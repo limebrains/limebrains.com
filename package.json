@@ -6,6 +6,7 @@
   "author": "Wojciech Nowak <mail@pythonic.ninja>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
+    "disqus-react": "^1.0.5",
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-manifest": "^2.0.9",
