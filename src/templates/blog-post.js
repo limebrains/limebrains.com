@@ -15,7 +15,7 @@ const LayoutWrapper = styled.div`
 `
 
 const PlaintextTemplate = ({data}) => {
-  const disqusShortname = data.markdownRemark.fields.slug;
+  const disqusShortname = 'limebrains';
   const title = _.get(data, 'markdownRemark.frontmatter.title')
   const disqusConfig = {
     url: `${data.site.siteMetadata.url}${data.markdownRemark.fields.slug}`,
