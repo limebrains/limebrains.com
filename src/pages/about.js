@@ -1,20 +1,20 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import Layout from '../components/layout/index'
 import SEO from '../components/seo'
-
 import { Section } from '../components/section';
 import { colors } from '../components/theme/colors';
 import { SectionHeading } from '../components/heading';
 
-const IndexPage = (props) => (
+const SecondPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
+    <SEO title="Page two"/>
 
     <Section
       background={colors.sections.lightSection.background}
     >
-      <SectionHeading title={'Customer Reviews'}/>
+      <SectionHeading title={'Clients'}/>
     </Section>
 
     <Section
@@ -23,7 +23,8 @@ const IndexPage = (props) => (
       <SectionHeading title={'Meet The Team'} inverse/>
     </Section>
 
+    <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
 
-export default IndexPage
+export default SecondPage
