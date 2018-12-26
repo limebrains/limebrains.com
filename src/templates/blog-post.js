@@ -1,7 +1,8 @@
 import * as React from 'react'
+import * as _ from 'lodash';
 
 import styled from 'styled-components'
-import {graphql} from "gatsby";
+import { graphql } from "gatsby";
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 import { SectionHeading } from '../components/heading';
@@ -15,9 +16,9 @@ const LayoutWrapper = styled.div`
 
 const PlaintextTemplate = ({data}) => (
   <Layout>
-    <SEO title={data.markdownRemark.frontmatter.seo.title}/>
+    <SEO title={_.get(data, 'markdownRemark.frontmatter.seo.title')}/>
     <LayoutWrapper>
-      <SectionHeading title={data.markdownRemark.frontmatter.title} />
+      <SectionHeading title={_.get(data, 'markdownRemark.frontmatter.title')}/>
       <div dangerouslySetInnerHTML={{__html: data.markdownRemark.html}}/>
     </LayoutWrapper>
   </Layout>
@@ -26,7 +27,7 @@ const PlaintextTemplate = ({data}) => (
 export default PlaintextTemplate
 
 export const query = graphql`
-  query PageTemplateQuery($slug: String!) {
+  query PlaintextTemplateQuery($slug: String!) {
     site {
       siteMetadata {
         title
@@ -39,6 +40,7 @@ export const query = graphql`
       frontmatter {
         title
         subtitle
+        date
         seo {
           title
           description

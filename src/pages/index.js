@@ -69,25 +69,25 @@ const IndexPage = (props) => (
       />
 
 
-      <Slide left>
+      <Slide left fraction={1}>
         <SectionHeading title={'Our areas of interest'}/>
       </Slide>
 
       <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={2 / 3}>
         <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-          <Slide left>
+          <Slide left fraction={1}>
             <IconRounded icon={'FaLightbulb'}/>
             <SectionHeading title={'Progressive apps'} subtitle={'ReactJS / GraphQL / NodeJS / Mobile'}/>
           </Slide>
         </Flex>
         <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-          <Slide bottom>
+          <Slide bottom fraction={1}>
             <IconRounded icon={'FaKeyboard'}/>
             <SectionHeading title={'Scalable API'} subtitle={'AWS / Google Cloud / Terraform / Docker'}/>
           </Slide>
         </Flex>
         <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-          <Slide right>
+          <Slide right fraction={1}>
             <IconRounded icon={'FaRocket'}/>
             <SectionHeading title={'Open source'} subtitle={'Pet / Sufler / pydrill / and much more'}/>
           </Slide>
@@ -100,7 +100,7 @@ const IndexPage = (props) => (
     >
       <Flex p={'3rem'} align={'center'} justify={'center'} flex={1} w={3 / 4}>
         <Box flex={1}>
-          <Flip right>
+          <Flip right fraction={1}>
             <SectionHeading title={'ABOUT US'}/>
           </Flip>
           <Text align={'center'}>
@@ -126,7 +126,7 @@ const IndexPage = (props) => (
           </Text>
         </Box>
         <Flex flex={1} pt={'2rem'} flexDirection={'column'} justify={'center'} align={'center'}>
-          <Flip right>
+          <Flip right fraction={1}>
             <Img src={LimeBrainsLogo} responsive width={200}/>
           </Flip>
         </Flex>
@@ -214,7 +214,7 @@ const IndexPage = (props) => (
         }}
       />
 
-      <Flip right>
+      <Flip right fraction={1}>
         <SectionHeading title={'Our expertise'} inverse/>
       </Flip>
 
@@ -241,17 +241,17 @@ const IndexPage = (props) => (
         </Flex>
         <Flex flex={3}>
           <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-            <Slide left>
+            <Slide left fraction={1}>
               <SectionHeading title={'Progressive apps'} subtitle={'ReactJS / GraphQL / NodeJS / Mobile'} inverse/>
             </Slide>
           </Flex>
           <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-            <Slide bottom>
+            <Slide bottom fraction={1}>
               <SectionHeading title={'Scalable API'} subtitle={'AWS / Google Cloud / Terraform / Docker'} inverse/>
             </Slide>
           </Flex>
           <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-            <Slide right>
+            <Slide right fraction={1}>
               <SectionHeading title={'Open source'} subtitle={'Pet / Sufler / pydrill / and much more'} inverse/>
             </Slide>
           </Flex>
@@ -306,19 +306,19 @@ const IndexPage = (props) => (
 
       <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={2 / 3}>
         <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-          <Slide left>
+          <Slide left fraction={1}>
             <IconRounded icon={'FaLightbulb'}/>
             <SectionHeading title={'Progressive apps'} subtitle={'ReactJS / GraphQL / NodeJS / Mobile'}/>
           </Slide>
         </Flex>
         <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-          <Slide bottom>
+          <Slide bottom fraction={1}>
             <IconRounded icon={'FaKeyboard'}/>
             <SectionHeading title={'Scalable API'} subtitle={'AWS / Google Cloud / Terraform / Docker'}/>
           </Slide>
         </Flex>
         <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-          <Slide right>
+          <Slide right fraction={1}>
             <IconRounded icon={'FaRocket'}/>
             <SectionHeading title={'Open source'} subtitle={'Pet / Sufler / pydrill / and much more'}/>
           </Slide>
@@ -329,13 +329,13 @@ const IndexPage = (props) => (
     <Section
       background={colors.sections.lightSection.background}
     >
-      <Fade>
+      <Fade fraction={1}>
         <SectionHeading title={'Meet The Team'}/>
       </Fade>
 
       <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={1 / 2}>
         <Flex flex={2} align={'center'} justify={'center'}>
-          <Flip right>
+          <Flip right fraction={1}>
             <Img src={LimeBrainsLogo} responsive width={200}/>
           </Flip>
         </Flex>

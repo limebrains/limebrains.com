@@ -92,7 +92,7 @@ exports.createPages = async ({graphql, actions}) => {
       context: {
         // Data passed to context is available in page queries as GraphQL variables.
         slug,
-        indexable: !node.frontmatter.seo.noindex
+        indexable: _.get(node, 'frontmatter.seo.noindex')
       }
     })
   })
