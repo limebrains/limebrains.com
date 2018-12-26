@@ -12,6 +12,8 @@ import { Button } from './../buttons';
 
 const HeaderWrapper = styled.header`
   max-height: 100px;
+  position: sticky;
+  top: 0;
 
   ul {
     li {
