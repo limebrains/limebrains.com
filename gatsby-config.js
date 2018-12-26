@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#0f9900`,
         theme_color: `#0f9900`,
         display: `minimal-ui`,
-        icon: `src/images/lime-brains-logo.png`, // This path is relative to the root of the site.
+        icon: `src/images/lime-brains-logo.svg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

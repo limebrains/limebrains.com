@@ -23,6 +23,7 @@ const HeaderWrapper = styled.header`
 `;
 
 const NavButton = styled(Button)`
+  font-weight: 100;
 `
 
 
@@ -42,9 +43,9 @@ const Header = ({siteTitle}) => (
       </Box>
       <Flex justify align alignSelf={'center'}>
         <Link to="/">
-          <Heading.h1>
+          <Heading.h2>
             {siteTitle}
-          </Heading.h1>
+          </Heading.h2>
         </Link>
       </Flex>
       <Flex
@@ -57,14 +58,35 @@ const Header = ({siteTitle}) => (
           <li>
             <Link to={'/about/'}>
               <NavButton outline white text>
-                About
+                ABOUT
               </NavButton>
             </Link>
           </li>
           <li>
             <Link to={'/clients/'}>
+              <NavButton outline white text>
+                CLIENTS
+              </NavButton>
+            </Link>
+          </li>
+          <li>
+            <Link to={'/clients/'}>
+              <NavButton outline white text>
+                GITHUB
+              </NavButton>
+            </Link>
+          </li>
+          <li>
+            <Link to={'/about/'}>
+              <NavButton outline white text>
+                TEAM
+              </NavButton>
+            </Link>
+          </li>
+          <li>
+            <Link to={'/contact/'}>
               <NavButton outline white>
-                Clients
+                CONTACT
               </NavButton>
             </Link>
           </li>
