@@ -82,6 +82,14 @@ const Header = ({siteTitle}) => (
               </NavButton>
             </Link>
           </li>
+
+          <li>
+            <Link to={'/blog/'}>
+              <NavButton outline white text>
+                BLOG
+              </NavButton>
+            </Link>
+          </li>
           <li>
             <Link to={'/about/'}>
               <NavButton outline white text>
