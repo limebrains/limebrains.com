@@ -73,7 +73,8 @@ const IndexPage = (props) => (
       <Slide left>
         <SectionHeading title={'Our areas of interest'}/>
       </Slide>
-      <Flex flex={1} pt={'2rem'}>
+
+      <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={ 2 / 3}>
         <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
           <Slide left>
             <IconRounded icon={'FaLightbulb'}/>
@@ -98,7 +99,7 @@ const IndexPage = (props) => (
     <Section
       background={colors.sections.lightSection.background}
     >
-      <Flex p={'3rem'}>
+      <Flex p={'3rem'} align={'center'} justify={'center'} flex={1} w={ 3 / 4}>
         <Box flex={1}>
           <Flip right>
             <SectionHeading title={'ABOUT US'}/>
@@ -220,7 +221,7 @@ const IndexPage = (props) => (
         <SectionHeading title={'Our expertise'} inverse/>
       </Flip>
 
-      <Flex flex={1} pt={'2rem'}>
+      <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={ 2 / 3 }>
         <Flex flex={1} flexDirection={'column'}>
           <Flex pb={'1rem'} pl={'2rem'}>
             <IconRounded icon={'FaLightbulb'}/>
@@ -241,7 +242,7 @@ const IndexPage = (props) => (
             </Flex>
           </Flex>
         </Flex>
-        <Flex flex={1}>
+        <Flex flex={3}>
           <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
             <Slide left>
               <SectionHeading title={'Progressive apps'} subtitle={'ReactJS / GraphQL / NodeJS / Mobile'} inverse/>
@@ -306,7 +307,7 @@ const IndexPage = (props) => (
         <SectionHeading title={'Customer Reviews'}/>
       </Flip>
 
-      <Flex flex={1} pt={'2rem'}>
+      <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={2 / 3}>
         <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
           <Slide left>
             <IconRounded icon={'FaLightbulb'}/>
@@ -335,7 +336,7 @@ const IndexPage = (props) => (
         <SectionHeading title={'Meet The Team'}/>
       </Fade>
 
-      <Flex flex={1} pt={'2rem'}>
+      <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={1 / 2}>
         <Flex flex={2} align={'center'} justify={'center'}>
           <Flip right>
             <Img src={LimeBrainsLogo} responsive width={200}/>
