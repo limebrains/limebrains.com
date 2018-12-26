@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Box, Heading } from 'rendition'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { Img } from './../img'
 import { Link } from './../link'

@@ -30,7 +30,7 @@ const Nav = styled(Flex)`
   }
 `
 
-export const Footer = ({}) => {
+export const Footer = () => {
   return (
     <StyledFooter>
       <Particles
