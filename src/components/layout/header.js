@@ -9,6 +9,7 @@ import { Flex, Box } from './../flex'
 import { gradients } from './../theme/colors';
 import { LimeBrainsLogo } from './../theme/logos'
 import { Button } from './../buttons';
+import { Flip } from 'react-reveal';
 
 const HeaderWrapper = styled.header`
   max-height: 100px;
@@ -41,7 +42,9 @@ const Header = ({siteTitle}) => (
     >
       <Box pt={10} pb={10} pr={10}>
         <Link to="/">
-          <Img src={LimeBrainsLogo} responsive width={80}/>
+          <Flip left>
+            <Img src={LimeBrainsLogo} responsive width={80}/>
+          </Flip>
         </Link>
       </Box>
       <Flex justify align alignSelf={'center'}>

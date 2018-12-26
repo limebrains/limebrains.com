@@ -8,6 +8,7 @@ export const Flex = styled(FlexDefault)`
   ${props => props.pb ? css`padding-bottom: ${props.pb}` : ''}
   ${props => props.pl ? css`padding-left: ${props.pl}` : ''}
   ${props => props.pr ? css`padding-right: ${props.pr}` : ''}
+  ${props => props.p ? css`padding: ${props.pr}` : ''}
 `
 
 export const Box = styled(BoxDefault)`

@@ -23,6 +23,10 @@ const SectionHeadingWrapper = styled.div`
     margin-top: 1rem;
     font-size: 12px;
     color: ${colors.text.light};
+    
+    ${props => props.inverse && css`
+      color: ${colors.gray.light};
+    `}
   }
 `
 

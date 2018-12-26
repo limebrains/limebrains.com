@@ -12,7 +12,7 @@ export const colors = {
       background: '#ffffff',
     },
     lightSection: {
-      background: '#dedede',
+      background: '#f8f8f8',
     },
     greenSection: {
       background: gradients.default,

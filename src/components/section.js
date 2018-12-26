@@ -10,7 +10,6 @@ const sizes = {
 export const Section = styled.div`
   position: relative;
   width: 100%;
-  min-height: 80vh;
   padding-top: 3rem;
   padding-bottom: 3rem;
   
