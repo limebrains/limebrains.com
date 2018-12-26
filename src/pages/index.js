@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../components/layout/index'
 import SEO from '../components/seo'
 import { Section } from '../components/section';
-import { colors, gradients } from '../components/theme/colors';
+import { colors } from '../components/theme/colors';
 import { SectionHeading } from '../components/heading';
 import { Slide, Flip, Fade } from 'react-reveal';
 import { IconRounded } from '../components/icon';
@@ -16,7 +16,6 @@ import { Img } from '../components/img';
 const IndexPage = (props) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
-
 
     <Section
       background={colors.sections.whiteSection.background}
@@ -74,7 +73,7 @@ const IndexPage = (props) => (
         <SectionHeading title={'Our areas of interest'}/>
       </Slide>
 
-      <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={ 2 / 3}>
+      <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={2 / 3}>
         <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
           <Slide left>
             <IconRounded icon={'FaLightbulb'}/>
@@ -99,7 +98,7 @@ const IndexPage = (props) => (
     <Section
       background={colors.sections.lightSection.background}
     >
-      <Flex p={'3rem'} align={'center'} justify={'center'} flex={1} w={ 3 / 4}>
+      <Flex p={'3rem'} align={'center'} justify={'center'} flex={1} w={3 / 4}>
         <Box flex={1}>
           <Flip right>
             <SectionHeading title={'ABOUT US'}/>
@@ -221,7 +220,7 @@ const IndexPage = (props) => (
         <SectionHeading title={'Our expertise'} inverse/>
       </Flip>
 
-      <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={ 2 / 3 }>
+      <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={2 / 3}>
         <Flex flex={1} flexDirection={'column'}>
           <Flex pb={'1rem'} pl={'2rem'}>
             <IconRounded icon={'FaLightbulb'}/>
