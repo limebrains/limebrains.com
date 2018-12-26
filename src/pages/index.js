@@ -1,11 +1,11 @@
 import React from 'react'
-import Flip from 'react-reveal/Flip';
 
 import Layout from '../components/layout/index'
 import SEO from '../components/seo'
 import { Section } from '../components/section';
 import { colors } from '../components/theme/colors';
 import { SectionHeading } from '../components/heading';
+import { Slide, Flip, Fade } from 'react-reveal';
 
 const IndexPage = (props) => (
   <Layout>
@@ -16,9 +16,9 @@ const IndexPage = (props) => (
       background={colors.sections.whiteSection.background}
       size={'xs'}
     >
-      <Flip right>
+      <Slide left>
         <SectionHeading title={'Our areas of interest'}/>
-      </Flip>
+      </Slide>
     </Section>
 
 
@@ -33,9 +33,9 @@ const IndexPage = (props) => (
     <Section
       background={colors.sections.greenSection.background}
     >
-      <Flip left>
+      <Fade>
         <SectionHeading title={'Meet The Team'} inverse/>
-      </Flip>
+      </Fade>
     </Section>
 
   </Layout>
