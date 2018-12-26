@@ -1,3 +1,4 @@
+# Lime Brains site
 
 https://staging.limebrains.com/
 
@@ -17,6 +18,9 @@ https://staging.limebrains.com/
 
 ## 🧐 What's inside?
 
+- **Prebuild components from rendition** 
+    - story book - https://balena-io-modules.github.io/rendition/
+    - github - https://github.com/balena-io-modules/rendition
 
 ## 🎓 Learning Gatsby
 
@@ -28,6 +32,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 💫 Deploy
 
-After successful merge to gitlab it deploys the version to pro
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+After successful merge to gitlab it deploys the version to production using Netlify.

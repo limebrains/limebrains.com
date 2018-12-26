@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "lime-brains-site",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Website build using Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Wojciech Nowak <mail@pythonic.ninja>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.76",
@@ -31,7 +31,10 @@
     "styled-components": "3.4.10"
   },
   "keywords": [
-    "gatsby"
+    "software house",
+    "lime",
+    "brains",
+    "lime brains",
   ],
   "license": "MIT",
   "scripts": {
@@ -46,9 +49,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/limebrains/limebrains.com"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/limebrains/limebrains.com/issues"
   }
 }
