@@ -6,6 +6,7 @@ import { Flex } from './../flex';
 import { Box, Heading, Txt } from 'rendition'
 import { LimeBrainsLogo } from './../theme/logos';
 import { Img } from './../img';
+import { Link } from '../link';
 
 const StyledFooter = styled.footer`
   position: relative;
@@ -74,13 +75,29 @@ export const Footer = ({}) => {
         <Box flex={1}>
           <Heading.h3>PROJECTS</Heading.h3>
           <ul>
-            <li>dsada</li>
+            <li>PyDrill</li>
+            <li>Pet</li>
+            <li>Sufler</li>
+            <li>PyOlx</li>
+            <li>PyOtodom</li>
           </ul>
         </Box>
         <Box flex={1}>
           <Heading.h3>CLIENTS</Heading.h3>
           <ul>
-            <li>dsada</li>
+            <li>VOX'M</li>
+            <li>VILLOID</li>
+            <li>COINFALCON</li>
+          </ul>
+        </Box>
+        <Box flex={1}>
+          <ul>
+            <li>
+              <Link to={'/'}>HOME</Link>
+            </li>
+            <li>
+              <Link to={'/en/privacy'}>PRIVACY</Link>
+            </li>
           </ul>
         </Box>
         <Box flex={1} align justify>

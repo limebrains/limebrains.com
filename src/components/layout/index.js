@@ -10,7 +10,7 @@ import { theme } from './../theme/theme';
 import { Footer } from './footer';
 
 const ContentWrapper = styled.div`
-
+  min-height: 75vh;
 `;
 
 const Layout = ({children}) => (
