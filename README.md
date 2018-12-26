@@ -14,7 +14,7 @@ https://staging.limebrains.com/
 
     Your site is now running at `http://localhost:8000`!
 
-    \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
+    You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).
 
 ## 🧐 What's inside?
 
@@ -32,4 +32,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 💫 Deploy
 
-After successful merge to gitlab it deploys the version to production using Netlify.
+After successful merge it deploys the version to production using Netlify.
