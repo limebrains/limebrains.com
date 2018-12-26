@@ -25,10 +25,10 @@ const NotFoundPage = () => (
         <Flip right>
           <SectionHeading title={'Not found'} inverse/>
         </Flip>
-        <Flip right delay={500}>
+        <Flip right delay={500} fraction={1}>
           <Img src={LimeBrainsLogo} responsive width={200}/>
         </Flip>
-        <Flip bottom delay={1000}>
+        <Flip bottom delay={1000} fraction={1}>
           <Text inverse>
             You just hit a route that doesn&#39;t exist...
           </Text>
