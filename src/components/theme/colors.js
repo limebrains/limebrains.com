@@ -8,6 +8,9 @@ export const colors = {
   white: '#ffffff',
 
   sections: {
+    whiteSection: {
+      background: '#ffffff',
+    },
     lightSection: {
       background: '#dedede',
     },
