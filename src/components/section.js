@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components'
 
 const sizes = {
-  lg: '80vh',
+  xlg: '80vh',
+  lg: '75vh',
   md: '40vh',
   sm: '20vh',
   xs: '10vh',
