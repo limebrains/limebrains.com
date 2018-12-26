@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Box, Heading } from 'rendition'
+import { Heading } from 'rendition'
 import styled from 'styled-components'
 
 import { Img } from './../img'
 import { Link } from './../link'
-import { Flex } from './../flex'
+import { Flex, Box } from './../flex'
 import { gradients } from './../theme/colors';
 import { LimeBrainsLogo } from './../theme/logos'
 import { Button } from './../buttons';
@@ -14,6 +14,7 @@ const HeaderWrapper = styled.header`
   max-height: 100px;
   position: sticky;
   top: 0;
+  z-index: 1000;
 
   ul {
     li {

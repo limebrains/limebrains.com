@@ -21,6 +21,9 @@ https://staging.limebrains.com/
 - **Prebuild components from rendition** 
     - story book - https://balena-io-modules.github.io/rendition/
     - github - https://github.com/balena-io-modules/rendition
+    
+- **Animations**
+    - react-reveal - https://www.react-reveal.com/examples/common/
 
 ## 🎓 Learning Gatsby
 

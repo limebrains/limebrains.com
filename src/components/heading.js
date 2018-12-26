@@ -7,7 +7,7 @@ import { colors } from './theme/colors';
 
 const SectionHeadingWrapper = styled.div`
   text-align: center;
-  padding: 2rem;
+  margin-top: 1rem;
 
   h1 {
     font-size: 25px;
@@ -20,7 +20,9 @@ const SectionHeadingWrapper = styled.div`
   }
  
   h4 {
+    margin-top: 1rem;
     font-size: 12px;
+    color: ${colors.text.light};
   }
 `
 

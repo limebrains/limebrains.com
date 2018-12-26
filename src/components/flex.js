@@ -1,6 +1,15 @@
-import { Flex as FlexDefault } from 'rendition'
-import styled from 'styled-components'
+import { Flex as FlexDefault, Box as BoxDefault } from 'rendition'
+import styled, { css } from 'styled-components'
 
 export const Flex = styled(FlexDefault)`
-  ${props => props.alignSelf ? `align-self: ${props.alignSelf}` : ''}
+  z-index: 1;
+  ${props => props.alignSelf ? css`align-self: ${props.alignSelf}` : ''}
+  ${props => props.pt ? css`padding-top: ${props.pt}` : ''}
+  ${props => props.pb ? css`padding-bottom: ${props.pb}` : ''}
+  ${props => props.pl ? css`padding-left: ${props.pl}` : ''}
+  ${props => props.pr ? css`padding-right: ${props.pr}` : ''}
+`
+
+export const Box = styled(BoxDefault)`
+
 `
