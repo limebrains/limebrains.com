@@ -172,9 +172,7 @@ const IndexPage = (props) => (
         }}
       />
 
-
     </Section>
-
 
     <Section
       background={colors.sections.greenSection.background}
