@@ -2,9 +2,9 @@ import React from 'react'
 import { Section } from '../section';
 import { colors } from '../theme/colors';
 import { SectionHeading } from '../heading';
-import { Slide, Flip, Fade } from 'react-reveal';
+import { Slide } from 'react-reveal';
 import { IconRounded } from '../icon';
-import { Flex, Box } from '../flex';
+import { Flex } from '../flex';
 import Particles from 'react-particles-js';
 
 

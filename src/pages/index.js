@@ -11,7 +11,7 @@ import { Team } from '../components/sections/team'
 const IndexPage = (props) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
-
+    
     <Areas />
 
     <About /> 
