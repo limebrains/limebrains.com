@@ -62,43 +62,43 @@ const Header = ({siteTitle}) => (
       >
         <ul>
           <li>
-            <Link to={'/about/'}>
+            <Link to={'#about'}>
               <NavButton outline white text>
                 ABOUT
               </NavButton>
             </Link>
           </li>
           <li>
-            <Link to={'/clients/'}>
+            <Link to={'#clients'}>
               <NavButton outline white text>
                 CLIENTS
               </NavButton>
             </Link>
           </li>
           <li>
-            <Link to={'/clients/'}>
+            <a href='https://github.com/limebrains/' style={{ textDecoration: 'none' }}>
               <NavButton outline white text>
                 GITHUB
               </NavButton>
-            </Link>
+            </a>
           </li>
 
           <li>
-            <Link to={'/blog/'}>
+            <Link to={'#blog'}>
               <NavButton outline white text>
                 BLOG
               </NavButton>
             </Link>
           </li>
           <li>
-            <Link to={'/about/'}>
+            <Link to={'#team'}>
               <NavButton outline white text>
                 TEAM
               </NavButton>
             </Link>
           </li>
           <li>
-            <Link to={'/contact/'}>
+            <Link to={'#contact'}>
               <NavButton outline white>
                 CONTACT
               </NavButton>
