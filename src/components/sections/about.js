@@ -18,6 +18,11 @@ export const About = () => {
     >
       <Flex p={'2rem'} align={'center'} justify={'center'} flex={1} w={3 / 4}>
         <Box flex={1}>
+          <Flex flex={1} pt={'2rem'} flexDirection={'column'} justify={'center'} align={'center'}>
+            <Flip right fraction={1}>
+              <Img src={LimeBrainsLogo} responsive width={200}/>
+            </Flip>
+          </Flex>
           <Flip right fraction={1}>
             <SectionHeading title={'ABOUT US'}/>
           </Flip>
@@ -43,11 +48,6 @@ export const About = () => {
             </Flex>
           </Text>
         </Box>
-        <Flex flex={1} pt={'2rem'} flexDirection={'column'} justify={'center'} align={'center'}>
-          <Flip right fraction={1}>
-            <Img src={LimeBrainsLogo} responsive width={200}/>
-          </Flip>
-        </Flex>
       </Flex>
 
       <Particles
