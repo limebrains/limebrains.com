@@ -6,7 +6,7 @@ import { Slide } from 'react-reveal';
 import { IconRounded } from '../icon';
 import { Flex } from '../flex';
 import Particles from 'react-particles-js';
-
+import { isMobile } from 'react-device-detect'
 
 export const Areas = () => {
     return(
@@ -66,9 +66,7 @@ export const Areas = () => {
       <Slide left fraction={1}>
         <SectionHeading title={'Our areas of interest'}/>
       </Slide>
-        {/* TODO 'isMobile() ? 'row' : 'column'} */}
-
-      <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={2 / 3} flexDirection={'column'}>
+      <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={2 / 3} flexDirection={isMobile ? 'column' : 'row'}  >
         <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
           <Slide left fraction={1} >
             <IconRounded icon={'FaLightbulb'}/>
