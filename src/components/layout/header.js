@@ -16,6 +16,7 @@ import './header.css'
 
 const HeaderWrapper = styled.header`
   max-height: 100px;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -34,7 +35,7 @@ const NavButton = styled(Button)`
 `
 
 
-const Header = function ({siteTitle}) {
+const Header = ({siteTitle}) => {
 
   useEffect(() => {
     setInterval(() => {
@@ -47,9 +48,8 @@ const Header = function ({siteTitle}) {
             closeIcon.checked = false;
           }
         }
-    }
+      } 
     }, 1000)
-      
   })
 
   return (
@@ -132,7 +132,7 @@ const Header = function ({siteTitle}) {
       
       <MobileView>
         <nav role="navigation">
-            <div id="menuToggle">
+          <div id="menuToggle">
             <input id="closeIcon" type="checkbox" />
             
             <span></span>
