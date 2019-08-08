@@ -35,6 +35,12 @@ const NavButton = styled(Button)`
   font-weight: 100;
 `
 
+const handleMenuClick = () => {
+    inputBox.current.checked = false
+}
+
+const inputBox = React.createRef()
+
 const Header = ({ siteTitle }) => {
 
   return (
@@ -118,7 +124,7 @@ const Header = ({ siteTitle }) => {
           <MobileView>
             <nav role="navigation">
               <div id="menuToggle">
-                <input id="closeIcon" type="checkbox" />
+                <input id="closeIcon" type="checkbox" ref={inputBox}/>
 
                 <span></span>
                 <span></span>
@@ -127,14 +133,14 @@ const Header = ({ siteTitle }) => {
                 <ul id="menu">
                   <li>
                     <Link to={'#about'}>
-                      <NavButton outline white text>
+                      <NavButton outline white text onClick={handleMenuClick} >
                         ABOUT
                       </NavButton>
                     </Link>
                   </li>
                   <li>
                     <Link to={'#clients'}>
-                      <NavButton outline white text>
+                      <NavButton outline white text onClick={handleMenuClick}>
                         CLIENTS
                       </NavButton>
                     </Link>
@@ -144,28 +150,28 @@ const Header = ({ siteTitle }) => {
                       href="https://github.com/limebrains/"
                       style={{ textDecoration: 'none' }}
                     >
-                      <NavButton outline white text>
+                      <NavButton outline white text >
                         GITHUB
                       </NavButton>
                     </a>
                   </li>
                   <li>
                     <Link to={'#blog'}>
-                      <NavButton outline white text>
+                      <NavButton outline white text onClick={handleMenuClick} >
                         BLOG
                       </NavButton>
                     </Link>
                   </li>
                   <li>
                     <Link to={'#team'}>
-                      <NavButton outline white text>
+                      <NavButton outline white text onClick={handleMenuClick} >
                         TEAM
                       </NavButton>
                     </Link>
                   </li>
                   <li>
                     <Link to={'#contact'}>
-                      <NavButton outline white>
+                      <NavButton outline white text onClick={handleMenuClick} >
                         CONTACT
                       </NavButton>
                     </Link>
