@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import Particles from 'react-particles-js';
-import React from 'react';
-import { colors, gradients } from './../theme/colors';
-import { Flex } from './../flex';
+import Particles from 'react-particles-js'
+import React from 'react'
+import { colors, gradients } from './../theme/colors'
+import { Flex } from './../flex'
 import { Box, Heading, Txt } from 'rendition'
-import { LimeBrainsLogo } from './../theme/logos';
-import { Img } from './../img';
-import { Link } from '../link';
+import { LimeBrainsLogo } from './../theme/logos'
+import { Img } from './../img'
+import { Link } from '../link'
 
 const StyledFooter = styled.footer`
   position: relative;
@@ -21,8 +21,7 @@ const Nav = styled(Flex)`
   z-index: 10;
   color: ${colors.white};
   padding: 20px;
-  
-  ul {
+  ≤ ul {
     li {
       color: ${colors.white};
       list-style: none;
@@ -41,9 +40,9 @@ export const Footer = () => {
             line_linked: {
               shadow: {
                 enable: false,
-                color: "#ffffff",
-                blur: 5
-              }
+                color: '#ffffff',
+                blur: 5,
+              },
             },
             number: {
               value: 30,
@@ -56,11 +55,11 @@ export const Footer = () => {
             events: {
               onhover: {
                 enable: true,
-                mode: "repulse"
-              }
-            }
-          }
-	      }}
+                mode: 'repulse',
+              },
+            },
+          },
+        }}
         style={{
           width: '100%',
           height: '100%',
@@ -101,13 +100,7 @@ export const Footer = () => {
           </ul>
         </Box>
         <Box flex={1} align justify>
-          <Img
-            src={LimeBrainsLogo}
-            width={50}
-            height={50}
-            responsive
-            center
-          />
+          <Img src={LimeBrainsLogo} width={50} height={50} responsive center />
           <Txt.p align={'center'}>
             Lime Brains
             <br />
@@ -120,13 +113,4 @@ export const Footer = () => {
       </Nav>
     </StyledFooter>
   )
-}
-
-if (typeof window !== "undefined") {
-  require("smooth-scroll")('a[href*="#"]', {
-		speed: 800,
-		speedAsDuration: true,
-    easing: 'easeInOutCubic',
-    offset: 100
-	})
 }
