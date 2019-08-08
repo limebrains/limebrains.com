@@ -36,20 +36,6 @@ const NavButton = styled(Button)`
 `
 
 const Header = ({ siteTitle }) => {
-  useEffect(() => {
-    // setInterval(() => {
-      var menu = document.getElementById('menuToggle')
-      var closeIcon = document.getElementById('closeIcon')
-      if (closeIcon) {
-        menu.addEventListener('click', handleMenuClick)
-        function handleMenuClick(event) {
-          if (event.target.nodeName === 'BUTTON') {
-            closeIcon.checked = false
-          }
-        }
-      }
-    // }, 1000)
-  })
 
   return (
     <HeaderWrapper>
