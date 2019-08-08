@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
-import { Heading } from 'rendition'
+import React, {useEffect} from 'react'
+import {Heading} from 'rendition'
 import styled from 'styled-components'
 
-import { Img } from './../img'
-import { Link } from './../link'
-import { Flex, Box } from './../flex'
-import { gradients } from './../theme/colors'
-import { LimeBrainsLogo } from './../theme/logos'
-import { Button } from './../buttons'
-import { Flip } from 'react-reveal'
-import { BrowserView, MobileView } from 'react-device-detect'
+import {Img} from './../img'
+import {Link} from './../link'
+import {Link as LinkScroll} from 'react-scroll'
+import {Flex, Box} from './../flex'
+import {gradients} from './../theme/colors'
+import {LimeBrainsLogo} from './../theme/logos'
+import {Button} from './../buttons'
+import {Flip} from 'react-reveal'
+import {BrowserView, MobileView} from 'react-device-detect'
 
 import './header.css'
 
@@ -35,13 +36,20 @@ const NavButton = styled(Button)`
   font-weight: 100;
 `
 
+
 const handleMenuClick = () => {
     inputBox.current.checked = false
 }
 
 const inputBox = React.createRef()
 
-const Header = ({ siteTitle }) => {
+const defaultSmooth = true
+const defaultDuration = 700
+const desktopOffset = -100
+const mobileOffset = 0
+
+const Header = ({siteTitle}) => {
+
 
   return (
     <HeaderWrapper>
@@ -55,7 +63,7 @@ const Header = ({ siteTitle }) => {
         <Box pt={10} pb={10} pr={10}>
           <Link to="/">
             <Flip left>
-              <Img src={LimeBrainsLogo} responsive width={80} />
+              <Img src={LimeBrainsLogo} responsive width={80}/>
             </Flip>
           </Link>
         </Box>
@@ -73,23 +81,35 @@ const Header = ({ siteTitle }) => {
           <BrowserView>
             <ul>
               <li>
-                <Link to={'#about'}>
+                <LinkScroll
+                  activeClass="active"
+                  to="about"
+                  smooth={defaultSmooth}
+                  duration={defaultDuration}
+                  offset={desktopOffset}
+                >
                   <NavButton outline white text>
                     ABOUT
                   </NavButton>
-                </Link>
+                </LinkScroll>
               </li>
               <li>
-                <Link to={'#clients'}>
+                <LinkScroll
+                  activeClass="active"
+                  to="clients"
+                  smooth={defaultSmooth}
+                  duration={defaultDuration}
+                  offset={desktopOffset}
+                >
                   <NavButton outline white text>
                     CLIENTS
                   </NavButton>
-                </Link>
+                </LinkScroll>
               </li>
               <li>
                 <a
                   href="https://github.com/limebrains/"
-                  style={{ textDecoration: 'none' }}
+                  style={{textDecoration: 'none'}}
                 >
                   <NavButton outline white text>
                     GITHUB
@@ -98,25 +118,43 @@ const Header = ({ siteTitle }) => {
               </li>
 
               <li>
-                <Link to={'#blog'}>
+                <LinkScroll
+                  activeClass="active"
+                  to="blog"
+                  smooth={defaultSmooth}
+                  duration={defaultDuration}
+                  offset={desktopOffset}
+                >
                   <NavButton outline white text>
                     BLOG
                   </NavButton>
-                </Link>
+                </LinkScroll>
               </li>
               <li>
-                <Link to={'#team'}>
+                <LinkScroll
+                  activeClass="active"
+                  to="team"
+                  smooth={defaultSmooth}
+                  duration={defaultDuration}
+                  offset={desktopOffset}
+                >
                   <NavButton outline white text>
                     TEAM
                   </NavButton>
-                </Link>
+                </LinkScroll>
               </li>
               <li>
-                <Link to={'#contact'}>
+                <LinkScroll
+                  activeClass="active"
+                  to="contact"
+                  smooth={defaultSmooth}
+                  duration={defaultDuration}
+                  offset={desktopOffset}
+                >
                   <NavButton outline white>
                     CONTACT
                   </NavButton>
-                </Link>
+                </LinkScroll>
               </li>
             </ul>
           </BrowserView>
@@ -125,30 +163,43 @@ const Header = ({ siteTitle }) => {
             <nav role="navigation">
               <div id="menuToggle">
                 <input id="closeIcon" type="checkbox" ref={inputBox}/>
-
+    
                 <span></span>
                 <span></span>
                 <span></span>
 
                 <ul id="menu">
                   <li>
-                    <Link to={'#about'}>
+                    <LinkScroll
+                      activeClass="active"
+                      to="about"
+                      spy={true}
+                      smooth={defaultSmooth}
+                      duration={defaultDuration}
+                      offset={mobileOffset}
+                    >
                       <NavButton outline white text onClick={handleMenuClick} >
                         ABOUT
                       </NavButton>
-                    </Link>
+                    </LinkScroll>
                   </li>
                   <li>
-                    <Link to={'#clients'}>
+                    <LinkScroll
+                      activeClass="active"
+                      to="clients"
+                      smooth={defaultSmooth}
+                      duration={defaultDuration}
+                      offset={mobileOffset}
+                    >
                       <NavButton outline white text onClick={handleMenuClick}>
                         CLIENTS
                       </NavButton>
-                    </Link>
+                    </LinkScroll>
                   </li>
                   <li>
                     <a
                       href="https://github.com/limebrains/"
-                      style={{ textDecoration: 'none' }}
+                      style={{textDecoration: 'none'}}
                     >
                       <NavButton outline white text >
                         GITHUB
@@ -156,25 +207,44 @@ const Header = ({ siteTitle }) => {
                     </a>
                   </li>
                   <li>
-                    <Link to={'#blog'}>
-                      <NavButton outline white text onClick={handleMenuClick} >
+                    <LinkScroll
+                      activeClass="active"
+                      to="blog"
+                      smooth={defaultSmooth}
+                      duration={defaultDuration}
+                      offset={mobileOffset}
+                    >
+                      <NavButton outline white text onClick={handleMenuClick}>
                         BLOG
                       </NavButton>
-                    </Link>
+                    </LinkScroll>
                   </li>
                   <li>
-                    <Link to={'#team'}>
-                      <NavButton outline white text onClick={handleMenuClick} >
+                    <LinkScroll
+                      activeClass="active"
+                      to="team"
+                      // spy={true}
+                      smooth={defaultSmooth}
+                      duration={defaultDuration}
+                      offset={mobileOffset}
+                    >
+                      <NavButton outline white text onClick={handleMenuClick}>
                         TEAM
                       </NavButton>
-                    </Link>
+                    </LinkScroll>
                   </li>
                   <li>
-                    <Link to={'#contact'}>
-                      <NavButton outline white text onClick={handleMenuClick} >
+                    <LinkScroll
+                      activeClass="active"
+                      to="contact"
+                      smooth={defaultSmooth}
+                      duration={defaultDuration}
+                      offset={mobileOffset}
+                    >
+                      <NavButton outline white text onClick={handleMenuClick}>
                         CONTACT
                       </NavButton>
-                    </Link>
+                    </LinkScroll>
                   </li>
                 </ul>
               </div>
