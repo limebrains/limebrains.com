@@ -135,8 +135,6 @@ const defaultDuration = 700
 const desktopOffset = -100
 const mobileOffset = 0
 
-const Header = ({siteTitle}) => {
-
 
 const Header = ({ siteTitle }) => {
   return (
