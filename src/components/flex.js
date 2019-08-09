@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 
 export const Flex = styled(FlexDefault)`
   z-index: 1;
-  ${props => props.alignSelf ? css`align-self: ${props.alignSelf}` : ''}
+  ${props => props.alignself ? css`align-self: ${props.alignself}` : ''}
   ${props => props.pt ? css`padding-top: ${props.pt}` : ''}
   ${props => props.pb ? css`padding-bottom: ${props.pb}` : ''}
   ${props => props.pl ? css`padding-left: ${props.pl}` : ''}
