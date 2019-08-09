@@ -6,9 +6,7 @@ import { Flip } from 'react-reveal'
 import { IconRounded } from '../icon'
 import { Flex, Box } from '../flex'
 import Particles from 'react-particles-js'
-import { LimeBrainsLogo } from '../theme/logos'
 import { Text } from '../text'
-import { Img } from '../img'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 import AnimatedProgressProvider from './AnimatedProgressProvider'
@@ -29,21 +27,22 @@ export const About = () => {
             <br />
             We provide web and mobile solutions for: enterprises which want to
             automate.
-            <Flex flex={1} justify={'center'} align={'center'} pt={'2rem'}>
-              <Flex flex={1} justify={'center'} align={'center'}>
-                <IconRounded icon={'FaLightbulb'} />
-              </Flex>
-              <Flex flex={1} justify={'center'} align={'center'}>
-                <IconRounded icon={'FaKeyboard'} />
-              </Flex>
-              <Flex flex={1} justify={'center'} align={'center'}>
-                <IconRounded icon={'FaRocket'} />
-              </Flex>
-              <Flex flex={1} justify={'center'} align={'center'}>
-                <IconRounded icon={'FaLightbulb'} />
-              </Flex>
-            </Flex>
           </Text>
+          <Flex flex={1} justify={'center'} align={'center'} pt={'2rem'}>
+            <Flex flex={1} justify={'center'} align={'center'}>
+              <IconRounded icon={'FaLightbulb'} />
+            </Flex>
+            <Flex flex={1} justify={'center'} align={'center'}>
+              <IconRounded icon={'FaKeyboard'} />
+            </Flex>
+            <Flex flex={1} justify={'center'} align={'center'}>
+              <IconRounded icon={'FaRocket'} />
+            </Flex>
+            <Flex flex={1} justify={'center'} align={'center'}>
+              <IconRounded icon={'FaLightbulb'} />
+            </Flex>
+          </Flex>
+
           <Flex flex={1} pt={'2rem'} justify={'center'} align={'center'}>
             <Flex flex={1} justify={'center'} align={'center'}>
               <Flip right fraction={1} pr={'2rem'}>
