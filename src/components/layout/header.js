@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Heading } from 'rendition'
 import styled from 'styled-components'
 
@@ -140,8 +140,6 @@ const Header = ({ siteTitle }) => {
   return (
     <HeaderWrapper>
       <Flex
-        justify
-        align
         style={{
           background: gradients.default,
         }}
@@ -153,7 +151,7 @@ const Header = ({ siteTitle }) => {
             </Flip>
           </Link>
         </Box>
-        <Flex justify align alignSelf={'center'}>
+        <Flex alignself={'center'}>
           <Link to="/">
             <Heading.h2>{siteTitle}</Heading.h2>
           </Link>
@@ -162,7 +160,7 @@ const Header = ({ siteTitle }) => {
           flex={1}
           justify={'flex-end'}
           align={'flex-end'}
-          alignSelf={'center'}
+          alignself={'center'}
         >
           <BrowserView>
             <ul>
