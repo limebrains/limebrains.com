@@ -244,7 +244,7 @@ const Header = ({ siteTitle }) => {
           <MobileView>
             <nav role="navigation">
               <MenuToggle>
-                <CloseIcon type="checkbox" ref={inputBox} />
+                <CloseIcon type="checkbox" innerRef={inputBox} />
 
                 <LineOfBurger />
                 <LineOfBurger />
