@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Heading } from 'rendition'
 import styled from 'styled-components'
 
-import {Img} from './../img'
-import {Link} from './../link'
-import {Link as LinkScroll} from 'react-scroll'
-import {Flex, Box} from './../flex'
-import {gradients} from './../theme/colors'
-import {LimeBrainsLogo} from './../theme/logos'
-import {Button} from './../buttons'
-import {Flip} from 'react-reveal'
-import {BrowserView, MobileView} from 'react-device-detect'
+import { Img } from './../img'
+import { Link } from './../link'
+import { Link as LinkScroll } from 'react-scroll'
+import { Flex, Box } from './../flex'
+import { gradients } from './../theme/colors'
+import { LimeBrainsLogo } from './../theme/logos'
+import { Button } from './../buttons'
+import { Flip } from 'react-reveal'
+import { BrowserView, MobileView } from 'react-device-detect'
 
 const HeaderWrapper = styled.header`
   max-height: 100px;
@@ -123,7 +123,6 @@ const MenuToggle = styled.div`
   }
 `
 
-
 const handleMenuClick = () => {
   inputBox.current.checked = false
 }
@@ -134,7 +133,6 @@ const defaultSmooth = true
 const defaultDuration = 700
 const desktopOffset = -100
 const mobileOffset = 0
-
 
 const Header = ({ siteTitle }) => {
   return (
@@ -149,7 +147,7 @@ const Header = ({ siteTitle }) => {
         <Box pt={10} pb={10} pr={10}>
           <Link to="/">
             <Flip left>
-              <Img src={LimeBrainsLogo} responsive width={80}/>
+              <Img src={LimeBrainsLogo} responsive width={80} />
             </Flip>
           </Link>
         </Box>
@@ -195,7 +193,7 @@ const Header = ({ siteTitle }) => {
               <li>
                 <a
                   href="https://github.com/limebrains/"
-                  style={{textDecoration: 'none'}}
+                  style={{ textDecoration: 'none' }}
                 >
                   <NavButton outline white text>
                     GITHUB
@@ -264,7 +262,7 @@ const Header = ({ siteTitle }) => {
                       duration={defaultDuration}
                       offset={mobileOffset}
                     >
-                      <NavButton outline white text onClick={handleMenuClick} >
+                      <NavButton outline white text onClick={handleMenuClick}>
                         ABOUT
                       </NavButton>
                     </LinkScroll>
@@ -287,7 +285,7 @@ const Header = ({ siteTitle }) => {
                       href="https://github.com/limebrains/"
                       style={{ textDecoration: 'none' }}
                     >
-                      <NavButton outline white text >
+                      <NavButton outline white text>
                         GITHUB
                       </NavButton>
                     </a>
