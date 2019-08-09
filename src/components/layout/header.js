@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import React, {useEffect} from 'react'
-import {Heading} from 'rendition'
+import React, { useEffect } from 'react'
+import { Heading } from 'rendition'
 import styled from 'styled-components'
 
 import {Img} from './../img'
@@ -12,8 +12,6 @@ import {LimeBrainsLogo} from './../theme/logos'
 import {Button} from './../buttons'
 import {Flip} from 'react-reveal'
 import {BrowserView, MobileView} from 'react-device-detect'
-
-import './header.css'
 
 const HeaderWrapper = styled.header`
   max-height: 100px;
@@ -36,14 +34,109 @@ const NavButton = styled(Button)`
   font-weight: 100;
 `
 
+const LineOfBurger = styled.span`
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+`
+
+const CloseIcon = styled.input`
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+`
+
+const MenuToggle = styled.div`
+  display: block;
+  position: relative;
+  right: 20px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+
+  ${LineOfBurger}:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  ${LineOfBurger}:nth-last-child (2) {
+    transform-origin: 0% 100%;
+  }
+
+  ${CloseIcon}:checked ~ ${LineOfBurger} {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+  }
+
+  ${CloseIcon}:checked ~ ${LineOfBurger}:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  ${CloseIcon}:checked ~ ${LineOfBurger}:nth-last-child(2) {
+    transform: rotate(-45deg) translate(-0.5px, -3px);
+  }
+
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: rgb(158 192 133);
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+
+    li {
+      font-size: 22px;
+      display: block;
+      list-style: none;
+      text-align: center;
+      padding: 1rem 1rem 1rem 7rem;
+    }
+  }
+
+  ${CloseIcon}:checked ~ ul {
+    transform: translate(-70%);
+  }
+`
+
+
+const handleMenuClick = () => {
+  inputBox.current.checked = false
+}
+
+const inputBox = React.createRef()
+
 const defaultSmooth = true
 const defaultDuration = 700
 const desktopOffset = -100
 const mobileOffset = 0
 
 
-const Header = ({siteTitle}) => {
-
+const Header = ({ siteTitle }) => {
   return (
     <HeaderWrapper>
       <Flex
@@ -154,12 +247,12 @@ const Header = ({siteTitle}) => {
 
           <MobileView>
             <nav role="navigation">
-              <div id="menuToggle">
-                <input id="closeIcon" type="checkbox"/>
+              <MenuToggle>
+                <CloseIcon type="checkbox" ref={inputBox} />
 
-                <span></span>
-                <span></span>
-                <span></span>
+                <LineOfBurger />
+                <LineOfBurger />
+                <LineOfBurger />
 
                 <ul id="menu">
                   <li>
@@ -171,7 +264,7 @@ const Header = ({siteTitle}) => {
                       duration={defaultDuration}
                       offset={mobileOffset}
                     >
-                      <NavButton outline white text>
+                      <NavButton outline white text onClick={handleMenuClick} >
                         ABOUT
                       </NavButton>
                     </LinkScroll>
@@ -184,7 +277,7 @@ const Header = ({siteTitle}) => {
                       duration={defaultDuration}
                       offset={mobileOffset}
                     >
-                      <NavButton outline white text>
+                      <NavButton outline white text onClick={handleMenuClick}>
                         CLIENTS
                       </NavButton>
                     </LinkScroll>
@@ -192,9 +285,9 @@ const Header = ({siteTitle}) => {
                   <li>
                     <a
                       href="https://github.com/limebrains/"
-                      style={{textDecoration: 'none'}}
+                      style={{ textDecoration: 'none' }}
                     >
-                      <NavButton outline white text>
+                      <NavButton outline white text >
                         GITHUB
                       </NavButton>
                     </a>
@@ -207,7 +300,7 @@ const Header = ({siteTitle}) => {
                       duration={defaultDuration}
                       offset={mobileOffset}
                     >
-                      <NavButton outline white text>
+                      <NavButton outline white text onClick={handleMenuClick}>
                         BLOG
                       </NavButton>
                     </LinkScroll>
@@ -221,7 +314,7 @@ const Header = ({siteTitle}) => {
                       duration={defaultDuration}
                       offset={mobileOffset}
                     >
-                      <NavButton outline white text>
+                      <NavButton outline white text onClick={handleMenuClick}>
                         TEAM
                       </NavButton>
                     </LinkScroll>
@@ -234,13 +327,13 @@ const Header = ({siteTitle}) => {
                       duration={defaultDuration}
                       offset={mobileOffset}
                     >
-                      <NavButton outline white>
+                      <NavButton outline white text onClick={handleMenuClick}>
                         CONTACT
                       </NavButton>
                     </LinkScroll>
                   </li>
                 </ul>
-              </div>
+              </MenuToggle>
             </nav>
           </MobileView>
         </Flex>
