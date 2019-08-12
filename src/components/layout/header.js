@@ -11,7 +11,7 @@ import { gradients } from './../theme/colors'
 import { LimeBrainsLogo } from './../theme/logos'
 import { Button } from './../buttons'
 import { Flip } from 'react-reveal'
-import { HorizonMenu, BurgerMenu } from '../responsive-menu'
+import { MobileView, DesktopView } from '../responsive'
 
 const HeaderWrapper = styled.header`
   max-height: 100px;
@@ -155,7 +155,7 @@ const Header = ({ siteTitle }) => {
           align={'flex-end'}
           alignself={'center'}
         >
-          <HorizonMenu>
+          <DesktopView>
             <ul>
               <li>
                 <LinkScroll
@@ -234,9 +234,9 @@ const Header = ({ siteTitle }) => {
                 </LinkScroll>
               </li>
             </ul>
-          </HorizonMenu>
+          </DesktopView>
 
-          <BurgerMenu>
+          <MobileView>
             <nav role="navigation">
               <MenuToggle>
                 <CloseIcon type="checkbox" innerRef={inputBox} />
@@ -326,7 +326,7 @@ const Header = ({ siteTitle }) => {
                 </ul>
               </MenuToggle>
             </nav>
-          </BurgerMenu>
+          </MobileView>
         </Flex>
       </Flex>
     </HeaderWrapper>
