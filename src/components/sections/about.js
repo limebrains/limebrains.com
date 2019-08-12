@@ -28,20 +28,6 @@ export const About = () => {
             We provide web and mobile solutions for: enterprises which want to
             automate.
           </Text>
-          <Flex flex={1} justify={'center'} align={'center'} pt={'2rem'}>
-            <Flex flex={1} justify={'center'} align={'center'}>
-              <IconRounded icon={'FaLightbulb'} />
-            </Flex>
-            <Flex flex={1} justify={'center'} align={'center'}>
-              <IconRounded icon={'FaKeyboard'} />
-            </Flex>
-            <Flex flex={1} justify={'center'} align={'center'}>
-              <IconRounded icon={'FaRocket'} />
-            </Flex>
-            <Flex flex={1} justify={'center'} align={'center'}>
-              <IconRounded icon={'FaLightbulb'} />
-            </Flex>
-          </Flex>
 
           <Flex flex={1} pt={'2rem'} justify={'center'} align={'center'}>
             <Flex flex={1} justify={'center'} align={'center'}>
