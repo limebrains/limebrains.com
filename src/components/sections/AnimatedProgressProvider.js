@@ -5,7 +5,7 @@ class AnimatedProgressProvider extends React.Component {
   interval = undefined;
 
   state = {
-    isAnimated: false
+    isAnimated: false,
   };
 
   static defaultProps = {
@@ -14,7 +14,7 @@ class AnimatedProgressProvider extends React.Component {
 
   componentDidMount() {
     if (this.props.repeat) {
-      this.interval = window.setInterval(() => {
+      this.interval = setInterval(() => {
         this.setState({
           isAnimated: !this.state.isAnimated
         });
@@ -27,7 +27,7 @@ class AnimatedProgressProvider extends React.Component {
   }
 
   componentWillUnmount() {
-    window.clearInterval(this.interval);
+    clearInterval(this.interval);
   }
 
   render() {
