@@ -20,7 +20,7 @@ const Nav = styled(Flex)`
   position: relative;
   z-index: 10;
   color: ${colors.white};
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   ≤ ul {
     li {
       color: ${colors.white};
