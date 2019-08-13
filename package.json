@@ -24,7 +24,7 @@
     "gatsby-transformer-sharp": "^2.1.8",
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
-    "react": "^16.6.3",
+    "react": "^16.8.0",
     "react-circular-progressbar": "^2.0.1",
     "react-device-detect": "^1.7.5",
     "react-dom": "^16.6.3",
