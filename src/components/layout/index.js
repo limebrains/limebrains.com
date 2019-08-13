@@ -21,14 +21,8 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const updateDimensions = () => {
-      //<ResponsiveContext.Provider
-      //  value={{
-      //    deviceWidth: setCurrentWidth,
-      //    isMobile: isMobile(currentWidth),
-      //  }}
-      ///>
       setCurrentWidth(window.innerWidth)
-    }
+    };
 
     console.log(currentWidth)
     window.addEventListener('resize', updateDimensions)
@@ -36,7 +30,7 @@ const Layout = ({ children }) => {
     return () => {
       window.addEventListener('resize', updateDimensions)
     }
-  })
+  });
 
   return (
     <StaticQuery
