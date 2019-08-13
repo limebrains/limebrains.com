@@ -6,7 +6,7 @@ import { Slide } from 'react-reveal'
 import { IconRounded } from '../icon'
 import { Flex } from '../flex'
 import Particles from 'react-particles-js'
-import { isMobile } from 'react-device-detect'
+import {HorizonMenu, BurgerMenu, MobileView} from '../responsive'
 
 export const Areas = () => {
   return (
@@ -62,7 +62,6 @@ export const Areas = () => {
         }}
       />
       {/* [{title: 'Progressive apps', subtitle: '', icon: ''}] */}
-
       <Slide left fraction={1}>
         <SectionHeading title={'Our areas of interest'} />
       </Slide>
@@ -72,7 +71,7 @@ export const Areas = () => {
         align={'center'}
         justify={'center'}
         w={2 / 3}
-        flexDirection={isMobile ? 'column' : 'row'}
+        // flexDirection={isMobile ? 'column' : 'row'}
       >
         <Flex
           flex={1}
@@ -120,3 +119,4 @@ export const Areas = () => {
     </Section>
   )
 }
+
