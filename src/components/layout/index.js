@@ -17,19 +17,21 @@ const ContentWrapper = styled.div`
 `
 
 const Layout = ({ children }) => {
-  const [currentWidth, setCurrentWidth] = useState(window.innerWidth)
+  const [currentWidth, setCurrentWidth] = useState(typeof window !== 'undefined' ? window.innerWidth: mobilePortrait);
 
   useEffect(() => {
     const updateDimensions = () => {
       setCurrentWidth(window.innerWidth)
     }
 
+      setCurrentWidth(typeof window !== 'undefined' ? window.innerWidth: mobilePortrait)
+    };
     window.addEventListener('resize', updateDimensions)
 
     return () => {
-      window.addEventListener('resize', updateDimensions)
+      window.removeEventListener('resize', updateDimensions)
     }
-  })
+  });
 
   return (
     <StaticQuery
