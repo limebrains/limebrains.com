@@ -85,7 +85,7 @@ export const Expertise = () => {
                 </Flex>
               </Flex>
             </Flex>
-            <Flex flex={3} flexDirection={'column' }>
+            <Flex flex={3} flexDirection={'column'}>
               <Flex
                 flex={1}
                 justify={'center'}
