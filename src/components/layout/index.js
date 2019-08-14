@@ -49,6 +49,7 @@ const Layout = ({ children }) => {
             <ResponsiveContext.Provider
               value={{
                 deviceWidth: setCurrentWidth,
+                width: currentWidth,
                 isMobile: isMobile(currentWidth),
                 isPhonePortrait: isPhonePortrait(currentWidth),
               }}

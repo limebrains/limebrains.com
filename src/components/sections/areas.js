@@ -7,7 +7,6 @@ import { IconRounded } from '../icon'
 import { Flex } from '../flex'
 import Particles from 'react-particles-js'
 import { Context as ResponsiveContext } from 'react-responsive'
-import Responsive from 'react-responsive'
 
 export const Areas = () => {
   return (
@@ -18,9 +17,6 @@ export const Areas = () => {
           background={colors.sections.whiteSection.background}
           size={'xs'}
         >
-          <Responsive  minWidth={2} maxWidth={1300} >
-            <h1>Here</h1>
-          </Responsive>
           <Particles
             width={'100%'}
             params={{
