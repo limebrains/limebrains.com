@@ -7,7 +7,7 @@ import { Box, Heading, Txt } from 'rendition'
 import { LimeBrainsLogo } from './../theme/logos'
 import { Img } from './../img'
 import { Link } from '../link'
-import { MobileView, DesktopView } from '../responsive'
+import { MobileView } from '../responsive'
 
 const StyledFooter = styled.footer`
   position: relative;
