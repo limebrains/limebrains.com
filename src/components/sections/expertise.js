@@ -81,16 +81,6 @@ export const Expertise = () => {
               <SectionHeading title={'Progressive apps'} subtitle={'ReactJS / GraphQL / NodeJS / Mobile'} inverse/>
             </Slide>
           </Flex>
-          <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-            <Slide bottom fraction={1}>
-              <SectionHeading title={'Scalable API'} subtitle={'AWS / Google Cloud / Terraform / Docker'} inverse/>
-            </Slide>
-          </Flex>
-          <Flex flex={1} justify={'center'} align={'center'} flexDirection={'column'}>
-            <Slide right fraction={1}>
-              <SectionHeading title={'Open source'} subtitle={'Pet / Sufler / pydrill / and much more'} inverse/>
-            </Slide>
-          </Flex>
         </Flex>
       </Flex>
     </Section>
