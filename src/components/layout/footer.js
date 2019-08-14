@@ -7,6 +7,7 @@ import { Box, Heading, Txt } from 'rendition'
 import { LimeBrainsLogo } from './../theme/logos'
 import { Img } from './../img'
 import { Link } from '../link'
+import { MobileView } from '../responsive'
 
 const StyledFooter = styled.footer`
   position: relative;
@@ -20,7 +21,7 @@ const Nav = styled(Flex)`
   position: relative;
   z-index: 10;
   color: ${colors.white};
-  padding: 20px 20px 0 20px;
+  padding: 20px;
   ≤ ul {
     li {
       color: ${colors.white};
@@ -71,6 +72,7 @@ export const Footer = () => {
         }}
       />
       <Nav>
+        <MobileView>
         <Box flex={1}>
           <Heading.h3>PROJECTS</Heading.h3>
           <ul>
@@ -99,6 +101,18 @@ export const Footer = () => {
             </li>
           </ul>
         </Box>
+        <Box flex={1} align justify>
+          <Img src={LimeBrainsLogo} width={50} height={50} responsive center />
+          <Txt.p align={'center'}>
+            Lime Brains
+            <br />
+            sp. z o. o.
+          </Txt.p>
+        </Box>
+        <Box flex={1}>
+          <Heading.h3>Social Media</Heading.h3>
+        </Box>
+        </MobileView>
 
       </Nav>
     </StyledFooter>

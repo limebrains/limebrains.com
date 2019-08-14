@@ -10,33 +10,27 @@ import { theme } from './../theme/theme'
 import { Footer } from './footer'
 
 import { Context as ResponsiveContext } from 'react-responsive'
-import { isMobile } from '../responsive'
+import { isMobile, isPhonePortrait, mobilePortrait } from '../responsive'
 
 const ContentWrapper = styled.div`
   min-height: 75vh;
 `
 
 const Layout = ({ children }) => {
-  const [currentWidth, setCurrentWidth] = useState(window.innerWidth)
+  const [currentWidth, setCurrentWidth] = useState(typeof window !== 'undefined' ? window.innerWidth: mobilePortrait);
 
   useEffect(() => {
-    const updateDimensions = () => {
-      //<ResponsiveContext.Provider
-      //  value={{
-      //    deviceWidth: setCurrentWidth,
-      //    isMobile: isMobile(currentWidth),
-      //  }}
-      ///>
-      setCurrentWidth(window.innerWidth)
-    }
+      const updateDimensions = () => {
+        setCurrentWidth(typeof window !== 'undefined' ? window.innerWidth : mobilePortrait)
+      }
 
-    console.log(currentWidth)
-    window.addEventListener('resize', updateDimensions)
-
-    return () => {
       window.addEventListener('resize', updateDimensions)
+
+      return () => {
+        window.removeEventListener('resize', updateDimensions)
+      }
     }
-  })
+  )
 
   return (
     <StaticQuery
@@ -56,11 +50,13 @@ const Layout = ({ children }) => {
               value={{
                 deviceWidth: setCurrentWidth,
                 isMobile: isMobile(currentWidth),
+                isPhonePortrait: isPhonePortrait(currentWidth),
               }}
-            />
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <ContentWrapper>{children}</ContentWrapper>
-            <Footer />
+            >
+              <Header siteTitle={data.site.siteMetadata.title} />
+              <ContentWrapper>{children}</ContentWrapper>
+              <Footer />
+            </ResponsiveContext.Provider>
           </Provider>
         </>
       )}
