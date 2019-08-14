@@ -113,6 +113,7 @@ export const Footer = () => {
           <Heading.h3>Social Media</Heading.h3>
         </Box>
         </MobileView>
+
       </Nav>
     </StyledFooter>
   )

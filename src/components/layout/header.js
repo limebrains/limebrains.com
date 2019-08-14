@@ -11,7 +11,7 @@ import { gradients } from './../theme/colors'
 import { LimeBrainsLogo } from './../theme/logos'
 import { Button } from './../buttons'
 import { Flip } from 'react-reveal'
-import { BrowserView, MobileView } from 'react-device-detect'
+import { MobileView, DesktopView } from '../responsive'
 
 const HeaderWrapper = styled.header`
   max-height: 100px;
@@ -65,65 +65,60 @@ const MenuToggle = styled.div`
   display: block;
   position: relative;
   right: 20px;
-
-  z-index: 1;
-
   -webkit-user-select: none;
   user-select: none;
-
   ${LineOfBurger}:first-child {
     transform-origin: 0% 0%;
   }
-
   ${LineOfBurger}:nth-last-child (2) {
     transform-origin: 0% 100%;
   }
-
   ${CloseIcon}:checked ~ ${LineOfBurger} {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
     background: #232323;
   }
-
   ${CloseIcon}:checked ~ ${LineOfBurger}:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
   }
-
   ${CloseIcon}:checked ~ ${LineOfBurger}:nth-last-child(2) {
     transform: rotate(-45deg) translate(-0.5px, -3px);
   }
-
   ul {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    margin: -100px 0 0 -50px;
-    padding: 50px;
-    padding-top: 125px;
+    height: 100vh;
+    top: 0;
+    right: -100vw;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
     background: rgb(158 192 133);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
     /* to stop flickering of text in safari */
-    transform-origin: 0% 0%;
-    transform: translate(100%, 0);
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-
-    li {
-      font-size: 22px;
-      display: block;
-      list-style: none;
-      text-align: center;
-      padding: 1rem 1rem 1rem 7rem;
+    transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    div {
+      margin: 100px 0;
+      li {
+        margin-right: 0;
+        font-size: 22px;
+        display: block;
+        list-style: none;
+        text-align: center;
+        padding: 1rem;
+      }
     }
   }
 
   ${CloseIcon}:checked ~ ul {
-    transform: translate(-70%);
+    right: 0;
   }
 `
 
 const handleMenuClick = () => {
+  console.log(inputBox.current)
   inputBox.current.checked = false
 }
 
@@ -160,7 +155,7 @@ const Header = ({ siteTitle }) => {
           align={'flex-end'}
           alignself={'center'}
         >
-          <BrowserView>
+          <DesktopView>
             <ul>
               <li>
                 <LinkScroll
@@ -239,18 +234,18 @@ const Header = ({ siteTitle }) => {
                 </LinkScroll>
               </li>
             </ul>
-          </BrowserView>
+          </DesktopView>
 
           <MobileView>
             <nav role="navigation">
               <MenuToggle>
-                <CloseIcon type="checkbox" ref={inputBox} />
+                <CloseIcon type="checkbox" innerRef={inputBox} />
 
                 <LineOfBurger />
                 <LineOfBurger />
                 <LineOfBurger />
-
                 <ul id="menu">
+                  <div>
                   <li>
                     <LinkScroll
                       activeClass="active"
@@ -305,7 +300,6 @@ const Header = ({ siteTitle }) => {
                     <LinkScroll
                       activeClass="active"
                       to="team"
-                      // spy={true}
                       smooth={defaultSmooth}
                       duration={defaultDuration}
                       offset={mobileOffset}
@@ -328,6 +322,7 @@ const Header = ({ siteTitle }) => {
                       </NavButton>
                     </LinkScroll>
                   </li>
+                  </div>
                 </ul>
               </MenuToggle>
             </nav>
