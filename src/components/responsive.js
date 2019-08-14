@@ -2,10 +2,10 @@ import React from "react";
 import Responsive from 'react-responsive';
 
 // breakpoints
-const mobilePortrait = 480
-const mobileLandscape = 768
-const tabletPortrait = 992
-const tabletLandscape = 1200
+export const mobilePortrait = 480
+export const mobileLandscape = 768
+export const tabletPortrait = 992
+export const tabletLandscape = 1200
 
 export const isPhonePortrait = width => width < mobileLandscape
 export const isPhoneLandscape = width => mobilePortrait < width && width < mobileLandscape
