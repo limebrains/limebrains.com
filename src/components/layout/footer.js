@@ -36,11 +36,11 @@ const Nav = styled(Flex)`
 export const Footer = () => {
   return (
     <ResponsiveContext.Consumer>
-      {({ isTabletPortrait }) => (
+      {({ isDesktop }) => (
         <StyledFooter>
           <Particles
             width={'100%'}
-            height={isTabletPortrait ? 200 : 350}
+            height={isDesktop ? 200 : 350}
             params={{
               particles: {
                 line_linked: {

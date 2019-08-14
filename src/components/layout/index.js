@@ -14,7 +14,7 @@ import {
   isMobile,
   isPhonePortrait,
   mobilePortrait,
-  isTabletPortrait,
+  isDesktop,
 } from '../responsive'
 
 const ContentWrapper = styled.div`
@@ -60,7 +60,7 @@ const Layout = ({ children }) => {
                 width: currentWidth,
                 isMobile: isMobile(currentWidth),
                 isPhonePortrait: isPhonePortrait(currentWidth),
-                isTabletPortrait: isTabletPortrait(currentWidth),
+                isDesktop: isDesktop(currentWidth)
               }}
             >
               <Header siteTitle={data.site.siteMetadata.title} />
