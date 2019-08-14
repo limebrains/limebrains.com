@@ -10,27 +10,35 @@ import { theme } from './../theme/theme'
 import { Footer } from './footer'
 
 import { Context as ResponsiveContext } from 'react-responsive'
-import { isMobile, isPhonePortrait, mobilePortrait } from '../responsive'
+import {
+  isMobile,
+  isPhonePortrait,
+  mobilePortrait,
+  isTabletPortrait,
+} from '../responsive'
 
 const ContentWrapper = styled.div`
   min-height: 75vh;
 `
 
 const Layout = ({ children }) => {
-  const [currentWidth, setCurrentWidth] = useState(typeof window !== 'undefined' ? window.innerWidth: mobilePortrait);
+  const [currentWidth, setCurrentWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : mobilePortrait
+  )
 
   useEffect(() => {
-      const updateDimensions = () => {
-        setCurrentWidth(typeof window !== 'undefined' ? window.innerWidth : mobilePortrait)
-      }
-
-      window.addEventListener('resize', updateDimensions)
-
-      return () => {
-        window.removeEventListener('resize', updateDimensions)
-      }
+    const updateDimensions = () => {
+      setCurrentWidth(
+        typeof window !== 'undefined' ? window.innerWidth : mobilePortrait
+      )
     }
-  )
+
+    window.addEventListener('resize', updateDimensions)
+
+    return () => {
+      window.removeEventListener('resize', updateDimensions)
+    }
+  })
 
   return (
     <StaticQuery
@@ -52,6 +60,7 @@ const Layout = ({ children }) => {
                 width: currentWidth,
                 isMobile: isMobile(currentWidth),
                 isPhonePortrait: isPhonePortrait(currentWidth),
+                isTabletPortrait: isTabletPortrait(currentWidth),
               }}
             >
               <Header siteTitle={data.site.siteMetadata.title} />
