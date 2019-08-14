@@ -99,17 +99,7 @@ export const Footer = () => {
             </li>
           </ul>
         </Box>
-        <Box flex={1} align justify>
-          <Img src={LimeBrainsLogo} width={50} height={50} responsive center />
-          <Txt.p align={'center'}>
-            Lime Brains
-            <br />
-            sp. z o. o.
-          </Txt.p>
-        </Box>
-        <Box flex={1}>
-          <Heading.h3>Social Media</Heading.h3>
-        </Box>
+
       </Nav>
     </StyledFooter>
   )

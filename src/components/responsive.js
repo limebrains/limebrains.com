@@ -1,8 +1,6 @@
 import React from "react";
 import Responsive from 'react-responsive';
-const res = require('react-responsive');
 
-console.log('Res', res)
 // breakpoints
 const mobilePortrait = 488;
 const mobileLandscape = 600;
