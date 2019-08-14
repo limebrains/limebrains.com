@@ -10,7 +10,7 @@ import { theme } from './../theme/theme'
 import { Footer } from './footer'
 
 import { Context as ResponsiveContext } from 'react-responsive'
-import { isMobile, isPhonePortrait } from '../responsive'
+import { isMobile, isPhonePortrait, mobilePortrait } from '../responsive'
 
 const ContentWrapper = styled.div`
   min-height: 75vh;
@@ -20,18 +20,17 @@ const Layout = ({ children }) => {
   const [currentWidth, setCurrentWidth] = useState(typeof window !== 'undefined' ? window.innerWidth: mobilePortrait);
 
   useEffect(() => {
-    const updateDimensions = () => {
-      setCurrentWidth(window.innerWidth)
-    }
+      const updateDimensions = () => {
+        setCurrentWidth(typeof window !== 'undefined' ? window.innerWidth : mobilePortrait)
+      }
 
-      setCurrentWidth(typeof window !== 'undefined' ? window.innerWidth: mobilePortrait)
-    };
-    window.addEventListener('resize', updateDimensions)
+      window.addEventListener('resize', updateDimensions)
 
-    return () => {
-      window.removeEventListener('resize', updateDimensions)
+      return () => {
+        window.removeEventListener('resize', updateDimensions)
+      }
     }
-  });
+  )
 
   return (
     <StaticQuery
