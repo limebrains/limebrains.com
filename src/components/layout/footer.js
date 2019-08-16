@@ -36,6 +36,7 @@ const Nav = styled(Flex)`
 `
 
 export const Footer = () => {
+  console.log(window.innerWidth)
   return (
     <ResponsiveContext.Consumer>
       {({ isDesktop }) => (
