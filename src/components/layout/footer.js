@@ -10,6 +10,7 @@ import { Link } from '../link'
 import { MobileView, DesktopView } from '../responsive'
 import { Context as ResponsiveContext } from 'react-responsive'
 import { SectionHeading } from '../heading'
+import { GetProjects, GetClients } from '../fetchJson'
 
 const StyledFooter = styled.footer`
   position: relative;
@@ -82,21 +83,11 @@ export const Footer = () => {
             <DesktopView>
               <Box flex={1}>
                 <Heading.h3>PROJECTS</Heading.h3>
-                <ul>
-                  <li>PyDrill</li>
-                  <li>Pet</li>
-                  <li>Sufler</li>
-                  <li>PyOlx</li>
-                  <li>PyOtodom</li>
-                </ul>
+                <GetProjects />
               </Box>
               <Box flex={1} pl={'4rem'}>
                 <Heading.h3>CLIENTS</Heading.h3>
-                <ul>
-                  <li>VOX'M</li>
-                  <li>VILLOID</li>
-                  <li>COINFALCON</li>
-                </ul>
+                <GetClients />
               </Box>
               <Box flex={1}>
                 <ul>
@@ -132,21 +123,11 @@ export const Footer = () => {
                 <Flex>
                   <Box flex={1}>
                     <Heading.h3>PROJECTS</Heading.h3>
-                    <ul>
-                      <li>PyDrill</li>
-                      <li>Pet</li>
-                      <li>Sufler</li>
-                      <li>PyOlx</li>
-                      <li>PyOtodom</li>
-                    </ul>
+                    <GetProjects />
                   </Box>
                   <Box flex={1}>
                     <Heading.h3>CLIENTS</Heading.h3>
-                    <ul>
-                      <li>VOX'M</li>
-                      <li>VILLOID</li>
-                      <li>COINFALCON</li>
-                    </ul>
+                    <GetClients />
                   </Box>
                 </Flex>
                 <SectionHeading title={''} inverse />
