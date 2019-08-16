@@ -13,7 +13,7 @@ export class GetProjects extends Component {
     return (
       <ul>
         {footerData.footer.PROJECTS.map(project => (
-          <li>{project}</li>
+          <li key={project}>{project}</li>
         ))}
       </ul>
     )
@@ -32,7 +32,7 @@ export class GetClients extends Component {
     return (
       <ul>
         {footerData.footer.CLIENTS.map(client => (
-          <li>{client}</li>
+          <li key={client}>{client}</li>
         ))}
       </ul>
     )
