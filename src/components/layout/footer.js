@@ -16,7 +16,6 @@ const StyledFooter = styled.footer`
   position: relative;
   bottom: 0;
   width: 100%;
-  height: 200px;
 `
 
 const Nav = styled(Flex)`
@@ -41,7 +40,7 @@ export const Footer = () => {
         <StyledFooter>
           <Particles
             width={'100%'}
-            height={isDesktop ? 200 : 350}
+            height={'100%'}
             params={{
               particles: {
                 line_linked: {
