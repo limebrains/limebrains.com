@@ -16,6 +16,7 @@ const StyledFooter = styled.footer`
   bottom: 0;
   width: 100%;
   height: 200px;
+  text-align: center;
 `
 
 const Nav = styled(Flex)`
@@ -25,7 +26,8 @@ const Nav = styled(Flex)`
   color: ${colors.white};
   padding: 20px 20px 0 20px;
 
-  ≤ ul {
+  ul {
+    padding: 0;
     li {
       color: ${colors.white};
       list-style: none;
@@ -106,7 +108,7 @@ export const Footer = () => {
                   </li>
                 </ul>
               </Box>
-              <Box flex={1} align justify>
+              <Box flex={1} >
                 <Img
                   src={LimeBrainsLogo}
                   width={50}
@@ -114,7 +116,7 @@ export const Footer = () => {
                   responsive
                   center
                 />
-                <Txt.p align={'center'}>
+                <Txt.p>
                   Lime Brains
                   <br />
                   sp. z o. o.
@@ -126,7 +128,7 @@ export const Footer = () => {
             </DesktopView>
 
             <MobileView>
-              <Flex flexDirection={'column'} w={1} alignItems={'center'}>
+              <Flex flexDirection={'column'} w={1}>
                 <Flex>
                   <Box flex={1}>
                     <Heading.h3>PROJECTS</Heading.h3>
@@ -159,7 +161,7 @@ export const Footer = () => {
                       </li>
                     </ul>
                   </Box>
-                  <Box flex={1} align justify>
+                  <Box flex={1} >
                     <Img
                       src={LimeBrainsLogo}
                       width={50}
