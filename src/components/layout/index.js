@@ -13,7 +13,6 @@ import { Context as ResponsiveContext } from 'react-responsive'
 import {
   isMobile,
   isPhonePortrait,
-  //mobilePortrait,
   isDesktop,
 } from '../responsive'
 
@@ -22,56 +21,56 @@ const ContentWrapper = styled.div`
 `
 
 const Layout = ({ children }) => {
-  const [currentWidth, setCurrentWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : mobilePortrait
-  )
+  
+    const [currentWidth, setCurrentWidth] = useState(
+      typeof window !== 'undefined' ? window.innerWidth : null
+    )
 
   useEffect(() => {
     const updateDimensions = () => {
-      setCurrentWidth(
+      setCurrentWidth(        
         window.innerWidth
       )
     }
-
     window.addEventListener('resize', updateDimensions)
-
     return () => {
       window.removeEventListener('resize', updateDimensions)
     }
   })
-
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
+  if (typeof window !== 'undefined'){
+    return (
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
             }
           }
-        }
-      `}
-      render={data => (
-        <>
-          <Provider theme={theme}>
-            <ResponsiveContext.Provider
-              value={{
-                deviceWidth: setCurrentWidth,
-                width: currentWidth,
-                isMobile: isMobile(currentWidth),
-                isPhonePortrait: isPhonePortrait(currentWidth),
-                isDesktop: isDesktop(currentWidth)
-              }}
-            >
-              <Header siteTitle={data.site.siteMetadata.title} />
-              <ContentWrapper>{children}</ContentWrapper>
-              <Footer />
-            </ResponsiveContext.Provider>
-          </Provider>
-        </>
-      )}
-    />
-  )
+        `}
+        render={data => (
+          <>
+            <Provider theme={theme}>
+              <ResponsiveContext.Provider
+                value={{
+                  deviceWidth: setCurrentWidth,
+                  width: currentWidth,
+                  isMobile: isMobile(currentWidth),
+                  isPhonePortrait: isPhonePortrait(currentWidth),
+                  isDesktop: isDesktop(currentWidth)
+                }}
+              >
+                <Header siteTitle={data.site.siteMetadata.title} />
+                <ContentWrapper>{children}</ContentWrapper>
+                <Footer />
+              </ResponsiveContext.Provider>
+            </Provider>
+          </>
+        )}
+      />
+    )
+  } return null
 }
 
 Layout.propTypes = {
