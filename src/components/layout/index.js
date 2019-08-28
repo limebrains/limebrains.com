@@ -13,7 +13,7 @@ import { Context as ResponsiveContext } from 'react-responsive'
 import {
   isMobile,
   isPhonePortrait,
-  mobilePortrait,
+  //mobilePortrait,
   isDesktop,
 } from '../responsive'
 
@@ -23,13 +23,13 @@ const ContentWrapper = styled.div`
 
 const Layout = ({ children }) => {
   const [currentWidth, setCurrentWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : mobilePortrait
+    window.innerWidth
   )
 
   useEffect(() => {
     const updateDimensions = () => {
       setCurrentWidth(
-        typeof window !== 'undefined' ? window.innerWidth : mobilePortrait
+        window.innerWidth
       )
     }
 
