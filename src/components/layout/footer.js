@@ -41,6 +41,7 @@ export const Footer = () => {
     <ResponsiveContext.Consumer>
       {({ isDesktop }) => (
         <StyledFooter>
+          {console.log(isDesktop)}
           <Particles
             width={'100%'}
             height={isDesktop ? 200 : 350}
@@ -99,7 +100,7 @@ export const Footer = () => {
                   </li>
                 </ul>
               </Box>
-              <Box flex={1} >
+              <Box flex={1}>
                 <Img
                   src={LimeBrainsLogo}
                   width={50}
@@ -142,7 +143,7 @@ export const Footer = () => {
                       </li>
                     </ul>
                   </Box>
-                  <Box flex={1} >
+                  <Box flex={1}>
                     <Img
                       src={LimeBrainsLogo}
                       width={50}
