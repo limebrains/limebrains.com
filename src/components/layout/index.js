@@ -23,7 +23,7 @@ const ContentWrapper = styled.div`
 
 const Layout = ({ children }) => {
   const [currentWidth, setCurrentWidth] = useState(
-    window.innerWidth
+    typeof window !== 'undefined' ? window.innerWidth : mobilePortrait
   )
 
   useEffect(() => {
