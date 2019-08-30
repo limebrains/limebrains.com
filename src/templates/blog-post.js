@@ -4,15 +4,17 @@ import Disqus from 'disqus-react';
 import styled from 'styled-components'
 import { graphql } from "gatsby";
 
+import { Divider } from '../components/divider'
+
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 import { SectionHeading } from '../components/heading';
-
 const LayoutWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 `
+
 
 const PlaintextTemplate = ({data}) => {
   const disqusShortname = 'limebrains';
@@ -29,9 +31,8 @@ const PlaintextTemplate = ({data}) => {
         <SectionHeading title={title}/>
         <div dangerouslySetInnerHTML={{__html: data.markdownRemark.html}}/>
 
-        <Disqus.CommentCount shortname={disqusShortname} config={disqusConfig}>
-          Comments
-        </Disqus.CommentCount>
+        <Divider />
+
         <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
       </LayoutWrapper>
     </Layout>
