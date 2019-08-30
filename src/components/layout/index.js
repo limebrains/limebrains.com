@@ -4,11 +4,13 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Header from './header'
+import HeaderHome from './header-blog'
 
 import { Provider } from 'rendition'
 import { theme } from './../theme/theme'
 import { Footer } from './footer'
 
+import { LocationProvider } from '@reach/router'
 import { Context as ResponsiveContext } from 'react-responsive'
 import {
   isMobile,
@@ -19,6 +21,18 @@ import {
 const ContentWrapper = styled.div`
   min-height: 75vh;
 `
+
+const renderHeader = (siteTitle) => {
+  return (
+    <LocationProvider>
+      {(context) => 
+      context.location.pathname === '/' ? 
+      <Header siteTitle={siteTitle} />: <HeaderHome siteTitle={siteTitle} />
+      }
+  </LocationProvider>
+  )
+}
+
 
 const Layout = ({ children }) => {
   
@@ -39,6 +53,7 @@ const Layout = ({ children }) => {
   })
   if (typeof window !== 'undefined'){
     return (
+      
       <StaticQuery
         query={graphql`
           query SiteTitleQuery {
@@ -61,7 +76,9 @@ const Layout = ({ children }) => {
                   isDesktop: isDesktop(currentWidth)
                 }}
               >
-                <Header siteTitle={data.site.siteMetadata.title} />
+                
+                {renderHeader( data.site.siteMetadata.title )}
+
                 <ContentWrapper>{children}</ContentWrapper>
                 <Footer />
               </ResponsiveContext.Provider>
