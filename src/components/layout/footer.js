@@ -38,7 +38,6 @@ export const Footer = () => {
     <ResponsiveContext.Consumer>
       {({ isDesktop }) => (
         <StyledFooter>
-          {console.log(isDesktop)}
           <Particles
             width={'100%'}
             height={'100%'}
