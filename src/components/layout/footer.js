@@ -24,7 +24,6 @@ const Nav = styled(Flex)`
   z-index: 10;
   color: ${colors.white};
   padding: 20px 20px 0 20px;
-
   ul {
     padding: 0;
     li {
