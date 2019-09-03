@@ -14,9 +14,10 @@ export const Flex = styled(FlexDefault)`
 
 export const FlexBlog = styled(FlexDefault)`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 10px;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 4rem;
+  padding-left: 15%;
+  padding-right: 15%;
 
 
 `
