@@ -1,5 +1,6 @@
 import { Flex as FlexDefault, Box as BoxDefault } from 'rendition'
 import styled, { css } from 'styled-components'
+import { isMobile, mobilePortrait } from './responsive'
 
 export const Flex = styled(FlexDefault)`
   z-index: 1;
@@ -14,10 +15,15 @@ export const Flex = styled(FlexDefault)`
 
 export const FlexBlog = styled(FlexDefault)`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(22em, 1fr));
   grid-gap: 4rem;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
+
+  @media only screen and (max-width: 480px) {
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+
+  }
 
 
 `
