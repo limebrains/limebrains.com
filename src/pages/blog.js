@@ -11,52 +11,38 @@ import { Card } from '../components/card';
 import { Button } from '../components/buttons';
 import { Link } from '../components/link';
 import { Img } from '../components/img';
-import { Box, Flex } from '../components/flex';
+import { FlexBlog, Box } from '../components/flex';
 import { Reveal, Flip } from 'react-reveal';
 import { LimeBrainsLogo } from '../components/theme/logos';
 
-const Blog = ({data}) => (
+const Blog = ({ data }) => (
   <Layout>
-    <SEO title="Page two"/>
+    <SEO title="Page two" />
 
     <Section
       background={colors.sections.greenSection.background}
     >
       <Flip left wait={2000}>
-        <Img src={LimeBrainsLogo} responsive width={150}/>
+        <Img src={LimeBrainsLogo} responsive width={150} />
       </Flip>
       <Reveal right fraction={1}>
         <SectionHeading title={'Blog'} inverse />
       </Reveal>
     </Section>
 
-    <Flex wrap={'wrap'}>
-      {data.allMarkdownRemark.edges.map((post) => (
-        <Flex w={1 / 5} mt={'1rem'} px={'1rem'}>
-          <Reveal right fraction={1}>
-            <Box flex={1}>
-              <Card
-                title={_.get(post, 'node.frontmatter.title')}
-                cta={
-                  <Link to={post.node.fields.slug}>
-                    <Button
-                      plaintext
-                      primary
-                    >
-                      READ
-                    </Button>
-                  </Link>
-                }
-              >
-                <Img src={_.get(post, 'node.frontmatter.image')}/>
-                <p dangerouslySetInnerHTML={{__html: _.get(post, 'node.frontmatter.subtitle')}}></p>
+    <Box m={3}>
+      <FlexBlog>
+        {data.allMarkdownRemark.edges.map((post) => (
+          <Box >
+            <Link to={post.node.fields.slug}>
+              <Card title={_.get(post, 'node.frontmatter.title')}>
+                <Img src={_.get(post, 'node.frontmatter.image')} />
               </Card>
-            </Box>
-          </Reveal>
-        </Flex>
-      ))}
-    </Flex>
-
+            </Link>
+          </Box>
+        ))}
+      </FlexBlog>
+    </Box>
   </Layout>
 )
 
