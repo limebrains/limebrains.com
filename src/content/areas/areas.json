@@ -1,0 +1,19 @@
+{
+  "areas": {
+    "ICON": [
+      "FaLightbulb",
+      "FaKeyboard",
+      "FaRocket"
+    ],
+    "TITLE": [
+      "Progressive apps",
+      "Scalable API",
+      "Open source"
+    ],
+    "SUBTITLE": [
+      "ReactJS / GraphQL / NodeJS / Mobile",
+      "AWS / Google Cloud / Terraform / Docker",
+      "Pet / Sufler / pydrill / and much more"
+    ]
+  }
+}
