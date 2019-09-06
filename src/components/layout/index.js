@@ -20,12 +20,9 @@ import {
 
 import HeaderVideo from '../video';
 
-
 const ContentWrapper = styled.div`
   min-height: 75vh;
 `
-
-
 
 const renderHeader = (siteTitle) => {
   return (
@@ -37,7 +34,6 @@ const renderHeader = (siteTitle) => {
   </LocationProvider>
   )
 }
-
 
 const Layout = ({ children }) => {
   
