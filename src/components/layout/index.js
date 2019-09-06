@@ -25,20 +25,7 @@ const ContentWrapper = styled.div`
   min-height: 75vh;
 `
 
-const VideoContainer = styled.div`
 
-  position:relative;
-  top: -10px;
-`
-
-const AnotherVideoContainer = styled.div`
-
-  position:absolute;
-  width:100%;
-  height: 300px;
-  background: black;
-
-`
 
 const renderHeader = (siteTitle) => {
   return (
@@ -94,8 +81,8 @@ const Layout = ({ children }) => {
                   isDesktop: isDesktop(currentWidth)
                 }}
               >
-                    <HeaderVideo />
 
+                    <HeaderVideo/>
                     {renderHeader( data.site.siteMetadata.title )}
 
                 <ContentWrapper>{children}</ContentWrapper>
