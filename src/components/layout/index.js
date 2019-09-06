@@ -18,6 +18,8 @@ import {
   isDesktop,
 } from '../responsive'
 
+import HeaderVideo from '../video';
+
 const ContentWrapper = styled.div`
   min-height: 75vh;
 `
@@ -32,7 +34,6 @@ const renderHeader = (siteTitle) => {
   </LocationProvider>
   )
 }
-
 
 const Layout = ({ children }) => {
   
@@ -76,8 +77,9 @@ const Layout = ({ children }) => {
                   isDesktop: isDesktop(currentWidth)
                 }}
               >
-                
-                {renderHeader( data.site.siteMetadata.title )}
+
+                    <HeaderVideo/>
+                    {renderHeader( data.site.siteMetadata.title )}
 
                 <ContentWrapper>{children}</ContentWrapper>
                 <Footer />
