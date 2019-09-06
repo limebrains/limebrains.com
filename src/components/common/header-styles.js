@@ -19,7 +19,7 @@ export const HeaderWrapper = styled.header`
 `
 
 export const NavButton = styled(Button)`
-  font-weight: 100;
+  font-weight: 200;
 `
 
 export const LineOfBurger = styled.span`
