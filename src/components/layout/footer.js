@@ -11,7 +11,8 @@ import { MobileView, DesktopView } from '../responsive'
 import { Context as ResponsiveContext } from 'react-responsive'
 import { SectionHeading } from '../heading'
 import { GetProjects, GetClients } from '../fetchJson'
-
+import { IconBorderedx, IconBordered } from '../icon';
+import { FaFacebookF, FaGit } from "react-icons/fa";
 const StyledFooter = styled.footer`
   position: relative;
   bottom: 0;
@@ -38,19 +39,23 @@ const Nav = styled(Flex)`
 const NavList = styled.div`
   width: 30%;
   li{
-    font-size: 22px;
+    font-size: 1.375em;
     font-weight: 200;
   }
 `
 
-const FooterMain = styled.div`
+const LogoGrid = styled.div`
   width: 70%;
   p{
-    font-size: 22px;
+    font-size: 1.375em;
     font-weight: 200;
     letter-spacing: 0.125em;
     padding-left: 3em;
 
+    &.social{
+      padding-top: 2rem;
+      letter-spacing: 0;
+    }
   }
 
 `
@@ -76,7 +81,13 @@ const Link = styled(LinkDefault)`
     }
   }
 `
+const SocialIcons = styled.div`
+  width:50px;
+  height:50px;
+  display:table-cell;
+  padding-left: 4.125em;
 
+`
 export const Footer = () => {
   return (
     <ResponsiveContext.Consumer>
@@ -123,13 +134,26 @@ export const Footer = () => {
           <Nav>
             <DesktopView>
 
-            <FooterMain>
+            <LogoGrid>
               <Box flex={1}>
                 <p>
                   <Link to="/">Lime Brains</Link>
                 </p>
+                <p className="social">
+                  Follow us:
+                </p>
+                <SocialIcons>
+                  <IconBordered icon="FaGit"  />
+                </SocialIcons>
+                <SocialIcons>
+                  <IconBordered icon="FaFacebookF"  />
+                </SocialIcons>
+                <SocialIcons>
+                  <IconBordered icon="FaInstagram"  />
+                </SocialIcons>
+
               </Box>
-            </FooterMain>
+            </LogoGrid>
             <NavList>
               <Box flex={1}>
                 <ul>
@@ -141,6 +165,9 @@ export const Footer = () => {
                     </li>
                     <li>
                       <Link to={'/'}><a>Projects</a></Link>
+                    </li>
+                    <li>
+                      <Link to={'/blog'}><a>Blog</a></Link>
                     </li>
                     <li>
                       <Link to={'/'}><a>Contact</a></Link>

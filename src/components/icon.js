@@ -31,9 +31,31 @@ const IconWrapper = styled.div`
   }
 `
 
+const IconBorder = styled.div`
+  border: 1px solid ${colors.gray.light};
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  margin-bottom: 10px;
 
-export const IconRounded = ({icon}) => (
+  &:hover {
+    transform: rotate(90deg); 
+  }
+`
+
+export const IconRounded = ({icon}, {size}) => (
   <IconWrapper>
     <Icon icon={icon} />
   </IconWrapper>
+)
+
+export const IconBordered = ({icon}, {size}) => (
+  <IconBorder>
+    <Icon icon={icon} />
+  </IconBorder>
 )
