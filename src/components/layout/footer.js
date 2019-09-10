@@ -6,7 +6,7 @@ import { Flex } from './../flex'
 import { Box, Heading, Txt } from 'rendition'
 import { LimeBrainsLogo } from './../theme/logos'
 import { Img } from './../img'
-import { Link } from '../link'
+import { Link as LinkDefault } from '../link'
 import { MobileView, DesktopView } from '../responsive'
 import { Context as ResponsiveContext } from 'react-responsive'
 import { SectionHeading } from '../heading'
@@ -24,11 +24,55 @@ const Nav = styled(Flex)`
   z-index: 10;
   color: ${colors.white};
   padding: 20px 20px 0 20px;
+  padding-top: 7.8125vw;
+  padding-bottom: 6.51042vw;
   ul {
     padding: 0;
     li {
       color: ${colors.white};
       list-style: none;
+    }
+  }
+`
+
+const NavList = styled.div`
+  width: 30%;
+  li{
+    font-size: 22px;
+    font-weight: 200;
+  }
+`
+
+const FooterMain = styled.div`
+  width: 70%;
+  p{
+    font-size: 22px;
+    font-weight: 200;
+    letter-spacing: 0.125em;
+    padding-left: 3em;
+
+  }
+
+`
+const Link = styled(LinkDefault)`
+  a{
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #FFF;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover:before{
+      visibility: visible;
+      transform: scaleX(1);
     }
   }
 `
@@ -78,53 +122,44 @@ export const Footer = () => {
           />
           <Nav>
             <DesktopView>
+
+            <FooterMain>
               <Box flex={1}>
-                <Heading.h3>PROJECTS</Heading.h3>
-                <GetProjects />
+                <p>
+                  <Link to="/">Lime Brains</Link>
+                </p>
               </Box>
-              <Box flex={1} pl={'4rem'}>
-                <Heading.h3>CLIENTS</Heading.h3>
-                <GetClients />
-              </Box>
+            </FooterMain>
+            <NavList>
               <Box flex={1}>
                 <ul>
-                  <li>
-                    <Link to={'/'}>HOME</Link>
-                  </li>
-                  <li>
-                    <Link to={'/en/privacy'}>PRIVACY</Link>
-                  </li>
-                </ul>
-              </Box>
-              <Box flex={1}>
-                <Img
-                  src={LimeBrainsLogo}
-                  width={50}
-                  height={50}
-                  responsive
-                  center
-                />
-                <Txt.p>
-                  Lime Brains
-                  <br />
-                  sp. z o. o.
-                </Txt.p>
-              </Box>
-              <Box flex={1}>
-                <Heading.h3>Social Media</Heading.h3>
-              </Box>
+                    <li>
+                      <Link to={'/'}><a>Home</a></Link>
+                    </li>
+                    <li>
+                      <Link to={'/'}><a>Clients</a></Link>
+                    </li>
+                    <li>
+                      <Link to={'/'}><a>Projects</a></Link>
+                    </li>
+                    <li>
+                      <Link to={'/'}><a>Contact</a></Link>
+                    </li>
+                    <li>
+                      <Link to={'/en/privacy'}><a>Privacy</a></Link>
+                    </li>
+                  </ul>
+                </Box>
+              </NavList>
+
+
             </DesktopView>
 
             <MobileView>
               <Flex flexDirection={'column'} w={1}>
                 <Flex>
+       
                   <Box flex={1}>
-                    <Heading.h3>PROJECTS</Heading.h3>
-                    <GetProjects />
-                  </Box>
-                  <Box flex={1}>
-                    <Heading.h3>CLIENTS</Heading.h3>
-                    <GetClients />
                   </Box>
                 </Flex>
                 <SectionHeading title={''} inverse />
@@ -133,6 +168,15 @@ export const Footer = () => {
                     <ul>
                       <li>
                         <Link to={'/'}>HOME</Link>
+                      </li>
+                      <li>
+                        <Link to={'/'}>CLIENTS</Link>
+                      </li>
+                      <li>
+                        <Link to={'/'}>PROJECTS</Link>
+                      </li>
+                      <li>
+                        <Link to={'/'}>CONTACT</Link>
                       </li>
                       <li>
                         <Link to={'/en/privacy'}>PRIVACY</Link>
