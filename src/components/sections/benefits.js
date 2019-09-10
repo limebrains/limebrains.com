@@ -1,8 +1,6 @@
 import React from 'react';
-import { Context as ResponsiveContext } from 'react-responsive'
-import { Section } from '../section'
 import styled from 'styled-components'
-
+import { FaGit } from 'react-icons/fa'
 
 const Container = styled.div`
   position: relative;
@@ -36,17 +34,11 @@ const Box = styled.div`
 
 `
 
-const ImageWrapper = styled.div`
+const IconWrapper = styled.div`
   width:20%;
   height:100%;
   float:left;
 
-  img{
-    width: 42px;
-    height: 42px;
-    float: left;
-    background-image: none;
-  }
 `
 
 const TextWrapper = styled.div`
@@ -76,9 +68,9 @@ export const JobSection = () => {
   return(
       <Container>
         <Box>
-          <ImageWrapper>
-            <img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Transport-Airplane-Take-Off-icon.png"/>
-          </ImageWrapper>
+          <IconWrapper>
+            <FaGit size={32} />
+          </IconWrapper>
           <TextWrapper>
             <h4>Top remote jobs</h4> 
             <p>Benefit from our sales power and get to work on the most interesting projects around </p> 
@@ -86,9 +78,9 @@ export const JobSection = () => {
         </Box>
         
         <Box>
-          <ImageWrapper>
-            <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-08-512.png"/>
-          </ImageWrapper>
+          <IconWrapper>
+            <FaGit size={32} />
+          </IconWrapper>
           <TextWrapper>
             <h4>Title title title title</h4> 
             <p>Some textSome textSome textSome </p> 
@@ -96,9 +88,9 @@ export const JobSection = () => {
         </Box>
         
         <Box>
-          <ImageWrapper>
-            <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-08-512.png"/>
-          </ImageWrapper>
+          <IconWrapper>
+            <FaGit size={32} />
+          </IconWrapper>
           <TextWrapper>
             <h4>Title title title title</h4> 
             <p>Some textSome textSome textSome </p> 
@@ -106,9 +98,9 @@ export const JobSection = () => {
         </Box>
         
         <Box>
-          <ImageWrapper>
-            <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-08-512.png"/>
-          </ImageWrapper>
+          <IconWrapper>
+            <FaGit size={32} />
+          </IconWrapper>
           <TextWrapper>
             <h4>Title title title title</h4> 
             <p>Some textSome textSome textSome </p> 
@@ -116,9 +108,9 @@ export const JobSection = () => {
         </Box>
         
         <Box>
-          <ImageWrapper>
-            <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-08-512.png"/>
-          </ImageWrapper>
+          <IconWrapper>
+            <FaGit size={32} />
+          </IconWrapper>
           <TextWrapper>
             <h4>Title title title title</h4> 
             <p>Some textSome textSome textSome </p> 
@@ -126,9 +118,9 @@ export const JobSection = () => {
         </Box>
         
         <Box>
-          <ImageWrapper>
-            <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-08-512.png"/>
-          </ImageWrapper>
+          <IconWrapper>
+            <FaGit size={32} />
+          </IconWrapper>
           <TextWrapper>
             <h4>Title title title title</h4> 
             <p>Some textSome textSome textSome </p> 
