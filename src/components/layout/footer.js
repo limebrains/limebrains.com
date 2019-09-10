@@ -53,14 +53,22 @@ const LogoGrid = styled.div`
     letter-spacing: 0.125em;
     padding-left: 3em;
 
-
     &.social{
       padding-top: 2rem;
       letter-spacing: 0;
     }
+    
+    &.contact{
+      padding-left: 6em;
+      font-size: 0.8em;
+      font-weight: 100;
+    }
 
     @media only screen and (max-width: 640px){
       font-size: 1em;
+      &.contact{
+        font-size: 0.6em;
+      }
     }
   }
 
@@ -152,6 +160,13 @@ export const Footer = () => {
               <Box flex={1}>
                 <p>
                   <Link to="/">Lime Brains</Link>
+
+                </p>
+                <p className="contact">
+                  Lime Brains sp. z o. o.<br />
+                  NIP: 5862332197<br />
+                  REGON: 38031902300000<br />
+                  KRS: 0000733442
                 </p>
                 <p className="social">
                   Follow us:
@@ -200,6 +215,12 @@ export const Footer = () => {
                     <Box flex={1}>
                       <p>
                         <Link to="/">Lime Brains</Link>
+                      </p>
+                      <p className="contact">
+                        Lime Brains sp. z o. o.<br />
+                        NIP: 5862332197<br />
+                        REGON: 38031902300000<br />
+                        KRS: 0000733442
                       </p>
                       <p className="social">
                         Follow us:
