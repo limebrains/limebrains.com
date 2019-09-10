@@ -41,20 +41,32 @@ const NavList = styled.div`
   li{
     font-size: 1.375em;
     font-weight: 200;
+
+    @media only screen and (max-width: 640px){
+      font-size: 1em;
+      padding-left: 2em;
+    }
   }
 `
 
 const LogoGrid = styled.div`
   width: 70%;
   p{
+
+
     font-size: 1.375em;
     font-weight: 200;
     letter-spacing: 0.125em;
     padding-left: 3em;
 
+
     &.social{
       padding-top: 2rem;
       letter-spacing: 0;
+    }
+
+    @media only screen and (max-width: 640px){
+      font-size: 1em;
     }
   }
 
@@ -86,6 +98,15 @@ const SocialIcons = styled.div`
   height:50px;
   display:table-cell;
   padding-left: 4.125em;
+  @media only screen and (max-width: 640px){
+    font-size: 1em;
+    padding-left: 3em;
+  }
+  @media only screen and (max-width: 340px){
+    font-size: 1em;
+    padding-left: 3em;
+    display:flex;
+  }
 
 `
 export const Footer = () => {
@@ -184,49 +205,53 @@ export const Footer = () => {
 
             <MobileView>
               <Flex flexDirection={'column'} w={1}>
+
                 <Flex>
-       
-                  <Box flex={1}>
-                  </Box>
-                </Flex>
-                <SectionHeading title={''} inverse />
-                <Flex>
-                  <Box flex={1}>
-                    <ul>
-                      <li>
-                        <Link to={'/'}>HOME</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'}>CLIENTS</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'}>PROJECTS</Link>
-                      </li>
-                      <li>
-                        <Link to={'/'}>CONTACT</Link>
-                      </li>
-                      <li>
-                        <Link to={'/en/privacy'}>PRIVACY</Link>
-                      </li>
-                    </ul>
-                  </Box>
-                  <Box flex={1}>
-                    <Img
-                      src={LimeBrainsLogo}
-                      width={50}
-                      height={50}
-                      responsive
-                      center
-                    />
-                    <Txt.p align={'center'}>
-                      Lime Brains
-                      <br />
-                      sp. z o. o.
-                    </Txt.p>
-                  </Box>
-                  <Box flex={1}>
-                    <Heading.h3>Social Media</Heading.h3>
-                  </Box>
+                <LogoGrid>
+                    <Box flex={1}>
+                      <p>
+                        <Link to="/">Lime Brains</Link>
+                      </p>
+                      <p className="social">
+                        Follow us:
+                      </p>
+                      <SocialIcons>
+                        <IconBordered icon="FaGit"  />
+                      </SocialIcons>
+                      <SocialIcons>
+                        <IconBordered icon="FaFacebookF"  />
+                      </SocialIcons>
+                      <SocialIcons>
+                        <IconBordered icon="FaInstagram"  />
+                      </SocialIcons>
+                    </Box>
+                  </LogoGrid>
+                  <NavList>
+                    <Box flex={1}>
+                      <ul>
+                        <li>
+                          <Link to={'/'}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={'/'}>Clients</Link>
+                        </li>
+                        <li>
+                          <Link to={'/'}>Projects</Link>
+                        </li>
+                        <li>
+                          <Link to={'/blog'}><a>Blog</a></Link>
+                        </li>
+                        <li>
+                          <Link to={'/'}>Contact</Link>
+                        </li>
+                        <li>
+                          <Link to={'/en/privacy'}>Privacy</Link>
+                        </li>
+                      </ul>
+                    </Box>
+                  </NavList>
+
+
                 </Flex>
               </Flex>
             </MobileView>
