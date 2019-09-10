@@ -3,16 +3,11 @@ import Particles from 'react-particles-js'
 import React from 'react'
 import { colors, gradients } from './../theme/colors'
 import { Flex } from './../flex'
-import { Box, Heading, Txt } from 'rendition'
-import { LimeBrainsLogo } from './../theme/logos'
-import { Img } from './../img'
+import { Box } from 'rendition'
 import { Link as LinkDefault } from '../link'
 import { MobileView, DesktopView } from '../responsive'
 import { Context as ResponsiveContext } from 'react-responsive'
-import { SectionHeading } from '../heading'
-import { GetProjects, GetClients } from '../fetchJson'
-import { IconBorderedx, IconBordered } from '../icon';
-import { FaFacebookF, FaGit } from "react-icons/fa";
+import { IconBordered } from '../icon';
 const StyledFooter = styled.footer`
   position: relative;
   bottom: 0;
@@ -52,8 +47,6 @@ const NavList = styled.div`
 const LogoGrid = styled.div`
   width: 70%;
   p{
-
-
     font-size: 1.375em;
     font-weight: 200;
     letter-spacing: 0.125em;
