@@ -75,10 +75,28 @@ const HeaderVideo = ( ) => {
         <h1><em>Thumbs up</em></h1>
       </TextWrapper>
 
-      <video playsInline muted preload="auto" poster="https://res.cloudinary.com/studio-up/image/fetch/f_auto/https://d22ivmygv0pwjj.cloudfront.net/v2/homeHero.jpg" autoPlay="autoplay" >
-          <source data-src="https://d22ivmygv0pwjj.cloudfront.net/v2/homeHero.webm" src="https://d22ivmygv0pwjj.cloudfront.net/v2/homeHero.webm" type="video/webm" />
-          <source data-src="https://d22ivmygv0pwjj.cloudfront.net/v2/homeHero.mp4" src="https://d22ivmygv0pwjj.cloudfront.net/v2/homeHero.mp4" type="video/mp4" />
-          <source data-src="https://d22ivmygv0pwjj.cloudfront.net/v2/homeHero.ogg" src="https://d22ivmygv0pwjj.cloudfront.net/v2/homeHero.ogg" type="video/mp4" />
+      <video
+        playsInline
+        muted
+        preload="auto"
+        poster="https://storage.cloud.google.com/static-voxm/04791ff99c7f7b0de02c6544bb66f04a.jpg"
+        autoPlay="autoplay"
+      >
+          <source
+            data-src="https://storage.cloud.google.com/static-voxm/media.io_limebrains-header.webm"
+            src="https://storage.cloud.google.com/static-voxm/media.io_limebrains-header.webm"
+            type="video/webm"
+          />
+          <source
+            data-src="https://storage.cloud.google.com/static-voxm/b33bb9360a08ef81f43e7e91d0a89f0b.mp4"
+            src="https://storage.cloud.google.com/static-voxm/b33bb9360a08ef81f43e7e91d0a89f0b.mp4"
+            type="video/mp4"
+          />
+          <source
+            data-src="https://storage.cloud.google.com/static-voxm/media.io_limebrains-header.ogv"
+            src="https://storage.cloud.google.com/static-voxm/media.io_limebrains-header.ogv"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
       </video>
 
