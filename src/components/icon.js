@@ -43,6 +43,10 @@ const IconBorder = styled.div`
   cursor: pointer;
   margin-bottom: 10px;
 
+  @media only screen and (max-width: 640px){
+    width: 25px;
+    height: 25px;
+  }
   &:hover {
     transform: rotate(90deg); 
   }
