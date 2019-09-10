@@ -8,6 +8,7 @@ import { Link as LinkDefault } from '../link'
 import { MobileView, DesktopView } from '../responsive'
 import { Context as ResponsiveContext } from 'react-responsive'
 import { IconBordered } from '../icon';
+
 const StyledFooter = styled.footer`
   position: relative;
   bottom: 0;
@@ -79,7 +80,6 @@ const Link = styled(LinkDefault)`
       transform: scaleX(0);
       transition: all 0.3s ease-in-out;
     }
-
     &:hover:before{
       visibility: visible;
       transform: scaleX(1);
@@ -165,7 +165,6 @@ export const Footer = () => {
                 <SocialIcons>
                   <IconBordered icon="FaInstagram"  />
                 </SocialIcons>
-
               </Box>
             </LogoGrid>
             <NavList>
@@ -192,13 +191,10 @@ export const Footer = () => {
                   </ul>
                 </Box>
               </NavList>
-
-
             </DesktopView>
 
             <MobileView>
               <Flex flexDirection={'column'} w={1}>
-
                 <Flex>
                 <LogoGrid>
                     <Box flex={1}>
@@ -243,8 +239,6 @@ export const Footer = () => {
                       </ul>
                     </Box>
                   </NavList>
-
-
                 </Flex>
               </Flex>
             </MobileView>
