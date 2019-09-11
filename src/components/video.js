@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 import { mobileLandscape } from './responsive';
 import { MazarLogo, NokiaLogo, SiemensLogo } from './theme/logos'
+import { LimeBrainsVideoMp4,  LimeBrainsVideoWebm } from './theme/videos'
+
 const TextGradient = styled.div`
   color: ${({start}) => start};
   background: ${({start, end}) => `-webkit-linear-gradient(5deg, ${start || '#8db7d7'}, ${end || '#febc77'});`}
@@ -132,19 +134,19 @@ const HeaderVideo = ( ) => {
         autoPlay="autoplay"
       >
           <source
-            data-src="https://storage.cloud.google.com/static-voxm/media.io_limebrains-header.webm"
-            src="https://storage.cloud.google.com/static-voxm/media.io_limebrains-header.webm"
+            data-src={LimeBrainsVideoWebm}
+            src={LimeBrainsVideoWebm}
             type="video/webm"
           />
           <source
-            data-src="https://storage.cloud.google.com/static-voxm/b33bb9360a08ef81f43e7e91d0a89f0b.mp4"
-            src="https://storage.cloud.google.com/static-voxm/b33bb9360a08ef81f43e7e91d0a89f0b.mp4"
+            data-src={LimeBrainsVideoMp4}
+            src={LimeBrainsVideoMp4}
             type="video/mp4"
           />
           <source
-            data-src="https://storage.cloud.google.com/static-voxm/media.io_limebrains-header.ogv"
-            src="https://storage.cloud.google.com/static-voxm/media.io_limebrains-header.ogv"
-            type="video/mp4"
+            data-src='../videos/io_limebrains-header.ogv'
+            src='../videos/io_limebrains-header.ogv'
+            type="video/ogv"
           />
           Your browser does not support the video tag.
       </video>
