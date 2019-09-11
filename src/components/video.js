@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { mobileLandscape } from './responsive';
-
+import { MazarLogo, NokiaLogo, SiemensLogo } from './theme/logos'
 const TextGradient = styled.div`
   color: ${({start}) => start};
   background: ${({start, end}) => `-webkit-linear-gradient(5deg, ${start || '#8db7d7'}, ${end || '#febc77'});`}
@@ -150,9 +150,9 @@ const HeaderVideo = ( ) => {
       </video>
 
       <Logos>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Mazars_logo.svg/1280px-Mazars_logo.svg.png' alt=''/>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nokia_wordmark.svg/1280px-Nokia_wordmark.svg.png' alt=''/>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/1280px-Siemens-logo.svg.png' alt=''/>
+        <img src={MazarLogo} alt=''/>
+        <img src={SiemensLogo} alt=''/>
+        <img src={NokiaLogo} alt=''/>
       </Logos>
 
     </VideoWrapper>
