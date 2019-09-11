@@ -18,11 +18,14 @@ const StyledFooter = styled.footer`
 const Nav = styled(Flex)`
   flex: 1;
   position: relative;
+
   z-index: 10;
   color: ${colors.white};
   padding: 20px 20px 0 20px;
   padding-top: 7.8125vw;
   padding-bottom: 6.51042vw;
+  margin-left: 5%;
+  margin-right: 5%;
   ul {
     padding: 0;
     li {
@@ -33,25 +36,55 @@ const Nav = styled(Flex)`
 `
 
 const NavList = styled.div`
-  width: 30%;
-  li{
-    font-size: 1.375em;
-    font-weight: 200;
-
-    @media only screen and (max-width: 640px){
-      font-size: 1em;
-      padding-left: 2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
+  ul{
+    float: right;
+    li{
+      font-size: 1.375em;
+      font-weight: 200;
+      @media only screen and (max-width: 640px){
+        font-size: 1em;
+      }
     }
   }
+
+`
+
+const NavColumn = styled.div`
+  display: inline-flex;
+  ul{
+    li{
+      font-size: 1em;
+      padding-bottom: 0.6em;
+      @media only screen and (max-width: 640px){
+        font-size: 0.6em;
+      }
+      &.navHeader{
+        padding-top: 0.125em;
+        font-size: 1.375em;
+        font-weight: 200;
+        letter-spacing: 0.125em;
+        text-transform: uppercase;
+        @media only screen and (max-width: 640px){
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+
 `
 
 const LogoGrid = styled.div`
-  width: 70%;
+  width: 50%;
   p{
     font-size: 1.375em;
     font-weight: 200;
     letter-spacing: 0.125em;
-    padding-left: 3em;
 
     &.social{
       padding-top: 2rem;
@@ -59,11 +92,9 @@ const LogoGrid = styled.div`
     }
     
     &.contact{
-      padding-left: 6em;
       font-size: 0.8em;
       font-weight: 100;
     }
-
 
     @media only screen and (max-width: 640px){
       font-size: 1em;
@@ -100,15 +131,10 @@ const SocialIcon = styled.div`
   width:50px;
   height:50px;
   display:table-cell;
-  padding-left: 4.125em;
-  @media only screen and (max-width: 640px){
-    font-size: 1em;
-    padding-left: 3em;
-  }
-  @media only screen and (max-width: 340px){
-    font-size: 1em;
-    padding-left: 3em;
-    display:flex;
+  padding-right: 4em;
+
+  @media only screen and (max-width: 880px){
+    padding-right: 1em;
   }
 
   }
@@ -116,7 +142,6 @@ const SocialIcon = styled.div`
     display:flex;
     height: 100%;
     width: 100%;
-    padding-left: 4.825em;
     padding-top: 0.8em;
       @media only screen and (max-width: 640px){
         font-size: 0.8em;
@@ -224,10 +249,49 @@ export const Footer = () => {
               </Box>
             </LogoGrid>
             <NavList>
-            PROJECTS
-
-              <Box flex={1}>
+              <NavColumn>
                 <ul>
+                  <li className="navHeader">
+                    Projects
+                  </li>
+                  <li>
+                    Pydrill
+                  </li>
+                  <li>
+                    Pet
+                  </li>
+                  <li>
+                    Sufler
+                  </li>
+                  <li>
+                    PyOlx
+                  </li>
+                  <li>
+                    PyOtodom
+                  </li>
+                </ul>
+              </NavColumn>
+              <NavColumn>
+                <ul>
+                  <li className="navHeader">
+                    Clients
+                  </li>
+                  <li>
+                    Vox'M
+                  </li>
+                  <li>
+                    Villoid
+                  </li>
+                  <li>
+                    Coinfalcon
+                  </li>
+                </ul>
+              </NavColumn>
+              <NavColumn>
+                <ul>
+                    <li className="navHeader">
+                      Company
+                    </li>
                     <li>
                       <Link to={'/'}><a>Home</a></Link>
                     </li>
@@ -247,7 +311,7 @@ export const Footer = () => {
                       <Link to={'/en/privacy'}><a>Privacy</a></Link>
                     </li>
                   </ul>
-                </Box>
+                </NavColumn>
               </NavList>
             </DesktopView>
 
@@ -292,28 +356,69 @@ export const Footer = () => {
                     </Box>
                   </LogoGrid>
                   <NavList>
-                    <Box flex={1}>
-                      <ul>
-                        <li>
-                          <Link to={'/'}>Home</Link>
-                        </li>
-                        <li>
-                          <Link to={'/'}>Clients</Link>
-                        </li>
-                        <li>
-                          <Link to={'/'}>Projects</Link>
-                        </li>
-                        <li>
-                          <Link to={'/blog'}><a>Blog</a></Link>
-                        </li>
-                        <li>
-                          <Link to={'/'}>Contact</Link>
-                        </li>
-                        <li>
-                          <Link to={'/en/privacy'}>Privacy</Link>
-                        </li>
-                      </ul>
-                    </Box>
+                  <NavColumn>
+                <ul>
+                  <li className="navHeader">
+                    Projects
+                  </li>
+                  <li>
+                    Pydrill
+                  </li>
+                  <li>
+                    Pet
+                  </li>
+                  <li>
+                    Sufler
+                  </li>
+                  <li>
+                    PyOlx
+                  </li>
+                  <li>
+                    PyOtodom
+                  </li>
+                </ul>
+              </NavColumn>
+              <NavColumn>
+                <ul>
+                  <li className="navHeader">
+                    Clients
+                  </li>
+                  <li>
+                    Vox'M
+                  </li>
+                  <li>
+                    Villoid
+                  </li>
+                  <li>
+                    Coinfalcon
+                  </li>
+                </ul>
+              </NavColumn>
+              <NavColumn>
+                <ul>
+                    <li className="navHeader">
+                      Company
+                    </li>
+                    <li>
+                      <Link to={'/'}><a>Home</a></Link>
+                    </li>
+                    <li>
+                      <Link to={'/'}><a>Clients</a></Link>
+                    </li>
+                    <li>
+                      <Link to={'/'}><a>Projects</a></Link>
+                    </li>
+                    <li>
+                      <Link to={'/blog'}><a>Blog</a></Link>
+                    </li>
+                    <li>
+                      <Link to={'/'}><a>Contact</a></Link>
+                    </li>
+                    <li>
+                      <Link to={'/en/privacy'}><a>Privacy</a></Link>
+                    </li>
+                  </ul>
+                </NavColumn>
                   </NavList>
                 </Flex>
               </Flex>
