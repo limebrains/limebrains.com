@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import { mobileLandscape } from './responsive';
-import { MazarLogo, NokiaLogo, SiemensLogo } from './theme/logos'
+import { MazarLogo, NokiaLogo, SiemensLogo, HeaderLogo } from './theme/logos'
 import { LimeBrainsVideoMp4,  LimeBrainsVideoWebm } from './theme/videos'
 
 const TextGradient = styled.div`
@@ -9,6 +9,8 @@ const TextGradient = styled.div`
   background: ${({start, end}) => `-webkit-linear-gradient(5deg, ${start || '#8db7d7'}, ${end || '#febc77'});`}
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-filter: blur(0.8px);
+
 `
 
 const TextWrapper = styled.div`
@@ -23,7 +25,6 @@ const TextWrapper = styled.div`
   background: ${({start, end}) => `-webkit-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
   background: ${({start, end}) => `-ms-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
   background: ${({start, end}) => `-o-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
-  backdrop-filter: blur(4px);
   h1 {
     font-size: 76px;
     display: block;
@@ -55,13 +56,8 @@ const VideoWrapper = styled.div`
   line-height: 0;
 
   video {
-    position: absolute;
-    left: 50%; /* % of surrounding element */
-    top: 50%;
-    transform: translate(-50%, -50%); /* % of current element */
     width: 100%;
     height: 100%;
-    transition: opacity 0.5s;
     object-fit: cover;
   }
 `
@@ -132,7 +128,7 @@ const HeaderVideo = ( ) => {
         muted
         loop
         preload="auto"
-        poster="https://storage.cloud.google.com/static-voxm/04791ff99c7f7b0de02c6544bb66f04a.jpg"
+        poster={HeaderLogo}
         autoPlay="autoplay"
       >
           <source
