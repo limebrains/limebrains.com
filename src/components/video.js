@@ -25,6 +25,7 @@ const TextWrapper = styled.div`
   background: ${({start, end}) => `-webkit-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
   background: ${({start, end}) => `-ms-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
   background: ${({start, end}) => `-o-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
+  backdrop-filter: blur(4px);
   h1 {
     font-size: 76px;
     display: block;
