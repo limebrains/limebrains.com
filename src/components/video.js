@@ -90,8 +90,8 @@ const Logos = styled.div`
     bottom: 0;
     img {
       width: 100px;
-      margin-left: 1rem;
-      margin-right: 1rem;
+      margin-left: .5rem;
+      margin-right: .5rem;
     }
   }
 `
