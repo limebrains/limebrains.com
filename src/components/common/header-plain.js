@@ -24,7 +24,7 @@ const HeaderPlain = ({ children }, { siteTitle }) => {
         <Box pt={10} pb={10} pr={10}>
           <Link to="/">
             <Flip left>
-              <Img src={LimeBrainsLogo} responsive width={80} />
+              <Img src={LimeBrainsLogo} responsive width={80} style={{height:60}} />
             </Flip>
           </Link>
         </Box>
