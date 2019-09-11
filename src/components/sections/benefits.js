@@ -24,40 +24,33 @@ const Container = styled.div`
 `
 
 const Box = styled.div`
-
   width: 300px;
   height: 100px;
   padding-top: 4rem;
-
-
 `
 
 const IconWrapper = styled.div`
   width:20%;
   height:100%;
   float:left;
-
 `
 
 const TextWrapper = styled.div`
-    height: 100%;
-    width: 80%;
-    float: right;
+  height: 100%;
+  width: 80%;
+  float: right;
 
   h4{
     margin: 0;
     float: left;
     font-size: 1.125em;
     font-weight: 300;
-
   }
 
   p{
     float: left;
     font-size: 1.1em;
     font-weight: 100;
-
-  
   }
 `
 
