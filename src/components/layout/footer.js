@@ -7,7 +7,7 @@ import { Box } from 'rendition'
 import { Link as LinkDefault } from '../link'
 import { MobileView, DesktopView } from '../responsive'
 import { Context as ResponsiveContext } from 'react-responsive'
-import { IconBordered } from '../icon';
+import { IconBordered, Icon} from '../icon';
 
 const StyledFooter = styled.footer`
   position: relative;
@@ -64,11 +64,13 @@ const LogoGrid = styled.div`
       font-weight: 100;
     }
 
+
     @media only screen and (max-width: 640px){
       font-size: 1em;
       &.contact{
         font-size: 0.6em;
       }
+
     }
   }
 
@@ -94,7 +96,7 @@ const Link = styled(LinkDefault)`
     }
   }
 `
-const SocialIcons = styled.div`
+const SocialIcon = styled.div`
   width:50px;
   height:50px;
   display:table-cell;
@@ -109,7 +111,33 @@ const SocialIcons = styled.div`
     display:flex;
   }
 
+  }
+  &.companyInfo{
+    display:flex;
+    height: 100%;
+    width: 100%;
+    padding-left: 4.825em;
+    padding-top: 0.8em;
+      @media only screen and (max-width: 640px){
+        font-size: 0.8em;
+      }
+    p{
+      display: inline;
+      margin:0;
+      padding-left: 0.5em;
+      font-size: 0.8em;
+      font-weight: 100;
+      @media only screen and (max-width: 640px){
+        font-size: 0.6em;
+      } 
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+  }
 `
+
+
 export const Footer = () => {
   return (
     <ResponsiveContext.Consumer>
@@ -168,21 +196,36 @@ export const Footer = () => {
                   REGON: 38031902300000<br />
                   KRS: 0000733442
                 </p>
+                <SocialIcon className="companyInfo">
+                  <Icon icon="FaMapMarkerAlt" />
+                  <p>UL.OLIMPIJSKA 2</p>
+                </SocialIcon>
+                <SocialIcon className="companyInfo">
+                  <Icon icon="FaPhone" />
+                  <p>+48 665 987 443</p>
+                </SocialIcon>
+                <SocialIcon className="companyInfo">
+                  <Icon icon="FaMailBulk" />
+                  <p><Link><a href="mailTo: mail@limebrains.com">mail@limebrains.com</a></Link></p>
+                </SocialIcon>
+
                 <p className="social">
                   Follow us:
                 </p>
-                <SocialIcons>
+                <SocialIcon>
                   <IconBordered icon="FaGit"  />
-                </SocialIcons>
-                <SocialIcons>
+                </SocialIcon>
+                <SocialIcon>
                   <IconBordered icon="FaFacebookF"  />
-                </SocialIcons>
-                <SocialIcons>
+                </SocialIcon>
+                <SocialIcon>
                   <IconBordered icon="FaInstagram"  />
-                </SocialIcons>
+                </SocialIcon>
               </Box>
             </LogoGrid>
             <NavList>
+            PROJECTS
+
               <Box flex={1}>
                 <ul>
                     <li>
@@ -222,18 +265,30 @@ export const Footer = () => {
                         REGON: 38031902300000<br />
                         KRS: 0000733442
                       </p>
+                        <SocialIcon className="companyInfo">
+                          <Icon icon="FaMapMarkerAlt" />
+                          <p>UL.OLIMPIJSKA 2</p>
+                        </SocialIcon>
+                        <SocialIcon className="companyInfo">
+                          <Icon icon="FaPhone" />
+                          <p>+48 665 987 443</p>
+                        </SocialIcon>
+                        <SocialIcon className="companyInfo">
+                          <Icon icon="FaMailBulk" />
+                          <p><Link><a href="mailTo: mail@limebrains.com">mail@limebrains.com</a></Link></p>
+                        </SocialIcon>
                       <p className="social">
                         Follow us:
                       </p>
-                      <SocialIcons>
+                      <SocialIcon>
                         <IconBordered icon="FaGit"  />
-                      </SocialIcons>
-                      <SocialIcons>
+                      </SocialIcon>
+                      <SocialIcon>
                         <IconBordered icon="FaFacebookF"  />
-                      </SocialIcons>
-                      <SocialIcons>
+                      </SocialIcon>
+                      <SocialIcon>
                         <IconBordered icon="FaInstagram"  />
-                      </SocialIcons>
+                      </SocialIcon>
                     </Box>
                   </LogoGrid>
                   <NavList>
