@@ -107,7 +107,7 @@ const LogoGrid = styled.div`
 
 `
 const Link = styled(LinkDefault)`
-  a{
+  
     position: relative;
     &:before{
       content: "";
@@ -125,7 +125,7 @@ const Link = styled(LinkDefault)`
       visibility: visible;
       transform: scaleX(1);
     }
-  }
+  
 `
 const SocialIcon = styled.div`
   width:50px;
@@ -231,7 +231,7 @@ export const Footer = () => {
                 </SocialIcon>
                 <SocialIcon className="companyInfo">
                   <Icon icon="FaMailBulk" />
-                  <p><Link><a href="mailTo: mail@limebrains.com">mail@limebrains.com</a></Link></p>
+                  <p><a href="mailto: mail@limebrains.com">mail@limebrains.com</a></p>
                 </SocialIcon>
 
                 <p className="social">
@@ -293,22 +293,22 @@ export const Footer = () => {
                       Company
                     </li>
                     <li>
-                      <Link to={'/'}><a>Home</a></Link>
+                      <Link to={'/'}>Home</Link>
                     </li>
                     <li>
-                      <Link to={'/'}><a>Clients</a></Link>
+                      <Link to={'/'}>Clients</Link>
                     </li>
                     <li>
-                      <Link to={'/'}><a>Projects</a></Link>
+                      <Link to={'/'}>Projects</Link>
                     </li>
                     <li>
-                      <Link to={'/blog'}><a>Blog</a></Link>
+                      <Link to={'/blog'}>Blog</Link>
                     </li>
                     <li>
-                      <Link to={'/'}><a>Contact</a></Link>
+                      <Link to={'/'}>Contact</Link>
                     </li>
                     <li>
-                      <Link to={'/en/privacy'}><a>Privacy</a></Link>
+                      <Link to={'/en/privacy'}>Privacy</Link>
                     </li>
                   </ul>
                 </NavColumn>
@@ -339,7 +339,7 @@ export const Footer = () => {
                         </SocialIcon>
                         <SocialIcon className="companyInfo">
                           <Icon icon="FaMailBulk" />
-                          <p><Link><a href="mailTo: mail@limebrains.com">mail@limebrains.com</a></Link></p>
+                          <p><a href="mailto: mail@limebrains.com">mail@limebrains.com</a></p>
                         </SocialIcon>
                       <p className="social">
                         Follow us:
@@ -400,22 +400,22 @@ export const Footer = () => {
                       Company
                     </li>
                     <li>
-                      <Link to={'/'}><a>Home</a></Link>
+                      <Link to={'/'}>Home</Link>
                     </li>
                     <li>
-                      <Link to={'/'}><a>Clients</a></Link>
+                      <Link to={'/'}>Clients</Link>
                     </li>
                     <li>
-                      <Link to={'/'}><a>Projects</a></Link>
+                      <Link to={'/'}>Projects</Link>
                     </li>
                     <li>
-                      <Link to={'/blog'}><a>Blog</a></Link>
+                      <Link to={'/blog'}>Blog</Link>
                     </li>
                     <li>
-                      <Link to={'/'}><a>Contact</a></Link>
+                      <Link to={'/'}>Contact</Link>
                     </li>
                     <li>
-                      <Link to={'/en/privacy'}><a>Privacy</a></Link>
+                      <Link to={'/en/privacy'}>Privacy</Link>
                     </li>
                   </ul>
                 </NavColumn>
