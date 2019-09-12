@@ -9,13 +9,15 @@ import { gradients } from '../theme/colors'
 import { LimeBrainsLogo } from '../theme/logos'
 import { Flip } from 'react-reveal'
 
+import { Context as ResponsiveContext } from 'react-responsive'
+
 
 
 
 const HeaderPlain = ({ children }, { siteTitle }) => {
 
   return (
-
+    <ResponsiveContext.Consumer>{({isPhonePortrait}) => (
       <Flex
         style={{
           background: gradients.default,
@@ -24,7 +26,7 @@ const HeaderPlain = ({ children }, { siteTitle }) => {
         <Box pt={10} pb={10} pr={10}>
           <Link to="/">
             <Flip left>
-              <Img src={LimeBrainsLogo} responsive width={80} style={{height:60}} />
+              <Img src={LimeBrainsLogo} responsive width={80} style={isPhonePortrait ? {height: 40} : {height: 60}} />
             </Flip>
           </Link>
         </Box>
@@ -42,7 +44,8 @@ const HeaderPlain = ({ children }, { siteTitle }) => {
             {children}
         </Flex>
       </Flex>
-
+      )}
+      </ResponsiveContext.Consumer>
   )
 }
 
