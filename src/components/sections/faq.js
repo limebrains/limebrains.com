@@ -10,7 +10,13 @@ export const FAQ = () => {
     id="FAQ"
     background={colors.sections.lightSection.background}
     size={'xs'}>
-      <Bar />
+      <Bar text="How long are the projects?"/>
+      <Bar text="Lorem ipsum dolor sit amet"/>
+      <Bar text="Lorem ipsum dolor sit amet"/>
+      <Bar text="Lorem ipsum dolor sit amet"/>
+      <Bar text="Lorem ipsum dolor sit amet"/>
+
+
     </Section>
   )
 }
