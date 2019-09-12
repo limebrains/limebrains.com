@@ -43,7 +43,7 @@ const IconBorder = styled.div`
   cursor: pointer;
   margin-bottom: 10px;
 
-  @media only screen and (max-width: 640px){
+  @media only screen and (max-width: 880px){
     width: 25px;
     height: 25px;
   }

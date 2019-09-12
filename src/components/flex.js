@@ -1,6 +1,5 @@
 import { Flex as FlexDefault, Box as BoxDefault } from 'rendition'
 import styled, { css } from 'styled-components'
-import { isMobile, mobilePortrait } from './responsive'
 
 export const Flex = styled(FlexDefault)`
   z-index: 1;

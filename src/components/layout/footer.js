@@ -7,7 +7,7 @@ import { Box } from 'rendition'
 import { Link as LinkDefault } from '../link'
 import { MobileView, DesktopView } from '../responsive'
 import { Context as ResponsiveContext } from 'react-responsive'
-import { IconBordered } from '../icon';
+import { IconBordered, Icon} from '../icon';
 
 const StyledFooter = styled.footer`
   position: relative;
@@ -18,11 +18,14 @@ const StyledFooter = styled.footer`
 const Nav = styled(Flex)`
   flex: 1;
   position: relative;
+
   z-index: 10;
   color: ${colors.white};
   padding: 20px 20px 0 20px;
   padding-top: 7.8125vw;
   padding-bottom: 6.51042vw;
+  margin-left: 5%;
+  margin-right: 5%;
   ul {
     padding: 0;
     li {
@@ -33,40 +36,84 @@ const Nav = styled(Flex)`
 `
 
 const NavList = styled.div`
-  width: 30%;
-  li{
-    font-size: 1.375em;
-    font-weight: 200;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
+  @media only screen and (max-width: 443px){
+    padding-left: 4em;
+  }
+  @media only screen and (max-width: 375px){
+    padding-left: 3.5em;
+  }
+  ul{
 
-    @media only screen and (max-width: 640px){
-      font-size: 1em;
-      padding-left: 2em;
+    li{
+      font-size: 1.375em;
+      font-weight: 200;
+      @media only screen and (max-width: 640px){
+        font-size: 1em;
+      }
     }
   }
+
+`
+
+const NavColumn = styled.div`
+  display: inline-flex;
+  ul{
+    li{
+      font-size: 1em;
+      padding-bottom: 0.6em;
+      @media only screen and (max-width: 640px){
+        font-size: 0.6em;
+      }
+      &.navHeader{
+        padding-top: 0.125em;
+        font-size: 1.375em;
+        font-weight: 200;
+        letter-spacing: 0.125em;
+        text-transform: uppercase;
+        @media only screen and (max-width: 640px){
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+
 `
 
 const LogoGrid = styled.div`
-  width: 70%;
+  width: 50%;
   p{
     font-size: 1.375em;
     font-weight: 200;
     letter-spacing: 0.125em;
-    padding-left: 3em;
-
 
     &.social{
       padding-top: 2rem;
       letter-spacing: 0;
     }
+    
+    &.contact{
+      font-size: 0.8em;
+      font-weight: 100;
+    }
 
     @media only screen and (max-width: 640px){
       font-size: 1em;
+      &.contact{
+        font-size: 0.6em;
+      }
+
     }
   }
 
 `
 const Link = styled(LinkDefault)`
-  a{
+  
     position: relative;
     &:before{
       content: "";
@@ -84,24 +131,44 @@ const Link = styled(LinkDefault)`
       visibility: visible;
       transform: scaleX(1);
     }
-  }
+  
 `
-const SocialIcons = styled.div`
+const SocialIcon = styled.div`
   width:50px;
   height:50px;
   display:table-cell;
-  padding-left: 4.125em;
-  @media only screen and (max-width: 640px){
-    font-size: 1em;
-    padding-left: 3em;
-  }
-  @media only screen and (max-width: 340px){
-    font-size: 1em;
-    padding-left: 3em;
-    display:flex;
+  padding-right: 4em;
+
+  @media only screen and (max-width: 880px){
+    padding-right: 1em;
   }
 
+  }
+  &.companyInfo{
+    display:flex;
+    height: 100%;
+    width: 100%;
+    padding-top: 0.8em;
+      @media only screen and (max-width: 640px){
+        font-size: 0.8em;
+      }
+    p{
+      display: inline;
+      margin:0;
+      padding-left: 0.5em;
+      font-size: 0.8em;
+      font-weight: 100;
+      @media only screen and (max-width: 640px){
+        font-size: 0.6em;
+      } 
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+  }
 `
+
+
 export const Footer = () => {
   return (
     <ResponsiveContext.Consumer>
@@ -152,44 +219,105 @@ export const Footer = () => {
               <Box flex={1}>
                 <p>
                   <Link to="/">Lime Brains</Link>
+
                 </p>
+                <p className="contact">
+                  Lime Brains sp. z o. o.<br />
+                  NIP: 5862332197<br />
+                  REGON: 38031902300000<br />
+                  KRS: 0000733442
+                </p>
+                <SocialIcon className="companyInfo">
+                  <Icon icon="FaMapMarkerAlt" />
+                  <p>UL.OLIMPIJSKA 2</p>
+                </SocialIcon>
+                <SocialIcon className="companyInfo">
+                  <Icon icon="FaPhone" />
+                  <p>+48 665 987 443</p>
+                </SocialIcon>
+                <SocialIcon className="companyInfo">
+                  <Icon icon="FaMailBulk" />
+                  <p><a href="mailto: mail@limebrains.com">mail@limebrains.com</a></p>
+                </SocialIcon>
+
                 <p className="social">
                   Follow us:
                 </p>
-                <SocialIcons>
+                <SocialIcon>
                   <IconBordered icon="FaGit"  />
-                </SocialIcons>
-                <SocialIcons>
+                </SocialIcon>
+                <SocialIcon>
                   <IconBordered icon="FaFacebookF"  />
-                </SocialIcons>
-                <SocialIcons>
+                </SocialIcon>
+                <SocialIcon>
                   <IconBordered icon="FaInstagram"  />
-                </SocialIcons>
+                </SocialIcon>
               </Box>
             </LogoGrid>
             <NavList>
-              <Box flex={1}>
+              <NavColumn>
                 <ul>
-                    <li>
-                      <Link to={'/'}><a>Home</a></Link>
+                  <li className="navHeader">
+                    Projects
+                  </li>
+                  <li>
+                    Pydrill
+                  </li>
+                  <li>
+                    Pet
+                  </li>
+                  <li>
+                    Sufler
+                  </li>
+                  <li>
+                    PyOlx
+                  </li>
+                  <li>
+                    PyOtodom
+                  </li>
+                </ul>
+              </NavColumn>
+              <NavColumn>
+                <ul>
+                  <li className="navHeader">
+                    Clients
+                  </li>
+                  <li>
+                    Vox'M
+                  </li>
+                  <li>
+                    Villoid
+                  </li>
+                  <li>
+                    Coinfalcon
+                  </li>
+                </ul>
+              </NavColumn>
+              <NavColumn>
+                <ul>
+                    <li className="navHeader">
+                      Company
                     </li>
                     <li>
-                      <Link to={'/'}><a>Clients</a></Link>
+                      <Link to={'/'}>Home</Link>
                     </li>
                     <li>
-                      <Link to={'/'}><a>Projects</a></Link>
+                      <Link to={'/'}>Clients</Link>
                     </li>
                     <li>
-                      <Link to={'/blog'}><a>Blog</a></Link>
+                      <Link to={'/'}>Projects</Link>
                     </li>
                     <li>
-                      <Link to={'/'}><a>Contact</a></Link>
+                      <Link to={'/blog'}>Blog</Link>
                     </li>
                     <li>
-                      <Link to={'/en/privacy'}><a>Privacy</a></Link>
+                      <Link to={'/'}>Contact</Link>
+                    </li>
+                    <li>
+                      <Link to={'/en/privacy'}>Privacy</Link>
                     </li>
                   </ul>
-                </Box>
+                </NavColumn>
               </NavList>
             </DesktopView>
 
@@ -201,43 +329,102 @@ export const Footer = () => {
                       <p>
                         <Link to="/">Lime Brains</Link>
                       </p>
+                      <p className="contact">
+                        Lime Brains sp. z o. o.<br />
+                        NIP: 5862332197<br />
+                        REGON: 38031902300000<br />
+                        KRS: 0000733442
+                      </p>
+                        <SocialIcon className="companyInfo">
+                          <Icon icon="FaMapMarkerAlt" />
+                          <p>UL.OLIMPIJSKA 2</p>
+                        </SocialIcon>
+                        <SocialIcon className="companyInfo">
+                          <Icon icon="FaPhone" />
+                          <p>+48 665 987 443</p>
+                        </SocialIcon>
+                        <SocialIcon className="companyInfo">
+                          <Icon icon="FaMailBulk" />
+                          <p><a href="mailto: mail@limebrains.com">mail@limebrains.com</a></p>
+                        </SocialIcon>
                       <p className="social">
                         Follow us:
                       </p>
-                      <SocialIcons>
+                      <SocialIcon>
                         <IconBordered icon="FaGit"  />
-                      </SocialIcons>
-                      <SocialIcons>
+                      </SocialIcon>
+                      <SocialIcon>
                         <IconBordered icon="FaFacebookF"  />
-                      </SocialIcons>
-                      <SocialIcons>
+                      </SocialIcon>
+                      <SocialIcon>
                         <IconBordered icon="FaInstagram"  />
-                      </SocialIcons>
+                      </SocialIcon>
                     </Box>
                   </LogoGrid>
                   <NavList>
-                    <Box flex={1}>
-                      <ul>
-                        <li>
-                          <Link to={'/'}>Home</Link>
-                        </li>
-                        <li>
-                          <Link to={'/'}>Clients</Link>
-                        </li>
-                        <li>
-                          <Link to={'/'}>Projects</Link>
-                        </li>
-                        <li>
-                          <Link to={'/blog'}><a>Blog</a></Link>
-                        </li>
-                        <li>
-                          <Link to={'/'}>Contact</Link>
-                        </li>
-                        <li>
-                          <Link to={'/en/privacy'}>Privacy</Link>
-                        </li>
-                      </ul>
-                    </Box>
+                  <NavColumn>
+                <ul>
+                  <li className="navHeader">
+                    Projects
+                  </li>
+                  <li>
+                    Pydrill
+                  </li>
+                  <li>
+                    Pet
+                  </li>
+                  <li>
+                    Sufler
+                  </li>
+                  <li>
+                    PyOlx
+                  </li>
+                  <li>
+                    PyOtodom
+                  </li>
+                </ul>
+              </NavColumn>
+              <NavColumn>
+                <ul>
+                  <li className="navHeader">
+                    Clients
+                  </li>
+                  <li>
+                    Vox'M
+                  </li>
+                  <li>
+                    Villoid
+                  </li>
+                  <li>
+                    Coinfalcon
+                  </li>
+                </ul>
+              </NavColumn>
+              <NavColumn>
+                <ul>
+                    <li className="navHeader">
+                      Company
+                    </li>
+                    <li>
+                      <Link to={'/'}>Home</Link>
+                    </li>
+                    <li>
+                      <Link to={'/'}>Clients</Link>
+                    </li>
+                    <li>
+                      <Link to={'/'}>Projects</Link>
+                    </li>
+                    <li>
+                      <Link to={'/blog'}>Blog</Link>
+                    </li>
+                    <li>
+                      <Link to={'/'}>Contact</Link>
+                    </li>
+                    <li>
+                      <Link to={'/en/privacy'}>Privacy</Link>
+                    </li>
+                  </ul>
+                </NavColumn>
                   </NavList>
                 </Flex>
               </Flex>
