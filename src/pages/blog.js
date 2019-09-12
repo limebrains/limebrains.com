@@ -8,7 +8,6 @@ import { Section } from '../components/section';
 import { colors } from '../components/theme/colors';
 import { SectionHeading } from '../components/heading';
 import { Card } from '../components/card';
-import { Button } from '../components/buttons';
 import { Link } from '../components/link';
 import { Img } from '../components/img';
 import { FlexBlog, Box } from '../components/flex';

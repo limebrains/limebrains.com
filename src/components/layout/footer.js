@@ -41,8 +41,14 @@ const NavList = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   width: 50%;
+  @media only screen and (max-width: 443px){
+    padding-left: 4em;
+  }
+  @media only screen and (max-width: 375px){
+    padding-left: 3.5em;
+  }
   ul{
-    float: right;
+
     li{
       font-size: 1.375em;
       font-weight: 200;
