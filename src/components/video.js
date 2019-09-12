@@ -9,7 +9,6 @@ const TextGradient = styled.div`
   background: ${({start, end}) => `-webkit-linear-gradient(5deg, ${start || '#8db7d7'}, ${end || '#febc77'});`}
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-filter: blur(0.8px);
 
 `
 
