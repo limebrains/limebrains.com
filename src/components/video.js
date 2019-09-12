@@ -25,8 +25,6 @@ const TextWrapper = styled.div`
   width: 100%;
   height: 100%;
   background: ${({start, end}) => `-webkit-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
-  background: ${({start, end}) => `-ms-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
-  background: ${({start, end}) => `-o-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
   backdrop-filter: blur(4px);
   h1 {
     font-size: 76px;
@@ -52,7 +50,6 @@ const TextWrapper = styled.div`
 `
 
 const VideoWrapper = styled.div`
-  ${(props) => console.log({"size": props.size})}
   display: flex;
   position: relative;
   top: 0;
