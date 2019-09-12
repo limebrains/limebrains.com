@@ -4,6 +4,9 @@ import { mobileLandscape } from './responsive';
 import { MazarLogo, NokiaLogo, SiemensLogo, HeaderLogo } from './theme/logos'
 import { LimeBrainsVideoMp4,  LimeBrainsVideoWebm } from './theme/videos'
 
+import { Context as ResponsiveContext } from 'react-responsive'
+
+
 const TextGradient = styled.div`
   color: ${({start}) => start};
   background: ${({start, end}) => `-webkit-linear-gradient(5deg, ${start || '#8db7d7'}, ${end || '#febc77'});`}
@@ -49,10 +52,12 @@ const TextWrapper = styled.div`
 `
 
 const VideoWrapper = styled.div`
+  ${(props) => console.log({"size": props.size})}
+  display: flex;
   position: relative;
   top: 0;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100vh - ${(props) => props.size}px);
   line-height: 0;
 
   video {
@@ -96,8 +101,8 @@ const Logos = styled.div`
 
 const HeaderVideo = ( ) => {
   return (
-
-    <VideoWrapper>
+    <ResponsiveContext.Consumer>{({isPhonePortrait}) => (
+    <VideoWrapper size={isPhonePortrait ? 60 : 80}>
       <TextWrapper
         start={'rgb(0,0,0, 0.3)'}
         end={'rgba(0, 0, 0, 0.4)'}
@@ -156,6 +161,8 @@ const HeaderVideo = ( ) => {
       </Logos>
 
     </VideoWrapper>
+    )}
+    </ResponsiveContext.Consumer>
   )
 }
 
