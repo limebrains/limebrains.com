@@ -10,11 +10,11 @@ export const FAQ = () => {
     id="FAQ"
     background={colors.sections.lightSection.background}
     size={'xs'}>
-      <Bar header="How long are the projects?" index='0'/>
-      <Bar header="Lorem ipsum dolor sit amet" index='1'/>
-      <Bar header="Lorem ipsum dolor sit amet" index='2'/>
-      <Bar header="Lorem ipsum dolor sit amet" index='3'/>
-      <Bar header="Lorem ipsum dolor sit amet" index='4'/>
+      <Bar header="How long are the projects?" myIndex='0'/>
+      <Bar header="Lorem ipsum dolor sit amet" myIndex='1'/>
+      <Bar header="Lorem ipsum dolor sit amet" myIndex='2'/>
+      <Bar header="Lorem ipsum dolor sit amet" myIndex='3'/>
+      <Bar header="Lorem ipsum dolor sit amet" myIndex='4'/>
     </Section>
   )
 }

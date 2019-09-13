@@ -46,35 +46,36 @@ const Divider = styled.div`
 `
 
 const Content = styled.div`
-  display: flex;
+  display: ${(props) => props.show};
   border-radius: 10px;
   background-color: white;
   align-items: center;
   margin-left: 5%;
   margin-right: 5%;
+  transition: height 500ms;
 `
 
 
-const Accordion = (props ) => {
+const Accordion = (props) => {
   console.log(props)
 
 }
 
 
-const Bar = ({header, index}) => {
+const Bar = ({header, myIndex}) => {
 
-  const [selectedIndex, setIndex] = useState(0);
+  const [selectedIndex, setIndex] = useState({index: '0', open: false});
 
   return (
       <Container>
         <Sector>
           <p>{header}</p>
           <RightSector>
-              <FaChevronDown onClick={() => setIndex(index)} size={24} />
-              {console.log({'expand': selectedIndex})}
+              <FaChevronDown onClick={() => setIndex({index: myIndex, open: (selectedIndex.open ? false : true)})} size={24} />
+              {console.log(selectedIndex)}
           </RightSector>
         </Sector>
-        <Content>
+        <Content show={selectedIndex.open ? 'flex' : 'none'}>
           <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
