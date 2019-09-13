@@ -12,9 +12,11 @@ const Container = styled.div`
 `
 
 const Sector = styled.div`
-  height: 50px;
+  height: ${props => props.show}px;
   margin-left: 5%;
   margin-right: 5%;
+  overflow-y: hidden;
+  transition: height 0.4s linear;
   p{
     float: left;
   }
@@ -39,7 +41,7 @@ const Divider = styled.div`
 `
 
 const Content = styled.div`
-  display: ${(props) => props.show};
+  display: ${props => props.show};
   border-radius: 10px;
   background-color: white;
   margin-left: 5%;
@@ -51,29 +53,37 @@ const Content = styled.div`
 `
 
 
-const Accordion = styled.div`
-  transition: height 1000ms;
-  
+const Icon = styled(FaChevronDown)`
+  &:hover{
+    color: green;
+  }
+
+  &.icon{
+    background
+    font-size: 100px;
+  }
 `
 
 
 const Bar = ({ header, content, myIndex }) => {
   const [selectedIndex, setIndex] = useState({ index: '0', open: false });
   return (
-
     <Container>
-      <Sector>
+      <Sector show={selectedIndex.open ? 200 : 50}>
         <p>{header}</p>
+
         <RightSector>
-          <FaChevronDown className="icon" onClick={() => setIndex({ index: myIndex, open: (selectedIndex.open ? false : true) })} size={24} />
+
+          <Icon onClick={() => setIndex({ index: myIndex, open: (selectedIndex.open ? false : true) })} size={24} />
           {console.log(selectedIndex)}
         </RightSector>
+        <Content >
+          <p>
+            {content}
+          </p>
+        </Content>
       </Sector>
-      <Content show={selectedIndex.open ? 'flex' : 'none'}>
-        <p>
-          {content}
-        </p>
-      </Content>
+
       <Divider />
     </Container>
 
