@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 import { FaChevronDown } from 'react-icons/fa'
 
@@ -12,11 +12,9 @@ const Container = styled.div`
 `
 
 const Sector = styled.div`
-
   height: 50px;
   margin-left: 5%;
   margin-right: 5%;
-
   p{
     float: left;
   }
@@ -29,11 +27,6 @@ const RightSector = styled.div`
   height: 100%;
   justify-content: flex-end;
   align-items: center;
-  
-`
-
-const Button = styled.div`
-  
 `
 
 const Divider = styled.div`
@@ -49,42 +42,40 @@ const Content = styled.div`
   display: ${(props) => props.show};
   border-radius: 10px;
   background-color: white;
-  align-items: center;
   margin-left: 5%;
   margin-right: 5%;
-  transition: height 500ms;
+  p{
+    padding-left: 2em;
+    padding-right: 2em;
+  }
 `
 
 
-const Accordion = (props) => {
-  console.log(props)
+const Accordion = styled.div`
+  transition: height 1000ms;
+  
+`
 
-}
 
-
-const Bar = ({header, myIndex}) => {
-
-  const [selectedIndex, setIndex] = useState({index: '0', open: false});
-
+const Bar = ({ header, content, myIndex }) => {
+  const [selectedIndex, setIndex] = useState({ index: '0', open: false });
   return (
-      <Container>
-        <Sector>
-          <p>{header}</p>
-          <RightSector>
-              <FaChevronDown onClick={() => setIndex({index: myIndex, open: (selectedIndex.open ? false : true)})} size={24} />
-              {console.log(selectedIndex)}
-          </RightSector>
-        </Sector>
-        <Content show={selectedIndex.open ? 'flex' : 'none'}>
-          <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-        </Content>
-        <Divider />
-      </Container>
+
+    <Container>
+      <Sector>
+        <p>{header}</p>
+        <RightSector>
+          <FaChevronDown className="icon" onClick={() => setIndex({ index: myIndex, open: (selectedIndex.open ? false : true) })} size={24} />
+          {console.log(selectedIndex)}
+        </RightSector>
+      </Sector>
+      <Content show={selectedIndex.open ? 'flex' : 'none'}>
+        <p>
+          {content}
+        </p>
+      </Content>
+      <Divider />
+    </Container>
 
   )
 }
