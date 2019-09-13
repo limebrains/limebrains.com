@@ -8,6 +8,7 @@ import { Expertise } from '../components/sections/expertise'
 import { Reviews } from '../components/sections/reviews'
 import { Team } from '../components/sections/team'
 import { JobSection } from '../components/sections/benefits'
+import { FAQ } from '../components/sections/faq'
 
 const IndexPage = (props) => (
   <Layout>
@@ -24,6 +25,8 @@ const IndexPage = (props) => (
     <Team />
     
     <JobSection />
+
+    <FAQ />
 
   </Layout>
 )
