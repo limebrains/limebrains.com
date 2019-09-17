@@ -1,4 +1,4 @@
-import React, { useState, useRef, createRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 import { FaChevronDown } from 'react-icons/fa'
 
