@@ -57,7 +57,7 @@ class Typer extends React.Component {
         <h3>
           {this.state.subtitle}
         </h3>
-        <h3 className="colored">
+        <h3>
           {this.state.slogan}
         </h3>
       </HeaderText>
