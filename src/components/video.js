@@ -1,19 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import { mobileLandscape } from './responsive';
 import { MazarLogo, NokiaLogo, SiemensLogo, HeaderLogo } from './theme/logos'
-import { LimeBrainsVideoMp4,  LimeBrainsVideoWebm } from './theme/videos'
+import { LimeBrainsVideoMp4, LimeBrainsVideoWebm } from './theme/videos'
 
 import { Context as ResponsiveContext } from 'react-responsive'
 
+import Typer from './typer';
 
-const TextGradient = styled.div`
-  color: ${({start}) => start};
-  background: ${({start, end}) => `-webkit-linear-gradient(5deg, ${start || '#8db7d7'}, ${end || '#febc77'});`}
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-`
 
 const TextWrapper = styled.div`
   position:absolute;
@@ -24,14 +18,13 @@ const TextWrapper = styled.div`
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: ${({start, end}) => `-webkit-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
+  background: ${({ start, end }) => `-webkit-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
   backdrop-filter: blur(4px);
   h1 {
     font-size: 76px;
     display: block;
     font-weight: 500;
     user-select: none;
-    margin-bottom: 3rem;
     
     @media (max-width: ${mobileLandscape}px) {
       font-size: 30px;
@@ -40,12 +33,12 @@ const TextWrapper = styled.div`
   h3 {
     font-size: 30px;
     font-weight: 300;
-    margin-bottom: 3rem;
+    padding-top: 0.5rem;
     
     @media (max-width: 1000px) {
       font-size: 16px;
-      margin-bottom: 2rem;
     }
+
   }
 `
 
@@ -96,43 +89,31 @@ const Logos = styled.div`
   }
 `
 
-const HeaderVideo = ( ) => {
-  return (
-    <ResponsiveContext.Consumer>{({isPhonePortrait}) => (
-    <VideoWrapper size={isPhonePortrait ? 60 : 80}>
-      <TextWrapper
-        start={'rgb(0,0,0, 0.3)'}
-        end={'rgba(0, 0, 0, 0.4)'}
-      >
-        <TextGradient
-          start={'#ffffff'}
-          end={'#99c1b7'}
-        >
-          <h1>
-            Lime Brains
-          </h1>
-        </TextGradient>
-        <TextGradient
-          start={'#99c1b7'}
-          end={'#ffffff'}
-        >
-          <h3>
-            Software house where business questions.
-          </h3>
-          <h3>
-            Meet software answers.
-          </h3>
-        </TextGradient>
-      </TextWrapper>
 
-      <video
-        playsInline
-        muted
-        loop
-        preload="auto"
-        poster={HeaderLogo}
-        autoPlay="autoplay"
-      >
+const HeaderVideo = () => {
+  return (
+    <ResponsiveContext.Consumer>{({ isPhonePortrait }) => (
+      <VideoWrapper size={isPhonePortrait ? 60 : 80}>
+        <TextWrapper
+          start={'rgb(0,0,0, 0.3)'}
+          end={'rgba(0, 0, 0, 0.4)'}
+        >
+          <Typer data={{
+            title: 'Lime Brains',
+            subtitle: 'Software house where business questions,',
+            slogan: ["meet software answers.", "slogan2", "slogan3", "slogan4"]
+          }}
+            typingSpeed="70" />
+        </TextWrapper>
+
+        <video
+          playsInline
+          muted
+          loop
+          preload="auto"
+          poster={HeaderLogo}
+          autoPlay="autoplay"
+        >
           <source
             data-src={LimeBrainsVideoWebm}
             src={LimeBrainsVideoWebm}
@@ -151,13 +132,13 @@ const HeaderVideo = ( ) => {
           Your browser does not support the video tag.
       </video>
 
-      <Logos>
-        <img src={MazarLogo} alt=''/>
-        <img src={SiemensLogo} alt=''/>
-        <img src={NokiaLogo} alt=''/>
-      </Logos>
+        <Logos>
+          <img src={MazarLogo} alt='' />
+          <img src={SiemensLogo} alt='' />
+          <img src={NokiaLogo} alt='' />
+        </Logos>
 
-    </VideoWrapper>
+      </VideoWrapper>
     )}
     </ResponsiveContext.Consumer>
   )
