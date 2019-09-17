@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, createRef, useEffect } from 'react';
 import styled from 'styled-components'
 import { FaChevronDown } from 'react-icons/fa'
 
@@ -7,16 +7,14 @@ const Container = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-
-
 `
 
 const Sector = styled.div`
-  height: ${props => props.show}px;
+  max-height: ${props => props.show}px;
   margin-left: 5%;
   margin-right: 5%;
   overflow-y: hidden;
-  transition: height 0.4s linear;
+  transition: max-height 0.4s linear;
   p{
     float: left;
   }
@@ -32,7 +30,6 @@ const RightSector = styled.div`
 `
 
 const Divider = styled.div`
-  height: 1px;
   background: #D2CBCB;
   margin-left: 5%;
   margin-right: 5%;
@@ -41,43 +38,33 @@ const Divider = styled.div`
 `
 
 const Content = styled.div`
-  display: ${props => props.show};
   border-radius: 10px;
-  background-color: white;
   margin-left: 5%;
   margin-right: 5%;
-  p{
-    padding-left: 2em;
-    padding-right: 2em;
-  }
 `
 
-
 const Icon = styled(FaChevronDown)`
+  transition: 0.4s;
   &:hover{
     color: green;
   }
-
-  &.icon{
-    background
-    font-size: 100px;
+  &.clicked{
+    transform: rotate(-90deg);
   }
 `
-
 
 const Bar = ({ header, content, myIndex }) => {
   const [selectedIndex, setIndex] = useState({ index: '0', open: false });
   return (
-    <Container>
-      <Sector show={selectedIndex.open ? 200 : 50}>
+
+    < Container >
+      <Sector show={selectedIndex.open ? 500 : 50}>
         <p>{header}</p>
 
         <RightSector>
-
-          <Icon onClick={() => setIndex({ index: myIndex, open: (selectedIndex.open ? false : true) })} size={24} />
-          {console.log(selectedIndex)}
+          <Icon className={`${selectedIndex.open ? "clicked" : ""}`} onClick={() => { setIndex({ index: myIndex, open: (selectedIndex.open ? false : true) }) }} size={24} />
         </RightSector>
-        <Content >
+        <Content  >
           <p>
             {content}
           </p>
@@ -85,7 +72,7 @@ const Bar = ({ header, content, myIndex }) => {
       </Sector>
 
       <Divider />
-    </Container>
+    </Container >
 
   )
 }
