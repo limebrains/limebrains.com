@@ -38,10 +38,7 @@ const TextWrapper = styled.div`
     @media (max-width: 1000px) {
       font-size: 16px;
     }
-    &.colored{
-      margin-top: 0;
-      font-weight: 200;
-    }
+
   }
 `
 
