@@ -7,12 +7,15 @@ const HeaderText = styled.div`
 
 `
 
+
+
 class Typer extends React.Component {
   state = {
     title: '',
     subtitle: '',
     slogan: '',
     isDeleting: false,
+    typingSpeed: 70,
     i: 0
   }
 
@@ -21,15 +24,18 @@ class Typer extends React.Component {
   }
 
   loop = () => {
-    const { slogan, title, subtitle, isDeleting, i } = this.state;
-    const { data, typingSpeed } = this.props;
+    const { slogan, title, subtitle, isDeleting, typingSpeed, i } = this.state;
+    const { data } = this.props;
     const j = i % data.slogan.length;
+    console.log(j, i)
     this.setState({
-      title: data.title.substring(0, title.length + 1)
+      title: data.title.substring(0, title.length + 1),
+      typingSpeed: 200
     })
     if (data.title === title) {
       this.setState({
-        subtitle: data.subtitle.substring(0, subtitle.length + 1)
+        subtitle: data.subtitle.substring(0, subtitle.length + 1),
+        typingSpeed: 70
       })
     }
 
@@ -37,14 +43,15 @@ class Typer extends React.Component {
       this.setState({
         slogan: isDeleting ?
           data.slogan[j].substring(0, slogan.length - 1) :
-          data.slogan[j].substring(0, slogan.length + 1)
+          data.slogan[j].substring(0, slogan.length + 1),
       })
     }
     if (slogan === data.slogan[j]) {
-      this.setState({ isDeleting: true })
+      setTimeout(() => this.setState({ isDeleting: true }), 500)
     } else if (isDeleting && slogan === '') {
       this.setState({ isDeleting: false, i: i + 1 })
     }
+
     setTimeout(this.loop, typingSpeed);
   }
 
