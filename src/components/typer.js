@@ -27,7 +27,6 @@ class Typer extends React.Component {
     const { slogan, title, subtitle, isDeleting, typingSpeed, i } = this.state;
     const { data } = this.props;
     const j = i % data.slogan.length;
-    console.log(j, i)
     this.setState({
       title: data.title.substring(0, title.length + 1),
       typingSpeed: 200
@@ -46,10 +45,10 @@ class Typer extends React.Component {
           data.slogan[j].substring(0, slogan.length + 1),
       })
     }
-    if (slogan === data.slogan[j]) {
-      setTimeout(() => this.setState({ isDeleting: true }), 500)
+    if (!isDeleting && slogan === data.slogan[j]) {
+      setTimeout(() => this.setState({ isDeleting: true }), 1000)
     } else if (isDeleting && slogan === '') {
-      this.setState({ isDeleting: false, i: i + 1 })
+      setTimeout(() => this.setState({ isDeleting: false, i: i + 1 }), 500)
     }
 
     setTimeout(this.loop, typingSpeed);
