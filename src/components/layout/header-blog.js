@@ -87,12 +87,57 @@ const Header = () => {
 							<ul id="menu">
 								<div>
 									<HeaderButton
-										to="/"
-										text="HOME"
+										to="/#about"
+										text="ABOUT"
 										style={{
 											white: true,
 											outline: true,
 											text: true
+										}}
+									/>
+									<HeaderButton
+										to="/#clients"
+										text="CLIENTS"
+										style={{
+											white: true,
+											outline: true,
+											text: true
+										}}
+									/>
+									<HeaderHrefButton
+										text="GITHUB"
+										href="https://github.com/limebrains/"
+										style={{
+											white: true,
+											outline: true,
+											text: true
+										}}
+									/>
+									<HeaderButton
+										to="/blog"
+										text="BLOG"
+										style={{
+											white: true,
+											outline: true,
+											text: true
+										}}
+									/>
+									<HeaderButton
+										to="/#team"
+										text="TEAM"
+										style={{
+											white: true,
+											outline: true,
+											text: true
+										}}
+									/>
+									<HeaderButton
+										to="/#contact"
+										text="CONTACT"
+										style={{
+											white: true,
+											outline: true,
+											text: false
 										}}
 									/>
 								</div>

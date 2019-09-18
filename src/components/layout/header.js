@@ -19,7 +19,6 @@ const handleMenuClick = () => {
 }
 
 const Header = (props) => {
-	console.log(props)
 	return (
 		<HeaderWrapper>
 			<HeaderPlain>
