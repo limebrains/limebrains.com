@@ -1,31 +1,31 @@
 import React from 'react';
 import { MobileView, DesktopView } from '../responsive'
-import { HeaderButton, HeaderButtonScrolled, HeaderHrefButton} from '../common/header-button'
+import { HeaderButton, HeaderButtonScrolled, HeaderHrefButton } from '../common/header-button'
 import {
-        HeaderWrapper,
-        LineOfBurger,
-        CloseIcon,
-        MenuToggle,
-        defaultSmooth,
-        defaultDuration,
-        desktopOffset,
-        mobileOffset
+	HeaderWrapper,
+	LineOfBurger,
+	CloseIcon,
+	MenuToggle,
+	defaultSmooth,
+	defaultDuration,
+	desktopOffset,
+	mobileOffset
 } from '../common/header-styles';
 import HeaderPlain from '../common/header-plain';
 
 const inputBox = React.createRef()
 const handleMenuClick = () => {
-  inputBox.current.checked = false
+	inputBox.current.checked = false
 }
 
-const Header = () => {
-  return (
-	<HeaderWrapper>
-		<HeaderPlain>
-			<DesktopView>
-				<ul>
-					<HeaderButtonScrolled 
-							to="about" 
+const Header = (props) => {
+	return (
+		<HeaderWrapper>
+			<HeaderPlain>
+				<DesktopView>
+					<ul>
+						<HeaderButtonScrolled
+							to="about"
 							text="ABOUT"
 							activeClass="active"
 							smooth={defaultSmooth}
@@ -37,9 +37,9 @@ const Header = () => {
 								text: true
 							}}
 
-							/>
-					<HeaderButtonScrolled 
-							to="clients" 
+						/>
+						<HeaderButtonScrolled
+							to="clients"
 							text="CLIENTS"
 							activeClass="active"
 							smooth={defaultSmooth}
@@ -50,17 +50,17 @@ const Header = () => {
 								outline: true,
 								text: true
 							}}
-							/>
-					<HeaderHrefButton
+						/>
+						<HeaderHrefButton
 							text="GITHUB"
 							href="https://github.com/limebrains/"
-							style = {{
+							style={{
 								white: true,
-								outline:true,
-								text:true
+								outline: true,
+								text: true
 							}}
-							/>
-					<HeaderButton
+						/>
+						<HeaderButton
 							to="/blog"
 							text="BLOG"
 							style={{
@@ -68,9 +68,9 @@ const Header = () => {
 								outline: true,
 								text: true
 							}}
-							/>
-					<HeaderButtonScrolled 
-							to="team" 
+						/>
+						<HeaderButtonScrolled
+							to="team"
 							text="TEAM"
 							activeClass="active"
 							smooth={defaultSmooth}
@@ -81,9 +81,9 @@ const Header = () => {
 								outline: true,
 								text: true
 							}}
-							/>
-					<HeaderButtonScrolled 
-							to="contact" 
+						/>
+						<HeaderButtonScrolled
+							to="contact"
 							text="CONTACT"
 							activeClass="active"
 							smooth={defaultSmooth}
@@ -94,21 +94,21 @@ const Header = () => {
 								outline: true,
 								text: false
 							}}
-							/>
-				</ul>
-			</DesktopView>
+						/>
+					</ul>
+				</DesktopView>
 
-			<MobileView>
-				<nav role="navigation">
-					<MenuToggle>
-						<CloseIcon type="checkbox" innerRef={inputBox} />
-						<LineOfBurger />
-						<LineOfBurger />
-						<LineOfBurger />
-						<ul id="menu">
-							<div>
-								<HeaderButtonScrolled 
-										to="about" 
+				<MobileView>
+					<nav role="navigation">
+						<MenuToggle>
+							<CloseIcon type="checkbox" innerRef={inputBox} />
+							<LineOfBurger />
+							<LineOfBurger />
+							<LineOfBurger />
+							<ul id="menu">
+								<div>
+									<HeaderButtonScrolled
+										to="about"
 										text="ABOUT"
 										activeClass="active"
 										smooth={defaultSmooth}
@@ -120,9 +120,9 @@ const Header = () => {
 											outline: true,
 											text: true
 										}}
-										/>
-								<HeaderButtonScrolled 
-										to="clients" 
+									/>
+									<HeaderButtonScrolled
+										to="clients"
 										text="CLIENTS"
 										activeClass="active"
 										smooth={defaultSmooth}
@@ -134,8 +134,8 @@ const Header = () => {
 											outline: true,
 											text: true
 										}}
-										/>
-								<HeaderHrefButton
+									/>
+									<HeaderHrefButton
 										text="GITHUB"
 										href="https://github.com/limebrains/"
 										style={{
@@ -143,8 +143,8 @@ const Header = () => {
 											outline: true,
 											text: true
 										}}
-										/>
-								<HeaderButton
+									/>
+									<HeaderButton
 										to="/blog"
 										text="BLOG"
 										style={{
@@ -152,9 +152,9 @@ const Header = () => {
 											outline: true,
 											text: true
 										}}
-										/>
-								<HeaderButtonScrolled 
-										to="team" 
+									/>
+									<HeaderButtonScrolled
+										to="team"
 										text="TEAM"
 										activeClass="active"
 										smooth={defaultSmooth}
@@ -166,9 +166,9 @@ const Header = () => {
 											outline: true,
 											text: true
 										}}
-										/>
-								<HeaderButtonScrolled 
-										to="contact" 
+									/>
+									<HeaderButtonScrolled
+										to="contact"
 										text="CONTACT"
 										activeClass="active"
 										smooth={defaultSmooth}
@@ -180,15 +180,15 @@ const Header = () => {
 											outline: true,
 											text: false
 										}}
-										/>
-							</div>
-						</ul>
-					</MenuToggle>
-				</nav>
-			</MobileView>
-		</HeaderPlain>
-	</HeaderWrapper>
-  )
+									/>
+								</div>
+							</ul>
+						</MenuToggle>
+					</nav>
+				</MobileView>
+			</HeaderPlain>
+		</HeaderWrapper>
+	)
 }
 
 export default Header

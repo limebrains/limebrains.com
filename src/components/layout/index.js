@@ -27,23 +27,23 @@ const ContentWrapper = styled.div`
 const renderHeader = (siteTitle) => {
   return (
     <LocationProvider>
-      {(context) => 
-      context.location.pathname === '/' ? 
-      <Header siteTitle={siteTitle} />: <HeaderHome siteTitle={siteTitle} />
+      {(context) =>
+        context.location.pathname === '/' ?
+          <Header siteTitle={siteTitle} /> : <HeaderHome siteTitle={siteTitle} />
       }
-  </LocationProvider>
+    </LocationProvider>
   )
 }
 
 const Layout = ({ children }) => {
-  
-    const [currentWidth, setCurrentWidth] = useState(
-      typeof window !== 'undefined' ? window.innerWidth : null
-    )
+
+  const [currentWidth, setCurrentWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : null
+  )
 
   useEffect(() => {
     const updateDimensions = () => {
-      setCurrentWidth(        
+      setCurrentWidth(
         window.innerWidth
       )
     }
@@ -52,9 +52,9 @@ const Layout = ({ children }) => {
       window.removeEventListener('resize', updateDimensions)
     }
   })
-  if (typeof window !== 'undefined'){
+  if (typeof window !== 'undefined') {
     return (
-      
+
       <StaticQuery
         query={graphql`
           query SiteTitleQuery {
@@ -78,8 +78,8 @@ const Layout = ({ children }) => {
                 }}
               >
 
-                    <HeaderVideo/>
-                    {renderHeader( data.site.siteMetadata.title )}
+                <HeaderVideo />
+                {renderHeader(data.site.siteMetadata.title)}
 
                 <ContentWrapper>{children}</ContentWrapper>
                 <Footer />
