@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-import styled from 'styled-components'
-import { FaChevronDown } from 'react-icons/fa'
+import styled from 'styled-components';
+import { FaChevronDown } from 'react-icons/fa';
+import { mobileLandscape } from './responsive';
+
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
+
+  @media (max-width: ${mobileLandscape}px ){
+    font-size: 1em;
+  }
+
 `
 
 const Sector = styled.div`
@@ -26,7 +33,6 @@ const RightSector = styled.div`
   width:  50px;
   height: 100%;
   justify-content: flex-end;
-  align-items: center;
 `
 
 const Divider = styled.div`
@@ -45,6 +51,7 @@ const Content = styled.div`
 
 const Icon = styled(FaChevronDown)`
   transition: 0.4s;
+  height: 100%;
   &:hover{
     color: green;
   }
