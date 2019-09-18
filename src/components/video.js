@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components'
 import { mobileLandscape } from './responsive';
 import { MazarLogo, NokiaLogo, SiemensLogo, HeaderLogo } from './theme/logos'
@@ -7,7 +7,6 @@ import { LimeBrainsVideoMp4, LimeBrainsVideoWebm } from './theme/videos'
 import { Context as ResponsiveContext } from 'react-responsive'
 
 import Typer from './typer';
-
 
 const TextWrapper = styled.div`
   position:absolute;
