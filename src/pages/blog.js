@@ -1,33 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby';
 import * as _ from 'lodash';
-
 import Layout from '../components/layout/index'
 import SEO from '../components/seo'
-import { Section } from '../components/section';
-import { colors } from '../components/theme/colors';
-// import { SectionHeading } from '../components/heading';
 import { Card } from '../components/card';
 import { Link } from '../components/link';
 import { Img } from '../components/img';
 import { FlexBlog, Box } from '../components/flex';
-// import { Reveal, Flip } from 'react-reveal';
-// import { LimeBrainsLogo } from '../components/theme/logos';
+
+import Carousel from '../components/carousel';
 
 const Blog = ({ data }) => (
   <Layout>
     <SEO title="Page two" />
 
-    <Section
-      background={colors.sections.greenSection.background}
-    >
-      {/* <Flip left wait={2000}>
-        <Img src={LimeBrainsLogo} responsive width={150} />
-      </Flip>
-      <Reveal right fraction={1}>
-        <SectionHeading title={'Blog'} inverse />
-      </Reveal> */}
-    </Section>
+    <Carousel />
 
     <Box m={3}>
       <FlexBlog>

@@ -1,0 +1,216 @@
+import React from 'react';
+import styled from 'styled-components';
+import { colors } from '../components/theme/colors';
+import { FaAngleRight, FaAngleLeft, FaShareAlt } from "react-icons/fa";
+import { mobileLandscape } from './responsive';
+import { Link } from './link'
+
+const Container = styled.div`
+  position: relative;
+  display: flex;
+  min-height: 60vh;
+  // margin-left: 11vw;
+  // margin-right: 11vw;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+
+`
+
+
+const Button = styled.div`
+  display: flex;
+  position: absolute;
+  opacity: 0.5;
+  width: 5vw;
+  min-height: 60vh;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &.next{
+    right: 0;
+    FaAngleLeft{
+      opacity: 1;
+    }
+  }
+  &.prev{
+    left: 0;
+  }
+`
+
+
+
+const Content = styled.div`
+  user-select:none;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  width:100%;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url('https://1r65612jvqxn8fcup46pve6b-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/clear-impact-state-government-background-header.jpg');
+  background-repeat: no-repeat;
+	background-position: center;
+  background-size: cover;
+
+  span{
+    &.share{
+      position:absolute;
+      border: 1px solid;
+      border-radius: 20px;
+        display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      top: 10%;
+      right: 10%;
+      color: white;
+      transition: all 0.3s ease-in-out;
+      @media (max-width: ${mobileLandscape}px){
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+      }
+      &:hover {
+        transform: rotate(-90deg); 
+ 
+
+      }
+    }
+  }
+
+  p{
+    position:absolute;
+    white-space: nowrap;
+    &.header{
+      font-size: 2em;
+      font-weight: 600;
+      top:  30%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      color: white;
+
+      @media (max-width: ${mobileLandscape}px){
+        font-size: .8em;
+      }
+    }
+
+    &.date{
+      font-size: .9em;
+      font-weight: 200;
+      top: 10%;
+      left: 10%;
+      transform: translate(-10%, -10%);
+      color: white;
+      b{
+        letter-spacing: .2em;
+        font-weight: 500;
+        padding-right: 0.2em;
+      }
+      @media (max-width: ${mobileLandscape}px){
+        font-size: .5em;
+      }
+    }
+
+    &.subHeader{
+      font-size: 1em;
+      font-weight: 200;
+      color: white;
+      top:  40%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      @media (max-width: ${mobileLandscape}px){
+        font-size: .6em;
+        top: 35%;
+        transform: translate(-50%, -25%);
+        
+      }
+    }
+  }
+  
+  a{
+    &.visit{
+    text-decoration: none;
+    position: absolute;
+    display: inline-block;
+    top: 80%;
+    color: white;
+    padding: 0 3em;
+    font-size: 0.8em;
+    font-weight: 500;
+    height:34px;
+    border: 1px solid;
+    border-radius: 50px;
+    border-color: #043d0c;
+    background-color: #043d0c;
+    line-height:34px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+
+    @media (max-width: ${mobileLandscape}px){
+      padding 0 1em;
+      font-size: .6em;
+    }
+
+    &:hover{
+      background-color: #fff;
+      color: #043d0c;
+      }
+    }
+
+
+`
+
+
+const Carousel = () => {
+  return (
+
+    <Container background={colors.sections.greenSection.background}  >
+
+      <Button className="prev">
+        <FaAngleLeft color="white" size={30} />
+      </Button>
+      <Button className="next">
+        <FaAngleRight color="white" size={30} />
+      </Button>
+      <Content>
+        <span className="share">
+          <FaShareAlt />
+        </span>
+        <p className="date">
+          <b>Lime Brains</b> September 18, 2019
+        </p>
+        <p className="header">
+          <Link to="/">Header Header Header Header</Link>
+        </p>
+        <p className="subHeader">
+          SubInfo SubInfo SubInfo
+        </p>
+
+        <a href="/" className="visit">Show More</a>
+
+
+      </Content>
+    </Container>
+  )
+}
+
+
+
+export default Carousel;
+
+const Slides = [
+  {
+    header: 'Testing w/ React Slider',
+    subtitle: 'subtitle subtitile subtitle',
+    image: 'https://static.pexels.com/photos/8807/sopot-medium.jpg'
+  },
+  {
+    header: 'Testing w/ React Slider',
+    subtitle: 'subtitle subtitile subtitle',
+    image: 'https://static.pexels.com/photos/7360/startup-photos-large.jpg'
+  },
+  {
+    header: 'Testing w/ React Slider',
+    subtitle: 'subtitle subtitile subtitle',
+    image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg'
+  }
+]
