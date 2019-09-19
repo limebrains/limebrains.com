@@ -311,19 +311,4 @@ const Slides = [
   }
 ]
 
-export const query = graphql`
-{
-  allMarkdownRemark(filter: {fields: {layout: {eq: "blog-post"}}}) {
-    edges {
-      node {
-        frontmatter {
-          index
-          title
-          subtitle
-        }
-      }
-    }
-  }
-}
-
-`
+  `
