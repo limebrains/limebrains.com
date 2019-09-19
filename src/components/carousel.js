@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql } from "gatsby";
 import { colors } from '../components/theme/colors';
 import { FaAngleRight, FaAngleLeft, FaShareAlt } from "react-icons/fa";
 import { mobileLandscape } from './responsive';
-import { Link } from './link'
+import { Link as DefaultLink } from './link'
 
 const Container = styled.div`
   position: relative;
@@ -13,7 +14,39 @@ const Container = styled.div`
   white-space: nowrap;
   overflow:hidden;
 `
+const Link = styled(DefaultLink)`
+  &.visit{
+      text-decoration: none;
+      position: absolute;
+      display: inline-block;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -80%);
+      color: white;
+      padding: 0 3em;
+      font-size: 0.8em;
+      font-weight: 500;
+      height:34px;
+      border: 1px solid;
+      border-radius: 50px;
+      border-color:  #043d0c;
+      background-color: #043d0c;
+      line-height:34px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
 
+      @media (max-width: ${mobileLandscape}px){
+        padding 0 1em;
+        font-size: .6em;
+      }
+
+      &:hover{
+        background-color: #fff;
+        color: #043d0c;
+        }
+      }
+`
 const Image = styled.div`
   position:relative;
   display: inline-block;
@@ -190,21 +223,23 @@ class Carousel extends React.Component {
   }
 
   renderContent = (index) => {
+    const { data } = this.props;
+    console.log(data)
     return (
       <Content>
         <span className="share">
           <FaShareAlt />
         </span>
         <p className="date">
-          <b>LimeBrains</b> September 18, 2019
-          </p>
+          <b>LimeBrains</b>{data.allMarkdownRemark.edges[index].node.frontmatter.date}
+        </p>
         <p className="header">
-          <Link to="/">{Slides[index].header}</Link>
+          <Link to="/">{data.allMarkdownRemark.edges[index].node.frontmatter.title}</Link>
         </p>
         <p className="subHeader">
-          {Slides[index].subtitle}
+          {data.allMarkdownRemark.edges[index].node.frontmatter.subtitle}
         </p>
-        <a href="/" className="visit">Show More</a>
+        <Link to={data.allMarkdownRemark.edges[index].node.fields.slug} className="visit">Show More</Link>
       </Content>
     )
   }
@@ -236,14 +271,13 @@ class Carousel extends React.Component {
   }
 
   render() {
-    console.log(this.state.currentIndex)
     return (
       <div ref={this.myRef}>
         <Container background={colors.sections.greenSection.background}>
 
           {
             Slides.map((slide) => (
-              <Image url={slide.image} translateValue={this.state.translateValue} />
+              <Image url={slide.image} key={slide.link} translateValue={this.state.translateValue} />
             ))
           }
 
@@ -267,18 +301,29 @@ export default Carousel;
 
 const Slides = [
   {
-    header: 'Configuration for productive terminal on osx',
-    subtitle: 'In just two easy steps!',
-    image: 'https://i.ytimg.com/vi/HWn85tjFMIQ/maxresdefault.jpg'
+    image: 'https://i.ytimg.com/vi/HWn85tjFMIQ/maxresdefault.jpg',
   },
   {
-    header: 'How to easily find biggest files?',
-    subtitle: 'It couldn\'t be easier!',
-    image: 'https://c.pxhere.com/photos/b3/37/coding_computer_hacker_hacking_html_programmer_programming_script-1366057.jpg!d'
+    image: 'https://c.pxhere.com/photos/b3/37/coding_computer_hacker_hacking_html_programmer_programming_script-1366057.jpg!d',
   },
   {
-    header: 'Testing w/ React Slider',
-    subtitle: 'subtitle subtitile subtitle',
-    image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg'
+    image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
   }
 ]
+
+export const query = graphql`
+{
+  allMarkdownRemark(filter: {fields: {layout: {eq: "blog-post"}}}) {
+    edges {
+      node {
+        frontmatter {
+          index
+          title
+          subtitle
+        }
+      }
+    }
+  }
+}
+
+`
