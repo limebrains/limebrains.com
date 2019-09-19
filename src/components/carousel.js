@@ -7,25 +7,43 @@ import { Link } from './link'
 
 const Container = styled.div`
   position: relative;
-  display: flex;
-  min-height: 60vh;
-  // margin-left: 11vw;
-  // margin-right: 11vw;
+  height: 60vh;
   margin-top: 10vh;
   margin-bottom: 10vh;
-
+  white-space: nowrap;
+  overflow:hidden;
 `
 
+const Image = styled.div`
+  position:relative;
+  display: inline-block;
+
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)),url(${props => props.url});
+  background-repeat: no-repeat;
+	background-position: center;
+  background-size: cover;
+  transition: all 0.6s ease-in-out;
+  transform: translateX(${props => props.translateValue}px);
+`
 
 const Button = styled.div`
-  display: flex;
   position: absolute;
-  opacity: 0.5;
+  display: flex;
+  top:0;
+  opacity: 0.8;
+  font-size: 38px;
   width: 5vw;
   min-height: 60vh;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover{
+    opacity: 0.5;
+    background-color: black;
+  }
   &.next{
     right: 0;
     FaAngleLeft{
@@ -35,19 +53,17 @@ const Button = styled.div`
   &.prev{
     left: 0;
   }
-`
 
+  @media (max-width: ${mobileLandscape}px){
+    font-size: 16px;
+  }
+`
 
 
 const Content = styled.div`
   user-select:none;
-  padding-left: 10vw;
-  padding-right: 10vw;
-  width:100%;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),url('https://1r65612jvqxn8fcup46pve6b-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/clear-impact-state-government-background-header.jpg');
-  background-repeat: no-repeat;
-	background-position: center;
-  background-size: cover;
+  transition: all 1s ease-in-out;
+  transform: none;
 
   span{
     &.share{
@@ -79,6 +95,7 @@ const Content = styled.div`
   p{
     position:absolute;
     white-space: nowrap;
+    transition: all 0.6s ease-in-out;
     &.header{
       font-size: 2em;
       font-weight: 600;
@@ -94,7 +111,7 @@ const Content = styled.div`
 
     &.date{
       font-size: .9em;
-      font-weight: 200;
+      font-weight: 300;
       top: 10%;
       left: 10%;
       transform: translate(-10%, -10%);
@@ -111,15 +128,15 @@ const Content = styled.div`
 
     &.subHeader{
       font-size: 1em;
-      font-weight: 200;
+      font-weight: 300;
       color: white;
-      top:  40%;
+      top:  50%;
       left: 50%;
-      transform: translate(-50%, -30%);
+      transform: translate(-50%, -50%);
       @media (max-width: ${mobileLandscape}px){
         font-size: .6em;
-        top: 35%;
-        transform: translate(-50%, -25%);
+        top: 45%;
+        transform: translate(-50%, -45%);
         
       }
     }
@@ -131,6 +148,8 @@ const Content = styled.div`
     position: absolute;
     display: inline-block;
     top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
     color: white;
     padding: 0 3em;
     font-size: 0.8em;
@@ -138,7 +157,7 @@ const Content = styled.div`
     height:34px;
     border: 1px solid;
     border-radius: 50px;
-    border-color: #043d0c;
+    border-color:  #043d0c;
     background-color: #043d0c;
     line-height:34px;
     cursor: pointer;
@@ -160,53 +179,102 @@ const Content = styled.div`
 `
 
 
-const Carousel = () => {
-  return (
+class Carousel extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentIndex: 0,
+      translateValue: 0
+    }
+    this.myRef = React.createRef()
+  }
 
-    <Container background={colors.sections.greenSection.background}  >
-
-      <Button className="prev">
-        <FaAngleLeft color="white" size={30} />
-      </Button>
-      <Button className="next">
-        <FaAngleRight color="white" size={30} />
-      </Button>
+  renderContent = (index) => {
+    return (
       <Content>
         <span className="share">
           <FaShareAlt />
         </span>
         <p className="date">
-          <b>Lime Brains</b> September 18, 2019
-        </p>
+          <b>LimeBrains</b> September 18, 2019
+          </p>
         <p className="header">
-          <Link to="/">Header Header Header Header</Link>
+          <Link to="/">{Slides[index].header}</Link>
         </p>
         <p className="subHeader">
-          SubInfo SubInfo SubInfo
+          {Slides[index].subtitle}
         </p>
-
         <a href="/" className="visit">Show More</a>
-
-
       </Content>
-    </Container>
-  )
+    )
+  }
+
+  nextSlide = () => {
+    if (this.state.currentIndex === (Slides.length - 1)) {
+      return this.setState(prevState => ({
+        currentIndex: 0,
+        translateValue: prevState.translateValue + this.myRef.current.clientWidth * (Slides.length - 1)
+      }))
+    }
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex + 1,
+      translateValue: prevState.translateValue - this.myRef.current.clientWidth
+    }))
+  }
+
+  prevSlide() {
+    if (this.state.currentIndex === 0) {
+      return this.setState(prevState => ({
+        currentIndex: (Slides.length - 1),
+        translateValue: prevState.translateValue - this.myRef.current.clientWidth * (Slides.length - 1)
+      }))
+    }
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex - 1,
+      translateValue: prevState.translateValue + this.myRef.current.clientWidth
+    }))
+  }
+
+  render() {
+    console.log(this.state.currentIndex)
+    return (
+      <div ref={this.myRef}>
+        <Container background={colors.sections.greenSection.background}>
+
+          {
+            Slides.map((slide) => (
+              <Image url={slide.image} translateValue={this.state.translateValue} />
+            ))
+          }
+
+          <Button className="prev" onClick={() => this.prevSlide()} >
+            <FaAngleLeft color="white" />
+          </Button>
+          <Button className="next" onClick={() => this.nextSlide()}>
+            <FaAngleRight color="white" />
+          </Button>
+
+          {this.renderContent(this.state.currentIndex)}
+
+        </Container>
+      </div>
+    )
+  }
+
 }
-
-
 
 export default Carousel;
 
 const Slides = [
   {
-    header: 'Testing w/ React Slider',
-    subtitle: 'subtitle subtitile subtitle',
-    image: 'https://static.pexels.com/photos/8807/sopot-medium.jpg'
+    header: 'Configuration for productive terminal on osx',
+    subtitle: 'In just two easy steps!',
+    image: 'https://i.ytimg.com/vi/HWn85tjFMIQ/maxresdefault.jpg'
   },
   {
-    header: 'Testing w/ React Slider',
-    subtitle: 'subtitle subtitile subtitle',
-    image: 'https://static.pexels.com/photos/7360/startup-photos-large.jpg'
+    header: 'How to easily find biggest files?',
+    subtitle: 'It couldn\'t be easier!',
+    image: 'https://c.pxhere.com/photos/b3/37/coding_computer_hacker_hacking_html_programmer_programming_script-1366057.jpg!d'
   },
   {
     header: 'Testing w/ React Slider',
