@@ -14,7 +14,7 @@ const Blog = ({ data }) => (
   <Layout>
     <SEO title="Page two" />
 
-    <Carousel />
+    <Carousel data={data} />
 
     <Box m={3}>
       <FlexBlog>
@@ -44,6 +44,7 @@ query {
         frontmatter {
           title
           subtitle
+          date
           tags
           image
           seo {
