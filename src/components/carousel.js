@@ -35,12 +35,10 @@ const Link = styled(DefaultLink)`
       cursor: pointer;
       text-align: center;
       transition: all 0.3s ease-in-out;
-
       @media (max-width: ${mobileLandscape}px){
         padding 0 1em;
         font-size: .6em;
       }
-
       &:hover{
         background-color: #fff;
         color: #043d0c;
@@ -86,7 +84,6 @@ const Button = styled.div`
   &.prev{
     left: 0;
   }
-
   @media (max-width: ${mobileLandscape}px){
     font-size: 16px;
   }
@@ -97,7 +94,6 @@ const Content = styled.div`
   user-select:none;
   transition: all 1s ease-in-out;
   transform: none;
-
   span{
     &.share{
       position:absolute;
@@ -119,8 +115,6 @@ const Content = styled.div`
       }
       &:hover {
         transform: rotate(-90deg); 
- 
-
       }
     }
   }
@@ -174,40 +168,6 @@ const Content = styled.div`
       }
     }
   }
-  
-  a{
-    &.visit{
-    text-decoration: none;
-    position: absolute;
-    display: inline-block;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -80%);
-    color: white;
-    padding: 0 3em;
-    font-size: 0.8em;
-    font-weight: 500;
-    height:34px;
-    border: 1px solid;
-    border-radius: 50px;
-    border-color:  #043d0c;
-    background-color: #043d0c;
-    line-height:34px;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-
-    @media (max-width: ${mobileLandscape}px){
-      padding 0 1em;
-      font-size: .6em;
-    }
-
-    &:hover{
-      background-color: #fff;
-      color: #043d0c;
-      }
-    }
-
 
 `
 
