@@ -310,5 +310,3 @@ const Slides = [
     image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
   }
 ]
-
-  `
