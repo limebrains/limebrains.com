@@ -76,14 +76,14 @@ const Slides = [
     image: 'https://c.pxhere.com/photos/b3/37/coding_computer_hacker_hacking_html_programmer_programming_script-1366057.jpg!d',
     header: 'How to easily find biggest files?',
     subtitle: 'How to easily find biggest files?',
-    date: 'September 18 2019',
-    link: '/blog/2017-10-20T00:00-progress-bar/'
+    date: 'September 19 2019',
+    link: '/blog/2017-10-20T01:00-disk-usage/'
   },
   {
     image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
     header: 'How to create alert in osx?',
     subtitle: 'How to create alert in osx?',
-    date: 'September 18 2019',
-    link: '/blog/2017-10-20T00:00-progress-bar/'
+    date: 'September 20 2019',
+    link: '/blog/2017-10-20T02:00-alert-in-osx/'
   }
 ]
