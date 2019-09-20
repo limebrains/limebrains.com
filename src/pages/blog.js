@@ -1,38 +1,25 @@
 import React from 'react'
 import { graphql } from 'gatsby';
 import * as _ from 'lodash';
-
 import Layout from '../components/layout/index'
 import SEO from '../components/seo'
-import { Section } from '../components/section';
-import { colors } from '../components/theme/colors';
-import { SectionHeading } from '../components/heading';
 import { Card } from '../components/card';
 import { Link } from '../components/link';
 import { Img } from '../components/img';
 import { FlexBlog, Box } from '../components/flex';
-import { Reveal, Flip } from 'react-reveal';
-import { LimeBrainsLogo } from '../components/theme/logos';
+
+import Carousel from '../components/carousel';
 
 const Blog = ({ data }) => (
   <Layout>
     <SEO title="Page two" />
 
-    <Section
-      background={colors.sections.greenSection.background}
-    >
-      <Flip left wait={2000}>
-        <Img src={LimeBrainsLogo} responsive width={150} />
-      </Flip>
-      <Reveal right fraction={1}>
-        <SectionHeading title={'Blog'} inverse />
-      </Reveal>
-    </Section>
+    <Carousel data={Slides} />
 
     <Box m={3}>
       <FlexBlog>
         {data.allMarkdownRemark.edges.map((post) => (
-          <Box >
+          <Box key={post.node.frontmatter.title}>
             <Link to={post.node.fields.slug}>
               <Card title={_.get(post, 'node.frontmatter.title')}>
                 <Img src={_.get(post, 'node.frontmatter.image')} />
@@ -57,6 +44,7 @@ query {
         frontmatter {
           title
           subtitle
+          date
           tags
           image
           seo {
@@ -74,3 +62,26 @@ query {
   }
 }
 `
+const Slides = [
+  {
+    image: 'https://i.ytimg.com/vi/HWn85tjFMIQ/maxresdefault.jpg',
+    header: 'Add a progress meter to your loops in a second',
+    subtitle: 'It couldn\'t be easier!',
+    date: 'September 18 2019',
+    link: '/blog/2017-10-20T00:00-progress-bar/'
+  },
+  {
+    image: 'https://c.pxhere.com/photos/b3/37/coding_computer_hacker_hacking_html_programmer_programming_script-1366057.jpg!d',
+    header: 'How to easily find biggest files?',
+    subtitle: 'Press button below to find out!',
+    date: 'September 19 2019',
+    link: '/blog/2017-10-20T01:00-disk-usage/'
+  },
+  {
+    image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
+    header: 'How to create alert in osx?',
+    subtitle: 'Just one easy step!',
+    date: 'September 20 2019',
+    link: '/blog/2017-10-20T02:00-alert-in-osx/'
+  }
+]

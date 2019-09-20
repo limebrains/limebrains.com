@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import { mobileLandscape } from './responsive';
+import { mobileLandscape, mobilePortrait } from './responsive';
 import { MazarLogo, NokiaLogo, SiemensLogo, HeaderLogo } from './theme/logos'
 import { LimeBrainsVideoMp4, LimeBrainsVideoWebm } from './theme/videos'
 
@@ -48,7 +48,11 @@ const VideoWrapper = styled.div`
   width: 100%;
   height: calc(100vh - ${(props) => props.size}px);
   line-height: 0;
-
+  @supports (-webkit-appearance:none){
+    @media (max-width: ${mobilePortrait}){
+        min-height: calc(100vh - 56px);
+        }
+    }
   video {
     width: 100%;
     height: 100%;

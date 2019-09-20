@@ -10,13 +10,13 @@ const CardWrapper = styled.div`
 
   }
   img {
-    object-fit: scale-down;
+    object-fit: fill;
     height: 200px;
-    margin: 0 auto;
+    width: 100%;
   }
 `
 
-export const Card = ({children, ...rest}) => (
+export const Card = ({ children, ...rest }) => (
   <CardWrapper>
     <DefaultCard {...rest}>{children}</DefaultCard>
   </CardWrapper>

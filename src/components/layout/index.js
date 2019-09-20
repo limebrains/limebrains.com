@@ -35,6 +35,17 @@ const renderHeader = (siteTitle) => {
   )
 }
 
+const renderVideo = () => {
+  return (
+    <LocationProvider>
+      {(context) =>
+        context.location.pathname === '/' ?
+          <HeaderVideo /> : ''
+      }
+    </LocationProvider>
+  )
+}
+
 const Layout = ({ children }) => {
 
   const [currentWidth, setCurrentWidth] = useState(
@@ -78,7 +89,7 @@ const Layout = ({ children }) => {
                 }}
               >
 
-                <HeaderVideo />
+                {renderVideo()}
                 {renderHeader(data.site.siteMetadata.title)}
 
                 <ContentWrapper>{children}</ContentWrapper>
