@@ -38,7 +38,6 @@ class Carousel extends React.Component {
   }
 
   renderButtons = (data, render) => {
-    console.log(render)
     if (render) {
       return (
         <div>
@@ -49,7 +48,6 @@ class Carousel extends React.Component {
             <FaAngleRight color="white" />
           </Button>
         </div>
-
       )
     }
   }
@@ -82,7 +80,6 @@ class Carousel extends React.Component {
 
   render() {
     const { data } = this.props;
-
     return (
       <ResponsiveContext.Consumer>{({ isPhonePortrait }) => (
         <div ref={this.myRef}>
@@ -108,7 +105,6 @@ class Carousel extends React.Component {
 }
 
 export default Carousel;
-
 
 const Container = styled.div`
   position: relative;

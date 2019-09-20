@@ -10,8 +10,6 @@ import { FlexBlog, Box } from '../components/flex';
 
 import Carousel from '../components/carousel';
 
-
-
 const Blog = ({ data }) => (
   <Layout>
     <SEO title="Page two" />
