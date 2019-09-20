@@ -48,7 +48,11 @@ const VideoWrapper = styled.div`
   width: 100%;
   height: calc(100vh - ${(props) => props.size}px);
   line-height: 0;
-
+  @supports (-webkit-appearance:none) {
+      .os-android & {
+        min-height: calc(100vh - 56px);
+      }
+    }
   video {
     width: 100%;
     height: 100%;
