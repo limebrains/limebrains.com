@@ -1,10 +1,97 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql } from "gatsby";
 import { colors } from '../components/theme/colors';
 import { FaAngleRight, FaAngleLeft, FaShareAlt } from "react-icons/fa";
 import { mobileLandscape } from './responsive';
 import { Link as DefaultLink } from './link'
+
+
+class Carousel extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentIndex: 0,
+      translateValue: 0
+    }
+    this.myRef = React.createRef()
+  }
+
+  renderContent = (index, data) => {
+    return (
+      <Content>
+        <span className="share">
+          <FaShareAlt />
+        </span>
+        <p className="date">
+          <b>LimeBrains</b>{data[index].date}
+        </p>
+        <p className="header">
+          <Link to="/">{data[index].header}</Link>
+        </p>
+        <p className="subHeader">
+          {data[index].subtitle}
+        </p>
+        <Link to={data[index].link} className="visit">Show More</Link>
+      </Content>
+    )
+  }
+
+  nextSlide = (data) => {
+    if (this.state.currentIndex === (data.length - 1)) {
+      return this.setState(prevState => ({
+        currentIndex: 0,
+        translateValue: prevState.translateValue + this.myRef.current.clientWidth * (data.length - 1)
+      }))
+    }
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex + 1,
+      translateValue: prevState.translateValue - this.myRef.current.clientWidth
+    }))
+  }
+
+  prevSlide(data) {
+    if (this.state.currentIndex === 0) {
+      return this.setState(prevState => ({
+        currentIndex: (data.length - 1),
+        translateValue: prevState.translateValue - this.myRef.current.clientWidth * (data.length - 1)
+      }))
+    }
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex - 1,
+      translateValue: prevState.translateValue + this.myRef.current.clientWidth
+    }))
+  }
+
+  render() {
+    const { data } = this.props;
+    return (
+      <div ref={this.myRef}>
+        <Container background={colors.sections.greenSection.background}>
+
+          {
+            data.map((slide) => (
+              <Image url={slide.image} key={slide.link} translateValue={this.state.translateValue} />
+            ))
+          }
+
+          <Button className="prev" onClick={() => this.prevSlide(data)} >
+            <FaAngleLeft color="white" />
+          </Button>
+          <Button className="next" onClick={() => this.nextSlide(data)}>
+            <FaAngleRight color="white" />
+          </Button>
+
+          {this.renderContent(this.state.currentIndex, data)}
+
+        </Container>
+      </div>
+    )
+  }
+
+}
+
+export default Carousel;
+
 
 const Container = styled.div`
   position: relative;
@@ -171,102 +258,3 @@ const Content = styled.div`
 
 `
 
-
-class Carousel extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      currentIndex: 0,
-      translateValue: 0
-    }
-    this.myRef = React.createRef()
-  }
-
-  renderContent = (index) => {
-    const { data } = this.props;
-    console.log(data)
-    return (
-      <Content>
-        <span className="share">
-          <FaShareAlt />
-        </span>
-        <p className="date">
-          <b>LimeBrains</b>{data.allMarkdownRemark.edges[index].node.frontmatter.date}
-        </p>
-        <p className="header">
-          <Link to="/">{data.allMarkdownRemark.edges[index].node.frontmatter.title}</Link>
-        </p>
-        <p className="subHeader">
-          {data.allMarkdownRemark.edges[index].node.frontmatter.subtitle}
-        </p>
-        <Link to={data.allMarkdownRemark.edges[index].node.fields.slug} className="visit">Show More</Link>
-      </Content>
-    )
-  }
-
-  nextSlide = () => {
-    if (this.state.currentIndex === (Slides.length - 1)) {
-      return this.setState(prevState => ({
-        currentIndex: 0,
-        translateValue: prevState.translateValue + this.myRef.current.clientWidth * (Slides.length - 1)
-      }))
-    }
-    this.setState(prevState => ({
-      currentIndex: prevState.currentIndex + 1,
-      translateValue: prevState.translateValue - this.myRef.current.clientWidth
-    }))
-  }
-
-  prevSlide() {
-    if (this.state.currentIndex === 0) {
-      return this.setState(prevState => ({
-        currentIndex: (Slides.length - 1),
-        translateValue: prevState.translateValue - this.myRef.current.clientWidth * (Slides.length - 1)
-      }))
-    }
-    this.setState(prevState => ({
-      currentIndex: prevState.currentIndex - 1,
-      translateValue: prevState.translateValue + this.myRef.current.clientWidth
-    }))
-  }
-
-  render() {
-    return (
-      <div ref={this.myRef}>
-        <Container background={colors.sections.greenSection.background}>
-
-          {
-            Slides.map((slide) => (
-              <Image url={slide.image} key={slide.link} translateValue={this.state.translateValue} />
-            ))
-          }
-
-          <Button className="prev" onClick={() => this.prevSlide()} >
-            <FaAngleLeft color="white" />
-          </Button>
-          <Button className="next" onClick={() => this.nextSlide()}>
-            <FaAngleRight color="white" />
-          </Button>
-
-          {this.renderContent(this.state.currentIndex)}
-
-        </Container>
-      </div>
-    )
-  }
-
-}
-
-export default Carousel;
-
-const Slides = [
-  {
-    image: 'https://i.ytimg.com/vi/HWn85tjFMIQ/maxresdefault.jpg',
-  },
-  {
-    image: 'https://c.pxhere.com/photos/b3/37/coding_computer_hacker_hacking_html_programmer_programming_script-1366057.jpg!d',
-  },
-  {
-    image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
-  }
-]
