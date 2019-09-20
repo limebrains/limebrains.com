@@ -10,29 +10,7 @@ import { FlexBlog, Box } from '../components/flex';
 
 import Carousel from '../components/carousel';
 
-const Slides = [
-  {
-    image: 'https://i.ytimg.com/vi/HWn85tjFMIQ/maxresdefault.jpg',
-    header: 'Add a progress meter to your loops in a second',
-    subtitle: 'Add a progress meter to your loops in a second',
-    date: 'September 18 2019',
-    link: '/blog/2017-10-20T00:00-progress-bar/'
-  },
-  {
-    image: 'https://c.pxhere.com/photos/b3/37/coding_computer_hacker_hacking_html_programmer_programming_script-1366057.jpg!d',
-    header: 'How to easily find biggest files?',
-    subtitle: 'How to easily find biggest files?',
-    date: 'September 18 2019',
-    link: '/blog/2017-10-20T00:00-progress-bar/'
-  },
-  {
-    image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
-    header: 'How to create alert in osx?',
-    subtitle: 'How to create alert in osx?',
-    date: 'September 18 2019',
-    link: '/blog/2017-10-20T00:00-progress-bar/'
-  }
-]
+
 
 const Blog = ({ data }) => (
   <Layout>
@@ -86,3 +64,26 @@ query {
   }
 }
 `
+const Slides = [
+  {
+    image: 'https://i.ytimg.com/vi/HWn85tjFMIQ/maxresdefault.jpg',
+    header: 'Add a progress meter to your loops in a second',
+    subtitle: 'Add a progress meter to your loops in a second',
+    date: 'September 18 2019',
+    link: '/blog/2017-10-20T00:00-progress-bar/'
+  },
+  {
+    image: 'https://c.pxhere.com/photos/b3/37/coding_computer_hacker_hacking_html_programmer_programming_script-1366057.jpg!d',
+    header: 'How to easily find biggest files?',
+    subtitle: 'How to easily find biggest files?',
+    date: 'September 18 2019',
+    link: '/blog/2017-10-20T00:00-progress-bar/'
+  },
+  {
+    image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
+    header: 'How to create alert in osx?',
+    subtitle: 'How to create alert in osx?',
+    date: 'September 18 2019',
+    link: '/blog/2017-10-20T00:00-progress-bar/'
+  }
+]

@@ -4,7 +4,8 @@ import { colors } from '../components/theme/colors';
 import { FaAngleRight, FaAngleLeft, FaShareAlt } from "react-icons/fa";
 import { mobileLandscape } from './responsive';
 import { Link as DefaultLink } from './link'
-
+import { Swipeable } from 'react-swipeable';
+import { Context as ResponsiveContext } from 'react-responsive'
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -36,6 +37,23 @@ class Carousel extends React.Component {
     )
   }
 
+  renderButtons = (data, render) => {
+    console.log(render)
+    if (render) {
+      return (
+        <div>
+          <Button className="prev" onClick={() => this.prevSlide(data)} >
+            <FaAngleLeft color="white" />
+          </Button>
+          <Button className="next" onClick={() => this.nextSlide(data)}>
+            <FaAngleRight color="white" />
+          </Button>
+        </div>
+
+      )
+    }
+  }
+
   nextSlide = (data) => {
     if (this.state.currentIndex === (data.length - 1)) {
       return this.setState(prevState => ({
@@ -64,27 +82,26 @@ class Carousel extends React.Component {
 
   render() {
     const { data } = this.props;
+
     return (
-      <div ref={this.myRef}>
-        <Container background={colors.sections.greenSection.background}>
+      <ResponsiveContext.Consumer>{({ isPhonePortrait }) => (
+        <div ref={this.myRef}>
+          <Swipeable onSwipedLeft={() => this.nextSlide(data)} onSwipedRight={() => this.prevSlide(data)}>
+            <Container background={colors.sections.greenSection.background}>
 
-          {
-            data.map((slide) => (
-              <Image url={slide.image} key={slide.link} translateValue={this.state.translateValue} />
-            ))
-          }
+              {
+                data.map((slide) => (
+                  <Image url={slide.image} key={slide.header} translateValue={this.state.translateValue} />
+                ))
+              }
+              {this.renderButtons(data, (isPhonePortrait ? false : true))}
+              {this.renderContent(this.state.currentIndex, data)}
 
-          <Button className="prev" onClick={() => this.prevSlide(data)} >
-            <FaAngleLeft color="white" />
-          </Button>
-          <Button className="next" onClick={() => this.nextSlide(data)}>
-            <FaAngleRight color="white" />
-          </Button>
-
-          {this.renderContent(this.state.currentIndex, data)}
-
-        </Container>
-      </div>
+            </Container>
+          </Swipeable>
+        </div>
+      )}
+      </ResponsiveContext.Consumer>
     )
   }
 
