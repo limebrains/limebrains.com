@@ -109,7 +109,6 @@ export default Carousel;
 const Container = styled.div`
   position: relative;
   height: 60vh;
-  margin-top: 10vh;
   margin-bottom: 10vh;
   white-space: nowrap;
   overflow:hidden;
