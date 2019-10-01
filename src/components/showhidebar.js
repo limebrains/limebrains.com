@@ -41,7 +41,6 @@ const Divider = styled.div`
 `;
 
 const Content = styled.div`
-  border-radius: 10px;
   padding: 3rem;
   transition: all 0.2s ease-in-out;
   border: 1px solid #9c9595;

@@ -39,7 +39,7 @@ export const FAQ = () => {
         myIndex='0'
         content="Yes, we specialize in development of the mobile apps for Android / iOS"/>
       <Bar
-        header="What technologies are you familiar with?"
+        header="What technologies you use?"
         myIndex='1'
         content="Python, Django/REST, Pyramid, PostgreSQL, MySQL, MongoDB, ElasticSearch, AWS, serverless. ReactJS, Angular, ES6, Webpack, Redux, TypeScript. We also have experience in the following areas: SQL, Ajax, OOP, and software design and testing, Django, Python, Django Rest Framework, Angular, JS, HTML5, JQuery."/>
       <Bar
