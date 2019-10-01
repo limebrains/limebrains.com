@@ -253,10 +253,10 @@ export const Footer = () => {
                   Follow us:
                 </p>
                 <SocialIcon>
-                  <IconBordered icon="FaGit"  />
+                  <OutSideLink href={'https://github.com/limebrains/'}><IconBordered icon="FaGit" /></OutSideLink>
                 </SocialIcon>
                 <SocialIcon>
-                  <IconBordered icon="FaFacebookF"  />
+                  <OutSideLink href={'https://www.facebook.com/limebrains'}><IconBordered icon="FaFacebookF" /></OutSideLink>
                 </SocialIcon>
               </Box>
             </LogoGrid>
@@ -383,10 +383,10 @@ export const Footer = () => {
                         Follow us:
                       </p>
                       <SocialIcon>
-                        <IconBordered icon="FaGit"  />
+                        <OutSideLink href={'https://github.com/limebrains/'}><IconBordered icon="FaGit" /></OutSideLink>
                       </SocialIcon>
                       <SocialIcon>
-                        <IconBordered icon="FaFacebookF"  />
+                        <OutSideLink href={'https://www.facebook.com/limebrains'}><IconBordered icon="FaFacebookF" /></OutSideLink>
                       </SocialIcon>
                     </Box>
                   </LogoGrid>

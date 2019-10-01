@@ -82,8 +82,8 @@ const Header = (props) => {
 								text: true
 							}}
 						/>
-						<HeaderButtonScrolled
-							to="contact"
+						<HeaderHrefButton
+							href="mailto: mail@limebrains.com"
 							text="CONTACT"
 							activeClass="active"
 							smooth={defaultSmooth}

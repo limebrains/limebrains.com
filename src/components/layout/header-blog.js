@@ -1,6 +1,6 @@
 import React from 'react';
 import { MobileView, DesktopView } from '../responsive'
-import { HeaderButton, HeaderButtonScrolled, HeaderHrefButton } from '../common/header-button'
+import { HeaderButton, HeaderHrefButton } from '../common/header-button'
 import {
 	HeaderWrapper,
 	LineOfBurger,
@@ -9,7 +9,7 @@ import {
 } from '../common/header-styles';
 import HeaderPlain from '../common/header-plain';
 
-const inputBox = React.createRef()
+const inputBox = React.createRef();
 
 
 const Header = () => {
@@ -63,8 +63,8 @@ const Header = () => {
 								text: true
 							}}
 						/>
-						<HeaderButton
-							to="/#contact"
+						<HeaderHrefButton
+							href="mailto: mail@limebrains.com"
 							text="CONTACT"
 							style={{
 								white: true,
@@ -95,7 +95,7 @@ const Header = () => {
 											text: true
 										}}
 									/>
-									<HeaderButton
+									{false && (<HeaderButton
 										to="/#clients"
 										text="CLIENTS"
 										style={{
@@ -103,7 +103,7 @@ const Header = () => {
 											outline: true,
 											text: true
 										}}
-									/>
+									/>)}
 									<HeaderHrefButton
 										text="GITHUB"
 										href="https://github.com/limebrains/"
@@ -131,8 +131,8 @@ const Header = () => {
 											text: true
 										}}
 									/>
-									<HeaderButton
-										to="/#contact"
+									<HeaderHrefButton
+										href="mailto: mail@limebrains.com"
 										text="CONTACT"
 										style={{
 											white: true,
