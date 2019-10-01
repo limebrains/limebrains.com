@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 const HeaderText = styled.div`
   color: white;
-  text-align: center;
-
-`
-
+  
+  h1 {
+    margin-bottom: 4rem;
+  }
+`;
 
 
 class Typer extends React.Component {
@@ -17,18 +18,19 @@ class Typer extends React.Component {
     isDeleting: false,
     typingSpeed: 70,
     i: 0
-  }
+  };
 
   componentDidMount() {
     this.loop();
   }
+
   componentWillUnmount() {
     clearInterval();
   }
 
   loop = () => {
-    const { slogan, title, subtitle, isDeleting, typingSpeed, i } = this.state;
-    const { data } = this.props;
+    const {slogan, title, subtitle, isDeleting, typingSpeed, i} = this.state;
+    const {data} = this.props;
     const j = i % data.slogan.length;
     this.setState({
       title: data.title.substring(0, title.length + 1),
@@ -49,13 +51,13 @@ class Typer extends React.Component {
       })
     }
     if (!isDeleting && slogan === data.slogan[j]) {
-      setTimeout(() => this.setState({ isDeleting: true }), 1000)
+      setTimeout(() => this.setState({isDeleting: true}), 1000)
     } else if (isDeleting && slogan === '') {
-      setTimeout(() => this.setState({ isDeleting: false, i: i + 1 }), 1000)
+      setTimeout(() => this.setState({isDeleting: false, i: i + 1}), 1000)
     }
 
     setTimeout(this.loop, typingSpeed);
-  }
+  };
 
   render() {
     return (

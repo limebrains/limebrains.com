@@ -2,19 +2,20 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaChevronDown } from 'react-icons/fa';
 import { mobileLandscape } from './responsive';
-
+import { colors } from './theme/colors';
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
+  user-select: none;
 
   @media (max-width: ${mobileLandscape}px ){
     font-size: 1em;
   }
-
-`
+`;
 
 const Sector = styled.div`
   max-height: ${props => props.show}px;
@@ -22,32 +23,32 @@ const Sector = styled.div`
   margin-right: 5%;
   overflow-y: hidden;
   transition: max-height 0.4s linear;
+  cursor: pointer;
   p{
     float: left;
   }
-`
+`;
 
 const RightSector = styled.div`
-  display: flex;
-  float:  right;
-  width:  50px;
-  height: 100%;
-  justify-content: flex-end;
-`
+  position: absolute;
+  right: 5%;
+  top: 0;
+`;
 
 const Divider = styled.div`
   background: #D2CBCB;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 2em;
-  margin-bottom: 2em;
-`
+  margin: 2em 5%;
+`;
 
 const Content = styled.div`
   border-radius: 10px;
-  margin-left: 5%;
-  margin-right: 5%;
-`
+  padding: 3rem;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #9c9595;
+  background: ${colors.sections.lightSection};
+  margin-top: 2rem;
+  line-height: 1.8;
+`;
 
 const Icon = styled(FaChevronDown)`
   transition: 0.4s;
@@ -60,28 +61,30 @@ const Icon = styled(FaChevronDown)`
   }
 `
 
-const Bar = ({ header, content, myIndex }) => {
-  const [selectedIndex, setIndex] = useState({ index: '0', open: false });
+const Bar = ({header, content, myIndex}) => {
+  const [selectedIndex, setIndex] = useState({index: '0', open: false});
+  const toggle = () => setIndex({index: myIndex, open: !selectedIndex.open});
   return (
-
-    < Container >
-      <Sector show={selectedIndex.open ? 500 : 50}>
-        <p>{header}</p>
+    <Container>
+      <Sector
+        show={selectedIndex.open ? 500 : 50}
+        onClick={toggle}
+      >
+        <div>{header}</div>
+        {selectedIndex.open && (
+          <Content>
+            {content}
+          </Content>
+        )}
 
         <RightSector>
-          <Icon className={`${selectedIndex.open ? "clicked" : ""}`} onClick={() => { setIndex({ index: myIndex, open: (selectedIndex.open ? false : true) }) }} size={24} />
+          <Icon className={`${selectedIndex.open ? "clicked" : ""}`} size={24}/>
         </RightSector>
-        <Content  >
-          <p>
-            {content}
-          </p>
-        </Content>
       </Sector>
 
-      <Divider />
-    </Container >
-
+      <Divider/>
+    </Container>
   )
-}
+};
 
 export default Bar;

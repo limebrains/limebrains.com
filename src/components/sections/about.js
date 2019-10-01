@@ -43,7 +43,6 @@ export const About = () => {
               <Flex flex={1} pt={'2rem'} justify={'center'} align={'center'}>
                 <Flex flex={1} justify={'center'} align={'center'}>
                   <Flip right fraction={1} pr={'2rem'}>
-                    {/* <Img src={LimeBrainsLogo} responsive width={200}/> */}
                     <AnimatedProgressProvider
                       valueStart={0}
                       valueEnd={40}
@@ -55,8 +54,7 @@ export const About = () => {
                         return (
                           <CircularProgressbar
                             value={value}
-                            text={`${roundedValue}
-                      projektów`}
+                            text={`${roundedValue} projects`}
                             maxValue={40}
                             strokeWidth={5}
                             /* This is important to include, because if you're fully managing the
@@ -86,7 +84,7 @@ export const About = () => {
                         return (
                           <CircularProgressbar
                             value={value}
-                            text={`${roundedValue} \n \n\n\nklientów`}
+                            text={`${roundedValue} \n \n\n\nclients`}
                             maxValue={25}
                             strokeWidth={5}
                             /* This is important to include, because if you're fully managing the

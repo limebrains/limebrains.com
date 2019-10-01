@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Particles from 'react-particles-js'
 import React from 'react'
 import { colors, gradients } from './../theme/colors'
@@ -112,27 +112,36 @@ const LogoGrid = styled.div`
   }
 
 `
+const footerLinkStyle = css`
+  text-decoration: none;
+  color: white;
+  position: relative;
+  &:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover:before{
+    visibility: visible;
+    transform: scaleX(1);
+  }
+`;
+
 const Link = styled(LinkDefault)`
-  
-    position: relative;
-    &:before{
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #FFF;
-      visibility: hidden;
-      transform: scaleX(0);
-      transition: all 0.3s ease-in-out;
-    }
-    &:hover:before{
-      visibility: visible;
-      transform: scaleX(1);
-    }
-  
-`
+  ${footerLinkStyle};
+`;
+
+const OutSideLink = styled.a`
+  ${footerLinkStyle};
+`;
+
 const SocialIcon = styled.div`
   width:50px;
   height:50px;
@@ -249,31 +258,38 @@ export const Footer = () => {
                 <SocialIcon>
                   <IconBordered icon="FaFacebookF"  />
                 </SocialIcon>
-                <SocialIcon>
-                  <IconBordered icon="FaInstagram"  />
-                </SocialIcon>
               </Box>
             </LogoGrid>
             <NavList>
               <NavColumn>
                 <ul>
                   <li className="navHeader">
-                    Projects
+                    OpenSource
                   </li>
                   <li>
-                    Pydrill
+                    <OutSideLink href={'https://github.com/PythonicNinja/pydrill'}>
+                      Pydrill
+                    </OutSideLink>
                   </li>
                   <li>
-                    Pet
+                    <OutSideLink href={'https://github.com/limebrains/pet'}>
+                      Pet
+                    </OutSideLink>
                   </li>
                   <li>
-                    Sufler
+                    <OutSideLink href={'https://github.com/limebrains/sufler'}>
+                      Sufler
+                    </OutSideLink>
                   </li>
                   <li>
-                    PyOlx
+                    <OutSideLink href={'https://github.com/limebrains/pyolx'}>
+                      PyOlx
+                    </OutSideLink>
                   </li>
                   <li>
-                    PyOtodom
+                    <OutSideLink href={'https://github.com/limebrains/pyotodom'}>
+                      PyOtodom
+                    </OutSideLink>
                   </li>
                 </ul>
               </NavColumn>
@@ -283,13 +299,29 @@ export const Footer = () => {
                     Clients
                   </li>
                   <li>
-                    Vox'M
+                    <OutSideLink href={'https://www.mazars.fr/'}>
+                      Mazars
+                    </OutSideLink>
                   </li>
                   <li>
-                    Villoid
+                    <OutSideLink href={'https://attensi.com'}>
+                      Attensi
+                    </OutSideLink>
                   </li>
                   <li>
-                    Coinfalcon
+                    <OutSideLink href={'https://www.voxm.live'}>
+                      Vox'M
+                    </OutSideLink>
+                  </li>
+                  <li>
+                    <OutSideLink href={'https://villoid.no/'}>
+                      Villoid
+                    </OutSideLink>
+                  </li>
+                  <li>
+                    <OutSideLink href={'https://coinfalcon.com'}>
+                      Coinfalcon
+                    </OutSideLink>
                   </li>
                 </ul>
               </NavColumn>
@@ -301,17 +333,17 @@ export const Footer = () => {
                     <li>
                       <Link to={'/'}>Home</Link>
                     </li>
-                    <li>
+                    {false && (<li>
                       <Link to={'/'}>Clients</Link>
-                    </li>
+                    </li>)}
                     <li>
-                      <Link to={'/'}>Projects</Link>
+                      <OutSideLink href={'https://github.com/limebrains/'}>GitHub</OutSideLink>
                     </li>
                     <li>
                       <Link to={'/blog'}>Blog</Link>
                     </li>
                     <li>
-                      <Link to={'/'}>Contact</Link>
+                      <OutSideLink href={'mailto: mail@limebrains.com'}>Contact</OutSideLink>
                     </li>
                     <li>
                       <Link to={'/en/privacy'}>Privacy</Link>
@@ -356,31 +388,38 @@ export const Footer = () => {
                       <SocialIcon>
                         <IconBordered icon="FaFacebookF"  />
                       </SocialIcon>
-                      <SocialIcon>
-                        <IconBordered icon="FaInstagram"  />
-                      </SocialIcon>
                     </Box>
                   </LogoGrid>
                   <NavList>
                   <NavColumn>
                 <ul>
                   <li className="navHeader">
-                    Projects
+                    Open Source
                   </li>
                   <li>
-                    Pydrill
+                    <OutSideLink href={'https://github.com/PythonicNinja/pydrill'}>
+                      Pydrill
+                    </OutSideLink>
                   </li>
                   <li>
-                    Pet
+                    <OutSideLink href={'https://github.com/limebrains/pet'}>
+                      Pet
+                    </OutSideLink>
                   </li>
                   <li>
-                    Sufler
+                    <OutSideLink href={'https://github.com/limebrains/sufler'}>
+                      Sufler
+                    </OutSideLink>
                   </li>
                   <li>
-                    PyOlx
+                    <OutSideLink href={'https://github.com/limebrains/pyolx'}>
+                      PyOlx
+                    </OutSideLink>
                   </li>
                   <li>
-                    PyOtodom
+                    <OutSideLink href={'https://github.com/limebrains/pyotodom'}>
+                      PyOtodom
+                    </OutSideLink>
                   </li>
                 </ul>
               </NavColumn>
@@ -390,13 +429,29 @@ export const Footer = () => {
                     Clients
                   </li>
                   <li>
-                    Vox'M
+                    <OutSideLink href={'https://www.mazars.fr/'}>
+                      Mazars
+                    </OutSideLink>
                   </li>
                   <li>
-                    Villoid
+                    <OutSideLink href={'https://attensi.com'}>
+                      Attensi
+                    </OutSideLink>
                   </li>
                   <li>
-                    Coinfalcon
+                    <OutSideLink href={'https://www.voxm.live'}>
+                      Vox'M
+                    </OutSideLink>
+                  </li>
+                  <li>
+                    <OutSideLink href={'https://villoid.no/'}>
+                      Villoid
+                    </OutSideLink>
+                  </li>
+                  <li>
+                    <OutSideLink href={'https://coinfalcon.com'}>
+                      Coinfalcon
+                    </OutSideLink>
                   </li>
                 </ul>
               </NavColumn>
@@ -408,11 +463,11 @@ export const Footer = () => {
                     <li>
                       <Link to={'/'}>Home</Link>
                     </li>
-                    <li>
+                    {false && (<li>
                       <Link to={'/'}>Clients</Link>
-                    </li>
+                    </li>)}
                     <li>
-                      <Link to={'/'}>Projects</Link>
+                      <OutSideLink href={'https://github.com/limebrains/'}>Github</OutSideLink>
                     </li>
                     <li>
                       <Link to={'/blog'}>Blog</Link>

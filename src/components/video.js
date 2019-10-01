@@ -101,12 +101,14 @@ const HeaderVideo = () => {
           start={'rgb(0,0,0, 0.3)'}
           end={'rgba(0, 0, 0, 0.4)'}
         >
-          <Typer data={{
-            title: 'Lime Brains',
-            subtitle: 'Software house where business questions,',
-            slogan: ["meet software answers.", "slogan2", "slogan3", "slogan4"]
-          }}
-            typingSpeed="70" />
+          <Typer
+            data={{
+              title: 'Lime Brains',
+              subtitle: 'Software house where business questions,',
+              slogan: ["meet software answers.", "meet smart ideas.", "meet great people.", "meet deadlines."]
+            }}
+            typingSpeed="70"
+          />
         </TextWrapper>
 
         <video

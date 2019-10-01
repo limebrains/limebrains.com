@@ -38,8 +38,8 @@ const Header = (props) => {
 							}}
 
 						/>
-						<HeaderButtonScrolled
-							to="clients"
+						{false && (<HeaderButtonScrolled
+							to="/#clients"
 							text="CLIENTS"
 							activeClass="active"
 							smooth={defaultSmooth}
@@ -50,7 +50,7 @@ const Header = (props) => {
 								outline: true,
 								text: true
 							}}
-						/>
+						/>)}
 						<HeaderHrefButton
 							text="GITHUB"
 							href="https://github.com/limebrains/"
@@ -122,7 +122,7 @@ const Header = (props) => {
 										}}
 									/>
 									<HeaderButtonScrolled
-										to="clients"
+										to="/#clients"
 										text="CLIENTS"
 										activeClass="active"
 										smooth={defaultSmooth}

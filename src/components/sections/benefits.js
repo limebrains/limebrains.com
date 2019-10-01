@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import { FaGit } from 'react-icons/fa'
+import { FaAndroid, FaApple, FaGithub, FaCloud, FaBug, FaCalendar } from 'react-icons/fa'
 
 const Container = styled.div`
   position: relative;
@@ -21,19 +21,19 @@ const Container = styled.div`
   @media only screen and (max-width: 360px){
     justify-items: center;
   }
-`
+`;
 
 const Box = styled.div`
   width: 300px;
   height: 100px;
   padding-top: 4rem;
-`
+`;
 
 const IconWrapper = styled.div`
   width:20%;
   height:100%;
   float:left;
-`
+`;
 
 const TextWrapper = styled.div`
   height: 100%;
@@ -52,72 +52,71 @@ const TextWrapper = styled.div`
     font-size: 1.1em;
     font-weight: 100;
   }
-`
+`;
 
 
 export const JobSection = () => {
-  return(
-      <Container>
-        <Box>
-          <IconWrapper>
-            <FaGit size={32} />
-          </IconWrapper>
-          <TextWrapper>
-            <h4>Top remote jobs</h4> 
-            <p>Benefit from our sales power and get to work on the most interesting projects around </p> 
-          </TextWrapper>
-        </Box>
-        
-        <Box>
-          <IconWrapper>
-            <FaGit size={32} />
-          </IconWrapper>
-          <TextWrapper>
-            <h4>Title title title title</h4> 
-            <p>Some textSome textSome textSome </p> 
-          </TextWrapper>
-        </Box>
-        
-        <Box>
-          <IconWrapper>
-            <FaGit size={32} />
-          </IconWrapper>
-          <TextWrapper>
-            <h4>Title title title title</h4> 
-            <p>Some textSome textSome textSome </p> 
-          </TextWrapper>
-        </Box>
-        
-        <Box>
-          <IconWrapper>
-            <FaGit size={32} />
-          </IconWrapper>
-          <TextWrapper>
-            <h4>Title title title title</h4> 
-            <p>Some textSome textSome textSome </p> 
-          </TextWrapper>
-        </Box>
-        
-        <Box>
-          <IconWrapper>
-            <FaGit size={32} />
-          </IconWrapper>
-          <TextWrapper>
-            <h4>Title title title title</h4> 
-            <p>Some textSome textSome textSome </p> 
-          </TextWrapper>
-        </Box>
-        
-        <Box>
-          <IconWrapper>
-            <FaGit size={32} />
-          </IconWrapper>
-          <TextWrapper>
-            <h4>Title title title title</h4> 
-            <p>Some textSome textSome textSome </p> 
-          </TextWrapper>
-        </Box>
-      </Container>
+  return (
+    <Container>
+      <Box>
+        <IconWrapper>
+          <FaAndroid size={32}/>
+        </IconWrapper>
+        <TextWrapper>
+          <h4>Android</h4>
+          <p>We develop Android apps</p>
+        </TextWrapper>
+      </Box>
+
+      <Box>
+        <IconWrapper>
+          <FaApple size={32}/>
+        </IconWrapper>
+        <TextWrapper>
+          <h4>iOS</h4>
+          <p>We develop iOS apps both for iPhone's or iPad's</p>
+        </TextWrapper>
+      </Box>
+
+      <Box>
+        <IconWrapper>
+          <FaCloud size={32}/>
+        </IconWrapper>
+        <TextWrapper>
+          <h4>Cloud</h4>
+          <p>We are familiar with: AWS cloud, Google Cloud, Azure, Hetzner</p>
+        </TextWrapper>
+      </Box>
+
+      <Box>
+        <IconWrapper>
+          <FaGithub size={32}/>
+        </IconWrapper>
+        <TextWrapper>
+          <h4>Open Source</h4>
+          <p>We believe and contribute to Open Source projects</p>
+        </TextWrapper>
+      </Box>
+
+      <Box>
+        <IconWrapper>
+          <FaBug size={32}/>
+        </IconWrapper>
+        <TextWrapper>
+          <h4>Test Driven Development</h4>
+          <p>We believe in Test driven development</p>
+        </TextWrapper>
+      </Box>
+
+      <Box>
+        <IconWrapper>
+          <FaCalendar size={32}/>
+        </IconWrapper>
+        <TextWrapper>
+          <h4>Goals</h4>
+          <p>We believe that reaching goals needs flexible attitude</p>
+        </TextWrapper>
+      </Box>
+    </Container>
   )
-  
-}
+};

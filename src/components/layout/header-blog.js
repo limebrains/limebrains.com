@@ -1,6 +1,6 @@
 import React from 'react';
 import { MobileView, DesktopView } from '../responsive'
-import { HeaderButton, HeaderHrefButton } from '../common/header-button'
+import { HeaderButton, HeaderButtonScrolled, HeaderHrefButton } from '../common/header-button'
 import {
 	HeaderWrapper,
 	LineOfBurger,
@@ -27,7 +27,7 @@ const Header = () => {
 								text: true
 							}}
 						/>
-						<HeaderButton
+						{false && (<HeaderButton
 							to="/#clients"
 							text="CLIENTS"
 							style={{
@@ -35,7 +35,7 @@ const Header = () => {
 								outline: true,
 								text: true
 							}}
-						/>
+						/>)}
 						<HeaderHrefButton
 							text="GITHUB"
 							href="https://github.com/limebrains/"

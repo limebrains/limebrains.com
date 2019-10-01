@@ -24,7 +24,7 @@ const Header = styled.div`
 
 export const FAQ = () => {
 
- 
+
   return (
     <Section
     id="FAQ"
@@ -35,38 +35,21 @@ export const FAQ = () => {
         <h2>What would you like to know?</h2>
       </Header>
       <Bar
-        header="How long are the projects?" 
+        header="Do you do mobile apps?"
         myIndex='0'
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
-      <Bar 
-        header="How long are the projects?" 
+        content="Yes, we specialize in development of the mobile apps for Android / iOS"/>
+      <Bar
+        header="What technologies are you familiar with?"
         myIndex='1'
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
-      <Bar 
-        header="How long are the projects?" 
+        content="Python, Django/REST, Pyramid, PostgreSQL, MySQL, MongoDB, ElasticSearch, AWS, serverless. ReactJS, Angular, ES6, Webpack, Redux, TypeScript. We also have experience in the following areas: SQL, Ajax, OOP, and software design and testing, Django, Python, Django Rest Framework, Angular, JS, HTML5, JQuery."/>
+      <Bar
+        header="Do you offer full tech support?"
         myIndex='2'
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>        
-      <Bar 
-        header="How long are the projects?" 
+        content="Yes, we offer full tech support for our clients."/>
+      <Bar
+        header="24/7 Friendly Support?"
         myIndex='3'
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
-
+        content="Yes, contact us via email or chat. For sure you will be served."/>
     </Section>
   )
 }
