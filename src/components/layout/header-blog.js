@@ -64,7 +64,7 @@ const Header = () => {
 							}}
 						/>
 						<HeaderHrefButton
-							href="mailto: mail@limebrains.com"
+							href="mailto:mail@limebrains.com"
 							text="CONTACT"
 							style={{
 								white: true,
@@ -132,7 +132,7 @@ const Header = () => {
 										}}
 									/>
 									<HeaderHrefButton
-										href="mailto: mail@limebrains.com"
+										href="mailto:mail@limebrains.com"
 										text="CONTACT"
 										style={{
 											white: true,

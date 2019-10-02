@@ -24,6 +24,19 @@ const Header = (props) => {
 			<HeaderPlain>
 				<DesktopView>
 					<ul>
+						<HeaderHrefButton
+							href="mailto:hr@limebrains.com"
+							text="JOIN US"
+							activeClass="active"
+							smooth={defaultSmooth}
+							duration={defaultDuration}
+							offset={desktopOffset}
+							style={{
+								white: true,
+								outline: true,
+								text: false
+							}}
+						/>
 						<HeaderButtonScrolled
 							to="about"
 							text="ABOUT"
@@ -83,7 +96,7 @@ const Header = (props) => {
 							}}
 						/>
 						<HeaderHrefButton
-							href="mailto: mail@limebrains.com"
+							href="mailto:mail@limebrains.com"
 							text="CONTACT"
 							activeClass="active"
 							smooth={defaultSmooth}
@@ -107,6 +120,19 @@ const Header = (props) => {
 							<LineOfBurger />
 							<ul id="menu">
 								<div>
+									<HeaderHrefButton
+										href="mailto:hr@limebrains.com"
+										text="JOIN US"
+										activeClass="active"
+										smooth={defaultSmooth}
+										duration={defaultDuration}
+										offset={desktopOffset}
+										style={{
+											white: true,
+											outline: true,
+											text: false
+										}}
+									/>
 									<HeaderButtonScrolled
 										to="about"
 										text="ABOUT"

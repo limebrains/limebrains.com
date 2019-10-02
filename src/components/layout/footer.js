@@ -246,7 +246,7 @@ export const Footer = () => {
                 </SocialIcon>
                 <SocialIcon className="companyInfo">
                   <Icon icon="FaMailBulk" />
-                  <p><a href="mailto: mail@limebrains.com">mail@limebrains.com</a></p>
+                  <p><a href="mailto:mail@limebrains.com">mail@limebrains.com</a></p>
                 </SocialIcon>
 
                 <p className="social">
@@ -343,7 +343,7 @@ export const Footer = () => {
                       <Link to={'/blog'}>Blog</Link>
                     </li>
                     <li>
-                      <OutSideLink href={'mailto: mail@limebrains.com'}>Contact</OutSideLink>
+                      <OutSideLink href={'mailto:mail@limebrains.com'}>Contact</OutSideLink>
                     </li>
                     <li>
                       <Link to={'/en/privacy'}>Privacy</Link>
@@ -377,7 +377,7 @@ export const Footer = () => {
                         </SocialIcon>
                         <SocialIcon className="companyInfo">
                           <Icon icon="FaMailBulk" />
-                          <p><a href="mailto: mail@limebrains.com">mail@limebrains.com</a></p>
+                          <p><a href="mailto:mail@limebrains.com">mail@limebrains.com</a></p>
                         </SocialIcon>
                       <p className="social">
                         Follow us:
