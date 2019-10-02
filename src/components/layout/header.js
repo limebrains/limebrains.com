@@ -25,8 +25,8 @@ const Header = (props) => {
         <DesktopView>
           <ul>
             <HeaderHrefButton
-              href="mailto:hr@limebrains.com"
-              text="JOIN US"
+              href="https://drift.me/mail12/meeting"
+              text="MEET US"
               activeClass="active"
               smooth={defaultSmooth}
               duration={defaultDuration}
@@ -36,20 +36,6 @@ const Header = (props) => {
                 outline: true,
                 text: false
               }}
-            />
-            <HeaderButtonScrolled
-              to="about"
-              text="ABOUT"
-              activeClass="active"
-              smooth={defaultSmooth}
-              duration={defaultDuration}
-              offset={desktopOffset}
-              style={{
-                white: true,
-                outline: true,
-                text: true
-              }}
-
             />
             {false && (<HeaderButtonScrolled
               to="/#clients"
@@ -97,7 +83,7 @@ const Header = (props) => {
             />
             <HeaderHrefButton
               href="mailto:mail@limebrains.com"
-              text="CONTACT"
+              text="EMAIL US"
               activeClass="active"
               smooth={defaultSmooth}
               duration={defaultDuration}
@@ -121,8 +107,8 @@ const Header = (props) => {
               <ul id="menu">
                 <div>
                   <HeaderHrefButton
-                    href="mailto:hr@limebrains.com"
-                    text="JOIN US"
+                    href="https://drift.me/mail12/meeting"
+                    text="MEET US"
                     activeClass="active"
                     smooth={defaultSmooth}
                     duration={defaultDuration}
@@ -193,14 +179,13 @@ const Header = (props) => {
                       text: true
                     }}
                   />
-                  <HeaderButtonScrolled
-                    to="contact"
-                    text="CONTACT"
+                  <HeaderHrefButton
+                    href="mailto:mail@limebrains.com"
+                    text="EMAIL US"
                     activeClass="active"
                     smooth={defaultSmooth}
                     duration={defaultDuration}
-                    offset={mobileOffset}
-                    onClick={handleMenuClick}
+                    offset={desktopOffset}
                     style={{
                       white: true,
                       outline: true,
