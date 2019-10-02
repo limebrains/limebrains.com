@@ -10,14 +10,13 @@ class Typer extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    const {data} = props;
+    const {title, subtitle} = props;
 
     this.state = {
-      title: data.title,
-      subtitle: data.subtitle,
+      title: title,
+      subtitle: subtitle,
       slogan: '',
       isDeleting: false,
-      typingSpeed: data.typingSpeed,
       i: 0
     };
   }
@@ -31,23 +30,29 @@ class Typer extends React.PureComponent {
   }
 
   loop = () => {
-    const {slogan, isDeleting, typingSpeed, i} = this.state;
-    const {data} = this.props;
-    const j = i % data.slogan.length;
+    const {slogan, isDeleting, i} = this.state;
+    const {slogans, typingSpeed, removalSpeed, timeBetweenSlogans} = this.props;
+    const j = i % slogans.length;
 
     this.setState({
       slogan: isDeleting ?
-        data.slogan[j].substring(0, slogan.length - 1) :
-        data.slogan[j].substring(0, slogan.length + 1),
+        slogans[j].substring(0, slogan.length - 1) :
+        slogans[j].substring(0, slogan.length + 1),
     });
 
-    if (!isDeleting && slogan === data.slogan[j]) {
-      setTimeout(() => this.setState({isDeleting: true}), 1000)
+    if (!isDeleting && slogan === slogans[j]) {
+      setTimeout(() => {
+        this.setState({isDeleting: true});
+        this.loop()
+      }, timeBetweenSlogans)
     } else if (isDeleting && slogan === '') {
-      setTimeout(() => this.setState({isDeleting: false, i: i + 1}), 1000)
+      setTimeout(() => {
+        this.setState({isDeleting: false, i: i + 1});
+        this.loop()
+      }, timeBetweenSlogans)
+    } else {
+      setTimeout(this.loop, isDeleting ? removalSpeed : typingSpeed);
     }
-
-    setTimeout(this.loop, typingSpeed);
   };
 
   render() {
