@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { mobileLandscape, mobilePortrait } from './responsive'
 import { MazarLogo, NokiaLogo, SiemensLogo, HeaderLogo } from './theme/logos'
-import { LimeBrainsVideoMp4, LimeBrainsVideoWebm } from './theme/videos'
+import { LimeBrainsVideoMp4 } from './theme/videos'
 
 import { Context as ResponsiveContext } from 'react-responsive'
 
@@ -125,11 +125,6 @@ const HeaderVideo = () => {
             poster={HeaderLogo}
             autoPlay="autoplay"
           >
-            <source
-              data-src={LimeBrainsVideoWebm}
-              src={LimeBrainsVideoWebm}
-              type="video/webm"
-            />
             <source
               data-src={LimeBrainsVideoMp4}
               src={LimeBrainsVideoMp4}
