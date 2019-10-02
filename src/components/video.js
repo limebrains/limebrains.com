@@ -105,9 +105,9 @@ const HeaderVideo = () => {
             data={{
               title: 'Lime Brains',
               subtitle: 'Software house where business questions,',
-              slogan: ["meet software answers.", "meet smart ideas.", "meet great people.", "meet deadlines."]
+              slogan: ["meet software answers.", "meet smart ideas.", "meet great people.", "meet deadlines.", "meet smart solutions.", "meet great execution."]
             }}
-            typingSpeed="70"
+            typingSpeed={140}
           />
         </TextWrapper>
 

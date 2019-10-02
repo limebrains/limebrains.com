@@ -6,7 +6,7 @@ const HeaderText = styled.div`
 `;
 
 
-class Typer extends React.Component {
+class Typer extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -17,7 +17,7 @@ class Typer extends React.Component {
       subtitle: data.subtitle,
       slogan: '',
       isDeleting: false,
-      typingSpeed: 100,
+      typingSpeed: data.typingSpeed,
       i: 0
     };
   }
@@ -60,7 +60,7 @@ class Typer extends React.Component {
         <h3>
           {subtitle}
         </h3>
-        <h3 key={slogan}>
+        <h3>
           {slogan}
         </h3>
       </HeaderText>
