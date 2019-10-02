@@ -52,10 +52,11 @@ const Layout = ({ children }) => {
       setCurrentWidth(window.innerWidth)
     }
     window.addEventListener('resize', updateDimensions)
+    setTimeout(updateDimensions, 0)
     return () => {
       window.removeEventListener('resize', updateDimensions)
     }
-  })
+  });
 
   return (
     <StaticQuery
