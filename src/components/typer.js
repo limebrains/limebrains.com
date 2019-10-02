@@ -1,77 +1,74 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
 const HeaderText = styled.div`
   color: white;
-`;
-
+`
 
 class Typer extends React.PureComponent {
   constructor(props) {
-    super(props);
+    super(props)
 
-    const {title, subtitle} = props;
+    const { title, subtitle } = props
 
     this.state = {
       title: title,
       subtitle: subtitle,
       slogan: '',
       isDeleting: false,
-      i: 0
-    };
+      i: 0,
+    }
   }
 
   componentDidMount() {
-    this.loop();
+    this.loop()
   }
 
   componentWillUnmount() {
-    clearInterval();
+    clearInterval()
   }
 
   loop = () => {
-    const {slogan, isDeleting, i} = this.state;
-    const {slogans, typingSpeed, removalSpeed, timeBetweenSlogans} = this.props;
-    const j = i % slogans.length;
+    const { slogan, isDeleting, i } = this.state
+    const {
+      slogans,
+      typingSpeed,
+      removalSpeed,
+      timeBetweenSlogans,
+    } = this.props
+    const j = i % slogans.length
 
     this.setState({
-      slogan: isDeleting ?
-        slogans[j].substring(0, slogan.length - 1) :
-        slogans[j].substring(0, slogan.length + 1),
-    });
+      slogan: isDeleting
+        ? slogans[j].substring(0, slogan.length - 1)
+        : slogans[j].substring(0, slogan.length + 1),
+    })
 
     if (!isDeleting && slogan === slogans[j]) {
       setTimeout(() => {
-        this.setState({isDeleting: true});
+        this.setState({ isDeleting: true })
         this.loop()
       }, timeBetweenSlogans)
     } else if (isDeleting && slogan === '') {
       setTimeout(() => {
-        this.setState({isDeleting: false, i: i + 1});
+        this.setState({ isDeleting: false, i: i + 1 })
         this.loop()
       }, timeBetweenSlogans)
     } else {
-      setTimeout(this.loop, isDeleting ? removalSpeed : typingSpeed);
+      setTimeout(this.loop, isDeleting ? removalSpeed : typingSpeed)
     }
-  };
+  }
 
   render() {
-    const {title, subtitle, slogan} = this.state;
+    const { title, subtitle, slogan } = this.state
     return (
       <HeaderText key={slogan}>
-        <h1>
-          {title}
-        </h1>
-        <h3>
-          {subtitle}
-        </h3>
-        <h3>
-          {slogan}
-        </h3>
+        <h1>{title}</h1>
+        <h3>{subtitle}</h3>
+        <h3>{slogan}</h3>
       </HeaderText>
     )
   }
 }
 
-
-export default Typer;
+export default Typer

@@ -1,6 +1,10 @@
-import React from 'react';
+import React from 'react'
 import { MobileView, DesktopView } from '../responsive'
-import { HeaderButton, HeaderButtonScrolled, HeaderHrefButton } from '../common/header-button'
+import {
+  HeaderButton,
+  HeaderButtonScrolled,
+  HeaderHrefButton,
+} from '../common/header-button'
 import {
   HeaderWrapper,
   LineOfBurger,
@@ -9,16 +13,16 @@ import {
   defaultSmooth,
   defaultDuration,
   desktopOffset,
-  mobileOffset
-} from '../common/header-styles';
-import HeaderPlain from '../common/header-plain';
+  mobileOffset,
+} from '../common/header-styles'
+import HeaderPlain from '../common/header-plain'
 
-const inputBox = React.createRef();
+const inputBox = React.createRef()
 const handleMenuClick = () => {
   inputBox.current.checked = false
-};
+}
 
-const Header = (props) => {
+const Header = props => {
   return (
     <HeaderWrapper>
       <HeaderPlain>
@@ -34,29 +38,31 @@ const Header = (props) => {
               style={{
                 white: true,
                 outline: true,
-                text: false
+                text: false,
               }}
             />
-            {false && (<HeaderButtonScrolled
-              to="/#clients"
-              text="CLIENTS"
-              activeClass="active"
-              smooth={defaultSmooth}
-              duration={defaultDuration}
-              offset={desktopOffset}
-              style={{
-                white: true,
-                outline: true,
-                text: true
-              }}
-            />)}
+            {false && (
+              <HeaderButtonScrolled
+                to="/#clients"
+                text="CLIENTS"
+                activeClass="active"
+                smooth={defaultSmooth}
+                duration={defaultDuration}
+                offset={desktopOffset}
+                style={{
+                  white: true,
+                  outline: true,
+                  text: true,
+                }}
+              />
+            )}
             <HeaderHrefButton
               text="GITHUB"
               href="https://github.com/limebrains/"
               style={{
                 white: true,
                 outline: true,
-                text: true
+                text: true,
               }}
             />
             <HeaderButton
@@ -65,7 +71,7 @@ const Header = (props) => {
               style={{
                 white: true,
                 outline: true,
-                text: true
+                text: true,
               }}
             />
             <HeaderButtonScrolled
@@ -78,7 +84,7 @@ const Header = (props) => {
               style={{
                 white: true,
                 outline: true,
-                text: true
+                text: true,
               }}
             />
             <HeaderHrefButton
@@ -91,7 +97,7 @@ const Header = (props) => {
               style={{
                 white: true,
                 outline: true,
-                text: false
+                text: false,
               }}
             />
           </ul>
@@ -100,10 +106,10 @@ const Header = (props) => {
         <MobileView>
           <nav role="navigation">
             <MenuToggle>
-              <CloseIcon type="checkbox" innerRef={inputBox}/>
-              <LineOfBurger/>
-              <LineOfBurger/>
-              <LineOfBurger/>
+              <CloseIcon type="checkbox" innerRef={inputBox} />
+              <LineOfBurger />
+              <LineOfBurger />
+              <LineOfBurger />
               <ul id="menu">
                 <div>
                   <HeaderHrefButton
@@ -116,7 +122,7 @@ const Header = (props) => {
                     style={{
                       white: true,
                       outline: true,
-                      text: false
+                      text: false,
                     }}
                   />
                   <HeaderButtonScrolled
@@ -130,7 +136,7 @@ const Header = (props) => {
                     style={{
                       white: true,
                       outline: true,
-                      text: true
+                      text: true,
                     }}
                   />
                   <HeaderButtonScrolled
@@ -144,7 +150,7 @@ const Header = (props) => {
                     style={{
                       white: true,
                       outline: true,
-                      text: true
+                      text: true,
                     }}
                   />
                   <HeaderHrefButton
@@ -153,7 +159,7 @@ const Header = (props) => {
                     style={{
                       white: true,
                       outline: true,
-                      text: true
+                      text: true,
                     }}
                   />
                   <HeaderButton
@@ -162,7 +168,7 @@ const Header = (props) => {
                     style={{
                       white: true,
                       outline: true,
-                      text: true
+                      text: true,
                     }}
                   />
                   <HeaderButtonScrolled
@@ -176,7 +182,7 @@ const Header = (props) => {
                     style={{
                       white: true,
                       outline: true,
-                      text: true
+                      text: true,
                     }}
                   />
                   <HeaderHrefButton
@@ -189,7 +195,7 @@ const Header = (props) => {
                     style={{
                       white: true,
                       outline: true,
-                      text: false
+                      text: false,
                     }}
                   />
                 </div>

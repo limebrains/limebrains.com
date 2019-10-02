@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import { Button } from './../buttons'
 
 export const HeaderWrapper = styled.header`
@@ -104,8 +104,6 @@ export const MenuToggle = styled.div`
     right: 0;
   }
 `
-
-
 
 export const defaultSmooth = true
 export const defaultDuration = 700

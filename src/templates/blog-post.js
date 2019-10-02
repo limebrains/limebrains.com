@@ -1,39 +1,41 @@
 import * as React from 'react'
-import * as _ from 'lodash';
-import Disqus from 'disqus-react';
+import * as _ from 'lodash'
+import Disqus from 'disqus-react'
 import styled from 'styled-components'
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby'
 
 import { Divider } from '../components/divider'
 
-import SEO from '../components/seo';
-import Layout from '../components/layout';
-import { SectionHeading } from '../components/heading';
+import SEO from '../components/seo'
+import Layout from '../components/layout'
+import { SectionHeading } from '../components/heading'
 const LayoutWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 `
 
-
-const PlaintextTemplate = ({data}) => {
-  const disqusShortname = 'limebrains';
+const PlaintextTemplate = ({ data }) => {
+  const disqusShortname = 'limebrains'
   const title = _.get(data, 'markdownRemark.frontmatter.title')
   const disqusConfig = {
     url: `${data.site.siteMetadata.url}${data.markdownRemark.fields.slug}`,
     identifier: data.markdownRemark.fields.slug,
     title,
-  };
+  }
   return (
     <Layout>
-      <SEO title={_.get(data, 'markdownRemark.frontmatter.seo.title')}/>
+      <SEO title={_.get(data, 'markdownRemark.frontmatter.seo.title')} />
       <LayoutWrapper>
-        <SectionHeading title={title}/>
-        <div dangerouslySetInnerHTML={{__html: data.markdownRemark.html}}/>
+        <SectionHeading title={title} />
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
 
         <Divider />
 
-        <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig}/>
+        <Disqus.DiscussionEmbed
+          shortname={disqusShortname}
+          config={disqusConfig}
+        />
       </LayoutWrapper>
     </Layout>
   )

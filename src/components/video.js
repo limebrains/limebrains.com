@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
-import { mobileLandscape, mobilePortrait } from './responsive';
+import { mobileLandscape, mobilePortrait } from './responsive'
 import { MazarLogo, NokiaLogo, SiemensLogo, HeaderLogo } from './theme/logos'
 import { LimeBrainsVideoMp4, LimeBrainsVideoWebm } from './theme/videos'
 
 import { Context as ResponsiveContext } from 'react-responsive'
 
-import Typer from './typer';
+import Typer from './typer'
 
 const TextWrapper = styled.div`
   position:absolute;
@@ -17,7 +17,9 @@ const TextWrapper = styled.div`
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: ${({ start, end }) => `-webkit-linear-gradient(5deg, ${start || 'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
+  background: ${({ start, end }) =>
+    `-webkit-linear-gradient(5deg, ${start ||
+      'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
   backdrop-filter: blur(4px);
   h1 {
     font-size: 76px;
@@ -46,13 +48,13 @@ const VideoWrapper = styled.div`
   position: relative;
   top: 0;
   width: 100%;
-  height: calc(100vh - ${(props) => props.size}px);
+  height: calc(100vh - ${props => props.size}px);
   line-height: 0;
-  @supports (-webkit-appearance:none){
-    @media (max-width: ${mobilePortrait}){
-        min-height: calc(100vh - 56px);
-        }
+  @supports (-webkit-appearance: none) {
+    @media (max-width: ${mobilePortrait}) {
+      min-height: calc(100vh - 56px);
     }
+  }
   video {
     width: 100%;
     height: 100%;
@@ -71,82 +73,85 @@ const Logos = styled.div`
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.8);
-  
+
   padding-top: 1rem;
   padding-bottom: 1rem;
-  
+
   img {
     width: 200px;
     margin-left: 2rem;
     margin-right: 2rem;
   }
-  
+
   @media (max-width: ${mobileLandscape}px) {
     background: rgba(255, 255, 255, 1);
     bottom: 0;
     img {
       width: 100px;
-      margin-left: .5rem;
-      margin-right: .5rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
     }
   }
 `
 
-
 const HeaderVideo = () => {
   return (
-    <ResponsiveContext.Consumer>{({ isPhonePortrait }) => (
-      <VideoWrapper size={isPhonePortrait ? 60 : 80}>
-        <TextWrapper
-          start={'rgb(0,0,0, 0.3)'}
-          end={'rgba(0, 0, 0, 0.4)'}
-        >
-          <Typer
-            title={'Lime Brains'}
-            subtitle={'Software house where business questions,'}
-            slogans={["meet software answers.", "meet smart ideas.", "meet great people.", "meet deadlines.", "meet smart solutions.", "meet great execution."]}
-            typingSpeed={100}
-            removalSpeed={40}
-            timeBetweenSlogans={1500}
-          />
-        </TextWrapper>
+    <ResponsiveContext.Consumer>
+      {({ isPhonePortrait }) => (
+        <VideoWrapper size={isPhonePortrait ? 60 : 80}>
+          <TextWrapper start={'rgb(0,0,0, 0.3)'} end={'rgba(0, 0, 0, 0.4)'}>
+            <Typer
+              title={'Lime Brains'}
+              subtitle={'Software house where business questions,'}
+              slogans={[
+                'meet software answers.',
+                'meet smart ideas.',
+                'meet great people.',
+                'meet deadlines.',
+                'meet smart solutions.',
+                'meet great execution.',
+              ]}
+              typingSpeed={100}
+              removalSpeed={40}
+              timeBetweenSlogans={1500}
+            />
+          </TextWrapper>
 
-        <video
-          playsInline
-          muted
-          loop
-          preload="auto"
-          poster={HeaderLogo}
-          autoPlay="autoplay"
-        >
-          <source
-            data-src={LimeBrainsVideoWebm}
-            src={LimeBrainsVideoWebm}
-            type="video/webm"
-          />
-          <source
-            data-src={LimeBrainsVideoMp4}
-            src={LimeBrainsVideoMp4}
-            type="video/mp4"
-          />
-          <source
-            data-src='../videos/io_limebrains-header.ogv'
-            src='../videos/io_limebrains-header.ogv'
-            type="video/ogv"
-          />
-          Your browser does not support the video tag.
-      </video>
+          <video
+            playsInline
+            muted
+            loop
+            preload="auto"
+            poster={HeaderLogo}
+            autoPlay="autoplay"
+          >
+            <source
+              data-src={LimeBrainsVideoWebm}
+              src={LimeBrainsVideoWebm}
+              type="video/webm"
+            />
+            <source
+              data-src={LimeBrainsVideoMp4}
+              src={LimeBrainsVideoMp4}
+              type="video/mp4"
+            />
+            <source
+              data-src="../videos/io_limebrains-header.ogv"
+              src="../videos/io_limebrains-header.ogv"
+              type="video/ogv"
+            />
+            Your browser does not support the video tag.
+          </video>
 
-        <Logos>
-          <img src={MazarLogo} alt='' />
-          <img src={SiemensLogo} alt='' />
-          <img src={NokiaLogo} alt='' />
-        </Logos>
-
-      </VideoWrapper>
-    )}
+          <Logos>
+            <img src={MazarLogo} alt="" />
+            <img src={SiemensLogo} alt="" />
+            <img src={NokiaLogo} alt="" />
+          </Logos>
+        </VideoWrapper>
+      )}
     </ResponsiveContext.Consumer>
   )
 }
 
-export default HeaderVideo;
+export default HeaderVideo

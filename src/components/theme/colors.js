@@ -1,8 +1,7 @@
-
 export const gradients = {
   default: 'linear-gradient(135deg, #043927 45%, #9DC183 70%)',
   inverse: 'linear-gradient(135deg, #dddddd 45%, #ffffff 70%)',
-};
+}
 
 export const colors = {
   white: '#ffffff',
@@ -96,4 +95,4 @@ export const colors = {
     light: '#f4f4f4',
     dark: '#9f9f9f',
   },
-};
+}

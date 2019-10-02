@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { colors } from '../components/theme/colors';
-import { FaAngleRight, FaAngleLeft, FaShareAlt } from "react-icons/fa";
-import { mobileLandscape } from './responsive';
+import React from 'react'
+import styled from 'styled-components'
+import { colors } from '../components/theme/colors'
+import { FaAngleRight, FaAngleLeft, FaShareAlt } from 'react-icons/fa'
+import { mobileLandscape } from './responsive'
 import { Link as DefaultLink } from './link'
-import { Swipeable } from 'react-swipeable';
+import { Swipeable } from 'react-swipeable'
 import { Context as ResponsiveContext } from 'react-responsive'
 
 class Carousel extends React.Component {
@@ -12,7 +12,7 @@ class Carousel extends React.Component {
     super(props)
     this.state = {
       currentIndex: 0,
-      translateValue: 0
+      translateValue: 0,
     }
     this.myRef = React.createRef()
   }
@@ -24,15 +24,16 @@ class Carousel extends React.Component {
           <FaShareAlt />
         </span>
         <p className="date">
-          <b>LimeBrains</b>{data[index].date}
+          <b>LimeBrains</b>
+          {data[index].date}
         </p>
         <p className="header">
           <Link to="/">{data[index].header}</Link>
         </p>
-        <p className="subHeader">
-          {data[index].subtitle}
-        </p>
-        <Link to={data[index].link} className="visit">Show More</Link>
+        <p className="subHeader">{data[index].subtitle}</p>
+        <Link to={data[index].link} className="visit">
+          Show More
+        </Link>
       </Content>
     )
   }
@@ -41,7 +42,7 @@ class Carousel extends React.Component {
     if (render) {
       return (
         <div>
-          <Button className="prev" onClick={() => this.prevSlide(data)} >
+          <Button className="prev" onClick={() => this.prevSlide(data)}>
             <FaAngleLeft color="white" />
           </Button>
           <Button className="next" onClick={() => this.nextSlide(data)}>
@@ -52,66 +53,73 @@ class Carousel extends React.Component {
     }
   }
 
-  nextSlide = (data) => {
-    if (this.state.currentIndex === (data.length - 1)) {
+  nextSlide = data => {
+    if (this.state.currentIndex === data.length - 1) {
       return this.setState(prevState => ({
         currentIndex: 0,
-        translateValue: prevState.translateValue + this.myRef.current.clientWidth * (data.length - 1)
+        translateValue:
+          prevState.translateValue +
+          this.myRef.current.clientWidth * (data.length - 1),
       }))
     }
     this.setState(prevState => ({
       currentIndex: prevState.currentIndex + 1,
-      translateValue: prevState.translateValue - this.myRef.current.clientWidth
+      translateValue: prevState.translateValue - this.myRef.current.clientWidth,
     }))
   }
 
   prevSlide(data) {
     if (this.state.currentIndex === 0) {
       return this.setState(prevState => ({
-        currentIndex: (data.length - 1),
-        translateValue: prevState.translateValue - this.myRef.current.clientWidth * (data.length - 1)
+        currentIndex: data.length - 1,
+        translateValue:
+          prevState.translateValue -
+          this.myRef.current.clientWidth * (data.length - 1),
       }))
     }
     this.setState(prevState => ({
       currentIndex: prevState.currentIndex - 1,
-      translateValue: prevState.translateValue + this.myRef.current.clientWidth
+      translateValue: prevState.translateValue + this.myRef.current.clientWidth,
     }))
   }
 
   render() {
-    const { data } = this.props;
+    const { data } = this.props
     return (
-      <ResponsiveContext.Consumer>{({ isPhonePortrait }) => (
-        <div ref={this.myRef}>
-          <Swipeable onSwipedLeft={() => this.nextSlide(data)} onSwipedRight={() => this.prevSlide(data)}>
-            <Container background={colors.sections.greenSection.background}>
-
-              {
-                data.map((slide) => (
-                  <Image url={slide.image} key={slide.header} translateValue={this.state.translateValue} />
-                ))
-              }
-              {this.renderButtons(data, (isPhonePortrait ? false : true))}
-              {this.renderContent(this.state.currentIndex, data)}
-
-            </Container>
-          </Swipeable>
-        </div>
-      )}
+      <ResponsiveContext.Consumer>
+        {({ isPhonePortrait }) => (
+          <div ref={this.myRef}>
+            <Swipeable
+              onSwipedLeft={() => this.nextSlide(data)}
+              onSwipedRight={() => this.prevSlide(data)}
+            >
+              <Container background={colors.sections.greenSection.background}>
+                {data.map(slide => (
+                  <Image
+                    url={slide.image}
+                    key={slide.header}
+                    translateValue={this.state.translateValue}
+                  />
+                ))}
+                {this.renderButtons(data, isPhonePortrait ? false : true)}
+                {this.renderContent(this.state.currentIndex, data)}
+              </Container>
+            </Swipeable>
+          </div>
+        )}
       </ResponsiveContext.Consumer>
     )
   }
-
 }
 
-export default Carousel;
+export default Carousel
 
 const Container = styled.div`
   position: relative;
   height: 60vh;
   margin-bottom: 10vh;
   white-space: nowrap;
-  overflow:hidden;
+  overflow: hidden;
 `
 const Link = styled(DefaultLink)`
   &.visit{
@@ -145,14 +153,15 @@ const Link = styled(DefaultLink)`
       }
 `
 const Image = styled.div`
-  position:relative;
+  position: relative;
   display: inline-block;
 
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)),url(${props => props.url});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+    url(${props => props.url});
   background-repeat: no-repeat;
-	background-position: center;
+  background-position: center;
   background-size: cover;
   transition: all 0.6s ease-in-out;
   transform: translateX(${props => props.translateValue}px);
@@ -161,7 +170,7 @@ const Image = styled.div`
 const Button = styled.div`
   position: absolute;
   display: flex;
-  top:0;
+  top: 0;
   opacity: 0.8;
   font-size: 38px;
   width: 5vw;
@@ -170,35 +179,34 @@ const Button = styled.div`
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  &:hover{
+  &:hover {
     opacity: 0.5;
     background-color: black;
   }
-  &.next{
+  &.next {
     right: 0;
-    FaAngleLeft{
+    FaAngleLeft {
       opacity: 1;
     }
   }
-  &.prev{
+  &.prev {
     left: 0;
   }
-  @media (max-width: ${mobileLandscape}px){
+  @media (max-width: ${mobileLandscape}px) {
     font-size: 16px;
   }
 `
 
-
 const Content = styled.div`
-  user-select:none;
+  user-select: none;
   transition: all 1s ease-in-out;
   transform: none;
-  span{
-    &.share{
-      position:absolute;
+  span {
+    &.share {
+      position: absolute;
       border: 1px solid;
       border-radius: 20px;
-        display: flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       width: 34px;
@@ -207,66 +215,63 @@ const Content = styled.div`
       right: 10%;
       color: white;
       transition: all 0.3s ease-in-out;
-      @media (max-width: ${mobileLandscape}px){
+      @media (max-width: ${mobileLandscape}px) {
         width: 18px;
         height: 18px;
         font-size: 12px;
       }
       &:hover {
-        transform: rotate(-90deg); 
+        transform: rotate(-90deg);
       }
     }
   }
 
-  p{
-    position:absolute;
+  p {
+    position: absolute;
     white-space: nowrap;
     transition: all 0.6s ease-in-out;
-    &.header{
+    &.header {
       font-size: 2em;
       font-weight: 600;
-      top:  30%;
+      top: 30%;
       left: 50%;
       transform: translate(-50%, -20%);
       color: white;
 
-      @media (max-width: ${mobileLandscape}px){
-        font-size: .8em;
+      @media (max-width: ${mobileLandscape}px) {
+        font-size: 0.8em;
       }
     }
 
-    &.date{
-      font-size: .9em;
+    &.date {
+      font-size: 0.9em;
       font-weight: 300;
       top: 10%;
       left: 10%;
       transform: translate(-10%, -10%);
       color: white;
-      b{
-        letter-spacing: .2em;
+      b {
+        letter-spacing: 0.2em;
         font-weight: 500;
         padding-right: 0.2em;
       }
-      @media (max-width: ${mobileLandscape}px){
-        font-size: .5em;
+      @media (max-width: ${mobileLandscape}px) {
+        font-size: 0.5em;
       }
     }
 
-    &.subHeader{
+    &.subHeader {
       font-size: 1em;
       font-weight: 300;
       color: white;
-      top:  50%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      @media (max-width: ${mobileLandscape}px){
-        font-size: .6em;
+      @media (max-width: ${mobileLandscape}px) {
+        font-size: 0.6em;
         top: 45%;
         transform: translate(-50%, -45%);
-        
       }
     }
   }
-
 `
-

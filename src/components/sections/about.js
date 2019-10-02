@@ -41,7 +41,13 @@ export const About = () => {
               </Text>
 
               <Flex flex={1} pt={'2rem'} justify={'center'} align={'center'}>
-                <Flex flex={1} justify={'center'} align={'center'} ml={'5%'} mr={'5%'}>
+                <Flex
+                  flex={1}
+                  justify={'center'}
+                  align={'center'}
+                  ml={'5%'}
+                  mr={'5%'}
+                >
                   <Flip right fraction={1} pr={'2rem'}>
                     <AnimatedProgressProvider
                       valueStart={0}
@@ -71,7 +77,13 @@ export const About = () => {
                     </AnimatedProgressProvider>
                   </Flip>
                 </Flex>
-                <Flex flex={1} justify={'center'} align={'center'} ml={'5%'} mr={'5%'}>
+                <Flex
+                  flex={1}
+                  justify={'center'}
+                  align={'center'}
+                  ml={'5%'}
+                  mr={'5%'}
+                >
                   <Flip right fraction={1}>
                     <AnimatedProgressProvider
                       valueStart={0}

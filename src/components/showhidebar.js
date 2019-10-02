@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { FaChevronDown } from 'react-icons/fa';
-import { mobileLandscape } from './responsive';
-import { colors } from './theme/colors';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import { FaChevronDown } from 'react-icons/fa'
+import { mobileLandscape } from './responsive'
+import { colors } from './theme/colors'
 
 const Container = styled.div`
   position: relative;
@@ -12,10 +12,10 @@ const Container = styled.div`
   height: 100%;
   user-select: none;
 
-  @media (max-width: ${mobileLandscape}px ){
+  @media (max-width: ${mobileLandscape}px) {
     font-size: 1em;
   }
-`;
+`
 
 const Sector = styled.div`
   max-height: ${props => props.show}px;
@@ -24,21 +24,21 @@ const Sector = styled.div`
   overflow-y: hidden;
   transition: max-height 0.4s linear;
   cursor: pointer;
-  p{
+  p {
     float: left;
   }
-`;
+`
 
 const RightSector = styled.div`
   position: absolute;
   right: 5%;
   top: 0;
-`;
+`
 
 const Divider = styled.div`
-  background: #D2CBCB;
+  background: #d2cbcb;
   margin: 2em 5%;
-`;
+`
 
 const Content = styled.div`
   padding: 3rem;
@@ -47,43 +47,39 @@ const Content = styled.div`
   background: ${colors.sections.lightSection};
   margin-top: 2rem;
   line-height: 1.8;
-`;
+`
 
 const Icon = styled(FaChevronDown)`
   transition: 0.4s;
   height: 100%;
-  &:hover{
+  &:hover {
     color: green;
   }
-  &.clicked{
+  &.clicked {
     transform: rotate(-90deg);
   }
 `
 
-const Bar = ({header, content, myIndex}) => {
-  const [selectedIndex, setIndex] = useState({index: '0', open: false});
-  const toggle = () => setIndex({index: myIndex, open: !selectedIndex.open});
+const Bar = ({ header, content, myIndex }) => {
+  const [selectedIndex, setIndex] = useState({ index: '0', open: false })
+  const toggle = () => setIndex({ index: myIndex, open: !selectedIndex.open })
   return (
     <Container>
-      <Sector
-        show={selectedIndex.open ? 500 : 50}
-        onClick={toggle}
-      >
+      <Sector show={selectedIndex.open ? 500 : 50} onClick={toggle}>
         <div>{header}</div>
-        {selectedIndex.open && (
-          <Content>
-            {content}
-          </Content>
-        )}
+        {selectedIndex.open && <Content>{content}</Content>}
 
         <RightSector>
-          <Icon className={`${selectedIndex.open ? "clicked" : ""}`} size={24}/>
+          <Icon
+            className={`${selectedIndex.open ? 'clicked' : ''}`}
+            size={24}
+          />
         </RightSector>
       </Sector>
 
-      <Divider/>
+      <Divider />
     </Container>
   )
-};
+}
 
-export default Bar;
+export default Bar

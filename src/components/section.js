@@ -19,11 +19,15 @@ export const Section = styled.div`
   padding-bottom: 3rem;
   min-height: ${sizes.md};
   flex: 1;
-  
-  ${props => props.background && css`
-    background: ${props.background};
-  `}
-  ${props => props.size && css`
-    min-height: ${sizes[props.size]};
-  `}
+
+  ${props =>
+    props.background &&
+    css`
+      background: ${props.background};
+    `}
+  ${props =>
+    props.size &&
+    css`
+      min-height: ${sizes[props.size]};
+    `}
 `

@@ -10,24 +10,23 @@ import { Team } from '../components/sections/team'
 import { JobSection } from '../components/sections/benefits'
 import { FAQ } from '../components/sections/faq'
 
-const IndexPage = (props) => (
+const IndexPage = props => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
-    
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+
     <Areas />
 
-    <About /> 
+    <About />
 
     <Expertise />
 
     <Reviews />
 
     <Team />
-    
+
     <JobSection />
 
     <FAQ />
-
   </Layout>
 )
 

@@ -1,55 +1,55 @@
-import React from "react";
-import { Animate } from "react-move";
+import React from 'react'
+import { Animate } from 'react-move'
 
 class AnimatedProgressProvider extends React.Component {
-  interval = undefined;
+  interval = undefined
 
   state = {
     isAnimated: false,
-  };
+  }
 
   static defaultProps = {
-    valueStart: 0
-  };
+    valueStart: 0,
+  }
 
   componentDidMount() {
     if (this.props.repeat) {
       this.interval = setInterval(() => {
         this.setState({
-          isAnimated: !this.state.isAnimated
-        });
-      }, this.props.duration * 1000);
+          isAnimated: !this.state.isAnimated,
+        })
+      }, this.props.duration * 1000)
     } else {
       this.setState({
-        isAnimated: !this.state.isAnimated
-      });
+        isAnimated: !this.state.isAnimated,
+      })
     }
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval);
+    clearInterval(this.interval)
   }
 
   render() {
     return (
       <Animate
         start={() => ({
-          value: this.props.valueStart
+          value: this.props.valueStart,
         })}
         update={() => ({
           value: [
-            this.state.isAnimated ? this.props.valueEnd : this.props.valueStart
+            this.state.isAnimated ? this.props.valueEnd : this.props.valueStart,
           ],
           timing: {
             duration: this.props.duration * 1000,
-            ease: this.props.easingFunction
-          }
+            ease: this.props.easingFunction,
+          },
         })}
       >
         {({ value }) => this.props.children(value)}
       </Animate>
-    );
+    )
   }
 }
 
-export default AnimatedProgressProvider;
+export default AnimatedProgressProvider
