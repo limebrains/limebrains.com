@@ -1,5 +1,7 @@
 # Lime Brains site
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bbd91598-d9a8-411a-9fb1-725aed6ee511/deploy-status)](https://app.netlify.com/sites/hardcore-carson-195262/deploys)
+
 https://staging.limebrains.com/
 
 ## 🚀 Dev
