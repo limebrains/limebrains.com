@@ -10,11 +10,11 @@ import { FlexBlog, Box } from '../components/flex';
 
 import Carousel from '../components/carousel';
 
-const Blog = ({ data }) => (
+const Blog = ({data}) => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Page two"/>
 
-    <Carousel data={Slides} />
+    <Carousel data={Slides}/>
 
     <Box m={3}>
       <FlexBlog>
@@ -22,7 +22,7 @@ const Blog = ({ data }) => (
           <Box key={post.node.frontmatter.title}>
             <Link to={post.node.fields.slug}>
               <Card title={_.get(post, 'node.frontmatter.title')}>
-                <Img src={_.get(post, 'node.frontmatter.image')} />
+                <Img src={_.get(post, 'node.frontmatter.image')}/>
               </Card>
             </Link>
           </Box>
@@ -30,7 +30,7 @@ const Blog = ({ data }) => (
       </FlexBlog>
     </Box>
   </Layout>
-)
+);
 
 export default Blog
 
@@ -61,8 +61,16 @@ query {
     }
   }
 }
-`
+`;
+
 const Slides = [
+  {
+    image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
+    header: 'How to create alert in osx?',
+    subtitle: 'Just one easy step!',
+    date: 'September 20 2019',
+    link: '/blog/2017-10-20T02:00-alert-in-osx/'
+  },
   {
     image: 'https://i.ytimg.com/vi/HWn85tjFMIQ/maxresdefault.jpg',
     header: 'Add a progress meter to your loops in a second',
@@ -76,12 +84,5 @@ const Slides = [
     subtitle: 'Press button below to find out!',
     date: 'September 19 2019',
     link: '/blog/2017-10-20T01:00-disk-usage/'
-  },
-  {
-    image: 'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
-    header: 'How to create alert in osx?',
-    subtitle: 'Just one easy step!',
-    date: 'September 20 2019',
-    link: '/blog/2017-10-20T02:00-alert-in-osx/'
   }
-]
+];
