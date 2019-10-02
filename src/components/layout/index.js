@@ -29,7 +29,7 @@ const renderHeader = (siteTitle) => {
     <LocationProvider>
       {(context) =>
         context.location.pathname === '/' ?
-          <Header siteTitle={siteTitle} /> : <HeaderHome siteTitle={siteTitle} />
+          <Header siteTitle={siteTitle}/> : <HeaderHome siteTitle={siteTitle}/>
       }
     </LocationProvider>
   )
@@ -40,13 +40,13 @@ const renderVideo = () => {
     <LocationProvider>
       {(context) =>
         context.location.pathname === '/' ?
-          <HeaderVideo /> : ''
+          <HeaderVideo/> : ''
       }
     </LocationProvider>
   )
 }
 
-const Layout = ({ children }) => {
+const Layout = ({children}) => {
 
   const [currentWidth, setCurrentWidth] = useState(
     typeof window !== 'undefined' ? window.innerWidth : null
@@ -93,14 +93,15 @@ const Layout = ({ children }) => {
                 {renderHeader(data.site.siteMetadata.title)}
 
                 <ContentWrapper>{children}</ContentWrapper>
-                <Footer />
+                <Footer/>
               </ResponsiveContext.Provider>
             </Provider>
           </>
         )}
       />
     )
-  } return null
+  }
+  return null
 }
 
 Layout.propTypes = {
