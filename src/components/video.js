@@ -130,11 +130,6 @@ const HeaderVideo = () => {
               src={LimeBrainsVideoMp4}
               type="video/mp4"
             />
-            <source
-              data-src="../videos/io_limebrains-header.ogv"
-              src="../videos/io_limebrains-header.ogv"
-              type="video/ogv"
-            />
             Your browser does not support the video tag.
           </video>
 
