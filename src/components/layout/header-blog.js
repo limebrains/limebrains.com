@@ -1,11 +1,11 @@
 import React from 'react'
 import { MobileView, DesktopView } from '../responsive'
-import { HeaderButton, HeaderHrefButton } from '../common/header-button'
+import { HeaderButton, HeaderButtonScrolled, HeaderHrefButton } from '../common/header-button'
 import {
   HeaderWrapper,
   LineOfBurger,
   CloseIcon,
-  MenuToggle,
+  MenuToggle, defaultSmooth, defaultDuration, desktopOffset, mobileOffset,
 } from '../common/header-styles'
 import HeaderPlain from '../common/header-plain'
 
@@ -17,13 +17,17 @@ const Header = () => {
       <HeaderPlain>
         <DesktopView>
           <ul>
-            <HeaderButton
-              to="/#about"
-              text="ABOUT"
+            <HeaderHrefButton
+              href="https://drift.me/mail12/meeting"
+              text="MEET US"
+              activeClass="active"
+              smooth={defaultSmooth}
+              duration={defaultDuration}
+              offset={desktopOffset}
               style={{
                 white: true,
                 outline: true,
-                text: true,
+                text: false,
               }}
             />
             {false && (
@@ -37,6 +41,15 @@ const Header = () => {
                 }}
               />
             )}
+            <HeaderHrefButton
+              text="JOBS"
+              href="https://forms.gle/676Dcwo98LEYcPWy7"
+              style={{
+                white: true,
+                outline: true,
+                text: true,
+              }}
+            />
             <HeaderHrefButton
               text="GITHUB"
               href="https://github.com/limebrains/"
@@ -66,7 +79,11 @@ const Header = () => {
             />
             <HeaderHrefButton
               href="mailto:mail@limebrains.com"
-              text="CONTACT"
+              text="EMAIL US"
+              activeClass="active"
+              smooth={defaultSmooth}
+              duration={defaultDuration}
+              offset={desktopOffset}
               style={{
                 white: true,
                 outline: true,
@@ -86,9 +103,22 @@ const Header = () => {
               <LineOfBurger />
               <ul id="menu">
                 <div>
-                  <HeaderButton
-                    to="/#about"
-                    text="ABOUT"
+                  <HeaderHrefButton
+                    href="https://drift.me/mail12/meeting"
+                    text="MEET US"
+                    activeClass="active"
+                    smooth={defaultSmooth}
+                    duration={defaultDuration}
+                    offset={desktopOffset}
+                    style={{
+                      white: true,
+                      outline: true,
+                      text: false,
+                    }}
+                  />
+                  <HeaderHrefButton
+                    text="JOBS"
+                    href="https://forms.gle/676Dcwo98LEYcPWy7"
                     style={{
                       white: true,
                       outline: true,

@@ -148,7 +148,7 @@ const Header = props => {
                       text: true,
                     }}
                   />
-                  <HeaderButtonScrolled
+                  {false && (<HeaderButtonScrolled
                     to="/#clients"
                     text="CLIENTS"
                     activeClass="active"
@@ -161,7 +161,7 @@ const Header = props => {
                       outline: true,
                       text: true,
                     }}
-                  />
+                  />)}
                   <HeaderHrefButton
                     text="JOBS"
                     href="https://forms.gle/676Dcwo98LEYcPWy7"

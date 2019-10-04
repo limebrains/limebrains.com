@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
@@ -42,25 +42,38 @@ const renderVideo = () => {
   )
 }
 
-const Layout = ({ children }) => {
-  const [currentWidth, setCurrentWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : 1200
-  )
-
-  useEffect(() => {
-    const updateDimensions = () => {
-      setCurrentWidth(window.innerWidth)
+class Layout extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentWidth: typeof window !== 'undefined' ? window.innerWidth : 1200
     }
-    window.addEventListener('resize', updateDimensions)
-    setTimeout(updateDimensions, 0)
-    return () => {
-      window.removeEventListener('resize', updateDimensions)
-    }
-  });
+  }
 
-  return (
-    <StaticQuery
-      query={graphql`
+  updateDimensions = () => {
+    const currentWidth = typeof window !== 'undefined' ? window.innerWidth : this.state.currentWidth;
+    this.setState({
+      currentWidth
+    });
+    return currentWidth
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions);
+    setTimeout(this.updateDimensions, 0)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions)
+  }
+
+  render() {
+    const { children } = this.props;
+    const { currentWidth } = this.state;
+
+    return (
+      <StaticQuery
+        query={graphql`
         query SiteTitleQuery {
           site {
             siteMetadata {
@@ -69,29 +82,30 @@ const Layout = ({ children }) => {
           }
         }
       `}
-      render={data => (
-        <>
-          <Provider theme={theme}>
-            <ResponsiveContext.Provider
-              value={{
-                deviceWidth: setCurrentWidth,
-                width: currentWidth,
-                isMobile: isMobile(currentWidth),
-                isPhonePortrait: isPhonePortrait(currentWidth),
-                isDesktop: isDesktop(currentWidth),
-              }}
-            >
-              {renderVideo()}
-              {renderHeader(data.site.siteMetadata.title)}
+        render={data => (
+          <>
+            <Provider theme={theme}>
+              <ResponsiveContext.Provider
+                value={{
+                  deviceWidth: this.updateDimensions,
+                  width: currentWidth,
+                  isMobile: isMobile(currentWidth),
+                  isPhonePortrait: isPhonePortrait(currentWidth),
+                  isDesktop: isDesktop(currentWidth),
+                }}
+              >
+                {renderVideo()}
+                {renderHeader(data.site.siteMetadata.title)}
 
-              <ContentWrapper>{children}</ContentWrapper>
-              <Footer />
-            </ResponsiveContext.Provider>
-          </Provider>
-        </>
-      )}
-    />
-  )
+                <ContentWrapper>{children}</ContentWrapper>
+                <Footer/>
+              </ResponsiveContext.Provider>
+            </Provider>
+          </>
+        )}
+      />
+    )
+  }
 }
 
 Layout.propTypes = {

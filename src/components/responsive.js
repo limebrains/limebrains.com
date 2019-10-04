@@ -20,8 +20,8 @@ export const isTablet = width =>
 export const isDesktop = width => width > tabletLandscape
 
 export const MobileView = props => (
-  <Responsive {...props} minWidth={2} maxWidth={tabletLandscape} />
+  <Responsive {...props} minWidth={2} maxWidth={tabletLandscape}/>
 )
 export const DesktopView = props => (
-  <Responsive {...props} minWidth={tabletLandscape} />
+  <Responsive {...props} minWidth={tabletLandscape}/>
 )

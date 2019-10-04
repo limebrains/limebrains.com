@@ -64,7 +64,7 @@ export const MenuToggle = styled.div`
   ${CloseIcon}:checked ~ ${LineOfBurger} {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
-    background: #232323;
+    background: white;
   }
   ${CloseIcon}:checked ~ ${LineOfBurger}:nth-last-child(3) {
     opacity: 0;
@@ -88,7 +88,7 @@ export const MenuToggle = styled.div`
     /* to stop flickering of text in safari */
     transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
     div {
-      margin: 100px 0;
+      margin-top: 3rem;
       li {
         margin-right: 0;
         font-size: 22px;

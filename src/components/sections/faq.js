@@ -1,9 +1,10 @@
 import React from 'react'
-import { Section } from '../section'
-import { colors } from '../theme/colors'
 import styled from 'styled-components'
 
 import Bar from '../showhidebar'
+import { Section } from '../section'
+import { colors } from '../theme/colors'
+import { mobileLandscape } from '../responsive';
 
 const Header = styled.div`
   text-align: center;
@@ -17,6 +18,12 @@ const Header = styled.div`
     margin: 0;
     font-weight: 100;
     opacity: 0.5;
+  }
+  @media (max-width: ${mobileLandscape}px) {
+    h2 {
+      font-size: 17px;
+      text-transform: uppercase;
+    }
   }
 `
 

@@ -48,7 +48,7 @@ const VideoWrapper = styled.div`
   position: relative;
   top: 0;
   width: 100%;
-  height: calc(100vh - ${props => props.size}px);
+  height: calc(100vh - 80px);
   line-height: 0;
   @supports (-webkit-appearance: none) {
     @media (max-width: ${mobilePortrait}) {
@@ -59,6 +59,9 @@ const VideoWrapper = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  @media (max-width: ${mobileLandscape}px) {
+    height: calc(100vh - 60px);
   }
 `
 
@@ -96,51 +99,47 @@ const Logos = styled.div`
 
 const HeaderVideo = () => {
   return (
-    <ResponsiveContext.Consumer>
-      {({ isPhonePortrait }) => (
-        <VideoWrapper size={isPhonePortrait ? 60 : 80}>
-          <TextWrapper start={'rgb(0,0,0, 0.3)'} end={'rgba(0, 0, 0, 0.4)'}>
-            <Typer
-              title={'Lime Brains'}
-              subtitle={'Software house where business questions,'}
-              slogans={[
-                'meet software answers.',
-                'meet smart ideas.',
-                'meet great people.',
-                'meet deadlines.',
-                'meet smart solutions.',
-                'meet great execution.',
-              ]}
-              typingSpeed={100}
-              removalSpeed={40}
-              timeBetweenSlogans={1500}
-            />
-          </TextWrapper>
+    <VideoWrapper>
+      <TextWrapper start={'rgb(0,0,0, 0.3)'} end={'rgba(0, 0, 0, 0.4)'}>
+        <Typer
+          title={'Lime Brains'}
+          subtitle={'Software house where business questions,'}
+          slogans={[
+            'meet software answers.',
+            'meet smart ideas.',
+            'meet great people.',
+            'meet deadlines.',
+            'meet smart solutions.',
+            'meet great execution.',
+          ]}
+          typingSpeed={100}
+          removalSpeed={40}
+          timeBetweenSlogans={1500}
+        />
+      </TextWrapper>
 
-          <video
-            playsInline
-            muted
-            loop
-            preload="auto"
-            poster={HeaderLogo}
-            autoPlay="autoplay"
-          >
-            <source
-              data-src={LimeBrainsVideoMp4}
-              src={LimeBrainsVideoMp4}
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
+      <video
+        playsInline
+        muted
+        loop
+        preload="auto"
+        poster={HeaderLogo}
+        autoPlay="autoplay"
+      >
+        <source
+          data-src={LimeBrainsVideoMp4}
+          src={LimeBrainsVideoMp4}
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
 
-          <Logos>
-            <img src={MazarLogo} alt="" />
-            <img src={SiemensLogo} alt="" />
-            <img src={NokiaLogo} alt="" />
-          </Logos>
-        </VideoWrapper>
-      )}
-    </ResponsiveContext.Consumer>
+      <Logos>
+        <img src={MazarLogo} alt="" />
+        <img src={SiemensLogo} alt="" />
+        <img src={NokiaLogo} alt="" />
+      </Logos>
+    </VideoWrapper>
   )
 }
 
