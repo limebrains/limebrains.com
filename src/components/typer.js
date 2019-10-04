@@ -7,9 +7,8 @@ const HeaderText = styled.div`
 
 class Typer extends React.PureComponent {
   constructor(props) {
-    super(props)
-
-    const { title, subtitle } = props
+    super(props);
+    const { title, subtitle } = props;
 
     this.state = {
       title: title,
@@ -29,29 +28,29 @@ class Typer extends React.PureComponent {
   }
 
   loop = () => {
-    const { slogan, isDeleting, i } = this.state
+    const { slogan, isDeleting, i } = this.state;
     const {
       slogans,
       typingSpeed,
       removalSpeed,
       timeBetweenSlogans,
     } = this.props
-    const j = i % slogans.length
+    const j = i % slogans.length;
 
     this.setState({
       slogan: isDeleting
         ? slogans[j].substring(0, slogan.length - 1)
         : slogans[j].substring(0, slogan.length + 1),
-    })
+    });
 
     if (!isDeleting && slogan === slogans[j]) {
       setTimeout(() => {
-        this.setState({ isDeleting: true })
+        this.setState({ isDeleting: true });
         this.loop()
       }, timeBetweenSlogans)
     } else if (isDeleting && slogan === '') {
       setTimeout(() => {
-        this.setState({ isDeleting: false, i: i + 1 })
+        this.setState({ isDeleting: false, i: i + 1 });
         this.loop()
       }, timeBetweenSlogans)
     } else {
@@ -60,12 +59,12 @@ class Typer extends React.PureComponent {
   }
 
   render() {
-    const { title, subtitle, slogan } = this.state
+    const { title, subtitle, slogan } = this.state;
     return (
-      <HeaderText key={slogan}>
+      <HeaderText>
         <h1>{title}</h1>
         <h3>{subtitle}</h3>
-        <h3>{slogan}</h3>
+        <h3 key={slogan}>{slogan}</h3>
       </HeaderText>
     )
   }

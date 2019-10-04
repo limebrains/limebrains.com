@@ -15,4 +15,9 @@ injectGlobal`
     margin: 0;
     padding: 0;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
 `;
