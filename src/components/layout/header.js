@@ -57,6 +57,15 @@ const Header = props => {
               />
             )}
             <HeaderHrefButton
+              text="JOBS"
+              href="https://forms.gle/676Dcwo98LEYcPWy7"
+              style={{
+                white: true,
+                outline: true,
+                text: true,
+              }}
+            />
+            <HeaderHrefButton
               text="GITHUB"
               href="https://github.com/limebrains/"
               style={{
@@ -147,6 +156,15 @@ const Header = props => {
                     duration={defaultDuration}
                     offset={mobileOffset}
                     onClick={handleMenuClick}
+                    style={{
+                      white: true,
+                      outline: true,
+                      text: true,
+                    }}
+                  />
+                  <HeaderHrefButton
+                    text="JOBS"
+                    href="https://forms.gle/676Dcwo98LEYcPWy7"
                     style={{
                       white: true,
                       outline: true,

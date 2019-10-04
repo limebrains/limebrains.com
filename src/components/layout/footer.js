@@ -339,6 +339,11 @@ export const Footer = () => {
                       </li>
                     )}
                     <li>
+                      <OutSideLink href={'https://forms.gle/676Dcwo98LEYcPWy7'}>
+                        Jobs
+                      </OutSideLink>
+                    </li>
+                    <li>
                       <OutSideLink href={'https://github.com/limebrains/'}>
                         GitHub
                       </OutSideLink>
@@ -483,6 +488,11 @@ export const Footer = () => {
                         <li className="navHeader">Company</li>
                         <li>
                           <Link to={'/'}>Home</Link>
+                        </li>
+                        <li>
+                          <OutSideLink href={'https://forms.gle/676Dcwo98LEYcPWy7'}>
+                            Jobs
+                          </OutSideLink>
                         </li>
                         {false && (
                           <li>
