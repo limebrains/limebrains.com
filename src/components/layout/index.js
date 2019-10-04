@@ -1,20 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
-
-import Header from './header'
-import HeaderHome from './header-blog'
-
 import { Provider } from 'rendition'
-import { theme } from './../theme/theme'
-import { Footer } from './footer'
-
+import styled from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
 import { LocationProvider } from '@reach/router'
 import { Context as ResponsiveContext } from 'react-responsive'
-import { isMobile, isPhonePortrait, isDesktop } from '../responsive'
 
+import Header from './header'
+import { Footer } from './footer'
 import HeaderVideo from '../video'
+import HeaderHome from './header-blog'
+import { theme } from './../theme/theme'
+import { isMobile, isPhonePortrait, isDesktop } from '../responsive'
 
 const ContentWrapper = styled.div`
   min-height: 75vh;

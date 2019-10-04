@@ -173,49 +173,198 @@ const SocialIcon = styled.div`
 
 export const Footer = () => {
   return (
-    <ResponsiveContext.Consumer>
-      {({ isDesktop }) => (
-        <StyledFooter>
-          <Particles
-            width={'100%'}
-            height={'100%'}
-            params={{
-              particles: {
-                line_linked: {
-                  shadow: {
-                    enable: false,
-                    color: '#ffffff',
-                    blur: 5,
-                  },
-                },
-                number: {
-                  value: 30,
-                },
-                size: {
-                  value: 3,
-                },
+    <StyledFooter>
+      <Particles
+        width={'100%'}
+        height={'100%'}
+        params={{
+          particles: {
+            line_linked: {
+              shadow: {
+                enable: false,
+                color: '#ffffff',
+                blur: 5,
               },
-              interactivity: {
-                events: {
-                  onhover: {
-                    enable: true,
-                    mode: 'repulse',
-                  },
-                },
+            },
+            number: {
+              value: 30,
+            },
+            size: {
+              value: 3,
+            },
+          },
+          interactivity: {
+            events: {
+              onhover: {
+                enable: true,
+                mode: 'repulse',
               },
-            }}
-            style={{
-              width: '100%',
-              height: '100%',
-              background: `${gradients.default}`,
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: 0,
-            }}
-          />
-          <Nav>
-            <DesktopView>
+            },
+          },
+        }}
+        style={{
+          width: '100%',
+          height: '100%',
+          background: `${gradients.default}`,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex: 0,
+        }}
+      />
+      <Nav>
+        <DesktopView>
+          <LogoGrid>
+            <Box flex={1}>
+              <p>
+                <Link to="/">Lime Brains</Link>
+              </p>
+              <p className="contact">
+                Lime Brains sp. z o. o.
+                <br />
+                NIP: 5862332197
+                <br />
+                REGON: 38031902300000
+                <br />
+                KRS: 0000733442
+              </p>
+              <SocialIcon className="companyInfo">
+                <Icon icon="FaMapMarkerAlt" />
+                <p>UL.OLIMPIJSKA 2</p>
+              </SocialIcon>
+              <SocialIcon className="companyInfo">
+                <Icon icon="FaPhone" />
+                <p>+48 665 987 443</p>
+              </SocialIcon>
+              <SocialIcon className="companyInfo">
+                <Icon icon="FaMailBulk" />
+                <p>
+                  <a href="mailto:mail@limebrains.com">
+                    mail@limebrains.com
+                  </a>
+                </p>
+              </SocialIcon>
+
+              <p className="social">Follow us:</p>
+              <SocialIcon>
+                <OutSideLink href={'https://github.com/limebrains/'}>
+                  <IconBordered icon="FaGit" />
+                </OutSideLink>
+              </SocialIcon>
+              <SocialIcon>
+                <OutSideLink href={'https://www.facebook.com/limebrains'}>
+                  <IconBordered icon="FaFacebookF" />
+                </OutSideLink>
+              </SocialIcon>
+            </Box>
+          </LogoGrid>
+          <NavList>
+            <NavColumn>
+              <ul>
+                <li className="navHeader">OpenSource</li>
+                <li>
+                  <OutSideLink
+                    href={'https://github.com/PythonicNinja/pydrill'}
+                  >
+                    Pydrill
+                  </OutSideLink>
+                </li>
+                <li>
+                  <OutSideLink href={'https://github.com/limebrains/pet'}>
+                    Pet
+                  </OutSideLink>
+                </li>
+                <li>
+                  <OutSideLink
+                    href={'https://github.com/limebrains/sufler'}
+                  >
+                    Sufler
+                  </OutSideLink>
+                </li>
+                <li>
+                  <OutSideLink href={'https://github.com/limebrains/pyolx'}>
+                    PyOlx
+                  </OutSideLink>
+                </li>
+                <li>
+                  <OutSideLink
+                    href={'https://github.com/limebrains/pyotodom'}
+                  >
+                    PyOtodom
+                  </OutSideLink>
+                </li>
+              </ul>
+            </NavColumn>
+            <NavColumn>
+              <ul>
+                <li className="navHeader">Clients</li>
+                <li>
+                  <OutSideLink href={'https://www.mazars.fr/'}>
+                    Mazars
+                  </OutSideLink>
+                </li>
+                <li>
+                  <OutSideLink href={'https://attensi.com'}>
+                    Attensi
+                  </OutSideLink>
+                </li>
+                <li>
+                  <OutSideLink href={'https://www.voxm.live'}>
+                    Vox'M
+                  </OutSideLink>
+                </li>
+                <li>
+                  <OutSideLink href={'https://villoid.no/'}>
+                    Villoid
+                  </OutSideLink>
+                </li>
+                <li>
+                  <OutSideLink href={'https://coinfalcon.com'}>
+                    Coinfalcon
+                  </OutSideLink>
+                </li>
+              </ul>
+            </NavColumn>
+            <NavColumn>
+              <ul>
+                <li className="navHeader">Company</li>
+                <li>
+                  <Link to={'/'}>Home</Link>
+                </li>
+                {false && (
+                  <li>
+                    <Link to={'/'}>Clients</Link>
+                  </li>
+                )}
+                <li>
+                  <OutSideLink href={'https://forms.gle/676Dcwo98LEYcPWy7'}>
+                    Jobs
+                  </OutSideLink>
+                </li>
+                <li>
+                  <OutSideLink href={'https://github.com/limebrains/'}>
+                    GitHub
+                  </OutSideLink>
+                </li>
+                <li>
+                  <Link to={'/blog'}>Blog</Link>
+                </li>
+                <li>
+                  <OutSideLink href={'mailto:mail@limebrains.com'}>
+                    Contact
+                  </OutSideLink>
+                </li>
+                <li>
+                  <Link to={'/en/privacy'}>Privacy</Link>
+                </li>
+              </ul>
+            </NavColumn>
+          </NavList>
+        </DesktopView>
+
+        <MobileView>
+          <Flex flexDirection={'column'} w={1}>
+            <Flex>
               <LogoGrid>
                 <Box flex={1}>
                   <p>
@@ -246,7 +395,6 @@ export const Footer = () => {
                       </a>
                     </p>
                   </SocialIcon>
-
                   <p className="social">Follow us:</p>
                   <SocialIcon>
                     <OutSideLink href={'https://github.com/limebrains/'}>
@@ -254,7 +402,9 @@ export const Footer = () => {
                     </OutSideLink>
                   </SocialIcon>
                   <SocialIcon>
-                    <OutSideLink href={'https://www.facebook.com/limebrains'}>
+                    <OutSideLink
+                      href={'https://www.facebook.com/limebrains'}
+                    >
                       <IconBordered icon="FaFacebookF" />
                     </OutSideLink>
                   </SocialIcon>
@@ -263,7 +413,7 @@ export const Footer = () => {
               <NavList>
                 <NavColumn>
                   <ul>
-                    <li className="navHeader">OpenSource</li>
+                    <li className="navHeader">Open Source</li>
                     <li>
                       <OutSideLink
                         href={'https://github.com/PythonicNinja/pydrill'}
@@ -272,7 +422,9 @@ export const Footer = () => {
                       </OutSideLink>
                     </li>
                     <li>
-                      <OutSideLink href={'https://github.com/limebrains/pet'}>
+                      <OutSideLink
+                        href={'https://github.com/limebrains/pet'}
+                      >
                         Pet
                       </OutSideLink>
                     </li>
@@ -284,7 +436,9 @@ export const Footer = () => {
                       </OutSideLink>
                     </li>
                     <li>
-                      <OutSideLink href={'https://github.com/limebrains/pyolx'}>
+                      <OutSideLink
+                        href={'https://github.com/limebrains/pyolx'}
+                      >
                         PyOlx
                       </OutSideLink>
                     </li>
@@ -333,28 +487,26 @@ export const Footer = () => {
                     <li>
                       <Link to={'/'}>Home</Link>
                     </li>
+                    <li>
+                      <OutSideLink href={'https://forms.gle/676Dcwo98LEYcPWy7'}>
+                        Jobs
+                      </OutSideLink>
+                    </li>
                     {false && (
                       <li>
                         <Link to={'/'}>Clients</Link>
                       </li>
                     )}
                     <li>
-                      <OutSideLink href={'https://forms.gle/676Dcwo98LEYcPWy7'}>
-                        Jobs
-                      </OutSideLink>
-                    </li>
-                    <li>
                       <OutSideLink href={'https://github.com/limebrains/'}>
-                        GitHub
+                        Github
                       </OutSideLink>
                     </li>
                     <li>
                       <Link to={'/blog'}>Blog</Link>
                     </li>
                     <li>
-                      <OutSideLink href={'mailto:mail@limebrains.com'}>
-                        Contact
-                      </OutSideLink>
+                      <Link to={'/'}>Contact</Link>
                     </li>
                     <li>
                       <Link to={'/en/privacy'}>Privacy</Link>
@@ -362,166 +514,10 @@ export const Footer = () => {
                   </ul>
                 </NavColumn>
               </NavList>
-            </DesktopView>
-
-            <MobileView>
-              <Flex flexDirection={'column'} w={1}>
-                <Flex>
-                  <LogoGrid>
-                    <Box flex={1}>
-                      <p>
-                        <Link to="/">Lime Brains</Link>
-                      </p>
-                      <p className="contact">
-                        Lime Brains sp. z o. o.
-                        <br />
-                        NIP: 5862332197
-                        <br />
-                        REGON: 38031902300000
-                        <br />
-                        KRS: 0000733442
-                      </p>
-                      <SocialIcon className="companyInfo">
-                        <Icon icon="FaMapMarkerAlt" />
-                        <p>UL.OLIMPIJSKA 2</p>
-                      </SocialIcon>
-                      <SocialIcon className="companyInfo">
-                        <Icon icon="FaPhone" />
-                        <p>+48 665 987 443</p>
-                      </SocialIcon>
-                      <SocialIcon className="companyInfo">
-                        <Icon icon="FaMailBulk" />
-                        <p>
-                          <a href="mailto:mail@limebrains.com">
-                            mail@limebrains.com
-                          </a>
-                        </p>
-                      </SocialIcon>
-                      <p className="social">Follow us:</p>
-                      <SocialIcon>
-                        <OutSideLink href={'https://github.com/limebrains/'}>
-                          <IconBordered icon="FaGit" />
-                        </OutSideLink>
-                      </SocialIcon>
-                      <SocialIcon>
-                        <OutSideLink
-                          href={'https://www.facebook.com/limebrains'}
-                        >
-                          <IconBordered icon="FaFacebookF" />
-                        </OutSideLink>
-                      </SocialIcon>
-                    </Box>
-                  </LogoGrid>
-                  <NavList>
-                    <NavColumn>
-                      <ul>
-                        <li className="navHeader">Open Source</li>
-                        <li>
-                          <OutSideLink
-                            href={'https://github.com/PythonicNinja/pydrill'}
-                          >
-                            Pydrill
-                          </OutSideLink>
-                        </li>
-                        <li>
-                          <OutSideLink
-                            href={'https://github.com/limebrains/pet'}
-                          >
-                            Pet
-                          </OutSideLink>
-                        </li>
-                        <li>
-                          <OutSideLink
-                            href={'https://github.com/limebrains/sufler'}
-                          >
-                            Sufler
-                          </OutSideLink>
-                        </li>
-                        <li>
-                          <OutSideLink
-                            href={'https://github.com/limebrains/pyolx'}
-                          >
-                            PyOlx
-                          </OutSideLink>
-                        </li>
-                        <li>
-                          <OutSideLink
-                            href={'https://github.com/limebrains/pyotodom'}
-                          >
-                            PyOtodom
-                          </OutSideLink>
-                        </li>
-                      </ul>
-                    </NavColumn>
-                    <NavColumn>
-                      <ul>
-                        <li className="navHeader">Clients</li>
-                        <li>
-                          <OutSideLink href={'https://www.mazars.fr/'}>
-                            Mazars
-                          </OutSideLink>
-                        </li>
-                        <li>
-                          <OutSideLink href={'https://attensi.com'}>
-                            Attensi
-                          </OutSideLink>
-                        </li>
-                        <li>
-                          <OutSideLink href={'https://www.voxm.live'}>
-                            Vox'M
-                          </OutSideLink>
-                        </li>
-                        <li>
-                          <OutSideLink href={'https://villoid.no/'}>
-                            Villoid
-                          </OutSideLink>
-                        </li>
-                        <li>
-                          <OutSideLink href={'https://coinfalcon.com'}>
-                            Coinfalcon
-                          </OutSideLink>
-                        </li>
-                      </ul>
-                    </NavColumn>
-                    <NavColumn>
-                      <ul>
-                        <li className="navHeader">Company</li>
-                        <li>
-                          <Link to={'/'}>Home</Link>
-                        </li>
-                        <li>
-                          <OutSideLink href={'https://forms.gle/676Dcwo98LEYcPWy7'}>
-                            Jobs
-                          </OutSideLink>
-                        </li>
-                        {false && (
-                          <li>
-                            <Link to={'/'}>Clients</Link>
-                          </li>
-                        )}
-                        <li>
-                          <OutSideLink href={'https://github.com/limebrains/'}>
-                            Github
-                          </OutSideLink>
-                        </li>
-                        <li>
-                          <Link to={'/blog'}>Blog</Link>
-                        </li>
-                        <li>
-                          <Link to={'/'}>Contact</Link>
-                        </li>
-                        <li>
-                          <Link to={'/en/privacy'}>Privacy</Link>
-                        </li>
-                      </ul>
-                    </NavColumn>
-                  </NavList>
-                </Flex>
-              </Flex>
-            </MobileView>
-          </Nav>
-        </StyledFooter>
-      )}
-    </ResponsiveContext.Consumer>
+            </Flex>
+          </Flex>
+        </MobileView>
+      </Nav>
+    </StyledFooter>
   )
 }

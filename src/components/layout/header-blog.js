@@ -1,11 +1,14 @@
 import React from 'react'
 import { MobileView, DesktopView } from '../responsive'
-import { HeaderButton, HeaderButtonScrolled, HeaderHrefButton } from '../common/header-button'
+import { HeaderButton, HeaderHrefButton } from '../common/header-button'
 import {
   HeaderWrapper,
   LineOfBurger,
   CloseIcon,
-  MenuToggle, defaultSmooth, defaultDuration, desktopOffset, mobileOffset,
+  MenuToggle,
+  defaultSmooth,
+  defaultDuration,
+  desktopOffset,
 } from '../common/header-styles'
 import HeaderPlain from '../common/header-plain'
 

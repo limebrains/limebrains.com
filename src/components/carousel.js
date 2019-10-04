@@ -5,7 +5,6 @@ import { FaAngleRight, FaAngleLeft, FaShareAlt } from 'react-icons/fa'
 import { mobileLandscape } from './responsive'
 import { Link as DefaultLink } from './link'
 import { Swipeable } from 'react-swipeable'
-import { Context as ResponsiveContext } from 'react-responsive'
 
 class Carousel extends React.Component {
   constructor(props) {

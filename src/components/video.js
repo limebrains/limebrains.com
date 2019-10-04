@@ -4,8 +4,6 @@ import { mobileLandscape, mobilePortrait } from './responsive'
 import { MazarLogo, NokiaLogo, SiemensLogo, HeaderLogo } from './theme/logos'
 import { LimeBrainsVideoMp4 } from './theme/videos'
 
-import { Context as ResponsiveContext } from 'react-responsive'
-
 import Typer from './typer'
 
 const TextWrapper = styled.div`
