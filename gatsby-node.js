@@ -21,7 +21,6 @@ exports.onCreateNode = ({node, actions, getNode}) => {
     case 'MarkdownRemark': {
       const {permalink, layout} = node.frontmatter
       const {relativePath} = getNode(node.parent)
-
       let slug = permalink
 
       if (!slug && relativePath) {
@@ -40,6 +39,14 @@ exports.onCreateNode = ({node, actions, getNode}) => {
         node,
         name: 'layout',
         value: layout || ''
+      })
+
+      Object.entries(node.frontmatter, (key, value) => {
+        createNodeField({
+          node,
+          name: key,
+          value: value || ''
+        })
       })
     }
   }
@@ -76,6 +83,10 @@ exports.createPages = async ({graphql, actions}) => {
 
   allMarkdown.data.allMarkdownRemark.edges.forEach(({node}) => {
     const {slug, layout} = node.fields
+
+    if (!layout) {
+      return
+    }
 
     createPage({
       path: slug,

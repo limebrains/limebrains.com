@@ -5,6 +5,7 @@ import { MazarLogo, NokiaLogo, SiemensLogo, HeaderLogo } from './theme/logos'
 import { LimeBrainsVideoMp4 } from './theme/videos'
 
 import Typer from './typer'
+import { Link } from './link';
 
 const TextWrapper = styled.div`
   position:absolute;
@@ -132,11 +133,14 @@ const HeaderVideo = () => {
         Your browser does not support the video tag.
       </video>
 
-      <Logos>
-        <img src={MazarLogo} alt="" />
-        <img src={SiemensLogo} alt="" />
-        <img src={NokiaLogo} alt="" />
-      </Logos>
+
+      <Link to={'/projects'}>
+        <Logos>
+          <img src={MazarLogo} alt="" />
+          <img src={SiemensLogo} alt="" />
+          <img src={NokiaLogo} alt="" />
+        </Logos>
+      </Link>
     </VideoWrapper>
   )
 }

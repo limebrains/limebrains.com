@@ -6,7 +6,6 @@ import { Flex } from './../flex'
 import { Box } from 'rendition'
 import { Link as LinkDefault } from '../link'
 import { MobileView, DesktopView } from '../responsive'
-import { Context as ResponsiveContext } from 'react-responsive'
 import { IconBordered, Icon } from '../icon'
 
 const StyledFooter = styled.footer`

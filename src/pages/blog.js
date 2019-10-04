@@ -12,7 +12,7 @@ import Carousel from '../components/carousel'
 
 const Blog = ({ data }) => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Blog" />
 
     <Carousel data={Slides} />
 

@@ -72,8 +72,21 @@ const Header = () => {
               }}
             />
             <HeaderButton
-              to="/#team"
+              to="/team"
               text="TEAM"
+              style={{
+                white: true,
+                outline: true,
+                text: true,
+              }}
+            />
+            <HeaderButton
+              to="/projects"
+              text="PROJECTS"
+              activeClass="active"
+              smooth={defaultSmooth}
+              duration={defaultDuration}
+              offset={desktopOffset}
               style={{
                 white: true,
                 outline: true,
@@ -158,8 +171,21 @@ const Header = () => {
                     }}
                   />
                   <HeaderButton
-                    to="/#team"
+                    to="/team"
                     text="TEAM"
+                    style={{
+                      white: true,
+                      outline: true,
+                      text: true,
+                    }}
+                  />
+                  <HeaderButton
+                    to="/projects"
+                    text="PROJECTS"
+                    activeClass="active"
+                    smooth={defaultSmooth}
+                    duration={defaultDuration}
+                    offset={desktopOffset}
                     style={{
                       white: true,
                       outline: true,

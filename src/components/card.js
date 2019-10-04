@@ -4,7 +4,7 @@ import { Card as DefaultCard } from 'rendition'
 
 const CardWrapper = styled.div`
   display: grid;
-  grid-auto-rows: 320px;
+  ${({autoSize}) => autoSize ? '' : 'grid-auto-rows: 400px;'}
 
   ${DefaultCard} {
   }
@@ -16,7 +16,7 @@ const CardWrapper = styled.div`
 `
 
 export const Card = ({ children, ...rest }) => (
-  <CardWrapper>
+  <CardWrapper {...rest}>
     <DefaultCard {...rest}>{children}</DefaultCard>
   </CardWrapper>
 )
