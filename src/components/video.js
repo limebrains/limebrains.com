@@ -19,7 +19,6 @@ const TextWrapper = styled.div`
   background: ${({ start, end }) =>
     `-webkit-linear-gradient(5deg, ${start ||
       'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
-  backdrop-filter: blur(4px);
   h1 {
     font-size: 76px;
     display: block;
@@ -99,7 +98,7 @@ const Logos = styled.div`
 const HeaderVideo = () => {
   return (
     <VideoWrapper>
-      <TextWrapper start={'rgb(0,0,0, 0.3)'} end={'rgba(0, 0, 0, 0.4)'}>
+      <TextWrapper start={'rgb(0,0,0, .6)'} end={'rgba(0, 0, 0, 0.5)'}>
         <Typer
           title={'Lime Brains'}
           subtitle={'Software house where business questions,'}
@@ -111,8 +110,8 @@ const HeaderVideo = () => {
             'meet smart solutions.',
             'meet great execution.',
           ]}
-          typingSpeed={100}
-          removalSpeed={40}
+          typingSpeed={70}
+          removalSpeed={20}
           timeBetweenSlogans={1500}
         />
       </TextWrapper>

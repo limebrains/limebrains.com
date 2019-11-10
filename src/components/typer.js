@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { colors } from './theme/colors';
+
 const HeaderText = styled.div`
-  color: white;
+  color: ${colors.white};
 `
 
 class Typer extends React.PureComponent {
@@ -34,7 +36,7 @@ class Typer extends React.PureComponent {
       typingSpeed,
       removalSpeed,
       timeBetweenSlogans,
-    } = this.props
+    } = this.props;
     const j = i % slogans.length;
 
     this.setState({
@@ -56,7 +58,7 @@ class Typer extends React.PureComponent {
     } else {
       setTimeout(this.loop, isDeleting ? removalSpeed : typingSpeed)
     }
-  }
+  };
 
   render() {
     const { title, subtitle, slogan } = this.state;
