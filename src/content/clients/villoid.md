@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: client
 title: "Villoid"
 header: "Villoid"
 subtitle: "Villoid"

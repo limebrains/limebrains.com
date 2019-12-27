@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: client
 title: "VoxM"
 header: "VoxM"
 subtitle: "VoxM"

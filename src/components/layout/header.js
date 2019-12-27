@@ -90,8 +90,8 @@ const Header = props => {
               }}
             />
             <HeaderButton
-              to="/projects"
-              text="PROJECTS"
+              to="/clients"
+              text="CLIENTS"
               activeClass="active"
               smooth={defaultSmooth}
               duration={defaultDuration}
@@ -196,8 +196,8 @@ const Header = props => {
                     }}
                   />
                   <HeaderButton
-                    to="/projects"
-                    text="PROJECTS"
+                    to="/clients"
+                    text="CLIENTS"
                     activeClass="active"
                     smooth={defaultSmooth}
                     duration={defaultDuration}

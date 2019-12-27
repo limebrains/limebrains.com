@@ -55,7 +55,7 @@ const Motto = styled.div`
   }
 `
 
-const ProjectTemplate = ({ data }) => {
+const ClientTemplate = ({ data }) => {
   const title = _.get(data, 'markdownRemark.frontmatter.title');
   return (
     <Layout>
@@ -129,10 +129,10 @@ const ProjectTemplate = ({ data }) => {
   )
 }
 
-export default ProjectTemplate
+export default ClientTemplate
 
 export const query = graphql`
-  query ProjectTemplateQuery($slug: String!) {
+  query ClientTemplateQuery($slug: String!) {
     site {
       siteMetadata {
         title

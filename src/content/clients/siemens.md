@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: client
 title: "Siemens"
 header: "Siemens"
 subtitle: "Siemens"

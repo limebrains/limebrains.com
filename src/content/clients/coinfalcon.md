@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: client
 title: "CoinFalcon"
 header: "CoinFalcon"
 subtitle: "CoinFalcon"

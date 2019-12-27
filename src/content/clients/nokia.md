@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: client
 title: "Nokia"
 header: "Nokia"
 subtitle: "Nokia"
