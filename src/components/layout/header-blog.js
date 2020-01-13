@@ -13,6 +13,18 @@ import {
 import HeaderPlain from '../common/header-plain'
 
 const inputBox = React.createRef()
+const handleMenuClick = () => {
+  inputBox.current.checked = false
+  document.body.style.overflow = "auto"
+}
+const inputBoxOnClick = (e) => {
+  if (e.target.checked) {
+    document.body.style.overflow = "hidden"
+  }
+  else {
+    document.body.style.overflow = "auto"
+  }
+}
 
 const Header = () => {
   return (
@@ -33,17 +45,6 @@ const Header = () => {
                 text: false,
               }}
             />
-            {false && (
-              <HeaderButton
-                to="/#clients"
-                text="CLIENTS"
-                style={{
-                  white: true,
-                  outline: true,
-                  text: true,
-                }}
-              />
-            )}
             <HeaderHrefButton
               text="JOBS"
               href="https://forms.gle/676Dcwo98LEYcPWy7"
@@ -112,7 +113,7 @@ const Header = () => {
         <MobileView>
           <nav role="navigation">
             <MenuToggle>
-              <CloseIcon type="checkbox" innerRef={inputBox} />
+              <CloseIcon type="checkbox" innerRef={inputBox} onClick={inputBoxOnClick}/>
 
               <LineOfBurger />
               <LineOfBurger />
@@ -121,11 +122,13 @@ const Header = () => {
                 <div>
                   <HeaderHrefButton
                     href="https://drift.me/mail12/meeting"
+                    target={"_blank"}
                     text="MEET US"
                     activeClass="active"
                     smooth={defaultSmooth}
                     duration={defaultDuration}
                     offset={desktopOffset}
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,
@@ -135,26 +138,17 @@ const Header = () => {
                   <HeaderHrefButton
                     text="JOBS"
                     href="https://forms.gle/676Dcwo98LEYcPWy7"
+                    target={"_blank"}
                     style={{
                       white: true,
                       outline: true,
                       text: true,
                     }}
                   />
-                  {false && (
-                    <HeaderButton
-                      to="/#clients"
-                      text="CLIENTS"
-                      style={{
-                        white: true,
-                        outline: true,
-                        text: true,
-                      }}
-                    />
-                  )}
                   <HeaderHrefButton
                     text="GITHUB"
                     href="https://github.com/limebrains/"
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,
@@ -164,6 +158,7 @@ const Header = () => {
                   <HeaderButton
                     to="/blog"
                     text="BLOG"
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,
@@ -173,6 +168,7 @@ const Header = () => {
                   <HeaderButton
                     to="/team"
                     text="TEAM"
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,
@@ -186,6 +182,7 @@ const Header = () => {
                     smooth={defaultSmooth}
                     duration={defaultDuration}
                     offset={desktopOffset}
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,
@@ -195,6 +192,7 @@ const Header = () => {
                   <HeaderHrefButton
                     href="mailto:mail@limebrains.com"
                     text="CONTACT"
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,

@@ -9,7 +9,7 @@ import { Context as ResponsiveContext } from 'react-responsive'
 import Header from './header'
 import { Footer } from './footer'
 import HeaderVideo from '../video'
-import HeaderHome from './header-blog'
+import HeaderBlog from './header-blog'
 import { theme } from './../theme/theme'
 import { isMobile, isPhonePortrait, isDesktop } from '../responsive'
 
@@ -24,7 +24,7 @@ const renderHeader = siteTitle => {
         context.location.pathname === '/' ? (
           <Header siteTitle={siteTitle} />
         ) : (
-          <HeaderHome siteTitle={siteTitle} />
+          <HeaderBlog siteTitle={siteTitle} />
         )
       }
     </LocationProvider>

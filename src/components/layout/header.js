@@ -20,6 +20,7 @@ import HeaderPlain from '../common/header-plain'
 const inputBox = React.createRef()
 const handleMenuClick = () => {
   inputBox.current.checked = false
+  document.body.style.overflow = "auto"
 }
 const inputBoxOnClick = (e) => {
   if (e.target.checked) {
@@ -48,21 +49,6 @@ const Header = props => {
                 text: false,
               }}
             />
-            {false && (
-              <HeaderButtonScrolled
-                to="/#clients"
-                text="CLIENTS"
-                activeClass="active"
-                smooth={defaultSmooth}
-                duration={defaultDuration}
-                offset={desktopOffset}
-                style={{
-                  white: true,
-                  outline: true,
-                  text: true,
-                }}
-              />
-            )}
             <HeaderHrefButton
               text="JOBS"
               href="https://forms.gle/676Dcwo98LEYcPWy7"
@@ -168,20 +154,6 @@ const Header = props => {
                       text: true,
                     }}
                   />
-                  {false && (<HeaderButtonScrolled
-                    to="/#clients"
-                    text="CLIENTS"
-                    activeClass="active"
-                    smooth={defaultSmooth}
-                    duration={defaultDuration}
-                    offset={mobileOffset}
-                    onClick={handleMenuClick}
-                    style={{
-                      white: true,
-                      outline: true,
-                      text: true,
-                    }}
-                  />)}
                   <HeaderHrefButton
                     text="JOBS"
                     href="https://forms.gle/676Dcwo98LEYcPWy7"
@@ -203,6 +175,7 @@ const Header = props => {
                   <HeaderButton
                     to="/blog"
                     text="BLOG"
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,
@@ -230,6 +203,7 @@ const Header = props => {
                     smooth={defaultSmooth}
                     duration={defaultDuration}
                     offset={desktopOffset}
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,
@@ -243,6 +217,7 @@ const Header = props => {
                     smooth={defaultSmooth}
                     duration={defaultDuration}
                     offset={desktopOffset}
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,

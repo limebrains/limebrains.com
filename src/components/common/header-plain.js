@@ -26,7 +26,11 @@ const HeaderPlain = ({ children }, { siteTitle }) => {
         background: gradients.default,
       }}
     >
-      <Box pt={10} pb={10} pr={10}>
+      <Box pt={10} pb={10} pr={10}
+        style={{
+          flex: 0.15
+        }}
+      >
         <Link to="/">
           <Flip left>
             <Logo
