@@ -21,7 +21,14 @@ const inputBox = React.createRef()
 const handleMenuClick = () => {
   inputBox.current.checked = false
 }
-
+const inputBoxOnClick = (e) => {
+  if (e.target.checked) {
+    document.body.style.overflow = "hidden"
+  }
+  else {
+    document.body.style.overflow = "auto"
+  }
+}
 const Header = props => {
   return (
     <HeaderWrapper>
@@ -128,7 +135,7 @@ const Header = props => {
         <MobileView>
           <nav role="navigation">
             <MenuToggle>
-              <CloseIcon type="checkbox" innerRef={inputBox} />
+              <CloseIcon type="checkbox" innerRef={inputBox} onClick={inputBoxOnClick}/>
               <LineOfBurger />
               <LineOfBurger />
               <LineOfBurger />

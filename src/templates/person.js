@@ -18,24 +18,6 @@ const LayoutWrapper = styled.div`
   padding: 20px;
 `
 
-const Row = styled.div`
-  color: #8f9297;
-  color: #8f9297;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 1rem;
-  padding-top: 1rem;
-`
-
-const Name = styled.div`
-  
-`
-
-const Position = styled.div`
-  font-size: 12px;
-`
-
 const Section = styled.div`
   font-size: 30px;
   color: #8f9297;
@@ -177,29 +159,3 @@ export const query = graphql`
     }
   }
 `
-
-const Slides = [
-  {
-    image:
-      'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
-    header: 'How to create alert in osx?',
-    subtitle: 'Just one easy step!',
-    date: 'September 20 2019',
-    link: '/blog/2017-10-20T02:00-alert-in-osx/',
-  },
-  {
-    image: 'https://i.ytimg.com/vi/HWn85tjFMIQ/maxresdefault.jpg',
-    header: 'Add a progress meter to your loops in a second',
-    subtitle: 'It couldn\'t be easier!',
-    date: 'September 18 2019',
-    link: '/blog/2017-10-20T00:00-progress-bar/',
-  },
-  {
-    image:
-      'https://c.pxhere.com/photos/b3/37/coding_computer_hacker_hacking_html_programmer_programming_script-1366057.jpg!d',
-    header: 'How to easily find biggest files?',
-    subtitle: 'Press button below to find out!',
-    date: 'September 19 2019',
-    link: '/blog/2017-10-20T01:00-disk-usage/',
-  },
-]
