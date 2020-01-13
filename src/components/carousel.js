@@ -109,8 +109,8 @@ export default Carousel
 
 const Container = styled.div`
   position: relative;
-  height: 60vh;
-  margin-bottom: 10vh;
+  height: 45vh;
+  margin-bottom: 12vh;
   white-space: nowrap;
   overflow: hidden;
 `
@@ -167,7 +167,7 @@ const Button = styled.div`
   opacity: 0.8;
   font-size: 38px;
   width: 5vw;
-  min-height: 60vh;
+  min-height: 45vh;
   justify-content: center;
   align-items: center;
   cursor: pointer;
