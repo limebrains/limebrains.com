@@ -1,15 +1,15 @@
 ---
 layout: person
-title: "Arek Klein"
-subtitle: "Arek Klein"
+title: "Daniel Okroś"
+subtitle: "Daniel Okroś"
 seo:
-  title: "Arek Klein"
-  description: "Arek Klein"
+  title: "Daniel Okroś"
+  description: "Daniel Okroś"
   noindex: false
 leader: false
 position: 'Full stack developer'
 category: full-stack
 motto: "Challenges are what make life interesting and overcoming them is what makes life meaningful"
-image: https://i.imgur.com/yc4Pu2H.png
+image: https://i.imgur.com/m125lp4.png
 image_wide: https://i.imgur.com/2HVc452.png
 ---

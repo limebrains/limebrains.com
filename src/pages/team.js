@@ -17,7 +17,7 @@ const Row = styled.div`
   justify-content: space-between;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid #bec1c6;
+  border-bottom: 1px solid #bec1c6;
 `
 
 const Name = styled.div`
@@ -59,7 +59,7 @@ const Team = ({ data }) => (
           <Box key={post.node.frontmatter.title}>
             <Card autoSize>
               <Link to={post.node.fields.slug}>
-                <Img src={_.get(post, 'node.frontmatter.image')} />
+                <Img src={_.get(post, 'node.frontmatter.image')} responsive={true} />
                 <Row>
                   <Name>{_.get(post, 'node.frontmatter.title')}</Name>
                   <Position>{_.get(post, 'node.frontmatter.position')}</Position>
@@ -126,6 +126,7 @@ export const query = graphql`
             date
             tags
             image
+            image_wide
             seo {
               title
               description

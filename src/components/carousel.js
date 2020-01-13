@@ -27,7 +27,7 @@ class Carousel extends React.Component {
           {data[index].date}
         </p>
         <p className="header">
-          <Link to="/">{data[index].header}</Link>
+          <Link to={data[index].link}>{data[index].header}</Link>
         </p>
         <p className="subHeader">{data[index].subtitle}</p>
         <Link to={data[index].link} className="visit">
@@ -92,7 +92,7 @@ class Carousel extends React.Component {
             {data.map(slide => (
               <Image
                 url={slide.image}
-                key={slide.header}
+                key={slide.link}
                 translateValue={this.state.translateValue}
               />
             ))}
@@ -155,7 +155,7 @@ const Image = styled.div`
     url(${props => props.url});
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   transition: all 0.6s ease-in-out;
   transform: translateX(${props => props.translateValue}px);
 `

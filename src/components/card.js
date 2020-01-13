@@ -10,7 +10,6 @@ const CardWrapper = styled.div`
   }
   img {
     object-fit: contain;
-    height: 200px;
     width: 100%;
   }
 `

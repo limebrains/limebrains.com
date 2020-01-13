@@ -6,11 +6,11 @@ import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import { SectionHeading } from '../components/heading'
-import { Img } from '../components/img';
-import { Box } from '../components/flex';
-import { Card } from '../components/card';
-import Bar from '../components/showhidebar';
-import { mobileLandscape } from '../components/responsive';
+import { Img } from '../components/img'
+import { Box } from '../components/flex'
+import Bar from '../components/showhidebar'
+import { mobileLandscape } from '../components/responsive'
+import Carousel from '../components/carousel'
 
 const LayoutWrapper = styled.div`
   max-width: 1200px;
@@ -19,6 +19,7 @@ const LayoutWrapper = styled.div`
 `
 
 const Row = styled.div`
+  color: #8f9297;
   color: #8f9297;
   display: flex;
   flex-direction: row;
@@ -56,74 +57,61 @@ const Motto = styled.div`
 `
 
 const PlaintextTemplate = ({ data }) => {
-  const title = _.get(data, 'markdownRemark.frontmatter.title');
+  const title = _.get(data, 'markdownRemark.frontmatter.title')
+  const person = _.get(data, 'markdownRemark.frontmatter')
+  const projects = _.get(data, 'allMarkdownRemark.edges').map(edge => ({
+    ...edge.node.frontmatter,
+    link: edge.node.fields.slug
+  }))
+  console.log('ASFSAFAS', person)
+
   return (
     <Layout>
-      <SEO title={_.get(data, 'markdownRemark.frontmatter.seo.title')} />
+      <SEO title={_.get(person, 'seo.title')}/>
       <LayoutWrapper>
 
         <Box>
-          <Card autoSize>
-            <SectionHeading title={title} />
-
-            <Img src={_.get(data, 'markdownRemark.frontmatter.image')} />
-            <Row>
-              <Name>{_.get(data, 'markdownRemark.frontmatter.title')}</Name>
-              <Position>{_.get(data, 'markdownRemark.frontmatter.position')}</Position>
-            </Row>
-          </Card>
+          <SectionHeading title={`${title} - ${_.get(person, 'position')}`}/>
+          <Img src={_.get(person, 'image_wide')} responsive/>
         </Box>
 
         <Box mt={'3rem'}/>
-
-        <Section>
-          Motto
-        </Section>
-
-        <Card autoSize>
-          <Motto>{_.get(data, 'markdownRemark.frontmatter.motto')}</Motto>
-        </Card>
+        <Motto>{_.get(person, 'motto')}</Motto>
 
         <Box mt={'3rem'}/>
 
         <Section>
-          FAQ
+          Areas of expertise
         </Section>
 
-        <Card autoSize>
-          <Box mt={'3rem'}/>
-
-          <Bar
-            header="Do you do mobile apps?"
-            myIndex="0"
-            content="Yes, we specialize in development of the mobile apps for Android / iOS"
-          />
-          <Bar
-            header="What technologies you use?"
-            myIndex="1"
-            content="Python, Django/REST, Pyramid, PostgreSQL, MySQL, MongoDB, ElasticSearch, AWS, serverless. ReactJS, Angular, ES6, Webpack, Redux, TypeScript. We also have experience in the following areas: SQL, Ajax, OOP, and software design and testing, Django, Python, Django Rest Framework, Angular, JS, HTML5, JQuery."
-          />
-          <Bar
-            header="Do you offer full tech support?"
-            myIndex="2"
-            content="Yes, we offer full tech support for our clients."
-          />
-          <Bar
-            header="24/7 Friendly Support?"
-            myIndex="3"
-            content="Yes, contact us via email or chat. For sure you will be served."
-          />
-        </Card>
-
+        <Box mt={'3rem'}/>
+        <Bar
+          header="Server Administration"
+          myIndex="0"
+          content="Experience with the core AWS services. Good background in Linux/Unix administration."
+        />
+        <Bar
+          header="Backend Development"
+          myIndex="1"
+          content="Python, Django/REST, Pyramid, PostgreSQL, MySQL, MongoDB, ElasticSearch, AWS, serverless."
+        />
+        <Bar
+          header="Frontend Development"
+          myIndex="2"
+          content="ReactJS, Angular, ES6, Webpack, Redux, TypeScript"
+        />
+        <Bar
+          header="Test Driven Development"
+          myIndex="3"
+          content="Unit tests, E2E tests, watchers on production"
+        />
         <Box mt={'3rem'}/>
 
         <Section>
           Some Projects
         </Section>
 
-        <Card autoSize>
-          <Motto>{_.get(data, 'markdownRemark.frontmatter.motto')}</Motto>
-        </Card>
+        <Carousel data={projects}/>
       </LayoutWrapper>
     </Layout>
   )
@@ -132,33 +120,87 @@ const PlaintextTemplate = ({ data }) => {
 export default PlaintextTemplate
 
 export const query = graphql`
-  query PersonTemplateQuery($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        description
-        url
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      excerpt
-      frontmatter {
-        title
-        subtitle
-        image
-        position
-        motto
-        date
-        seo {
+    query  PersonTemplateQuery($slug: String!) {
+      site {
+        siteMetadata {
           title
           description
-          noindex
+          url
         }
       }
-      fields {
-        slug
+      markdownRemark(fields: { slug: { eq: $slug } }) {
+        html
+        excerpt
+        frontmatter {
+          title
+          subtitle
+          image
+          image_wide
+          position
+          motto
+          date
+          seo {
+            title
+            description
+            noindex
+          }
+        }
+        fields {
+          slug
+        }
+      }
+      allMarkdownRemark(filter: { fields: { layout: { eq: "project" } } }) {
+      edges {
+        node {
+          tableOfContents
+          timeToRead
+          frontmatter {
+            title
+            subtitle
+            description
+            website
+            motto
+            date
+            tags
+            image
+            seo {
+              title
+              description
+              noindex
+            }
+          }
+          fields {
+            slug
+            layout
+          }
+        }
       }
     }
   }
 `
+
+const Slides = [
+  {
+    image:
+      'https://static.pexels.com/photos/7055/desk-computer-imac-home-large.jpg',
+    header: 'How to create alert in osx?',
+    subtitle: 'Just one easy step!',
+    date: 'September 20 2019',
+    link: '/blog/2017-10-20T02:00-alert-in-osx/',
+  },
+  {
+    image: 'https://i.ytimg.com/vi/HWn85tjFMIQ/maxresdefault.jpg',
+    header: 'Add a progress meter to your loops in a second',
+    subtitle: 'It couldn\'t be easier!',
+    date: 'September 18 2019',
+    link: '/blog/2017-10-20T00:00-progress-bar/',
+  },
+  {
+    image:
+      'https://c.pxhere.com/photos/b3/37/coding_computer_hacker_hacking_html_programmer_programming_script-1366057.jpg!d',
+    header: 'How to easily find biggest files?',
+    subtitle: 'Press button below to find out!',
+    date: 'September 19 2019',
+    link: '/blog/2017-10-20T01:00-disk-usage/',
+  },
+]
