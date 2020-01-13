@@ -46,7 +46,7 @@ const Section = styled.div`
 `
 
 
-const Team = ({ data }) => (
+const Projects = ({ data }) => (
   <Layout>
     <SEO title="Projects" />
 
@@ -71,15 +71,15 @@ const Team = ({ data }) => (
         ))}
 
         <Box>
-          <Card>
-            <a href={'https://drift.me/mail12/meeting'} style={{ textDecoration: 'none' }}>
-              <Img src={'https://i.imgur.com/NM9LdJV.jpg'} />
+          <Card autoSize>
+            <Link to={'https://drift.me/mail12/meeting'} style={{ textDecoration: 'none' }}>
+              <Img src={'https://i.imgur.com/ZVdpbuj.png'} />
               <Row>
-                <Name>{"Your company"}</Name>
-                <Position>{'your website'}</Position>
+                <Name>Your company</Name>
+                <Position>your website</Position>
               </Row>
-              <Motto>{'Let\'s talk about your big idea?'}</Motto>
-            </a>
+              <Motto>Let's talk about your big idea?</Motto>
+            </Link>
           </Card>
         </Box>
       </FlexBlog>
@@ -88,7 +88,7 @@ const Team = ({ data }) => (
   </Layout>
 )
 
-export default Team
+export default Projects
 
 export const query = graphql`
   query {

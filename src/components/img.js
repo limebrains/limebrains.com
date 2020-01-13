@@ -8,8 +8,8 @@ const StyledImg = styled(StyleImg)`
   ${props =>
     props.responsive &&
     css`
-      max-width: 100%;
-      max-height: 100%;
+      width: 100% !important;
+      max-height: 100% !important;
     `}
 
   ${props =>

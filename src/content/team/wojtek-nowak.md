@@ -10,5 +10,6 @@ leader: true
 position: 'Cofounder'
 category: founder,full-stack
 motto: "Difficult roads often lead to beautiful destinations."
-image: https://i.imgur.com/SpMl1N5.jpg
+image: https://i.imgur.com/icboC8l.png
+image_wide: https://i.imgur.com/2HVc452.png
 ---
