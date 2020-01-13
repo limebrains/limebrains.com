@@ -10,5 +10,5 @@ leader: true
 position: 'Cofounder'
 motto: "Challenges are what make life interesting and overcoming them is what makes life meaningful."
 category: founder,full-stack
-image: https://i.imgur.com/sxGhtz3.jpg
+image: https://i.imgur.com/4idpg9d.png
 ---
