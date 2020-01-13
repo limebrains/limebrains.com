@@ -63,7 +63,6 @@ const PlaintextTemplate = ({ data }) => {
     ...edge.node.frontmatter,
     link: edge.node.fields.slug
   }))
-  console.log('ASFSAFAS', person)
 
   return (
     <Layout>
