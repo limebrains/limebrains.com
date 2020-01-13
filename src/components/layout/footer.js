@@ -296,7 +296,6 @@ export const Footer = () => {
             </NavColumn>
             <NavColumn>
               <ul>
-                <li className="navHeader">Clients</li>
                 <li>
                   <OutSideLink href={'https://www.mazars.fr/'}>
                     Mazars
@@ -330,11 +329,6 @@ export const Footer = () => {
                 <li>
                   <Link to={'/'}>Home</Link>
                 </li>
-                {false && (
-                  <li>
-                    <Link to={'/'}>Clients</Link>
-                  </li>
-                )}
                 <li>
                   <OutSideLink href={'https://forms.gle/676Dcwo98LEYcPWy7'}>
                     Jobs
@@ -452,7 +446,6 @@ export const Footer = () => {
                 </NavColumn>
                 <NavColumn>
                   <ul>
-                    <li className="navHeader">Clients</li>
                     <li>
                       <OutSideLink href={'https://www.mazars.fr/'}>
                         Mazars
@@ -491,11 +484,6 @@ export const Footer = () => {
                         Jobs
                       </OutSideLink>
                     </li>
-                    {false && (
-                      <li>
-                        <Link to={'/'}>Clients</Link>
-                      </li>
-                    )}
                     <li>
                       <OutSideLink href={'https://github.com/limebrains/'}>
                         Github
