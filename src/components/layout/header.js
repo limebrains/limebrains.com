@@ -117,7 +117,6 @@ const Header = props => {
             />
           </ul>
         </DesktopView>
-
         <MobileView>
           <nav role="navigation">
             <MenuToggle>
