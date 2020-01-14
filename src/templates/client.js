@@ -48,7 +48,7 @@ const Motto = styled.div`
   text-align: center;
   color: #c2bebe;
   font-style: italic;
-  font-size: 60px;
+  font-size: 38px;
   
   @media (max-width: ${mobileLandscape}px) {
     font-size: 30px;
