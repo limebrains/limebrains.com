@@ -5,7 +5,7 @@ import { colors, gradients } from './../theme/colors'
 import { Flex } from './../flex'
 import { Box } from 'rendition'
 import { Link as LinkDefault } from '../link'
-import { MobileView, DesktopView } from '../responsive'
+import { mobilePortrait, mobileLandscape } from '../responsive'
 import { IconBordered, Icon } from '../icon'
 
 const StyledFooter = styled.footer`
@@ -38,21 +38,19 @@ const NavList = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 100%;
   justify-content: space-between;
-  width: 50%;
-  @media only screen and (max-width: 443px) {
-    padding-left: 4em;
+  @media only screen and (max-width: ${mobilePortrait}px) {
+    flex-direction: column;
+    padding: 0 6em;
   }
-  @media only screen and (max-width: 375px) {
-    padding-left: 3.5em;
+  @media only screen and (min-width: ${mobilePortrait}px) and (max-width: ${mobileLandscape}px) {
+    padding: 2em;
   }
   ul {
     li {
       font-size: 1.375em;
       font-weight: 200;
-      @media only screen and (max-width: 640px) {
-        font-size: 1em;
-      }
     }
   }
 `
@@ -81,7 +79,6 @@ const NavColumn = styled.div`
 `
 
 const LogoGrid = styled.div`
-  width: 50%;
   p {
     font-size: 1.375em;
     font-weight: 200;
@@ -212,8 +209,9 @@ export const Footer = () => {
         }}
       />
       <Nav>
-        <DesktopView>
-          <LogoGrid>
+          <NavList>
+            <NavColumn>
+            <LogoGrid>
             <Box flex={1}>
               <p>
                 <Link to="/">Lime Brains</Link>
@@ -256,8 +254,8 @@ export const Footer = () => {
                 </OutSideLink>
               </SocialIcon>
             </Box>
-          </LogoGrid>
-          <NavList>
+    </LogoGrid>
+            </NavColumn>
             <NavColumn>
               <ul>
                 <li className="navHeader">OpenSource</li>
@@ -296,6 +294,7 @@ export const Footer = () => {
             </NavColumn>
             <NavColumn>
               <ul>
+                <li className="navHeader">Clients</li>
                 <li>
                   <OutSideLink href={'https://www.mazars.fr/'}>
                     Mazars
@@ -353,157 +352,7 @@ export const Footer = () => {
               </ul>
             </NavColumn>
           </NavList>
-        </DesktopView>
 
-        <MobileView>
-          <Flex flexDirection={'column'} w={1}>
-            <Flex>
-              <LogoGrid>
-                <Box flex={1}>
-                  <p>
-                    <Link to="/">Lime Brains</Link>
-                  </p>
-                  <p className="contact">
-                    Lime Brains sp. z o. o.
-                    <br />
-                    NIP: 5862332197
-                    <br />
-                    REGON: 38031902300000
-                    <br />
-                    KRS: 0000733442
-                  </p>
-                  <SocialIcon className="companyInfo">
-                    <Icon icon="FaMapMarkerAlt" />
-                    <p>UL.OLIMPIJSKA 2</p>
-                  </SocialIcon>
-                  <SocialIcon className="companyInfo">
-                    <Icon icon="FaPhone" />
-                    <p>+48 665 987 443</p>
-                  </SocialIcon>
-                  <SocialIcon className="companyInfo">
-                    <Icon icon="FaMailBulk" />
-                    <p>
-                      <a href="mailto:mail@limebrains.com">
-                        mail@limebrains.com
-                      </a>
-                    </p>
-                  </SocialIcon>
-                  <p className="social">Follow us:</p>
-                  <SocialIcon>
-                    <OutSideLink href={'https://github.com/limebrains/'}>
-                      <IconBordered icon="FaGit" />
-                    </OutSideLink>
-                  </SocialIcon>
-                  <SocialIcon>
-                    <OutSideLink
-                      href={'https://www.facebook.com/limebrains'}
-                    >
-                      <IconBordered icon="FaFacebookF" />
-                    </OutSideLink>
-                  </SocialIcon>
-                </Box>
-              </LogoGrid>
-              <NavList>
-                <NavColumn>
-                  <ul>
-                    <li className="navHeader">Open Source</li>
-                    <li>
-                      <OutSideLink
-                        href={'https://github.com/PythonicNinja/pydrill'}
-                      >
-                        Pydrill
-                      </OutSideLink>
-                    </li>
-                    <li>
-                      <OutSideLink
-                        href={'https://github.com/limebrains/pet'}
-                      >
-                        Pet
-                      </OutSideLink>
-                    </li>
-                    <li>
-                      <OutSideLink
-                        href={'https://github.com/limebrains/sufler'}
-                      >
-                        Sufler
-                      </OutSideLink>
-                    </li>
-                    <li>
-                      <OutSideLink
-                        href={'https://github.com/limebrains/pyolx'}
-                      >
-                        PyOlx
-                      </OutSideLink>
-                    </li>
-                    <li>
-                      <OutSideLink
-                        href={'https://github.com/limebrains/pyotodom'}
-                      >
-                        PyOtodom
-                      </OutSideLink>
-                    </li>
-                  </ul>
-                </NavColumn>
-                <NavColumn>
-                  <ul>
-                    <li>
-                      <OutSideLink href={'https://www.mazars.fr/'}>
-                        Mazars
-                      </OutSideLink>
-                    </li>
-                    <li>
-                      <OutSideLink href={'https://attensi.com'}>
-                        Attensi
-                      </OutSideLink>
-                    </li>
-                    <li>
-                      <OutSideLink href={'https://www.voxm.live'}>
-                        Vox'M
-                      </OutSideLink>
-                    </li>
-                    <li>
-                      <OutSideLink href={'https://villoid.no/'}>
-                        Villoid
-                      </OutSideLink>
-                    </li>
-                    <li>
-                      <OutSideLink href={'https://coinfalcon.com'}>
-                        Coinfalcon
-                      </OutSideLink>
-                    </li>
-                  </ul>
-                </NavColumn>
-                <NavColumn>
-                  <ul>
-                    <li className="navHeader">Company</li>
-                    <li>
-                      <Link to={'/'}>Home</Link>
-                    </li>
-                    <li>
-                      <OutSideLink href={'https://forms.gle/676Dcwo98LEYcPWy7'}>
-                        Jobs
-                      </OutSideLink>
-                    </li>
-                    <li>
-                      <OutSideLink href={'https://github.com/limebrains/'}>
-                        Github
-                      </OutSideLink>
-                    </li>
-                    <li>
-                      <Link to={'/blog'}>Blog</Link>
-                    </li>
-                    <li>
-                      <Link to={'/'}>Contact</Link>
-                    </li>
-                    <li>
-                      <Link to={'/en/privacy'}>Privacy</Link>
-                    </li>
-                  </ul>
-                </NavColumn>
-              </NavList>
-            </Flex>
-          </Flex>
-        </MobileView>
       </Nav>
     </StyledFooter>
   )

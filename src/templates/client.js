@@ -116,14 +116,6 @@ const ClientTemplate = ({ data }) => {
         </Card>
 
         <Box mt={'3rem'}/>
-
-        <Section>
-          Other Projects
-        </Section>
-
-        <Card autoSize>
-          <Motto>{_.get(data, 'markdownRemark.frontmatter.motto')}</Motto>
-        </Card>
       </LayoutWrapper>
     </Layout>
   )
