@@ -130,7 +130,7 @@ export const query = graphql`
           slug
         }
       }
-      allMarkdownRemark(filter: { fields: { layout: { eq: "project" } } }) {
+      allMarkdownRemark(filter: { fields: { layout: { eq: "client" } } }) {
       edges {
         node {
           tableOfContents
