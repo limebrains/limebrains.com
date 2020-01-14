@@ -48,7 +48,7 @@ const Motto = styled.div`
   text-align: center;
   color: #c2bebe;
   font-style: italic;
-  font-size: 60px;
+  font-size: 38px;
   
   @media (max-width: ${mobileLandscape}px) {
     font-size: 30px;
@@ -116,14 +116,6 @@ const ClientTemplate = ({ data }) => {
         </Card>
 
         <Box mt={'3rem'}/>
-
-        <Section>
-          Other Projects
-        </Section>
-
-        <Card autoSize>
-          <Motto>{_.get(data, 'markdownRemark.frontmatter.motto')}</Motto>
-        </Card>
       </LayoutWrapper>
     </Layout>
   )

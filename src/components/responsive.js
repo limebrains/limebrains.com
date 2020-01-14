@@ -1,5 +1,5 @@
 import React from 'react'
-import Responsive from 'react-responsive'
+import styled from 'styled-components'
 // breakpoints
 export const mobilePortrait = 480
 export const mobileLandscape = 768
@@ -19,9 +19,15 @@ export const isTablet = width =>
   mobileLandscape < width && width < tabletLandscape
 export const isDesktop = width => width > tabletLandscape
 
-export const MobileView = props => (
-  <Responsive {...props} minWidth={2} maxWidth={tabletLandscape}/>
-)
-export const DesktopView = props => (
-  <Responsive {...props} minWidth={tabletLandscape}/>
-)
+export const MobileView = styled.div`
+  display: none;
+  @media (max-width: ${tabletLandscape}px) {
+    display: block;
+  }
+`
+export const DesktopView = styled.div`
+  display: none;
+  @media (min-width: ${tabletLandscape}px) {
+    display: block;
+  }
+`
