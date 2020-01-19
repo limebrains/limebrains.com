@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { Provider } from 'rendition'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import { LocationProvider } from '@reach/router'
+import { Location } from '@reach/router'
+
 
 import Header from './header'
 import { Footer } from './footer'
@@ -17,33 +18,38 @@ const ContentWrapper = styled.div`
 
 const renderHeader = siteTitle => {
   return (
-    <LocationProvider>
-      {context =>
-        context.location.pathname === '/' ? (
-          <Header siteTitle={siteTitle} />
-        ) : (
-          <HeaderBlog siteTitle={siteTitle} />
-        )
-      }
-    </LocationProvider>
+    <Location>
+      {({ location }) => (
+        <div>
+          <h2>PATH: {location.pathname}</h2>
+          {location.pathname === '/' ? (
+            <Header siteTitle={siteTitle}/>
+          ) : (
+            <HeaderBlog siteTitle={siteTitle}/>
+          )}
+        </div>
+      )}
+    </Location>
   )
 }
 
 const renderVideo = () => {
   return (
-    <LocationProvider>
-      {context => (context.location.pathname === '/' ? <HeaderVideo /> : '')}
-    </LocationProvider>
+    <Location>
+      {({ location }) => (
+        <div>
+          <h2>PATH: {location.pathname}</h2>
+          {location.pathname === '/blog' && (<HeaderVideo/>)}
+        </div>
+      )}
+    </Location>
   )
 }
 
 class Layout extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
-    const { children } = this.props;
+    const { children } = this.props
 
     return (
       <StaticQuery
@@ -59,10 +65,10 @@ class Layout extends React.PureComponent {
         render={data => (
           <>
             <Provider theme={theme}>
-                {renderVideo()}
-                {renderHeader(data.site.siteMetadata.title)}
-                <ContentWrapper>{children}</ContentWrapper>
-                <Footer/>
+              {renderVideo()}
+              {renderHeader(data.site.siteMetadata.title)}
+              <ContentWrapper>{children}</ContentWrapper>
+              <Footer/>
             </Provider>
           </>
         )}

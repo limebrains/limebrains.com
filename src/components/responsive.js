@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 // breakpoints
 export const mobilePortrait = 480
