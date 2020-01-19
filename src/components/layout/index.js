@@ -15,18 +15,23 @@ import { theme } from './../theme/theme'
 const ContentWrapper = styled.div`
   min-height: 75vh;
 `
+const StickyWrapper = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+`
 
 const renderHeader = siteTitle => {
   return (
     <Location>
       {({ location }) => (
-        <div>
+        <StickyWrapper>
           {location.pathname === '/' ? (
             <Header siteTitle={siteTitle}/>
           ) : (
             <HeaderBlog siteTitle={siteTitle}/>
           )}
-        </div>
+        </StickyWrapper>
       )}
     </Location>
   )
