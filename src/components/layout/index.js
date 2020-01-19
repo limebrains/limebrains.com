@@ -37,7 +37,7 @@ const renderVideo = () => {
     <Location>
       {({ location }) => (
         <div>
-          {location.pathname === '/blog' && (<HeaderVideo/>)}
+          {location.pathname === '/blog' || (<HeaderVideo/>)}
         </div>
       )}
     </Location>
