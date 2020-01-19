@@ -21,7 +21,6 @@ const renderHeader = siteTitle => {
     <Location>
       {({ location }) => (
         <div>
-          <h2>PATH: {location.pathname}</h2>
           {location.pathname === '/' ? (
             <Header siteTitle={siteTitle}/>
           ) : (
@@ -38,7 +37,6 @@ const renderVideo = () => {
     <Location>
       {({ location }) => (
         <div>
-          <h2>PATH: {location.pathname}</h2>
           {location.pathname === '/blog' && (<HeaderVideo/>)}
         </div>
       )}
