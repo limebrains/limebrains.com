@@ -133,7 +133,7 @@ const HeaderVideo = () => {
       </video>
 
 
-      <Link to={'/clients§'}>
+      <Link to={'/clients'}>
         <Logos>
           <img src={MazarLogo} alt="" />
           <img src={SiemensLogo} alt="" />

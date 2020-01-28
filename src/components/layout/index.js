@@ -42,7 +42,7 @@ const renderVideo = () => {
     <Location>
       {({ location }) => (
         <div>
-          {[location.pathname].includes('/blog')  || (<HeaderVideo/>)}
+          {location.pathname.startsWith('/blog')  || (<HeaderVideo/>)}
         </div>
       )}
     </Location>
