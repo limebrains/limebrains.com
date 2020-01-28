@@ -42,7 +42,7 @@ const renderVideo = () => {
     <Location>
       {({ location }) => (
         <div>
-          {['/blog', '/blog/'].includes(location.pathname) || (<HeaderVideo/>)}
+          {[location.pathname].includes('/blog')  || (<HeaderVideo/>)}
         </div>
       )}
     </Location>
