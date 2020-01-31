@@ -8,8 +8,6 @@ import Particles from 'react-particles-js'
 import { Text } from '../text'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
-import AnimatedProgressProvider from './AnimatedProgressProvider'
-import { easeQuadInOut } from 'd3-ease'
 
 export const About = () => {
   return (
@@ -46,32 +44,20 @@ export const About = () => {
               mr={'5%'}
             >
               <Flip right fraction={1} pr={'2rem'}>
-                <AnimatedProgressProvider
-                  valueStart={0}
-                  valueEnd={40}
-                  duration={5}
-                  easingFunction={easeQuadInOut}
-                >
-                  {value => {
-                    const roundedValue = Math.round(value)
-                    return (
-                      <CircularProgressbar
-                        value={value}
-                        text={`${roundedValue} projects`}
-                        maxValue={40}
-                        strokeWidth={5}
-                        /* This is important to include, because if you're fully managing the
-                  animation yourself, you'll want to disable the CSS animation. */
-                        styles={buildStyles({
-                          pathTransition: 'none',
-                          textSize: '12px',
-                          pathColor: '#4C7753',
-                          textColor: '#4C7753',
-                        })}
-                      />
-                    )
-                  }}
-                </AnimatedProgressProvider>
+                <CircularProgressbar
+                  value={40}
+                  text={`40 projects`}
+                  maxValue={40}
+                  strokeWidth={5}
+                  /* This is important to include, because if you're fully managing the
+            animation yourself, you'll want to disable the CSS animation. */
+                  styles={buildStyles({
+                    pathTransition: 'none',
+                    textSize: '12px',
+                    pathColor: '#4C7753',
+                    textColor: '#4C7753',
+                  })}
+                />
               </Flip>
             </Flex>
             <Flex
@@ -82,32 +68,20 @@ export const About = () => {
               mr={'5%'}
             >
               <Flip right fraction={1}>
-                <AnimatedProgressProvider
-                  valueStart={0}
-                  valueEnd={25}
-                  duration={3}
-                  easingFunction={easeQuadInOut}
-                >
-                  {value => {
-                    const roundedValue = Math.round(value)
-                    return (
-                      <CircularProgressbar
-                        value={value}
-                        text={`${roundedValue} \n \n\n\nclients`}
-                        maxValue={25}
-                        strokeWidth={5}
-                        /* This is important to include, because if you're fully managing the
-                  animation yourself, you'll want to disable the CSS animation. */
-                        styles={buildStyles({
-                          pathTransition: 'none',
-                          textSize: '12px',
-                          pathColor: `rgba(77, 118, 84)`,
-                          textColor: '#4C7753',
-                        })}
-                      />
-                    )
-                  }}
-                </AnimatedProgressProvider>
+                <CircularProgressbar
+                  value={25}
+                  text={`25 clients`}
+                  maxValue={25}
+                  strokeWidth={5}
+                  /* This is important to include, because if you're fully managing the
+            animation yourself, you'll want to disable the CSS animation. */
+                  styles={buildStyles({
+                    pathTransition: 'none',
+                    textSize: '12px',
+                    pathColor: `rgba(77, 118, 84)`,
+                    textColor: '#4C7753',
+                  })}
+                />
               </Flip>
             </Flex>
           </Flex>
