@@ -119,7 +119,7 @@ const ClientTemplate = ({ data }) => {
       </LayoutWrapper>
     </Layout>
   )
-}
+};
 
 export default ClientTemplate
 

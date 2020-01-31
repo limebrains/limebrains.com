@@ -1,10 +1,6 @@
 import React from 'react'
 import { MobileView, DesktopView } from '../responsive'
-import {
-  HeaderButton,
-  HeaderButtonScrolled,
-  HeaderHrefButton,
-} from '../common/header-button'
+import { HeaderButton, HeaderHrefButton } from '../common/header-button'
 import {
   HeaderWrapper,
   LineOfBurger,
@@ -13,7 +9,6 @@ import {
   defaultSmooth,
   defaultDuration,
   desktopOffset,
-  mobileOffset,
 } from '../common/header-styles'
 import HeaderPlain from '../common/header-plain'
 
@@ -30,7 +25,8 @@ const inputBoxOnClick = (e) => {
     document.body.style.overflow = "auto"
   }
 }
-const Header = props => {
+
+const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderPlain>
@@ -79,10 +75,6 @@ const Header = props => {
             <HeaderButton
               to="/team"
               text="TEAM"
-              activeClass="active"
-              smooth={defaultSmooth}
-              duration={defaultDuration}
-              offset={desktopOffset}
               style={{
                 white: true,
                 outline: true,
@@ -117,10 +109,12 @@ const Header = props => {
             />
           </ul>
         </DesktopView>
+
         <MobileView>
           <nav role="navigation">
             <MenuToggle>
               <CloseIcon type="checkbox" innerRef={inputBox} onClick={inputBoxOnClick}/>
+
               <LineOfBurger />
               <LineOfBurger />
               <LineOfBurger />
@@ -128,34 +122,23 @@ const Header = props => {
                 <div>
                   <HeaderHrefButton
                     href="https://drift.me/mail12/meeting"
+                    target={"_blank"}
                     text="MEET US"
                     activeClass="active"
                     smooth={defaultSmooth}
                     duration={defaultDuration}
                     offset={desktopOffset}
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,
                       text: false,
                     }}
                   />
-                  <HeaderButtonScrolled
-                    to="about"
-                    text="ABOUT"
-                    activeClass="active"
-                    smooth={defaultSmooth}
-                    duration={defaultDuration}
-                    offset={mobileOffset}
-                    onClick={handleMenuClick}
-                    style={{
-                      white: true,
-                      outline: true,
-                      text: true,
-                    }}
-                  />
                   <HeaderHrefButton
                     text="JOBS"
                     href="https://forms.gle/676Dcwo98LEYcPWy7"
+                    target={"_blank"}
                     style={{
                       white: true,
                       outline: true,
@@ -165,6 +148,7 @@ const Header = props => {
                   <HeaderHrefButton
                     text="GITHUB"
                     href="https://github.com/limebrains/"
+                    onClick={handleMenuClick}
                     style={{
                       white: true,
                       outline: true,
@@ -184,10 +168,6 @@ const Header = props => {
                   <HeaderButton
                     to="/team"
                     text="TEAM"
-                    activeClass="active"
-                    smooth={defaultSmooth}
-                    duration={defaultDuration}
-                    offset={mobileOffset}
                     onClick={handleMenuClick}
                     style={{
                       white: true,
@@ -211,11 +191,7 @@ const Header = props => {
                   />
                   <HeaderHrefButton
                     href="mailto:mail@limebrains.com"
-                    text="EMAIL US"
-                    activeClass="active"
-                    smooth={defaultSmooth}
-                    duration={defaultDuration}
-                    offset={desktopOffset}
+                    text="CONTACT"
                     onClick={handleMenuClick}
                     style={{
                       white: true,

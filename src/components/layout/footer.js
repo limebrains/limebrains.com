@@ -122,15 +122,15 @@ const footerLinkStyle = css`
     visibility: visible;
     transform: scaleX(1);
   }
-`
+`;
 
 const Link = styled(LinkDefault)`
   ${footerLinkStyle};
-`
+`;
 
 const OutSideLink = styled.a`
   ${footerLinkStyle};
-`
+`;
 
 const SocialIcon = styled.div`
   width:50px;
@@ -227,7 +227,11 @@ export const Footer = () => {
               </p>
               <SocialIcon className="companyInfo">
                 <Icon icon="FaMapMarkerAlt" />
-                <p>UL.OLIMPIJSKA 2</p>
+                <p>
+                  UL.OLIMPIJSKA 2
+                  <br/>
+                  GDYNIA 84-240
+                </p>
               </SocialIcon>
               <SocialIcon className="companyInfo">
                 <Icon icon="FaPhone" />
@@ -262,30 +266,39 @@ export const Footer = () => {
                 <li>
                   <OutSideLink
                     href={'https://github.com/PythonicNinja/pydrill'}
+                    target="_blank"
                   >
                     Pydrill
                   </OutSideLink>
                 </li>
                 <li>
-                  <OutSideLink href={'https://github.com/limebrains/pet'}>
+                  <OutSideLink
+                    href={'https://github.com/limebrains/pet'}
+                    target="_blank"
+                  >
                     Pet
                   </OutSideLink>
                 </li>
                 <li>
                   <OutSideLink
                     href={'https://github.com/limebrains/sufler'}
+                    target="_blank"
                   >
                     Sufler
                   </OutSideLink>
                 </li>
                 <li>
-                  <OutSideLink href={'https://github.com/limebrains/pyolx'}>
+                  <OutSideLink
+                    href={'https://github.com/limebrains/pyolx'}
+                    target="_blank"
+                  >
                     PyOlx
                   </OutSideLink>
                 </li>
                 <li>
                   <OutSideLink
                     href={'https://github.com/limebrains/pyotodom'}
+                    target="_blank"
                   >
                     PyOtodom
                   </OutSideLink>
@@ -296,27 +309,42 @@ export const Footer = () => {
               <ul>
                 <li className="navHeader">Clients</li>
                 <li>
-                  <OutSideLink href={'https://www.mazars.fr/'}>
+                  <OutSideLink
+                    href={'https://www.mazars.fr/'}
+                    target="_blank"
+                  >
                     Mazars
                   </OutSideLink>
                 </li>
                 <li>
-                  <OutSideLink href={'https://attensi.com'}>
+                  <OutSideLink
+                    href={'https://attensi.com'}
+                    target="_blank"
+                  >
                     Attensi
                   </OutSideLink>
                 </li>
                 <li>
-                  <OutSideLink href={'https://www.voxm.live'}>
+                  <OutSideLink
+                    href={'https://www.voxm.live'}
+                    target="_blank"
+                  >
                     Vox'M
                   </OutSideLink>
                 </li>
                 <li>
-                  <OutSideLink href={'https://villoid.no/'}>
+                  <OutSideLink
+                    href={'https://villoid.no/'}
+                    target="_blank"
+                  >
                     Villoid
                   </OutSideLink>
                 </li>
                 <li>
-                  <OutSideLink href={'https://coinfalcon.com'}>
+                  <OutSideLink
+                    href={'https://coinfalcon.com'}
+                    target="_blank"
+                  >
                     Coinfalcon
                   </OutSideLink>
                 </li>
@@ -329,12 +357,18 @@ export const Footer = () => {
                   <Link to={'/'}>Home</Link>
                 </li>
                 <li>
-                  <OutSideLink href={'https://forms.gle/676Dcwo98LEYcPWy7'}>
+                  <OutSideLink
+                    href={'https://forms.gle/676Dcwo98LEYcPWy7'}
+                    target="_blank"
+                  >
                     Jobs
                   </OutSideLink>
                 </li>
                 <li>
-                  <OutSideLink href={'https://github.com/limebrains/'}>
+                  <OutSideLink
+                    href={'https://github.com/limebrains/'}
+                    target="_blank"
+                  >
                     GitHub
                   </OutSideLink>
                 </li>
@@ -342,7 +376,9 @@ export const Footer = () => {
                   <Link to={'/blog'}>Blog</Link>
                 </li>
                 <li>
-                  <OutSideLink href={'mailto:mail@limebrains.com'}>
+                  <OutSideLink
+                    href={'mailto:mail@limebrains.com'}
+                  >
                     Contact
                   </OutSideLink>
                 </li>

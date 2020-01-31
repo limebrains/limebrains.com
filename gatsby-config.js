@@ -9,6 +9,16 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-styled-components',
     {
+      resolve: `gatsby-plugin-performance-metrics`,
+      options: {
+        firstPaint: true,
+        firstContentfulPaint: true,
+        firstInputDelay: true,
+        useLogging: true,
+        useGoogleAnalytics: false
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

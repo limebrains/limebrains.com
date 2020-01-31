@@ -17,7 +17,7 @@ export const HeaderButton = props => {
 export const HeaderHrefButton = props => {
   return (
     <li>
-      <a href={props.href} style={{ textDecoration: 'none' }}>
+      <a href={props.href} style={{ textDecoration: 'none' }} target="_blank">
         <NavButton {...props.style}>{props.text}</NavButton>
       </a>
     </li>

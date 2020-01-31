@@ -5,7 +5,7 @@ import { colors } from './theme/colors';
 
 const HeaderText = styled.div`
   color: ${colors.white};
-`
+`;
 
 class Typer extends React.PureComponent {
   constructor(props) {
@@ -15,7 +15,7 @@ class Typer extends React.PureComponent {
     this.state = {
       title: title,
       subtitle: subtitle,
-      slogan: '',
+      slogan: props.slogans[0],
       isDeleting: false,
       i: 0,
     }

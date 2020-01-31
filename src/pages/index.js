@@ -12,7 +12,7 @@ import { FAQ } from '../components/sections/faq'
 
 const IndexPage = props => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" keywords={[`limebrains`, `software house`, `best software house poland`, `fullstack`, `python`]} />
 
     <Areas />
 
