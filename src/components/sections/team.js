@@ -18,7 +18,7 @@ export const Team = () => {
       <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} w={1 / 2}>
         <Flex flex={2} align={'center'} justify={'center'}>
           <Flip right fraction={1}>
-            <Img src={LimeBrainsLogo} responsive width={200} />
+            <Img src={LimeBrainsLogo} responsive width={200} alt={`Lime Brains logo`} />
           </Flip>
         </Flex>
         <Flex

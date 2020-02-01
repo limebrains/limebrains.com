@@ -35,6 +35,7 @@ const HeaderPlain = ({ children }, { siteTitle }) => {
           <Flip left>
             <Logo
               src={LimeBrainsLogo}
+              alt={`Lime Brains logo`}
               responsive
               width={80}
             />

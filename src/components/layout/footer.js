@@ -12,7 +12,7 @@ const StyledFooter = styled.footer`
   position: relative;
   bottom: 0;
   width: 100%;
-`
+`;
 
 const Nav = styled(Flex)`
   flex: 1;
@@ -32,7 +32,7 @@ const Nav = styled(Flex)`
       list-style: none;
     }
   }
-`
+`;
 
 const NavList = styled.div`
   display: flex;
@@ -53,7 +53,7 @@ const NavList = styled.div`
       font-weight: 200;
     }
   }
-`
+`;
 
 const NavColumn = styled.div`
   display: inline-flex;
@@ -76,7 +76,7 @@ const NavColumn = styled.div`
       }
     }
   }
-`
+`;
 
 const LogoGrid = styled.div`
   p {
@@ -101,7 +101,8 @@ const LogoGrid = styled.div`
       }
     }
   }
-`
+`;
+
 const footerLinkStyle = css`
   text-decoration: none;
   color: white;
@@ -165,7 +166,7 @@ const SocialIcon = styled.div`
       text-decoration: none;
     }
   }
-`
+`;
 
 export const Footer = () => {
   return (
@@ -183,7 +184,7 @@ export const Footer = () => {
               },
             },
             number: {
-              value: 30,
+              value: 10,
             },
             size: {
               value: 3,
@@ -192,8 +193,7 @@ export const Footer = () => {
           interactivity: {
             events: {
               onhover: {
-                enable: true,
-                mode: 'repulse',
+                enable: false,
               },
             },
           },
@@ -209,185 +209,185 @@ export const Footer = () => {
         }}
       />
       <Nav>
-          <NavList>
-            <NavColumn>
+        <NavList>
+          <NavColumn>
             <LogoGrid>
-            <Box flex={1}>
-              <p>
-                <Link to="/">Lime Brains</Link>
-              </p>
-              <p className="contact">
-                Lime Brains sp. z o. o.
-                <br />
-                NIP: 5862332197
-                <br />
-                REGON: 38031902300000
-                <br />
-                KRS: 0000733442
-              </p>
-              <SocialIcon className="companyInfo">
-                <Icon icon="FaMapMarkerAlt" />
+              <Box flex={1}>
                 <p>
-                  UL.OLIMPIJSKA 2
+                  <Link to="/">Lime Brains</Link>
+                </p>
+                <p className="contact">
+                  Lime Brains sp. z o. o.
                   <br/>
-                  GDYNIA 84-240
+                  NIP: 5862332197
+                  <br/>
+                  REGON: 38031902300000
+                  <br/>
+                  KRS: 0000733442
                 </p>
-              </SocialIcon>
-              <SocialIcon className="companyInfo">
-                <Icon icon="FaPhone" />
-                <p>+48 665 987 443</p>
-              </SocialIcon>
-              <SocialIcon className="companyInfo">
-                <Icon icon="FaMailBulk" />
-                <p>
-                  <a href="mailto:mail@limebrains.com">
-                    mail@limebrains.com
-                  </a>
-                </p>
-              </SocialIcon>
+                <SocialIcon className="companyInfo">
+                  <Icon icon="FaMapMarkerAlt"/>
+                  <p>
+                    UL.OLIMPIJSKA 2
+                    <br/>
+                    GDYNIA 84-240
+                  </p>
+                </SocialIcon>
+                <SocialIcon className="companyInfo">
+                  <Icon icon="FaPhone"/>
+                  <p>+48 665 987 443</p>
+                </SocialIcon>
+                <SocialIcon className="companyInfo">
+                  <Icon icon="FaMailBulk"/>
+                  <p>
+                    <a href="mailto:mail@limebrains.com">
+                      mail@limebrains.com
+                    </a>
+                  </p>
+                </SocialIcon>
 
-              <p className="social">Follow us:</p>
-              <SocialIcon>
-                <OutSideLink href={'https://github.com/limebrains/'}>
-                  <IconBordered icon="FaGit" />
+                <p className="social">Follow us:</p>
+                <SocialIcon>
+                  <OutSideLink href={'https://github.com/limebrains/'}>
+                    <IconBordered icon="FaGit"/>
+                  </OutSideLink>
+                </SocialIcon>
+                <SocialIcon>
+                  <OutSideLink href={'https://www.facebook.com/limebrains'}>
+                    <IconBordered icon="FaFacebookF"/>
+                  </OutSideLink>
+                </SocialIcon>
+              </Box>
+            </LogoGrid>
+          </NavColumn>
+          <NavColumn>
+            <ul>
+              <li className="navHeader">OpenSource</li>
+              <li>
+                <OutSideLink
+                  href={'https://github.com/PythonicNinja/pydrill'}
+                  target="_blank"
+                >
+                  Pydrill
                 </OutSideLink>
-              </SocialIcon>
-              <SocialIcon>
-                <OutSideLink href={'https://www.facebook.com/limebrains'}>
-                  <IconBordered icon="FaFacebookF" />
+              </li>
+              <li>
+                <OutSideLink
+                  href={'https://github.com/limebrains/pet'}
+                  target="_blank"
+                >
+                  Pet
                 </OutSideLink>
-              </SocialIcon>
-            </Box>
-    </LogoGrid>
-            </NavColumn>
-            <NavColumn>
-              <ul>
-                <li className="navHeader">OpenSource</li>
-                <li>
-                  <OutSideLink
-                    href={'https://github.com/PythonicNinja/pydrill'}
-                    target="_blank"
-                  >
-                    Pydrill
-                  </OutSideLink>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'https://github.com/limebrains/pet'}
-                    target="_blank"
-                  >
-                    Pet
-                  </OutSideLink>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'https://github.com/limebrains/sufler'}
-                    target="_blank"
-                  >
-                    Sufler
-                  </OutSideLink>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'https://github.com/limebrains/pyolx'}
-                    target="_blank"
-                  >
-                    PyOlx
-                  </OutSideLink>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'https://github.com/limebrains/pyotodom'}
-                    target="_blank"
-                  >
-                    PyOtodom
-                  </OutSideLink>
-                </li>
-              </ul>
-            </NavColumn>
-            <NavColumn>
-              <ul>
-                <li className="navHeader">Clients</li>
-                <li>
-                  <OutSideLink
-                    href={'https://www.mazars.fr/'}
-                    target="_blank"
-                  >
-                    Mazars
-                  </OutSideLink>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'https://attensi.com'}
-                    target="_blank"
-                  >
-                    Attensi
-                  </OutSideLink>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'https://www.voxm.live'}
-                    target="_blank"
-                  >
-                    Vox'M
-                  </OutSideLink>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'https://villoid.no/'}
-                    target="_blank"
-                  >
-                    Villoid
-                  </OutSideLink>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'https://coinfalcon.com'}
-                    target="_blank"
-                  >
-                    Coinfalcon
-                  </OutSideLink>
-                </li>
-              </ul>
-            </NavColumn>
-            <NavColumn>
-              <ul>
-                <li className="navHeader">Company</li>
-                <li>
-                  <Link to={'/'}>Home</Link>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'https://forms.gle/676Dcwo98LEYcPWy7'}
-                    target="_blank"
-                  >
-                    Jobs
-                  </OutSideLink>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'https://github.com/limebrains/'}
-                    target="_blank"
-                  >
-                    GitHub
-                  </OutSideLink>
-                </li>
-                <li>
-                  <Link to={'/blog'}>Blog</Link>
-                </li>
-                <li>
-                  <OutSideLink
-                    href={'mailto:mail@limebrains.com'}
-                  >
-                    Contact
-                  </OutSideLink>
-                </li>
-                <li>
-                  <Link to={'/en/privacy'}>Privacy</Link>
-                </li>
-              </ul>
-            </NavColumn>
-          </NavList>
+              </li>
+              <li>
+                <OutSideLink
+                  href={'https://github.com/limebrains/sufler'}
+                  target="_blank"
+                >
+                  Sufler
+                </OutSideLink>
+              </li>
+              <li>
+                <OutSideLink
+                  href={'https://github.com/limebrains/pyolx'}
+                  target="_blank"
+                >
+                  PyOlx
+                </OutSideLink>
+              </li>
+              <li>
+                <OutSideLink
+                  href={'https://github.com/limebrains/pyotodom'}
+                  target="_blank"
+                >
+                  PyOtodom
+                </OutSideLink>
+              </li>
+            </ul>
+          </NavColumn>
+          <NavColumn>
+            <ul>
+              <li className="navHeader">Clients</li>
+              <li>
+                <OutSideLink
+                  href={'https://www.mazars.fr/'}
+                  target="_blank"
+                >
+                  Mazars
+                </OutSideLink>
+              </li>
+              <li>
+                <OutSideLink
+                  href={'https://attensi.com'}
+                  target="_blank"
+                >
+                  Attensi
+                </OutSideLink>
+              </li>
+              <li>
+                <OutSideLink
+                  href={'https://www.voxm.live'}
+                  target="_blank"
+                >
+                  Vox'M
+                </OutSideLink>
+              </li>
+              <li>
+                <OutSideLink
+                  href={'https://villoid.no/'}
+                  target="_blank"
+                >
+                  Villoid
+                </OutSideLink>
+              </li>
+              <li>
+                <OutSideLink
+                  href={'https://coinfalcon.com'}
+                  target="_blank"
+                >
+                  Coinfalcon
+                </OutSideLink>
+              </li>
+            </ul>
+          </NavColumn>
+          <NavColumn>
+            <ul>
+              <li className="navHeader">Company</li>
+              <li>
+                <Link to={'/'}>Home</Link>
+              </li>
+              <li>
+                <OutSideLink
+                  href={'https://forms.gle/676Dcwo98LEYcPWy7'}
+                  target="_blank"
+                >
+                  Jobs
+                </OutSideLink>
+              </li>
+              <li>
+                <OutSideLink
+                  href={'https://github.com/limebrains/'}
+                  target="_blank"
+                >
+                  GitHub
+                </OutSideLink>
+              </li>
+              <li>
+                <Link to={'/blog'}>Blog</Link>
+              </li>
+              <li>
+                <OutSideLink
+                  href={'mailto:mail@limebrains.com'}
+                >
+                  Contact
+                </OutSideLink>
+              </li>
+              <li>
+                <Link to={'/en/privacy'}>Privacy</Link>
+              </li>
+            </ul>
+          </NavColumn>
+        </NavList>
 
       </Nav>
     </StyledFooter>
