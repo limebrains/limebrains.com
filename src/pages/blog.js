@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import * as _ from 'lodash'
 import Layout from '../components/layout/index'
 import SEO from '../components/seo'
 import { Card } from '../components/card'
@@ -21,8 +20,8 @@ const Blog = ({ data }) => (
         {data.allMarkdownRemark.edges.map(post => (
           <Box key={post.node.frontmatter.title}>
             <Link to={post.node.fields.slug}>
-              <Card title={_.get(post, 'node.frontmatter.title')}>
-                <Img src={_.get(post, 'node.frontmatter.image')} />
+              <Card title={post.node.frontmatter.title}>
+                <Img src={post.node.frontmatter.image} />
               </Card>
             </Link>
           </Box>

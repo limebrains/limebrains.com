@@ -1,5 +1,4 @@
 import React from 'react'
-import * as _ from 'lodash'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
@@ -37,10 +36,10 @@ const Clients = ({data}) => (
             <Fade>
               <ClientCard
                 to={post.node.fields.slug}
-                imgSrc={_.get(post, 'node.frontmatter.image')}
-                name={_.get(post, 'node.frontmatter.title')}
-                postion={_.get(post, 'node.frontmatter.website')}
-                motto={_.get(post, 'node.frontmatter.motto')}
+                imgSrc={post.node.frontmatter.image}
+                name={post.node.frontmatter.title}
+                postion={post.node.frontmatter.website}
+                motto={post.node.frontmatter.motto}
               />
             </Fade>
           </Box>

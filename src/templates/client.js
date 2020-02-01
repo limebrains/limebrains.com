@@ -1,5 +1,4 @@
-import * as React from 'react'
-import * as _ from 'lodash'
+import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 
@@ -17,7 +16,7 @@ const LayoutWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-`
+`;
 
 const Row = styled.div`
   color: #8f9297;
@@ -26,15 +25,15 @@ const Row = styled.div`
   justify-content: space-between;
   margin-top: 1rem;
   padding-top: 1rem;
-`
+`;
 
 const Name = styled.div`
   
-`
+`;
 
 const Position = styled.div`
   font-size: 12px;
-`
+`;
 
 const Section = styled.div`
   font-size: 30px;
@@ -42,7 +41,7 @@ const Section = styled.div`
   font-weight: 300;
   margin-top: 2rem;
   margin-bottom: 2rem;
-`
+`;
 
 const Motto = styled.div`
   padding: 2rem;
@@ -54,23 +53,23 @@ const Motto = styled.div`
   @media (max-width: ${mobileLandscape}px) {
     font-size: 30px;
   }
-`
+`;
 
 const ClientTemplate = ({ data }) => {
-  const title = _.get(data, 'markdownRemark.frontmatter.title');
+  const title = data.markdownRemark.frontmatter.title;
   return (
     <Layout>
-      <SEO title={_.get(data, 'markdownRemark.frontmatter.seo.title')} />
+      <SEO title={data.markdownRemark.frontmatter.seo.title} />
       <LayoutWrapper>
 
         <Box>
           <Card autoSize>
             <SectionHeading title={title} />
 
-            <Img src={_.get(data, 'markdownRemark.frontmatter.image')} />
+            <Img src={data.markdownRemark.frontmatter.image} />
             <Row>
-              <Name>{_.get(data, 'markdownRemark.frontmatter.title')}</Name>
-              <Position>{_.get(data, 'markdownRemark.frontmatter.website')}</Position>
+              <Name>{data.markdownRemark.frontmatter.title}</Name>
+              <Position>{data.markdownRemark.frontmatter.website}</Position>
             </Row>
           </Card>
         </Box>
@@ -82,7 +81,7 @@ const ClientTemplate = ({ data }) => {
         </Section>
 
         <Card autoSize>
-          <Motto>{_.get(data, 'markdownRemark.frontmatter.motto')}</Motto>
+          <Motto>{data.markdownRemark.frontmatter.motto}</Motto>
         </Card>
 
         <Box mt={'3rem'}/>

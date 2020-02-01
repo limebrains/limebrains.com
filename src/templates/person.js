@@ -1,5 +1,4 @@
-import * as React from 'react'
-import * as _ from 'lodash'
+import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 
@@ -18,7 +17,7 @@ const LayoutWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-`
+`;
 
 const Section = styled.div`
   font-size: 30px;
@@ -26,7 +25,7 @@ const Section = styled.div`
   font-weight: 300;
   margin-top: 2rem;
   margin-bottom: 2rem;
-`
+`;
 
 const Motto = styled.div`
   padding: 2rem;
@@ -38,28 +37,28 @@ const Motto = styled.div`
   @media (max-width: ${mobileLandscape}px) {
     font-size: 30px;
   }
-`
+`;
 
 const PlaintextTemplate = ({ data }) => {
-  const title = _.get(data, 'markdownRemark.frontmatter.title')
-  const person = _.get(data, 'markdownRemark.frontmatter')
-  const projects = _.get(data, 'allMarkdownRemark.edges').map(edge => ({
+  const title = data.markdownRemark.frontmatter.title;
+  const person = data.markdownRemark.frontmatter;
+  const projects = data.allMarkdownRemark.edges.map(edge => ({
     ...edge.node.frontmatter,
     link: edge.node.fields.slug
-  }))
+  }));
 
   return (
     <Layout>
-      <SEO title={_.get(person, 'seo.title')}/>
+      <SEO title={person.seo.title}/>
       <LayoutWrapper>
 
         <Box>
-          <SectionHeading title={`${title} - ${_.get(person, 'position')}`}/>
-          <Img src={_.get(person, 'image_wide')} responsive/>
+          <SectionHeading title={`${title} - ${person.position}`}/>
+          <Img src={person.image_wide} responsive/>
         </Box>
 
         <Box mt={'3rem'}/>
-        <Motto>{_.get(person, 'motto')}</Motto>
+        <Motto>{person.motto}</Motto>
 
         <Box mt={'3rem'}/>
 
@@ -112,7 +111,7 @@ const PlaintextTemplate = ({ data }) => {
       </LayoutWrapper>
     </Layout>
   )
-}
+};
 
 export default PlaintextTemplate
 

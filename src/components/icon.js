@@ -5,9 +5,9 @@ import styled from 'styled-components'
 import { colors } from './theme/colors'
 
 export const Icon = ({ icon }) => {
-  const Component = icons[icon]
+  const Component = icons[icon];
   return <Component />
-}
+};
 
 const IconWrapper = styled.div`
   background: ${colors.white};

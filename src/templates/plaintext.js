@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
@@ -10,7 +10,7 @@ const LayoutWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-`
+`;
 
 const PlaintextTemplate = ({ data }) => (
   <Layout>
@@ -20,7 +20,7 @@ const PlaintextTemplate = ({ data }) => (
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
     </LayoutWrapper>
   </Layout>
-)
+);
 
 export default PlaintextTemplate
 

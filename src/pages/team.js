@@ -1,5 +1,4 @@
 import React from 'react'
-import * as _ from 'lodash'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
@@ -42,10 +41,10 @@ const Team = ({data}) => (
               <Fade>
                 <PersonCard
                   to={post.node.fields.slug}
-                  imgSrc={_.get(post, 'node.frontmatter.image')}
-                  name={_.get(post, 'node.frontmatter.title')}
-                  postion={_.get(post, 'node.frontmatter.position')}
-                  motto={_.get(post, 'node.frontmatter.motto')}
+                  imgSrc={post.node.frontmatter.image}
+                  name={post.node.frontmatter.title}
+                  postion={post.node.frontmatter.website}
+                  motto={post.node.frontmatter.motto}
                 />
               </Fade>
             </Box>
@@ -67,10 +66,10 @@ const Team = ({data}) => (
               <Box key={post.node.frontmatter.title}>
                 <PersonCard
                   to={post.node.fields.slug}
-                  imgSrc={_.get(post, 'node.frontmatter.image')}
-                  name={_.get(post, 'node.frontmatter.title')}
-                  postion={_.get(post, 'node.frontmatter.position')}
-                  motto={_.get(post, 'node.frontmatter.motto')}
+                  imgSrc={post.node.frontmatter.image}
+                  name={post.node.frontmatter.title}
+                  postion={post.node.frontmatter.website}
+                  motto={post.node.frontmatter.motto}
                 />
               </Box>
             </Fade>
@@ -104,10 +103,10 @@ const Team = ({data}) => (
               <Box key={post.node.frontmatter.title}>
                 <PersonCard
                   to={post.node.fields.slug}
-                  imgSrc={_.get(post, 'node.frontmatter.image')}
-                  name={_.get(post, 'node.frontmatter.title')}
-                  postion={_.get(post, 'node.frontmatter.position')}
-                  motto={_.get(post, 'node.frontmatter.motto')}
+                  imgSrc={post.node.frontmatter.image}
+                  name={post.node.frontmatter.title}
+                  postion={post.node.frontmatter.website}
+                  motto={post.node.frontmatter.motto}
                 />
               </Box>
             </Fade>

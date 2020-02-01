@@ -1,16 +1,14 @@
-import * as React from 'react'
-import * as _ from 'lodash'
+import React from 'react'
+import { graphql } from 'gatsby'
 import Disqus from 'disqus-react'
 import styled from 'styled-components'
-import { graphql } from 'gatsby'
-
-import { Divider } from '../components/divider'
+import { Fade } from 'react-reveal';
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
+import { Divider } from '../components/divider'
 import { SectionHeading } from '../components/heading'
 import { Box, FlexBlog } from '../components/flex';
-import { Fade } from 'react-reveal';
 import { ClientCard, PersonCard } from '../components/card';
 
 const LayoutWrapper = styled.div`
@@ -21,7 +19,7 @@ const LayoutWrapper = styled.div`
 
 const PlaintextTemplate = ({data}) => {
   const disqusShortname = 'limebrains';
-  const title = _.get(data, 'markdownRemark.frontmatter.title');
+  const title = data.markdownRemark.frontmatter.title;
   const disqusConfig = {
     url: `${data.site.siteMetadata.url}${data.markdownRemark.fields.slug}`,
     identifier: data.markdownRemark.fields.slug,
@@ -29,7 +27,7 @@ const PlaintextTemplate = ({data}) => {
   };
   return (
     <Layout>
-      <SEO title={_.get(data, 'markdownRemark.frontmatter.seo.title')}/>
+      <SEO title={data.markdownRemark.frontmatter.seo.title}/>
       <LayoutWrapper>
         <SectionHeading title={title}/>
         <div dangerouslySetInnerHTML={{__html: data.markdownRemark.html}}/>
@@ -59,7 +57,7 @@ const PlaintextTemplate = ({data}) => {
       </LayoutWrapper>
     </Layout>
   )
-}
+};
 
 export default PlaintextTemplate
 
