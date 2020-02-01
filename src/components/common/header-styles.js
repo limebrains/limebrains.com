@@ -51,7 +51,8 @@ export const CloseIcon = styled.input`
 
 export const MenuToggle = styled.div`
   display: block;
-  position: relative;
+  position: fixed;
+  top: 20px;
   right: 20px;
   -webkit-user-select: none;
   user-select: none;
@@ -63,7 +64,7 @@ export const MenuToggle = styled.div`
   }
   ${CloseIcon}:checked ~ ${LineOfBurger} {
     opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
+    transform: rotate(45deg) translate(0, 0);
     background: white;
   }
   ${CloseIcon}:checked ~ ${LineOfBurger}:nth-last-child(3) {
@@ -71,7 +72,7 @@ export const MenuToggle = styled.div`
     transform: rotate(0deg) scale(0.2, 0.2);
   }
   ${CloseIcon}:checked ~ ${LineOfBurger}:nth-last-child(2) {
-    transform: rotate(-45deg) translate(-0.5px, -3px);
+    transform: rotate(-45deg) translate(-2px, -2px);
   }
   ul {
     position: fixed;
