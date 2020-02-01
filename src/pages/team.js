@@ -43,7 +43,7 @@ const Team = ({data}) => (
                   to={post.node.fields.slug}
                   imgSrc={post.node.frontmatter.image}
                   name={post.node.frontmatter.title}
-                  postion={post.node.frontmatter.website}
+                  postion={post.node.frontmatter.position}
                   motto={post.node.frontmatter.motto}
                 />
               </Fade>
@@ -68,7 +68,7 @@ const Team = ({data}) => (
                   to={post.node.fields.slug}
                   imgSrc={post.node.frontmatter.image}
                   name={post.node.frontmatter.title}
-                  postion={post.node.frontmatter.website}
+                  postion={post.node.frontmatter.position}
                   motto={post.node.frontmatter.motto}
                 />
               </Box>
@@ -105,7 +105,7 @@ const Team = ({data}) => (
                   to={post.node.fields.slug}
                   imgSrc={post.node.frontmatter.image}
                   name={post.node.frontmatter.title}
-                  postion={post.node.frontmatter.website}
+                  postion={post.node.frontmatter.position}
                   motto={post.node.frontmatter.motto}
                 />
               </Box>

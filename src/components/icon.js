@@ -27,7 +27,7 @@ const IconWrapper = styled.div`
     color: ${colors.white};
     transform: rotate(90deg);
   }
-`
+`;
 
 const IconBorder = styled.div`
   border: 1px solid ${colors.gray.light};
@@ -48,16 +48,16 @@ const IconBorder = styled.div`
   &:hover {
     transform: rotate(90deg);
   }
-`
+`;
 
 export const IconRounded = ({ icon }, { size }) => (
   <IconWrapper>
     <Icon icon={icon} />
   </IconWrapper>
-)
+);
 
 export const IconBordered = ({ icon }, { size }) => (
   <IconBorder>
     <Icon icon={icon} />
   </IconBorder>
-)
+);
