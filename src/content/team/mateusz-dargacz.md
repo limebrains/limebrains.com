@@ -7,6 +7,8 @@ seo:
   description: "Mateusz Dargacz"
   noindex: false
 leader: true
+developer: true
+order: 2
 position: 'Cofounder'
 motto: "Challenges are what make life interesting and overcoming them is what makes life meaningful"
 category: founder,full-stack

@@ -7,6 +7,8 @@ seo:
   description: "Wojtek Nowak"
   noindex: false
 leader: true
+developer: true
+order: 1
 position: 'Cofounder'
 category: founder,full-stack
 motto: "Difficult roads often lead to beautiful destinations."

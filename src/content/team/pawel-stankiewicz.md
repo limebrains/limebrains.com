@@ -7,6 +7,8 @@ seo:
   description: "Paweł Stankiewicz"
   noindex: false
 leader: false
+developer: true
+order: 5
 position: 'Full stack developer'
 category: full-stack
 motto: "Difficult roads often lead to beautiful destinations."

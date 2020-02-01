@@ -7,6 +7,8 @@ seo:
   description: "Michał Bartlakowski"
   noindex: false
 leader: false
+developer: true
+order: 6
 position: 'Full stack developer'
 category: full-stack
 motto: "Difficult roads often lead to beautiful destinations."

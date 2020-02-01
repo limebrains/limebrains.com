@@ -7,6 +7,8 @@ seo:
   description: "Daniel Okroś"
   noindex: false
 leader: false
+developer: true
+order: 8
 position: 'Full stack developer'
 category: full-stack
 motto: "Challenges are what make life interesting and overcoming them is what makes life meaningful"

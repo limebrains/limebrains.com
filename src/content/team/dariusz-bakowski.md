@@ -7,6 +7,8 @@ seo:
   description: "Dariusz Bąkowski"
   noindex: false
 leader: false
+developer: true
+order: 7
 position: 'Full stack developer'
 category: full-stack
 motto: "Challenges are what make life interesting and overcoming them is what makes life meaningful"

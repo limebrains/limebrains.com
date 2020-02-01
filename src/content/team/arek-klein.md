@@ -7,6 +7,8 @@ seo:
   description: "Arek Klein"
   noindex: false
 leader: false
+developer: true
+order: 3
 position: 'Full stack developer'
 category: full-stack
 motto: "Challenges are what make life interesting and overcoming them is what makes life meaningful"
