@@ -109,6 +109,10 @@ export const ClientCard = ({
 );
 
 const CallToActionWrapper = styled(Flex)`
+  flex: 1;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
   @media only screen and (max-width: 1000px) {
     flex-direction: column;
   }
@@ -117,17 +121,19 @@ const CallToActionWrapper = styled(Flex)`
 
 export const CallToAction = () => (
   <CallToActionWrapper>
-    <Box pr={'4rem'} pl={'4rem'} mb={'4rem'}>
+
+    <Box mb={'4rem'} mr={'2rem'} ml={'2rem'} flex={1}>
       <Fade>
         <ClientCard/>
       </Fade>
     </Box>
 
-    <Box pr={'4rem'} pl={'4rem'} mb={'4rem'}>
+    <Box mb={'4rem'} mr={'2rem'} ml={'2rem'} flex={1}>
       <Fade>
         <PersonCard/>
       </Fade>
     </Box>
+
   </CallToActionWrapper>
 );
 
