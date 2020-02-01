@@ -7,11 +7,11 @@ import { Img } from '../components/img';
 import { Link } from '../components/link';
 import { Section } from '../components/section';
 import Layout from '../components/layout/index';
-import { Box, Flex, FlexBlog } from '../components/flex';
+import { Box, Flex } from '../components/flex';
 import { IconRounded } from '../components/icon';
 import { colors } from './../components/theme/colors';
 import { SectionHeading } from '../components/heading';
-import { CallToAction, ClientCard, PersonCard } from '../components/card';
+import { CallToAction } from '../components/card';
 import { mobileLandscape } from '../components/responsive';
 import { LimeBrainsLogo } from '../components/theme/logos';
 
@@ -51,7 +51,7 @@ const AboutUs = () => (
     <SEO title="About us"/>
 
     <Flex ml={'10%'} mr={'10%'}>
-      <Fade delay={1000}>
+      <Fade delay={100}>
         <Motto>
           We are The Software House where business questions meet software answers.
         </Motto>
