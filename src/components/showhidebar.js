@@ -60,9 +60,9 @@ const Icon = styled(FaChevronDown)`
   }
 `
 
-const Bar = ({ header, content, myIndex }) => {
-  const [selectedIndex, setIndex] = useState({ index: '0', open: false })
-  const toggle = () => setIndex({ index: myIndex, open: !selectedIndex.open })
+const Bar = ({header, content, myIndex}) => {
+  const [selectedIndex, setIndex] = useState({index: '0', open: false})
+  const toggle = () => setIndex({index: myIndex, open: !selectedIndex.open})
   return (
     <Container>
       <Sector show={selectedIndex.open ? 500 : 50} onClick={toggle}>
@@ -77,7 +77,7 @@ const Bar = ({ header, content, myIndex }) => {
         </RightSector>
       </Sector>
 
-      <Divider />
+      <Divider/>
     </Container>
   )
 }

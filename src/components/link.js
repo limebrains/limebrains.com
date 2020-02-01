@@ -4,4 +4,4 @@ import styled from 'styled-components'
 export const Link = styled(GatsbyLink)`
   text-decoration: none;
   color: white;
-`
+`;

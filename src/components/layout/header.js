@@ -64,7 +64,15 @@ const Header = () => {
       <HeaderPlain>
         <DesktopView>
           <ul>
-
+            <HeaderButton
+              to="/about"
+              text="ABOUT US"
+              style={{
+                white: true,
+                outline: true,
+                text: true,
+              }}
+            />
             <HeaderButton
               to="/blog"
               text="BLOG"
@@ -122,34 +130,9 @@ const Header = () => {
               <LineOfBurger/>
               <ul id="menu">
                 <div>
-                  <HeaderHrefButton
-                    href="https://drift.me/mail12/meeting"
-                    target={"_blank"}
-                    text="MEET US"
-                    activeClass="active"
-                    smooth={defaultSmooth}
-                    duration={defaultDuration}
-                    offset={desktopOffset}
-                    onClick={handleMenuClick}
-                    style={{
-                      white: true,
-                      outline: true,
-                      text: false,
-                    }}
-                  />
-                  <HeaderHrefButton
-                    text="JOBS"
-                    href="https://forms.gle/676Dcwo98LEYcPWy7"
-                    target={"_blank"}
-                    style={{
-                      white: true,
-                      outline: true,
-                      text: true,
-                    }}
-                  />
-                  <HeaderHrefButton
-                    text="GITHUB"
-                    href="https://github.com/limebrains/"
+                  <HeaderButton
+                    to="/about"
+                    text="ABOUT US"
                     onClick={handleMenuClick}
                     style={{
                       white: true,
