@@ -1,21 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 import { mobileLandscape, mobilePortrait } from './responsive'
-import { MazarLogo, NokiaLogo, SiemensLogo } from './theme/logos'
+import { HeaderLogo, MazarLogo, NokiaLogo, SiemensLogo } from './theme/logos'
 
 import Typer from './typer'
 import { Link } from './link';
-import { Slide, Fade } from 'react-reveal';
+import { Fade } from 'react-reveal';
+import { LimeBrainsVideoMp4 } from './theme/videos';
 
 const TextWrapper = styled.div`
   position: absolute;
-  top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   z-index: 1;
-  padding-left: 3rem;
+  height: 100vh;
+  width: 100vw;
+  background: ${({ start, end }) =>
+    `-webkit-linear-gradient(5deg, ${start ||
+      'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
   h1 {
     font-size: 76px;
     display: block;
@@ -83,7 +87,7 @@ const Logos = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.9);
 
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -106,26 +110,9 @@ const Logos = styled.div`
 `;
 
 const HeaderVideo = () => {
-  /*
-  <video
-    playsInline
-    muted
-    loop
-    preload="auto"
-    poster={HeaderLogo}
-    autoPlay="autoplay"
-  >
-    <source
-      data-src={LimeBrainsVideoMp4}
-      src={LimeBrainsVideoMp4}
-      type="video/mp4"
-    />
-    Your browser does not support the video tag.
-  </video>
-   */
   return (
     <VideoWrapper>
-      <TextWrapper start={'rgb(0,0,0, .1)'} end={'rgba(0, 0, 0, 0.2)'}>
+      <TextWrapper start={'rgb(0,0,0, .6)'} end={'rgba(0, 0, 0, 0.5)'}>
         <Typer
           title={'Lime Brains'}
           subtitle={'Software house where business questions,'}
@@ -143,9 +130,21 @@ const HeaderVideo = () => {
         />
       </TextWrapper>
 
-      <Slide left fraction={1}>
-        <img src='https://i.imgur.com/vaoyL6A.jpg' alt='' className="background-img"/>
-      </Slide>
+      <video
+        playsinline
+        muted
+        loop
+        preload="auto"
+        poster={HeaderLogo}
+        autoPlay="autoplay"
+      >
+        <source
+          data-src={LimeBrainsVideoMp4}
+          src={LimeBrainsVideoMp4}
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
 
       <Link to={'/clients'}>
         <Logos>

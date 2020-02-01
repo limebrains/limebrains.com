@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { colors } from './theme/colors';
 
 const HeaderText = styled.div`
-  color: ${colors.gray};
+  color: ${colors.white};
 `;
 
 class Typer extends React.PureComponent {
