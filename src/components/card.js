@@ -4,6 +4,8 @@ import { Card as DefaultCard } from 'rendition'
 
 import { Img } from './img';
 import { Link as GatsbyLink } from './link';
+import { Box, Flex } from './flex';
+import { Fade } from 'react-reveal';
 
 const CardWrapper = styled.div`
   display: grid;
@@ -104,5 +106,28 @@ export const ClientCard = ({
     postion={postion || 'your website'}
     motto={motto || 'Let\'s talk about your big idea?'}
   />
+);
+
+const CallToActionWrapper = styled(Flex)`
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+`;
+
+
+export const CallToAction = () => (
+  <CallToActionWrapper>
+    <Box pr={'4rem'} pl={'4rem'} mb={'4rem'}>
+      <Fade>
+        <ClientCard/>
+      </Fade>
+    </Box>
+
+    <Box pr={'4rem'} pl={'4rem'} mb={'4rem'}>
+      <Fade>
+        <PersonCard/>
+      </Fade>
+    </Box>
+  </CallToActionWrapper>
 );
 
