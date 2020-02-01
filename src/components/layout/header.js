@@ -12,7 +12,7 @@ import {
 } from '../common/header-styles'
 import HeaderPlain from '../common/header-plain'
 
-const inputBox = React.createRef()
+const inputBox = React.createRef();
 const handleMenuClick = () => {
   inputBox.current.checked = false
   document.body.style.overflow = "auto"
@@ -20,49 +20,51 @@ const handleMenuClick = () => {
 const inputBoxOnClick = (e) => {
   if (e.target.checked) {
     document.body.style.overflow = "hidden"
-  }
-  else {
+  } else {
     document.body.style.overflow = "auto"
   }
 }
 
 const Header = () => {
+  /*
+  <HeaderHrefButton
+    href="https://drift.me/mail12/meeting"
+    text="MEET US"
+    activeClass="active"
+    smooth={defaultSmooth}
+    duration={defaultDuration}
+    offset={desktopOffset}
+    style={{
+      white: true,
+      outline: true,
+      text: false,
+    }}
+  />
+  <HeaderHrefButton
+    text="JOBS"
+    href="https://forms.gle/676Dcwo98LEYcPWy7"
+    style={{
+      white: true,
+      outline: true,
+      text: true,
+    }}
+  />
+  <HeaderHrefButton
+    text="GITHUB"
+    href="https://github.com/limebrains/"
+    style={{
+      white: true,
+      outline: true,
+      text: true,
+    }}
+  />
+   */
   return (
     <HeaderWrapper>
       <HeaderPlain>
         <DesktopView>
           <ul>
-            <HeaderHrefButton
-              href="https://drift.me/mail12/meeting"
-              text="MEET US"
-              activeClass="active"
-              smooth={defaultSmooth}
-              duration={defaultDuration}
-              offset={desktopOffset}
-              style={{
-                white: true,
-                outline: true,
-                text: false,
-              }}
-            />
-            <HeaderHrefButton
-              text="JOBS"
-              href="https://forms.gle/676Dcwo98LEYcPWy7"
-              style={{
-                white: true,
-                outline: true,
-                text: true,
-              }}
-            />
-            <HeaderHrefButton
-              text="GITHUB"
-              href="https://github.com/limebrains/"
-              style={{
-                white: true,
-                outline: true,
-                text: true,
-              }}
-            />
+
             <HeaderButton
               to="/blog"
               text="BLOG"
@@ -115,9 +117,9 @@ const Header = () => {
             <MenuToggle>
               <CloseIcon type="checkbox" innerRef={inputBox} onClick={inputBoxOnClick}/>
 
-              <LineOfBurger />
-              <LineOfBurger />
-              <LineOfBurger />
+              <LineOfBurger/>
+              <LineOfBurger/>
+              <LineOfBurger/>
               <ul id="menu">
                 <div>
                   <HeaderHrefButton

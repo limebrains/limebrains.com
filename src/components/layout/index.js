@@ -19,24 +19,17 @@ const StickyWrapper = styled.div`
   z-index: 1000;
 `;
 
-const renderVideo = () => {
-  return (
-    <Location>
-      {({location}) => (
-        location.pathname === '/' && (<HeaderVideo/>)
-      )}
-    </Location>
-  )
-};
-
 class Layout extends React.PureComponent {
-
   render() {
     const {children} = this.props;
 
     return (
       <Provider theme={theme}>
-        {renderVideo()}
+        <Location>
+          {({location}) => (
+            location.pathname === '/' && (<HeaderVideo/>)
+          )}
+        </Location>
         <StickyWrapper>
           <Header/>
         </StickyWrapper>

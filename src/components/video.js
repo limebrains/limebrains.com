@@ -1,24 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import { mobileLandscape, mobilePortrait } from './responsive'
-import { MazarLogo, NokiaLogo, SiemensLogo, HeaderLogo } from './theme/logos'
-import { LimeBrainsVideoMp4 } from './theme/videos'
+import { MazarLogo, NokiaLogo, SiemensLogo } from './theme/logos'
 
 import Typer from './typer'
 import { Link } from './link';
+import { Slide, Fade } from 'react-reveal';
 
 const TextWrapper = styled.div`
-  position:absolute;
+  position: absolute;
+  top: 1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   z-index: 1;
-  width: 100%;
-  height: 100%;
-  background: ${({ start, end }) =>
-    `-webkit-linear-gradient(5deg, ${start ||
-      'rgba(141,183,215, 0.1)'}, ${end || 'rgba(254, 188, 119, 0.2)'});`}
+  padding-left: 3rem;
   h1 {
     font-size: 76px;
     display: block;
@@ -39,7 +36,7 @@ const TextWrapper = styled.div`
     }
 
   }
-`
+`;
 
 const VideoWrapper = styled.div`
   display: flex;
@@ -61,7 +58,20 @@ const VideoWrapper = styled.div`
   @media (max-width: ${mobileLandscape}px) {
     height: calc(100vh - 60px);
   }
-`
+  
+  img.background-img {
+    position: absolute;
+    top: 25%;
+    right: 0;
+    width: 100vw;
+    height: 50vh;
+    object-fit: contain;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto;
+  }
+`;
 
 const Logos = styled.div`
   position: absolute;
@@ -73,7 +83,7 @@ const Logos = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.05);
 
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -93,12 +103,29 @@ const Logos = styled.div`
       margin-right: 0.5rem;
     }
   }
-`
+`;
 
 const HeaderVideo = () => {
+  /*
+  <video
+    playsInline
+    muted
+    loop
+    preload="auto"
+    poster={HeaderLogo}
+    autoPlay="autoplay"
+  >
+    <source
+      data-src={LimeBrainsVideoMp4}
+      src={LimeBrainsVideoMp4}
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+   */
   return (
     <VideoWrapper>
-      <TextWrapper start={'rgb(0,0,0, .6)'} end={'rgba(0, 0, 0, 0.5)'}>
+      <TextWrapper start={'rgb(0,0,0, .1)'} end={'rgba(0, 0, 0, 0.2)'}>
         <Typer
           title={'Lime Brains'}
           subtitle={'Software house where business questions,'}
@@ -116,32 +143,21 @@ const HeaderVideo = () => {
         />
       </TextWrapper>
 
-      <video
-        playsInline
-        muted
-        loop
-        preload="auto"
-        poster={HeaderLogo}
-        autoPlay="autoplay"
-      >
-        <source
-          data-src={LimeBrainsVideoMp4}
-          src={LimeBrainsVideoMp4}
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
-
+      <Slide left fraction={1}>
+        <img src='https://i.imgur.com/vaoyL6A.jpg' alt='' className="background-img"/>
+      </Slide>
 
       <Link to={'/clients'}>
         <Logos>
-          <img src={MazarLogo} alt="" />
-          <img src={SiemensLogo} alt="" />
-          <img src={NokiaLogo} alt="" />
+          <Fade>
+            <img src={MazarLogo} alt=""/>
+            <img src={SiemensLogo} alt=""/>
+            <img src={NokiaLogo} alt=""/>
+          </Fade>
         </Logos>
       </Link>
     </VideoWrapper>
   )
-}
+};
 
 export default HeaderVideo
