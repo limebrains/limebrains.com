@@ -17,16 +17,16 @@ const LayoutWrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-`
+`;
 
 const PlaintextTemplate = ({data}) => {
-  const disqusShortname = 'limebrains'
-  const title = _.get(data, 'markdownRemark.frontmatter.title')
+  const disqusShortname = 'limebrains';
+  const title = _.get(data, 'markdownRemark.frontmatter.title');
   const disqusConfig = {
     url: `${data.site.siteMetadata.url}${data.markdownRemark.fields.slug}`,
     identifier: data.markdownRemark.fields.slug,
     title,
-  }
+  };
   return (
     <Layout>
       <SEO title={_.get(data, 'markdownRemark.frontmatter.seo.title')}/>

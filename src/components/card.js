@@ -8,8 +8,8 @@ import { Link as GatsbyLink } from './link';
 const CardWrapper = styled.div`
   display: grid;
   ${({autoSize}) => autoSize ? '' : 'grid-auto-rows: 400px;'}
-
-  ${DefaultCard} {
+  &:hover {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   }
   img {
     object-fit: contain;
@@ -63,7 +63,7 @@ const Link = ({to, href, target, children}) => {
       </a>
     )
   }
-}
+};
 
 export const PersonCard = ({
                              to,

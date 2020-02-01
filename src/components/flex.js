@@ -5,46 +5,46 @@ export const Flex = styled(FlexDefault)`
   z-index: 1;
 
   ${props =>
-    props.alignself
-      ? css`
+  props.alignself
+    ? css`
           align-self: ${props.alignself};
         `
-      : ''}
+    : ''}
   ${props =>
-    props.pt
-      ? css`
+  props.pt
+    ? css`
           padding-top: ${props.pt};
         `
-      : ''}
+    : ''}
   ${props =>
-    props.pb
-      ? css`
+  props.pb
+    ? css`
           padding-bottom: ${props.pb};
         `
-      : ''}
+    : ''}
   ${props =>
-    props.pl
-      ? css`
+  props.pl
+    ? css`
           padding-left: ${props.pl};
         `
-      : ''}
+    : ''}
   ${props =>
-    props.pr
-      ? css`
+  props.pr
+    ? css`
           padding-right: ${props.pr};
         `
-      : ''}
+    : ''}
   ${props =>
-    props.p
-      ? css`
+  props.p
+    ? css`
           padding: ${props.pr};
         `
-      : ''}
+    : ''}
 `
 
 export const FlexBlog = styled(FlexDefault)`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(22em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
   grid-gap: 4rem;
   padding-left: 10%;
   padding-right: 10%;
@@ -52,6 +52,6 @@ export const FlexBlog = styled(FlexDefault)`
   @media only screen and (max-width: 480px) {
     grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
   }
-`
+`;
 
-export const Box = styled(BoxDefault)``
+export const Box = styled(BoxDefault)``;
