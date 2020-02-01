@@ -113,38 +113,42 @@ const HeaderVideo = () => {
   return (
     <VideoWrapper>
       <TextWrapper start={'rgb(0,0,0, .6)'} end={'rgba(0, 0, 0, 0.5)'}>
-        <Typer
-          title={'Lime Brains'}
-          subtitle={'Software house where business questions,'}
-          slogans={[
-            'meet software answers.',
-            'meet smart ideas.',
-            'meet great people.',
-            'meet deadlines.',
-            'meet smart solutions.',
-            'meet great execution.',
-          ]}
-          typingSpeed={70}
-          removalSpeed={20}
-          timeBetweenSlogans={1500}
-        />
+        <Fade fraction={1}>
+          <Typer
+            title={'Lime Brains'}
+            subtitle={'Software house where business questions,'}
+            slogans={[
+              'meet software answers.',
+              'meet smart ideas.',
+              'meet great people.',
+              'meet deadlines.',
+              'meet smart solutions.',
+              'meet great execution.',
+            ]}
+            typingSpeed={70}
+            removalSpeed={20}
+            timeBetweenSlogans={1500}
+          />
+        </Fade>
       </TextWrapper>
 
-      <video
-        playsinline
-        muted
-        loop
-        preload="auto"
-        poster={HeaderLogo}
-        autoPlay="autoplay"
-      >
-        <source
-          data-src={LimeBrainsVideoMp4}
-          src={LimeBrainsVideoMp4}
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
-      </video>
+      <Fade>
+        <video
+          playsinline
+          muted
+          loop
+          preload="auto"
+          poster={HeaderLogo}
+          autoPlay="autoplay"
+        >
+          <source
+            data-src={LimeBrainsVideoMp4}
+            src={LimeBrainsVideoMp4}
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </Fade>
 
       <Link to={'/clients'}>
         <Logos>
