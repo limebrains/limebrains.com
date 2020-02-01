@@ -134,7 +134,7 @@ const HeaderVideo = () => {
 
       <Fade>
         <video
-          playsinline
+          playsInline
           muted
           loop
           preload="auto"

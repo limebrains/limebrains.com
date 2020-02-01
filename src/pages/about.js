@@ -50,19 +50,17 @@ const AboutUs = () => (
   <Layout>
     <SEO title="About us"/>
 
-    <Fade fraction={1}>
-      <SectionHeading title={'About us'}/>
-    </Fade>
-
     <Flex ml={'10%'} mr={'10%'}>
-      <Motto>
-        We are The Software House where business questions meet software answers.
-      </Motto>
+      <Fade delay={1000}>
+        <Motto>
+          We are The Software House where business questions meet software answers.
+        </Motto>
+      </Fade>
     </Flex>
 
     <Flex flex={1} pt={'2rem'} align={'center'} justify={'center'} ml={'20%'} mr={'20%'}>
       <Flex flex={2} align={'center'} justify={'center'}>
-        <Flip left fraction={1}>
+        <Flip left fraction={1} delay={1000}>
           <Img src={LimeBrainsLogo} responsive width={200}/>
         </Flip>
       </Flex>
@@ -108,7 +106,7 @@ const AboutUs = () => (
 
         <Box mt={'2rem'}/>
 
-        <Slide left>
+        <Slide left delay={1000}>
           <Code>
             >>> import this
             <br/>
@@ -140,7 +138,7 @@ const AboutUs = () => (
     </Section>
 
     <Flex mt={'1rem'} mb={'10vh'} ml={'10%'} mr={'10%'}>
-      <Fade>
+      <Fade delay={1000}>
         <Motto>
           We provide web and mobile solutions for: enterprises which want to automate.
         </Motto>

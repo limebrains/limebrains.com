@@ -1,7 +1,6 @@
 import React from 'react'
 import { Slide } from 'react-reveal'
 import styled from 'styled-components'
-import Particles from 'react-particles-js'
 
 import { Flex } from '../flex'
 import { Section } from '../section'
@@ -24,55 +23,10 @@ export const Areas = () => {
       background={colors.sections.whiteSection.background}
       size={'xs'}
     >
-      <Particles
-        width={'100%'}
-        params={{
-          particles: {
-            line_linked: {
-              enable: false,
-            },
-            number: {
-              value: 5,
-            },
-            color: {
-              value: colors.primary.dark,
-            },
-            size: {
-              value: 3,
-              random: true,
-              anim: {
-                speed: 4,
-                size_min: 0.3,
-              },
-            },
-            move: {
-              random: true,
-              speed: 1,
-              direction: 'top',
-              out_mode: 'out',
-            },
-          },
-          interactivity: {
-            events: {
-              onhover: {
-                enable: true,
-                mode: 'repulse',
-              },
-            },
-          },
-        }}
-        style={{
-          width: '100%',
-          height: '100%',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: 0,
-        }}
-      />
       <Slide left fraction={1}>
         <SectionHeading title={'Our areas of interest'} />
       </Slide>
+
       <Row
         flex={1}
         pt={'2rem'}

@@ -5,7 +5,6 @@ import { SectionHeading } from '../heading'
 import { Slide, Flip } from 'react-reveal'
 import { IconRounded } from '../icon'
 import { Flex } from '../flex'
-import Particles from 'react-particles-js'
 import styled from 'styled-components';
 import { mobileLandscape } from '../responsive';
 
@@ -22,43 +21,6 @@ export const Reviews = () => {
       id="reviews"
       background={colors.sections.whiteSection.background}
     >
-      <Particles
-        width={'100%'}
-        params={{
-          particles: {
-            line_linked: {
-              shadow: {
-                enable: true,
-                color: '#ffffff',
-                blur: 5,
-              },
-            },
-            number: {
-              value: 10,
-            },
-            size: {
-              value: 3,
-            },
-          },
-          interactivity: {
-            events: {
-              onhover: {
-                enable: true,
-                mode: 'repulse',
-              },
-            },
-          },
-        }}
-        style={{
-          width: '100%',
-          height: '100%',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: 0,
-        }}
-      />
-
       <Flip right>
         <SectionHeading title={'Customer Reviews'} />
       </Flip>

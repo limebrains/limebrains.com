@@ -4,7 +4,6 @@ import { colors } from '../theme/colors'
 import { SectionHeading } from '../heading'
 import { Flip } from 'react-reveal'
 import { Flex, Box } from '../flex'
-import Particles from 'react-particles-js'
 import { Text } from '../text'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
@@ -23,7 +22,7 @@ export const About = () => {
         w={3 / 4}
       >
         <Box flex={1}>
-          <Flip right fraction={1}>
+          <Flip right fraction={1} delay={1000}>
             <SectionHeading title={'ABOUT US'}/>
           </Flip>
           <Text align={'center'}>
@@ -43,7 +42,7 @@ export const About = () => {
               ml={'5%'}
               mr={'5%'}
             >
-              <Flip right fraction={1} pr={'2rem'}>
+              <Flip right fraction={1} pr={'2rem'} delay={1000}>
                 <CircularProgressbar
                   value={40}
                   text={`40 projects`}
@@ -67,7 +66,7 @@ export const About = () => {
               ml={'5%'}
               mr={'5%'}
             >
-              <Flip right fraction={1}>
+              <Flip right fraction={1} delay={1000}>
                 <CircularProgressbar
                   value={25}
                   text={`25 clients`}
@@ -87,46 +86,6 @@ export const About = () => {
           </Flex>
         </Box>
       </Flex>
-
-      <Particles
-        width={'100%'}
-        params={{
-          particles: {
-            line_linked: {
-              shadow: {
-                enable: false,
-                color: '#ffffff',
-                blur: 5,
-              },
-            },
-            color: {
-              value: colors.primary.dark,
-            },
-            number: {
-              value: 10,
-            },
-            size: {
-              value: 3,
-            },
-          },
-          interactivity: {
-            events: {
-              onhover: {
-                enable: true,
-                mode: 'repulse',
-              },
-            },
-          },
-        }}
-        style={{
-          width: '100%',
-          height: '100%',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: 0,
-        }}
-      />
     </Section>
   )
 };
