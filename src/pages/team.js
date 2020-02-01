@@ -4,38 +4,10 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import SEO from '../components/seo'
-import { Link } from '../components/link'
-import { Card } from '../components/card'
-import { Img } from '../components/img'
 import Layout from '../components/layout/index'
 import { FlexBlog, Box } from '../components/flex'
 import { Fade } from 'react-reveal';
-
-const Row = styled.div`
-  color: #8f9297;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-bottom: 1px solid #bec1c6;
-  padding-bottom: 1rem;
-`;
-
-const Name = styled.div`
-  
-`;
-
-const Position = styled.div`
-  font-size: 12px;
-`;
-
-const Motto = styled.div`
-  padding: 2rem;
-  text-align: center;
-  color: #8f9297;
-  font-style: italic;
-`;
+import { ClientCard, PersonCard } from '../components/card';
 
 const Section = styled.div`
   font-size: 30px;
@@ -68,16 +40,13 @@ const Team = ({data}) => (
           .map(post => (
             <Box key={post.node.frontmatter.title}>
               <Fade>
-                <Card autoSize>
-                  <Link to={post.node.fields.slug}>
-                    <Img src={_.get(post, 'node.frontmatter.image')} responsive={true}/>
-                    <Row>
-                      <Name>{_.get(post, 'node.frontmatter.title')}</Name>
-                      <Position>{_.get(post, 'node.frontmatter.position')}</Position>
-                    </Row>
-                    <Motto>{_.get(post, 'node.frontmatter.motto')}</Motto>
-                  </Link>
-                </Card>
+                <PersonCard
+                  to={post.node.fields.slug}
+                  imgSrc={_.get(post, 'node.frontmatter.image')}
+                  name={_.get(post, 'node.frontmatter.title')}
+                  postion={_.get(post, 'node.frontmatter.position')}
+                  motto={_.get(post, 'node.frontmatter.motto')}
+                />
               </Fade>
             </Box>
           ))}
@@ -96,16 +65,13 @@ const Team = ({data}) => (
           .map(post => (
             <Fade>
               <Box key={post.node.frontmatter.title}>
-                <Card autoSize>
-                  <Link to={post.node.fields.slug}>
-                    <Img src={_.get(post, 'node.frontmatter.image')}/>
-                    <Row>
-                      <Name>{_.get(post, 'node.frontmatter.title')}</Name>
-                      <Position>{_.get(post, 'node.frontmatter.position')}</Position>
-                    </Row>
-                    <Motto>{_.get(post, 'node.frontmatter.motto')}</Motto>
-                  </Link>
-                </Card>
+                <PersonCard
+                  to={post.node.fields.slug}
+                  imgSrc={_.get(post, 'node.frontmatter.image')}
+                  name={_.get(post, 'node.frontmatter.title')}
+                  postion={_.get(post, 'node.frontmatter.position')}
+                  motto={_.get(post, 'node.frontmatter.motto')}
+                />
               </Box>
             </Fade>
           ))
@@ -113,16 +79,11 @@ const Team = ({data}) => (
 
         <Fade>
           <Box>
-            <Card>
-              <a href={'https://drift.me/mail12/meeting'} style={{textDecoration: 'none'}}>
-                <Img src={'https://i.imgur.com/NM9LdJV.jpg'}/>
-                <Row>
-                  <Name>{'Wanna join?'}</Name>
-                  <Position>{'your new title'}</Position>
-                </Row>
-                <Motto>{'Join us!'}</Motto>
-              </a>
-            </Card>
+            <PersonCard/>
+          </Box>
+
+          <Box>
+            <ClientCard/>
           </Box>
         </Fade>
       </FlexBlog>
@@ -141,16 +102,13 @@ const Team = ({data}) => (
           .map(post => (
             <Fade>
               <Box key={post.node.frontmatter.title}>
-                <Card autoSize>
-                  <Link to={post.node.fields.slug}>
-                    <Img src={_.get(post, 'node.frontmatter.image')}/>
-                    <Row>
-                      <Name>{_.get(post, 'node.frontmatter.title')}</Name>
-                      <Position>{_.get(post, 'node.frontmatter.position')}</Position>
-                    </Row>
-                    <Motto>{_.get(post, 'node.frontmatter.motto')}</Motto>
-                  </Link>
-                </Card>
+                <PersonCard
+                  to={post.node.fields.slug}
+                  imgSrc={_.get(post, 'node.frontmatter.image')}
+                  name={_.get(post, 'node.frontmatter.title')}
+                  postion={_.get(post, 'node.frontmatter.position')}
+                  motto={_.get(post, 'node.frontmatter.motto')}
+                />
               </Box>
             </Fade>
           ))
@@ -158,16 +116,11 @@ const Team = ({data}) => (
 
         <Fade>
           <Box>
-            <Card>
-              <a href={'https://drift.me/mail12/meeting'} style={{textDecoration: 'none'}}>
-                <Img src={'https://i.imgur.com/NM9LdJV.jpg'}/>
-                <Row>
-                  <Name>{'Wanna join?'}</Name>
-                  <Position>{'your new title'}</Position>
-                </Row>
-                <Motto>{'Join us!'}</Motto>
-              </a>
-            </Card>
+            <PersonCard/>
+          </Box>
+
+          <Box>
+            <ClientCard/>
           </Box>
         </Fade>
       </FlexBlog>
@@ -188,11 +141,11 @@ export const query = graphql`
                     frontmatter {
                         title
                         subtitle
-                        
+
                         leader
                         developer
                         intern
-                        
+
                         order
                         position
                         motto

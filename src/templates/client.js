@@ -7,10 +7,11 @@ import SEO from '../components/seo'
 import Layout from '../components/layout'
 import { SectionHeading } from '../components/heading'
 import { Img } from '../components/img';
-import { Box } from '../components/flex';
-import { Card } from '../components/card';
+import { Box, FlexBlog } from '../components/flex';
+import { Card, ClientCard, PersonCard } from '../components/card';
 import Bar from '../components/showhidebar';
 import { mobileLandscape } from '../components/responsive';
+import { Fade } from 'react-reveal';
 
 const LayoutWrapper = styled.div`
   max-width: 1200px;
@@ -115,7 +116,20 @@ const ClientTemplate = ({ data }) => {
           />
         </Card>
 
-        <Box mt={'3rem'}/>
+        <FlexBlog mb={'3rem'} mt={'4rem'}>
+          <Box>
+            <Fade>
+              <ClientCard/>
+            </Fade>
+          </Box>
+
+          <Box>
+            <Fade>
+              <PersonCard/>
+            </Fade>
+          </Box>
+        </FlexBlog>
+
       </LayoutWrapper>
     </Layout>
   )

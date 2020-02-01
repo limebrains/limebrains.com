@@ -9,24 +9,39 @@ import { About } from '../components/sections/about'
 import { Expertise } from '../components/sections/expertise'
 import { Reviews } from '../components/sections/reviews'
 import { JobSection } from '../components/sections/benefits'
+import { Fade } from 'react-reveal';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`limebrains`, `software house`, `best software house poland`, `fullstack`, `python`]}/>
 
-    <Areas/>
+    <Fade >
+      <Areas/>
+    </Fade>
 
-    <About/>
+    <Fade>
+      <About/>
+    </Fade>
 
-    <Expertise/>
+    <Fade>
+      <Expertise/>
+    </Fade>
 
-    <Reviews/>
+    <Fade>
+      <Reviews/>
+    </Fade>
 
-    <Team/>
+    <Fade>
+      <Team/>
+    </Fade>
 
-    <JobSection/>
+    <Fade>
+      <JobSection/>
+    </Fade>
 
-    <FAQ/>
+    <Fade>
+      <FAQ/>
+    </Fade>
   </Layout>
 );
 

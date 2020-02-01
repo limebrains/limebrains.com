@@ -7,10 +7,12 @@ import SEO from '../components/seo'
 import Layout from '../components/layout'
 import { SectionHeading } from '../components/heading'
 import { Img } from '../components/img'
-import { Box } from '../components/flex'
+import { Box, FlexBlog } from '../components/flex'
 import Bar from '../components/showhidebar'
 import { mobileLandscape } from '../components/responsive'
 import Carousel from '../components/carousel'
+import { Fade } from 'react-reveal';
+import { ClientCard, PersonCard } from '../components/card';
 
 const LayoutWrapper = styled.div`
   max-width: 1200px;
@@ -93,6 +95,20 @@ const PlaintextTemplate = ({ data }) => {
         </Section>
 
         <Carousel data={projects}/>
+
+        <FlexBlog mb={'5rem'}>
+          <Box>
+            <Fade>
+              <ClientCard/>
+            </Fade>
+          </Box>
+
+          <Box>
+            <Fade>
+              <PersonCard/>
+            </Fade>
+          </Box>
+        </FlexBlog>
       </LayoutWrapper>
     </Layout>
   )
