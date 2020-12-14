@@ -1,10 +1,10 @@
 ---
 layout: person
-title: "Daniel Okroś"
-subtitle: "Daniel Okroś"
+title: "Daniel Skoroś"
+subtitle: "Daniel Skoroś"
 seo:
-  title: "Daniel Okroś"
-  description: "Daniel Okroś"
+  title: "Daniel Skoroś"
+  description: "Daniel Skoroś"
   noindex: false
 leader: false
 developer: true

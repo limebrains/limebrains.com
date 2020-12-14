@@ -1,10 +1,10 @@
 ---
 layout: person
-title: "Michał Bartlakowski"
-subtitle: "Michał Bartlakowski"
+title: "Sebastian Wrzalek"
+subtitle: "Sebastian Wrzalek"
 seo:
-  title: "Michał Bartlakowski"
-  description: "Michał Bartlakowski"
+  title: "Sebastian Wrzalek"
+  description: "Sebastian Wrzalek"
   noindex: false
 leader: false
 developer: true
