@@ -132,7 +132,7 @@ export default Team
 
 export const query = graphql`
     query {
-        allMarkdownRemark(filter: { fields: { layout: { eq: "person" } }) {
+        allMarkdownRemark(filter: { fields: { layout: { eq: "person" } } }) {
             edges {
                 node {
                     tableOfContents
