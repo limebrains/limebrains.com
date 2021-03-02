@@ -20,6 +20,7 @@ Possible solutions:
 
 
 1. locize
+
 ```
 + easy to use
 + integration with google translate
@@ -28,6 +29,7 @@ Possible solutions:
 ```
 
 2. zanata
+
 ```
 + easy to use
 + has cli
@@ -73,7 +75,8 @@ Flow:
 1. use your i18n scanner to extract keys into json `{key: ""}` name of file
 
 i18next-parser.config.js
-```
+
+```javascript
 module.exports = {
   createOldCatalogs: false, // save previous translation catalogs to the \_old folder
 
@@ -90,7 +93,9 @@ module.exports = {
   namespaceSeparator: false,
   keySeparator: false,
   // Namespace separator used in your translation keys
-  // If you want to use plain english keys, separators such as `.` and `:` will conflict. You might want to set `keySeparator: false` and `namespaceSeparator: false`. That way, `t('Status: Loading...')` will not think that there are a namespace and three separator dots for instance.
+  // If you want to use plain english keys, separators such as `.` and `:` 
+  // will conflict. You might want to set `keySeparator: false` and 
+  // `namespaceSeparator: false`. That way, `t('Status: Loading...')` will not think that there are a namespace and three separator dots for instance.
 
   // output: 'i18n/$LOCALE/$NAMESPACE.json',
   output: 'public/locales/$LOCALE.json',
@@ -111,13 +116,14 @@ module.exports = {
 
 2. sync files with google sheets
 
-```
+```shell
 pip install gspread==3.6.0
 python i18n_google_sheets.py
 ```
 
 i18n_google_sheets.py
-```
+
+```python
 import os
 import json
 from collections import defaultdict
