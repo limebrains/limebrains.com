@@ -1,12 +1,15 @@
 ---
-layout: blog-post title: "How to make a div instead table td with height 100%?"
+layout: blog-post
+title: "How to make a div instead table td with height 100%?"
 subtitle: "How to make a div instead table td with height 100%?"
 tags: "html, css, table, frontend"
-date: 2021-03-02 13:00 category: webdev image: https://i.imgur.com/2d2q86y.png
+date: 2021-03-02 13:00
+category: webdev
+image: https://i.imgur.com/2d2q86y.png
 seo:
-title: "How to make a div instead table td with height 100%?"
-description: "How to make a div instead table td with height 100%?"
-noindex: false
+  title: "How to make a div instead table td with height 100%?"
+  description: "How to make a div instead table td with height 100%?"
+  noindex: false
 --- 
 
 # Problem 😱
