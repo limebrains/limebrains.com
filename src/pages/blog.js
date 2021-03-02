@@ -17,7 +17,7 @@ const Blog = ({ data }) => (
 
     <Box m={3}>
       <FlexBlog>
-        {data.allMarkdownRemark.edges.map(post => (
+        {data.allMarkdownRemark.edges.reverse().map(post => (
           <Box key={post.node.frontmatter.title}>
             <Link to={post.node.fields.slug}>
               <Card title={post.node.frontmatter.title}>
