@@ -44,7 +44,7 @@ Possible solutions:
 + easy to integrate
 + free
 
-- hard to maitain
+- hard to maintain
 - merge conflicts
 - non versioned
 ```
