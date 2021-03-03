@@ -5,7 +5,7 @@ subtitle: "Lighttpd configuration and vue router history"
 tags: "vue, lighttpd, nginx, devops"
 date: 2021-03-03 12:40
 category: devops
-image: https://i.imgur.com/xRnFwmd.png
+image: https://i.imgur.com/l9MVsS3.png
 seo:
   title: "Lighttpd configuration and vue router history"
   description: "Lighttpd configuration and vue router history"
@@ -45,3 +45,5 @@ url.rewrite-if-not-file = (
      "/.*" => "/index.html"
 )
 ```
+
+![Imgur](https://imgur.com/OHPCF2D.gif)
