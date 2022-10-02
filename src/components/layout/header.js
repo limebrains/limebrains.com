@@ -64,9 +64,10 @@ const Header = () => {
                 text: true,
               }}
             />
-            <HeaderButton
-              to="/team"
-              text="TEAM"
+            <HeaderHrefButton
+              href="https://forms.gle/RQkY962BStAm9D5eA"
+              text="CAREERS"
+              onClick={handleMenuClick}
               style={{
                 white: true,
                 outline: true,
