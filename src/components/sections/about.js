@@ -42,9 +42,9 @@ export const About = () => {
             >
               <Flip right fraction={1} pr={'2rem'} delay={1000}>
                 <CircularProgressbar
-                  value={40}
-                  text={`40 projects`}
-                  maxValue={40}
+                  value={60}
+                  text={`60+ projects`}
+                  maxValue={60}
                   strokeWidth={5}
                   /* This is important to include, because if you're fully managing the
             animation yourself, you'll want to disable the CSS animation. */
@@ -66,9 +66,9 @@ export const About = () => {
             >
               <Flip right fraction={1} delay={1000}>
                 <CircularProgressbar
-                  value={25}
-                  text={`25 clients`}
-                  maxValue={25}
+                  value={40}
+                  text={`35+ clients`}
+                  maxValue={40}
                   strokeWidth={5}
                   /* This is important to include, because if you're fully managing the
             animation yourself, you'll want to disable the CSS animation. */
