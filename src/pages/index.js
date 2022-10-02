@@ -27,10 +27,6 @@ const IndexPage = () => (
       <Expertise/>
     </Fade>
     <Fade>
-      <Team/>
-    </Fade>
-
-    <Fade>
       <JobSection/>
     </Fade>
 
