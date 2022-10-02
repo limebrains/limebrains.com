@@ -26,12 +26,10 @@ export const About = () => {
             <SectionHeading title={'ABOUT US'}/>
           </Flip>
           <Text align={'center'}>
-            We are The Software House where business questions meet software
-            answers.
+            Having 10+ years of experience in building IT solutions for global brands and different industries, we are able to complete quickly a software development team and start delivering.
             <br/>
             <br/>
-            We provide web and mobile solutions for: enterprises which want
-            to automate.
+            We have learned that building an IT company based on pure passion is a beautiful thing. That passion was driven by a chance to learn and understand how a big business works and to improve that business with our software. We have developed our teams with excitement about sharpening excellence in enterprise software engineering, combined with a remarkable design in the digital world.
           </Text>
 
           <Flex flex={1} pt={'2rem'} justify={'center'} align={'center'}>
