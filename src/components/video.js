@@ -79,7 +79,7 @@ const VideoWrapper = styled.div`
 
 const Logos = styled.div`
   position: absolute;
-  bottom: 2rem;
+  bottom: 0;
   left: 0;
   right: 0;
   margin: 0 auto;

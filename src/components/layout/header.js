@@ -106,7 +106,6 @@ const Header = () => {
           <nav role="navigation">
             <MenuToggle>
               <CloseIcon type="checkbox" innerRef={inputBox} onClick={inputBoxOnClick}/>
-
               <LineOfBurger/>
               <LineOfBurger/>
               <LineOfBurger/>
