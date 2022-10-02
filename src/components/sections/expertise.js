@@ -61,8 +61,8 @@ export const Expertise = () => {
           >
             <Slide left fraction={1}>
               <SectionHeading
-                title={'Progressive apps'}
-                subtitle={'ReactJS / GraphQL / NodeJS / Mobile'}
+                title={'Javascript'}
+                subtitle={'ReactJS / VueJS / NodeJS / Next.js / ReactNative'}
                 inverse
               />
             </Slide>
@@ -75,8 +75,8 @@ export const Expertise = () => {
           >
             <Slide bottom fraction={1}>
               <SectionHeading
-                title={'Scalable API'}
-                subtitle={'AWS / Google Cloud / Terraform / Docker'}
+                title={'Python'}
+                subtitle={'Python / Django / FastAPI / Flask'}
                 inverse
               />
             </Slide>
@@ -89,8 +89,8 @@ export const Expertise = () => {
           >
             <Slide right fraction={1}>
               <SectionHeading
-                title={'Open source'}
-                subtitle={'Pet / Sufler / pydrill / and much more'}
+                title={'Dev-Ops'}
+                subtitle={'AWS / Google Cloud / Docker / kubernetes'}
                 inverse
               />
             </Slide>
