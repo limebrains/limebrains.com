@@ -228,9 +228,9 @@ export const Footer = () => {
                 <SocialIcon className="companyInfo">
                   <Icon icon="FaMapMarkerAlt"/>
                   <p>
-                    UL.OLIMPIJSKA 2
+                    UL. K. Górskiego 1
                     <br/>
-                    GDYNIA 84-240
+                    GDYNIA 81-538
                   </p>
                 </SocialIcon>
                 <SocialIcon className="companyInfo">
