@@ -40,24 +40,6 @@ const Header = () => {
       text: false,
     }}
   />
-  <HeaderHrefButton
-    text="JOBS"
-    href="https://forms.gle/676Dcwo98LEYcPWy7"
-    style={{
-      white: true,
-      outline: true,
-      text: true,
-    }}
-  />
-  <HeaderHrefButton
-    text="GITHUB"
-    href="https://github.com/limebrains/"
-    style={{
-      white: true,
-      outline: true,
-      text: true,
-    }}
-  />
    */
   return (
     <HeaderWrapper>
@@ -150,9 +132,9 @@ const Header = () => {
                       text: true,
                     }}
                   />
-                  <HeaderButton
-                    to="/team"
-                    text="TEAM"
+                  <HeaderHrefButton
+                    href="https://forms.gle/RQkY962BStAm9D5eA"
+                    text="CAREERS"
                     onClick={handleMenuClick}
                     style={{
                       white: true,

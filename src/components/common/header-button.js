@@ -6,7 +6,7 @@ import { NavButton } from './header-styles'
 export const HeaderButton = props => {
   return (
     <li>
-      <Link to={props.to} onClick={props.onClick}>
+      <Link to={props.to} onClick={props.onClick} target={props.target}>
         <NavButton {...props.style}>{props.text}</NavButton>
       </Link>
     </li>

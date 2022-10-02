@@ -41,6 +41,26 @@ const HeaderPlain = ({ children }, { siteTitle }) => {
             />
           </Flip>
         </Link>
+
+      </Box>
+      <Box pt={10} pb={10} pr={10}
+        style={{
+          flex: 0.15
+        }}
+      >
+        <a
+          style={{
+            color: 'white',
+            'text-decoration': 'none'
+          }}
+          href="https://forms.gle/RQkY962BStAm9D5eA"
+        >
+          <span
+            style={{'text-decoration': 'underline'}}
+          >
+            We're Hiring
+          </span>!
+        </a>
       </Box>
       <Flex alignself={'center'}>
         <Link to="/">
