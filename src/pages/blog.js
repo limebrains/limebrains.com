@@ -17,7 +17,7 @@ const Blog = ({ data }) => (
 
     <Box m={3}>
       <FlexBlog>
-        {data.allMarkdownRemark.edges.reverse().map(post => (
+        {data.allMarkdownRemark.edges.map(post => (
           <Box key={post.node.frontmatter.title}>
             <Link to={post.node.fields.slug}>
               <Card title={post.node.frontmatter.title}>
@@ -35,7 +35,10 @@ export default Blog
 
 export const query = graphql`
   query {
-    allMarkdownRemark(filter: { fields: { layout: { eq: "blog-post" } } }) {
+    allMarkdownRemark(
+      filter: { fields: { layout: { eq: "blog-post" } } },
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           tableOfContents
