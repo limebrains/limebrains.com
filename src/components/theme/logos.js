@@ -2,7 +2,7 @@ import limeBrainsLogo from '../../images/lime-brains-logo.svg'
 
 import headerLogo from '../../images/header_bg.jpg'
 
-import mazarLogo from '../../images/Mazars_logo.svg.png'
+import mazarLogo from '../../images/Forvis-Mazars-logo.png'
 import nokiaLogo from '../../images/Nokia_wordmark.svg.png'
 import siemensLogo from '../../images/Siemens-logo.svg.png'
 
