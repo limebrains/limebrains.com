@@ -143,7 +143,6 @@ export const query = graphql`
 
                         leader
                         developer
-                        intern
 
                         order
                         position
