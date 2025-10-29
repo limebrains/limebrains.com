@@ -1,7 +1,11 @@
 ---
 title: "Crafting Successful AI Prompts"
-date: "2025-10-29"
-tags: ["AI", "Prompts", "Engineering"]
+date: 2025-10-29 10:00
+tags: "AI, Prompts, Engineering"
+seo:
+  title: "Crafting Successful AI Prompts"
+  description: "Crafting Successful AI Prompts"
+  noindex: false
 ---
 
 In the world of AI, the quality of your prompts determines the quality of the output. A well-crafted prompt is like a clear set of instructions for a brilliant but very literal assistant. To get the best results, it's helpful to structure your prompts using a framework. A popular and effective one is the **Persona, Task, Context, Format (PTCF)** model.
