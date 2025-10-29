@@ -1,12 +1,18 @@
 ---
-title: "Crafting Successful AI Prompts"
-date: 2025-10-29 10:00
+layout: blog-post
+title: "Crafting Successful AI Prompts in 2025"
+subtitle: "creating successful AI prompts in 2025"
 tags: "AI, Prompts, Engineering"
+date: 2025-10-29 10:00
+category: ai
+image: "https://i.imgur.com/W3c2ZMi.png"
 seo:
-  title: "Crafting Successful AI Prompts"
-  description: "Crafting Successful AI Prompts"
+  title: "Crafting Successful AI Prompts in 2025"
+  description: "creating successful AI prompts in 2025"
   noindex: false
 ---
+
+# Crafting Successful AI Prompts in 2025
 
 In the world of AI, the quality of your prompts determines the quality of the output. A well-crafted prompt is like a clear set of instructions for a brilliant but very literal assistant. To get the best results, it's helpful to structure your prompts using a framework. A popular and effective one is the **Persona, Task, Context, Format (PTCF)** model.
 
@@ -56,6 +62,22 @@ Here's an example of a prompt that uses all four elements:
 
 **Prompt:**
 
-"Act as a senior data analyst. Your task is to write a SQL query to find the top 5 most active users from the `users` and `activity` tables. The `users` table has columns `user_id` and `name`, and the `activity` table has columns `user_id` and `login_date`. Provide the output as a single SQL query, with a brief explanation of how it works."
+```bash
+<persona>
+Act as a senior data analyst. 
+</persona>
+
+<task>
+Your task is to write a SQL query to find the top 5 most active users from the `users` and `activity` tables.
+</task>
+
+<context> 
+The `users` table has columns `user_id` and `name`, and the `activity` table has columns `user_id` and `login_date`.
+</context>
+
+<format>
+Provide the output as a single SQL query, with a brief explanation of how it works.
+</format>
+```
 
 By using the PTCF framework, you can create prompts that are clear, concise, and effective, leading to better and more reliable results from your AI assistant.
